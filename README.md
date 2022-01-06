@@ -19,7 +19,9 @@ over an issue to propose a change to the content.
 Hosted on GitHub pages - https://w3f.github.io/w3f-education/
 This website is built using [Docusaurus](https://docusaurus.io/).
 
-## Installation and Local Development
+## Installation and Local Development$
+
+Download the repo and run the commands below
 
 ```console
 yarn install
