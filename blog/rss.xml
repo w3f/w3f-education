@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Web3 Education Initiative Blog</title>
+        <link>https://w3f.github.io/w3f-education/blog</link>
+        <description>Web3 Education Initiative Blog</description>
+        <lastBuildDate>Thu, 12 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Polkadot MOOC]]></title>
+            <link>https://w3f.github.io/w3f-education/blog/Polkadot MOOC</link>
+            <guid>Polkadot MOOC</guid>
+            <pubDate>Thu, 12 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course]]></description>
+        </item>
+    </channel>
+</rss>
