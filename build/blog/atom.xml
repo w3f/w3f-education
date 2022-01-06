@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://DrW3RK.github.io/polkadot-mooc/blog</id>
+    <title>Introduction to Polkadot Blog</title>
+    <updated>2021-08-12T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://DrW3RK.github.io/polkadot-mooc/blog"/>
+    <subtitle>Introduction to Polkadot Blog</subtitle>
+    <icon>https://DrW3RK.github.io/polkadot-mooc/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Polkadot MOOC]]></title>
+        <id>Polkadot MOOC</id>
+        <link href="https://DrW3RK.github.io/polkadot-mooc/blog/Polkadot MOOC"/>
+        <updated>2021-08-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course]]></summary>
+    </entry>
+</feed>

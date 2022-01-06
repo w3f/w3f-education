@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolkadot_mooc=self.webpackChunkpolkadot_mooc||[]).push([[649],{3927:function(o){o.exports=JSON.parse('{"permalink":"/polkadot-mooc/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
