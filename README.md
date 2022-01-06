@@ -16,7 +16,7 @@ over an issue to propose a change to the content.
 
 # Website
 
-Hosted on GitHub pages - https://w3f.github.io/w3f-education/
+Hosted on GitHub pages - https://w3f.github.io/w3f-education/.
 This website is built using [Docusaurus](https://docusaurus.io/).
 
 ## Installation and Local Development$
