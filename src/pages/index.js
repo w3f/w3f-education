@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="https://github.com/DrW3RK/polkadot-mooc">
+            to="https://github.com/w3f/w3f-education">
             Contribute
           </Link>
         </div>
