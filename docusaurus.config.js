@@ -70,7 +70,7 @@ module.exports = {
 
         {to: '/blog', label: 'Blog', position: 'right'},
         {
-          href: 'https://github.com/DrW3RK/polkadot-mooc',
+          href: 'https://github.com/w3f/w3f-education',
           label: 'GitHub',
           position: 'right',
         },
