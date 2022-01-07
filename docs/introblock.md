@@ -25,6 +25,8 @@ Energy implications of PoW. What are the other ways to mine/validate a Block? Wh
 
 ## Module 4 - Blockchain Nodes and Networking
 
+What software does a Blockchain node run? What are the hardware requirements?
+
 
 ## Module 5 - Blockchain Layers and Applications
 
