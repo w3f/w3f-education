@@ -24,6 +24,7 @@ How Bitcoin blocks are mined? Anatomy of a Bitcoin Block. What is Forking? Major
 Energy implications of PoW. What are the other ways to mine/validate a Block? PoS. What are other ways to finalize a Block?
 
 ## Module 4 - Blockchain Nodes and Networking
+
 Distributed systems. Can I run my own Blockchain node? What are minimum hardware requirements to run blockchain nodes out there? How do Blockchain nodes communicate? Interfacing with Blockchain network. API. Full node vs Archive node vs light client. Consensus in depth. 51% attacks.
 
 ## Module 5 - Blockchain Layers and Applications

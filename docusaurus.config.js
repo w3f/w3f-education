@@ -38,6 +38,10 @@ module.exports = {
               label: 'Blockchain',
             },
             {
+              to: 'docs/introweb3',
+              label: 'Web3',
+            },
+            {
               to: 'docs/introdot',
               label: 'Polkadot',
             },

@@ -134,6 +134,20 @@ module.exports = {
       href: 'https://docs.substrate.io/',
     },
   ],
+
+    web3: [
+      {
+        type: 'doc',
+        id: 'introweb3',
+        label: 'Web3',
+      },
+      {
+        type: 'link',
+        label: 'Learn more',
+        href: 'https://web3.foundation/',
+      },
+    ],
+
   atoz: [
     {
       type: 'doc',
