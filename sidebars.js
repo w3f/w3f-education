@@ -10,6 +10,12 @@ module.exports = {
       label: 'Introduction to Blockchain',
       items: [
           'Blockchain/Module1/blockchain',
+          'Blockchain/Module1/money-trust',
+          'Blockchain/Module1/money-properties',
+          'Blockchain/Module1/digital-money',
+          'Blockchain/Module1/bitcoin',
+          'Blockchain/Module1/ethereum',
+          'Blockchain/Module1/web3',
       ],
     },
     {
