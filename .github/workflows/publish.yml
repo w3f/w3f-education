@@ -20,7 +20,7 @@ jobs:
 
       - name: Publish
         run: |
-          git config --global user.email "drw3rk@users.noreply.github.com"
-          git config --global user.name "DrW3RK"
-          echo "machine github.com login DrW3RK password ${{ secrets.ACCESS_KEY }}" > ~/.netrc
-          yarn && yarn build && GIT_USER=DrW3RK PUBLISHING=true yarn deploy
+          git config --global user.email "w3fdeply@users.noreply.github.com"
+          git config --global user.name "w3fdeploy"
+          echo "machine github.com login w3fdeploy password ${{ secrets.ACCESS_KEY }}" > ~/.netrc
+          yarn && yarn build && GIT_USER=w3fdeploy PUBLISHING=true yarn deploy
