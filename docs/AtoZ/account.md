@@ -1,9 +1,10 @@
 ---
 id: account
+title: A for Account
 sidebar_position: 1
 ---
 
-# A for Account
+![A for Account](assets/A.png)
 
 ## What is an account?
 
