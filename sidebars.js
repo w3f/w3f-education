@@ -170,5 +170,50 @@ module.exports = {
       id: 'AtoZ/bridge',
       label: 'B for Bridge',
     },
+    {
+      type: 'doc',
+      id: 'AtoZ/collator',
+      label: 'C for Collator',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/democracy',
+      label: 'D for Democracy',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/existential-deposit',
+      label: 'E for Existential Deposit',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/forkless',
+      label: 'F for Forkless',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/grandpa',
+      label: 'G for Grandpa',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/hash',
+      label: 'H for Hash',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/interoperability',
+      label: 'I for Interoperability',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/polkadot-js',
+      label: 'J for Polkadot JS',
+    },
+    {
+      type: 'doc',
+      id: 'AtoZ/kusama',
+      label: 'K for Kusama',
+    },
   ],
 };
