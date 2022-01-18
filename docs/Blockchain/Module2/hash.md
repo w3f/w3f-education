@@ -1,0 +1,5 @@
+---
+id: hash
+---
+
+# Cryptographic Hashing

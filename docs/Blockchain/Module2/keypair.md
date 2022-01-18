@@ -1,6 +1,5 @@
 ---
 id: keypair
-sidebar_position: 2
 ---
 
-# Public/Private Key pair
+# Digital Signatures and Crypto-wallets
