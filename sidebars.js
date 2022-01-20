@@ -71,7 +71,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'The future of Blockchain',
+      label: 'Web3 and the future of Blockchain',
       items: [
           'Blockchain/Module6/web3',
           'Blockchain/Module6/crypto-defi',
