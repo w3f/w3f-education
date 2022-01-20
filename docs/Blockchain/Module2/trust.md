@@ -1,0 +1,5 @@
+---
+id: trust
+---
+
+# Trust issues

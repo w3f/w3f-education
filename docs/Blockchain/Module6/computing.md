@@ -1,0 +1,5 @@
+---
+id: computing
+---
+
+# Decentralized Computing

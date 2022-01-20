@@ -1,0 +1,5 @@
+---
+id: decentralization
+---
+
+# Decentralization Trilemma

@@ -1,0 +1,6 @@
+---
+id: finality
+---
+
+
+# Block finality
