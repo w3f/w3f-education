@@ -1,5 +1,5 @@
 ---
-id: Hashpower
+id: hashpower
 ---
 
 
