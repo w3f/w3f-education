@@ -22,7 +22,13 @@ module.exports = {
       type: 'category',
       label: 'Blockchain and Cryptography',
       items: [
+          'Blockchain/Module2/cryptography',
           'Blockchain/Module2/keypair',
+          'Blockchain/Module2/hash',
+          'Blockchain/Module2/datastructures',
+          'Blockchain/Module2/trust',
+          'Blockchain/Module2/invincible',
+          'Blockchain/Module2/decentralization',
       ],
     },
     {
@@ -30,13 +36,25 @@ module.exports = {
       label: 'Block Mining and Finality',
       items: [
           'Blockchain/Module3/mining',
+          'Blockchain/Module3/mining-hardware',
+          'Blockchain/Module3/hashpower',
+          'Blockchain/Module3/PoW',
+          'Blockchain/Module3/forking',
+          'Blockchain/Module3/finality',
+          'Blockchain/Module3/PoS',
       ],
     },
     {
       type: 'category',
       label: 'Nodes and Networking',
       items: [
+          'Blockchain/Module4/distributed',
+          'Blockchain/Module4/consensus',
+          'Blockchain/Module4/networkstack',
           'Blockchain/Module4/gossip',
+          'Blockchain/Module4/nodes',
+          'Blockchain/Module4/network-challenges',
+          'Blockchain/Module4/lightclients',
       ],
     },
     {
@@ -44,6 +62,11 @@ module.exports = {
       label: 'Layers and Applications',
       items: [
           'Blockchain/Module5/layers',
+          'Blockchain/Module5/layer0',
+          'Blockchain/Module5/layer1',
+          'Blockchain/Module5/layer2',
+          'Blockchain/Module5/enterprise',
+          'Blockchain/Module5/zk-proofs',
       ],
     },
     {
@@ -51,6 +74,11 @@ module.exports = {
       label: 'The future of Blockchain',
       items: [
           'Blockchain/Module6/web3',
+          'Blockchain/Module6/crypto-defi',
+          'Blockchain/Module6/nft-meta',
+          'Blockchain/Module6/dao',
+          'Blockchain/Module6/computing',
+          'Blockchain/Module6/future-web3',
       ],
     },
     {
