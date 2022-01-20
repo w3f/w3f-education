@@ -1,6 +1,6 @@
 [![CC BY 4.0][cc-by-shield]][cc-by][![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
 
-The educational content in this repo including files, text, images and videos, but excluding code is licensed under
+Unless explicitly specified, the educational content in this repo including files, text, images and videos, but excluding code is licensed under
 [Creative Commons Attribution 4.0 International License][cc-by]. All software or computer code is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 
