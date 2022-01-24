@@ -32,4 +32,4 @@ What problems can Blockchain solve? What is cheaper and reliable to do on Blockc
 
 ## Module 6 - Web3 and the Future of Blockchain
 
-Scams and Attacks. Culture. Public policy. Regulations. Blockchain governance. DAOs. Interoperability and Scalability.
+Scams and Attacks. Culture. Public policy. Regulations. Blockchain governance. Cryptocurrencies and DeFi. DAOs. Interoperability and Scalability. NFTs. Metaverse. Decentralized computing.
