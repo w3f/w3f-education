@@ -51,11 +51,8 @@ To make it easy for you during the workshop session, the code updates you need t
 
 In ```runtime/Cargo.toml``` add the code below. Make sure you update the tag to match the other dependencies listed in the file.
 
-    [dependencies.pallet-nicks]
-    default-features = false
-    git = 'https://github.com/paritytech/substrate.git'
-    tag = 'monthly-YYYY-MM'
-    version = '4.0.0-dev'
+    pallet-nicks = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.17" }
+
 
 Scroll down in ```runtime/Cargo.toml``` and add this line of code ```'pallet-nicks/std',``` in the features code block
 
