@@ -67,6 +67,10 @@ Scroll down in ```runtime/Cargo.toml``` and add this line of code ```'pallet-nic
       #--snip--
       ]
 
+This command is to ensure the dependencies work correctly for the current node template on Substrate Playground:
+
+    cargo update -p serde:1.0.133
+    
 Before moving on, check that the new dependencies resolve correctly by running:
 
     cargo check -p node-template-runtime
@@ -119,10 +123,10 @@ Then we can add Nicks to the ```construct_runtime!``` Macro in the same file. Yo
           UncheckedExtrinsic = UncheckedExtrinsic
           {
             /* --snip-- */
-            Balances: pallet_balances::{Pallet, Call, Storage, Config<T>, Event<T>},
+            Balances: pallet_balances,
 
             /*** Add This Line ***/
-            Nicks: pallet_nicks::{Pallet, Call, Storage, Event<T>},
+            Nicks: pallet_nicks,
           }
           );
 
