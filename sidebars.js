@@ -164,7 +164,7 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'workshop',
+      id: 'Substrate/workshop',
       label: 'Substrate Workshop',
     },
     {
