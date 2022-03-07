@@ -38,23 +38,6 @@ If Substrate Playground crashes or has issues with the load balancing multiple s
 
 _It is recommended that you setup the local development environment after the workshop session_
 
-## Running a Multi-Node Blockchain (_Skip this during the live session_)
-
-_Skip this section during the workshop as it takes a lot of time compile the node from scratch. You can try this later_
-
-After successfully starting the substrate node template, press CTRL + C on the terminal to stop the execution of the node. Remove the previously built artifacts by running the below command
-
-    cargo clean
-
-Now, run an instance of Local Testnet that allows you to run a Validator Node. This will take a while as Rust compiles the entire node from scratch. Observe the command prompt to see all the libraries that make a node template work.
-
-    cargo run -- --base-path data/node1 --chain local --alice  --name radha --validator
-
-Open a new terminal (At the top of the page, click on Terminal). Here, we will run another instance of the node. As we are running on the same machine, we will supply different ports for networking.
-
-    cargo run -- --base-path data/node2 --chain local --bob  --port 30334 --ws-port 9945 --name dasari --validator
-
-If everything goes well, you should be able to see a multi-node blockchain in action!
 
 ## Innovating with FRAME on substrate
 
@@ -157,3 +140,19 @@ Now, navigate to the menu items at the top. click on Playground -> Open Polkadot
 ![Docusaurus](/img/workshop/sub0workshop2.png)
 
 ![Docusaurus](/img/workshop/sub0workshop3.png)
+
+## Running a Multi-Node Blockchain
+
+After successfully starting the substrate node template, press CTRL + C on the terminal to stop the execution of the node. Remove the previously built artifacts by running the below command
+
+    cargo clean
+
+Now, run an instance of Local Testnet that allows you to run a Validator Node. This will take a while as Rust compiles the entire node from scratch. Observe the command prompt to see all the libraries that make a node template work.
+
+    cargo run -- --base-path data/node1 --chain local --alice  --name radha --validator
+
+Open a new terminal (At the top of the page, click on Terminal). Here, we will run another instance of the node. As we are running on the same machine, we will supply different ports for networking.
+
+    cargo run -- --base-path data/node2 --chain local --bob  --port 30334 --ws-port 9945 --name dasari --validator
+
+If everything goes well, you should be able to see a multi-node blockchain in action!
