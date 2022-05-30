@@ -99,39 +99,19 @@ module.exports = {
       label: 'What is Polkadot?',
       items: [
           'Polkadot/Module1/polkadot',
-<<<<<<< Updated upstream
-          'Polkadot/Module1/architecture',
-          'Polkadot/Module1/polkadot-vision',
-          'Polkadot/Module1/features',
-=======
-<<<<<<< Updated upstream
-=======
           'Polkadot/Module1/architecture',
           'Polkadot/Module1/polkadotvision',
           'Polkadot/Module1/features',
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       ],
     },
     {
       type: 'category',
       label: 'Interact with Polkadot',
       items: [
-          'Polkadot/Module2/account',
-<<<<<<< Updated upstream
-          'Polkadot/Module2/DOT-utility',
-          'Polkadot/Module2/explore-network',
-          'Polkadot/Module2/governance',
-          'Polkadot/Module2/treasury',
-=======
-<<<<<<< Updated upstream
-=======
           'Polkadot/Module2/dotutility',
           'Polkadot/Module2/explorenetwork',
           'Polkadot/Module2/governance',
           'Polkadot/Module2/treasury',
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       ],
     },
     {
