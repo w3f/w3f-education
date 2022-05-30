@@ -1,6 +1,9 @@
 ---
 id: parachains
-sidebar_position: 1
 ---
 
 # Parachains
+
+# Common Good Parachains
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BFo0EbLO46M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
