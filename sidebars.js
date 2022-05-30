@@ -99,6 +99,9 @@ module.exports = {
       label: 'What is Polkadot?',
       items: [
           'Polkadot/Module1/polkadot',
+          'Polkadot/Module1/architecture',
+          'Polkadot/Module1/polkadot-vision',
+          'Polkadot/Module1/features',
       ],
     },
     {
@@ -106,6 +109,10 @@ module.exports = {
       label: 'Interact with Polkadot',
       items: [
           'Polkadot/Module2/account',
+          'Polkadot/Module2/DOT-utility',
+          'Polkadot/Module2/explore-network',
+          'Polkadot/Module2/governance',
+          'Polkadot/Module2/treasury',
       ],
     },
     {
