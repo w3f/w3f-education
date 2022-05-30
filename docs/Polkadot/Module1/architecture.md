@@ -2,7 +2,7 @@
 id: architecture
 ---
 
-# Polkadot Architecture
+# Architecture of Polkadot
 
 ## Architecture - Polkadot vs Ethereum
 
