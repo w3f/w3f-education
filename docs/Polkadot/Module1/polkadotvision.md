@@ -1,5 +1,5 @@
 ---
-id: polkadot-vision
+id: polkadotvision
 ---
 
 # Vision of Polkadot
