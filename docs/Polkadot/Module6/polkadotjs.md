@@ -1,5 +1,5 @@
 ---
-id: API
+id: polkadotjs
 ---
 
-# Polkadot API
+# Polkadot JS
