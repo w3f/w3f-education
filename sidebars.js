@@ -102,12 +102,14 @@ module.exports = {
           'Polkadot/Module1/architecture',
           'Polkadot/Module1/polkadotvision',
           'Polkadot/Module1/features',
+          'Polkadot/Module1/becomeparachain',
       ],
     },
     {
       type: 'category',
       label: 'Interact with Polkadot',
       items: [
+          'Polkadot/Module2/account',
           'Polkadot/Module2/dotutility',
           'Polkadot/Module2/explorenetwork',
           'Polkadot/Module2/governance',
@@ -118,7 +120,11 @@ module.exports = {
       type: 'category',
       label: 'Consensus and Security',
       items: [
+          'Polkadot/Module3/consensus',
           'Polkadot/Module3/npos',
+          'Polkadot/Module3/maintainers',
+          'Polkadot/Module3/sharedsecurity',
+          'Polkadot/Module3/securityimprovements',
       ],
     },
     {
