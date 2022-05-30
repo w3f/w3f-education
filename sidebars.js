@@ -131,21 +131,35 @@ module.exports = {
       type: 'category',
       label: 'Cryptography and Networking',
       items: [
+          'Polkadot/Module4/cryptography',
+          'Polkadot/Module4/networking',
           'Polkadot/Module4/nodes',
+          'Polkadot/Module4/parachainblock',
+          'Polkadot/Module4/decentralization',
+
       ],
     },
     {
       type: 'category',
       label: 'Interoperability and Scalability',
       items: [
+          'Polkadot/Module5/interoperability',
+          'Polkadot/Module5/bridges',
           'Polkadot/Module5/parachains',
+          'Polkadot/Module5/scalability',
+          'Polkadot/Module5/architectureimprovements',
+
       ],
     },
     {
       type: 'category',
       label: 'Polkadot for Developers',
       items: [
-          'Polkadot/Module6/API',
+          'Polkadot/Module6/rust',
+          'Polkadot/Module6/substrate',
+          'Polkadot/Module6/testnets',
+          'Polkadot/Module6/polkadotjs',
+          'Polkadot/Module6/developers',
       ],
     },
     {
