@@ -1,5 +1,5 @@
 ---
-id: Networking
+id: networking
 
 ---
 
