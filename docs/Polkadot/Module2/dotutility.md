@@ -4,6 +4,13 @@ id: dotutility
 
 # DOT Token Utility
 
+On the side of economics, we aim to have a controlled near-constant yearly inflation
+rate. It is important for the security of the system that all validators have large
+amounts of stake backing them. Our adaptive reward schedule for validators and the nominators
+backing them ensures that overall participation in NPoS stays high, and that the validators' stake
+backings are evenly distributed. On a more granular level, we pay or slash validators on a per-
+executed-action basis, and extend the same rewards or punishment onto nominators proportionally,
+to ensure that the rational strategy is compatible with honest behaviour.
 
 ## What can you do with DOT?
 
