@@ -50,3 +50,5 @@ turnout is rarely 100%, we can e ect di erent outcomes depending on the circ
 a balance of power between active and passive stakeholders. For example, simple voting systems
 typically introduce a notion of quorum, whereby a minimum amount of turnout must be reached
 before a change is passed.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8CwYtcS5v18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
