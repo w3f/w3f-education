@@ -63,3 +63,21 @@ Relay chain block producers listen to all transaction network messages. Upon rec
 transaction message, the transaction(s) are validated by the Runtime. The valid transactions then
 are arranged in a queue based on their priority and dependency and are considered for inclusion
 in future blocks accordingly.
+
+## Transaction Fees
+
+We use the model described above to set the fee level of a transaction based
+on three parameters: its type, its on-chain length, and its expected resource usage. This fee
+differentiation is used to reflect the different costs that a transaction incurs on the network and
+on the state, and to encourage the processing of certain types of transactions over others. A
+fraction of every transaction fee is paid to the block producer, while another fraction goes to
+ nance the Treasury. We highlight that, for a block producer, the rewards coming
+from transaction fees may constitute only a small fraction of their overall revenue, just enough to
+incentivise inclusion on the block.
+We also run an adaptive transaction fee schedule that reacts to the traffic level, and ensures
+that blocks are typically far from full, so that peaks of activity can be dealt with e ectively and
+long inclusion times are rare. In particular, the fee of each transaction is multiplied by a parameter
+that evolves over time depending on the current network traffic.
+We make fees evolve slowly enough, so that the fee of any transaction can be predicted accu-
+rately within a frame of an hour. In particular, we do not intend for transaction fees to be the
+main source of income for stakers.

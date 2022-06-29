@@ -39,3 +39,14 @@ DOT holder may become a nominator or a validator candidate to participate in NPo
 ## Polkadot Council
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qpv0Bm_KyFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Turn out Biasing
+
+Turnout biasing: It may seem restrictive to force a full stakeholder-based process to do some-
+thing as little as, say, nudging the block time down by 5%. However, without this rule the network
+would likely be unstable, as placing its control outside of the hands of stakeholders would create a
+misalignment that may lead to inaction or worse. However, by taking advantage of the fact that
+turnout is rarely 100%, we can e ect di erent outcomes depending on the circumstances, crafting
+a balance of power between active and passive stakeholders. For example, simple voting systems
+typically introduce a notion of quorum, whereby a minimum amount of turnout must be reached
+before a change is passed.
