@@ -3,6 +3,8 @@ id: polkadotFAQ
 sidebar_position: 1
 ---
 
+# Polkadot FAQ
+
 ### Where can I find a list of academic and in-depth articles and information about Polkadot?
 
 * Polkadot Wiki: https://wiki.polkadot.network/
