@@ -23,7 +23,7 @@ module.exports = {
     navbar: {
       title: 'Technical Education',
       logo: {
-        alt: 'Web3 Education Initiative',
+        alt: 'Polkadot Education Initiative',
         src: 'img/Web3Foundation.png',
       },
       items: [
