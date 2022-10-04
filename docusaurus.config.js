@@ -65,6 +65,10 @@ module.exports = {
               to: 'https://wiki.polkadot.network/',
               label: 'Polkadot Wiki',
             },
+            {
+              to: 'docs/polkadotFAQ',
+              label: 'Polkadot FAQ ',
+            },
           ],
         },
 
