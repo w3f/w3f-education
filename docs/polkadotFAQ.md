@@ -209,3 +209,174 @@ If you want to know how much you have received in the past, you can view your ac
 
 Note that there is no such thing as "staking on Ledger". You can use Ledger to stake on-chain, but this does not change the fact that Ledger is just a tool to access the on-chain staking mechanism.
 
+### How do parachains work?
+
+At a really high level, when a parachain first connects to the relay chain, it submits its genesis block and its runtime (defining the state transition function). At this point, the validators on the chain (via the Wasm and genesis stored on the chain itself) can, given a set of transactions, verify if it is valid or not, by running them against the Wasm and the known state. Collators on the parachain send collations of transactions to a randomly selected subset of validators, who verify that the state transition is valid (since they know both the previous state and the state transition function (STF), defined in the Wasm blob containing the runtime).
+
+Other validators can verify that this is correct and slash an offending validator who tries to cheat by saying an invalid state transition is valid, since all of them have access to the current state as well as the STF. A block on a parachain is not considered finalized until its equivalent state transition has been validated on the relay chain. Thus, a parachain depends on the security of the relay chain.
+
+Of course this elides a LOT of detail and wrinkles in operation. If you want to dig in deeper, I really recommend reading the Wiki page on the topic, or if you want to really dive in, reading the chapter on AnV (availability and validity) in the Polkadot Specification, put together by our great Spec Team.
+
+How does XCM work?
+
+XCM allows different chains to have a common way of interacting with each other using an "Esperanto" (common language) instead of every chain having to know exactly how other chains operate.
+
+This is obviously a very high-level description! For more detail, I recommend reading Gav's description in the Medium post here: https://medium.com/polkadot-network/xcm-the-cross-consensus-message-format-3b77b1373392 or if you really want to dig in, you can review the code here: https://github.com/paritytech/polkadot/tree/59aa955576e963942c60e3ae8f8316444b66cafb/xcm
+
+Collators?
+
+Collators produce a collation (essentially, a candidate collection of transactions) on the parachain, which are sent to a randomly chosen subset of validators on the relay chain. The validators then verify that the collators provided a valid collation. It is a lot of work (ask anyone running a validator if they are seeing higher loads as the number of parachains increase). See https://spec.polkadot.network/#sect-collations
+
+Smart contract logic is _part of_ the state transition; calls to smart contracts change the state of the chain. Any necessary smart contract logic is part of the runtime, which is known to the validators. The validators can then run the "candidate block" against this Wasm blob to ensure that it is valid. See https://spec.polkadot.network/#sect-parachain-runtime
+
+
+### How to find the unbonding duration on-chain?
+
+You can check by querying the constant ( https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fwestend-rpc.polkadot.io#/chainstate/constants ) staking.bondingDuration . This will tell you the number of eras ( = 2 on Westend). An era on Westend is 6 hours (same as Kusama).
+
+### How to donate to Polkadot Treasury?
+
+It's a normal account, you can just send them.
+
+Example: https://polkadot.subscan.io/extrinsic/11061684-2
+It also looks like somebody sent > 3500 DOT to the Treasury directly from an exchange wallet
+
+### How to find minimum active nomination over time?
+
+Not sure if there is a site with that, but you can always look it up by querying chain state:
+
+Go to https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/chainstate
+
+Enter the block hash you want to check what it was
+
+Query and see the result in Plancks
+
+You could write a JavaScript script ( https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/js ) to get this over time.
+
+I'd have to look up the details, but essentially, there was no limit at first. About a year ago, a minimum 40 DOT nomination was initiated, then 80, then 120, then 160 in February. With some major staking mechanism changes, the minimum to nominate over the last few months has been 10 DOT, albeit with a dynamic rewards minimum.
+
+Nomination pools (now live on Kusama) should reduce this dramatically, down to 1 DOT or so.
+
+### How to see all the accounts on the network?
+
+You could use Subsquid for this. Thanks to Lucas, our erstwhile Grants intern, for finding this: https://app.subsquid.io/aquarium/polkadot-balances
+
+It's SQL - just change the "limit" variable to the number you want (note that it will take a while to run if you have a very large number here). The result will be in JSON, and amounts are shown in Plancks (like satoshis in Bitcoin, one DOT = 10_000_000_000 Plancks).
+
+### How to see the bags containing nominators?
+
+Click on the "Bags" tab on that page, or go directly there with the URL - https://polkadot.js.org/apps/#/staking/bags
+
+### How to verify multisig?
+
+if you ask them the addresses they used to make the account, you can make the multisig yourself and verify it's the same address
+it would be essentially impossible for them to generate a single-sig with the same address
+
+### Steps to do that:
+
+1. Add addresses to Address Book - https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama.api.onfinality.io%2Fpublic-ws#/addresses
+2. Go to Accounts and click "+ Multisig"
+3. Add the addresses and the threshold
+4. Give it a name
+5. Click "Create"
+
+You will then have a new multisig in your Accounts tab (which you can't sign transactions with, but you can click the dots icon and get the address and verify it's what they say)
+
+### How is ideal staking rate calculated?
+
+Depends on what you mean by a "good thing". The ideal rate was estimated as the ideal rate for the network to have locked in the staking mechanism for security. However, this also means less rewards for individual nominators, and the estimate is just that - an estimate. It could be that the network would operate optimally with less or more than the "ideal rate".
+
+The ideal staking rate should vary based on the number of parachains (since some DOT/KSM will be locked for securing parachain slots), down to a minimum of 50%. Kusama reduces the ideal staking rate by 0.5 percentage points per parachain, and has many more parachains than Polkadot. This algorithm for modifying the ideal staking rate based on the number of parachains was not implemented on Polkadot; I'm not sure of the rationale behind that. Perhaps it ensures that there is much more locked to ensure a higher security level of Polkadot.
+
+You can see more information here: https://wiki.polkadot.network/docs/learn-staking#inflation
+
+### Is Polkadot Decentralized?
+
+How will the Polkadot eco-system and its para-chains be able to maintain its integrity as a decentralized and safe system that is effectively able to bypass and avoid over reaching regulatory scrutiny?
+
+The Polkadot Network, and the DOT token which secures it, is fully decentralized. The Web3 Foundation took the hard road and worked with regulators throughout its launch to make sure that it was (and we believe still is) regulatory compliant in all jurisdictions.
+
+The parachains themselves are responsible for their own regulatory compliance, including communications and disclosures, because they are not controlled by Polkadot, but the Web3 Foundation is always here to help on the educational front if have questions or if otherwise needed.
+
+Is there any possibility that regulators and nation-states could force layer 0, layer 1 and layer 2 censorship within the Polkadot ecosystem and force (under threat of incarceration) developers to comply with their tyrannical oversight?
+
+There's always a possibility of something like this, as we have already seen in various ways recently.
+
+Can Polkadot and its para-chains truly become decoupled from the fiat ecosystem and be able to maintain the 5 pillars of crypto freedom (open, public, borderless, neutral, and censorship resistant)?
+
+This is certainly our goal here at Web3 Foundation! We have a sign here at our headquarters that states our goal:
+
+"We are building trustless, open-source infrastructure that empowers users to resist arbitrary authority and take back control of their sovereignty - a fully decentralized web."
+
+That is certainly what I think, and hope, we and the rest of the ecosystem are building. =)
+
+### How to listen to account balance change?
+
+https://polkadot.js.org/docs/api/examples/promise/listen-to-balance-change ?
+
+I prefer using py-substrate so I can use Python instead of JavaScript, personally. There is an example of getting an account's information here: https://github.com/polkascan/py-substrate-interface#storage-queries
+
+
+### Why am I not receiving staking rewards?
+
+If Polkadot staking were down, we'd be having real troubles, since we'd have no way of putting validators in the active set and thus unable to produce blocks.
+
+I would check your accounts on Polkadot-JS App and if you are not getting rewards, see https://support.polkadot.network/support/solutions/articles/65000170805-why-am-i-not-getting-staking-rewards-
+
+
+### Why is Polkadot-JS UI not loading?
+
+Perhaps try changing endpoints, browser, etc.
+
+Or try using the IPFS version - https://cloudflare-ipfs.com/ipns/dotapps.io/#/staking
+
+### How to query block information without subscan?
+
+You can query block information from a specific block using Network->Block Details (e.g.  https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/explorer/query/14000000 ) and then look at the extrinsics for the block
+
+### Can the crowdloaned DOT be returned before the parachain slot lease expires?
+
+Returning the DOT early is not possible going through the chain. Any DOT sent via crowdloan.contribute extrinsic will be locked up until the end of the lease (assuming they win a lease, of course).
+
+DOT / KSM will definitely be returned.
+
+To clarify, it's not just "customary", it's set by the rules of the chain. Anyone who is setting up a crowdloan can indicate the ending point, and after this ending point, anyone can refund the KSM to contributors to unsuccessful crowdloans (although this is usually done by the team that is running the crowdloan, technically anyone can do it).
+
+Kusama auctions (mostly just for scheduling reasons, but also to give engineering teams time to see how the network is reacting before starting a new batch of auctions) have a bit of a gap between groups. Many crowdloans just set the ending point to be the end of the group, when really they should set it a bit earlier if they want to be perfectly optimized.
+
+### How can I see account balance over time?
+
+Go to https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/js
+
+Enter the blocks you want to check.
+
+Enter the following JavaScript code and execute it. Note that the results may not be in chronological order, you can copy/paste and sort them in a text editor or the Unix sort command to do so.
+
+```
+blocks = [2105, 1205309, 1205349];
+
+const user = '1WG3jyNqniQMRZGQUc7QD2kVLT8hkRPGMSqAb5XYQM1UDxN';
+
+blocks.forEach(calc);
+
+async function calc(blockNum){
+  const blockHash = await api.rpc.chain.getBlockHash(blockNum);
+  const { data: { free: prev } } = await api.query.system.account.at(blockHash, user);
+  console.log('Block', blockNum, ': user had a balance of', prev.toHuman());
+}
+```
+
+### How to see the extrinsics supported by Ledger?
+
+If you want to use Ledger, you will need the XL version of the app, as the light version does not support the necessary extrinsics. See https://github.com/zondax/ledger-polkadot#voterlist
+
+
+### Staking rewards collector gets API rate limit exceeded error?
+
+Every time I try to run the staking-rewards-collector, I get an error from the Subscan API that the API rate limit is exceeded. Anyone know how I can slow down the query speed or something to get around this?
+
+Solution: enter your own Subscan API key as a new JSON file element "subscan_apikey" in the config file.
+
+
+
+
