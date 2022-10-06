@@ -108,4 +108,104 @@ The active era = The era being currently rewarded. Validator set of this era mus
 
 Any change in the staked account balance will trigger rebagging
 
+### How to figure out decimals for tokens?
+
+You can verify this by doing an RPC call for system.properties and look at tokenDecimals key.
+
+https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fwestend-rpc.polkadot.io#/rpc
+
+Westend:
+
+```
+system.properties: ChainProperties
+{
+  ss58Format: 42
+  tokenDecimals: [
+    12
+  ]
+  tokenSymbol: [
+    WND
+  ]
+}
+```
+
+Polkadot:
+
+```
+ system.properties: ChainProperties
+{
+  ss58Format: 0
+  tokenDecimals: [
+    10
+  ]
+  tokenSymbol: [
+    DOT
+  ]
+}
+```
+
+### How to find fast tracked proposals?
+
+You are looking for calls to democracy.fast_track. It is a bit confusing, since most explorers have trouble finding extrinsics inside of batch calls, and batch calls are the normal way to fast-track proposals.
+
+But what you CAN do is look for calls to technicalCommittee.close, which close and execute a decision by the Technical Committee. You can do that on Subscan here: https://polkadot.subscan.io/extrinsic?address=&module=technicalcommittee&call=close&result=all&signedChecked=all&startDate=&endDate=&startBlock=&timeType=date&version=9270&endBlock=
+
+But now you want to see what those fast track's actually did. The easiest way is to click on the extrinsic and see what events occurred. For example, this was the most recent: https://polkadot.subscan.io/extrinsic/12116335-2
+
+Looking at the events, you can see that after the close, an approval occurred, and Referendum 75 ( https://polkadot.subscan.io/referenda/75 ) started. Thus, Referendum 75 was first-tracked. Click on the link to Referendum 75 and you can see the parameters involved in the fast-track.
+
+### Is it possible to have free transactions on Substrate based chains?
+
+Before I answer this, it's important to realize that all of these decisions are in the hands of the blockchain developer using Substrate. Substrate itself doesn't care if you make a chain which is vulnerable to spamming. (Not saying you don't know this, but for the sake of everyone reading this...)
+
+So... if you want to create a chain, you will need some sort of mechanism to prevent people from spamming the network and not allowing authorized transactions. There are a variety of ways to do this; simply having fees per transaction is the simplest and most straightforward. But there are other ways:
+
+As you mentioned, an identity layer. If you trust the identity layer, you could provide a
+limit of n transactions per day per identity or something.
+
+Really, any system where Sybil protection is assumed to be done by some external entity off-chain could allow feeless tx's on-chain. But remember you are trusting that external identity!
+
+Ignoring identity services, "x transactions per user per day" wouldn't help against a determined adversary, as it simple for them to make new accounts.
+
+A global limiter like you mention would prevent most system-wide problems (i.e. chain would continue to produce blocks) but would likely drown out actual user activity with spam.
+
+You could use some sort on-chain process to identity people or vote that accounts can/cannot have feeless transactions. This could be done manually or via some sort of automated process (but the latter would probably be gamed after a while).
+
+A bond which can be slashed, e.g., you bond 100 FOO tokens, and if you are found guilty of spamming the network, you lose the FOO tokens. You can always create a new account and start spamming again, of course, but it would cost you 100 FOO tokens each time.
+
+You could require an NFT (or one of a limited number of fungible tokens) to produce transactions.
+
+You could have some other way of limiting transactions, e.g. by including a proof of work per transaction. I believe this is similar to how Nano works nowadays, after they experienced spamming problems.
+
+These are just a few examples of what's possible with Substrate, btw. There are lots of other possibilities.
+
+### What to do if I get txn version unsupported error on Ledger?
+
+Have you followed the steps on the Knowledge Base for when this error occurs?
+
+Make sure your Ledger's firmware is updated
+
+Update your Ledger Live app to the latest version
+
+Update your Polkadot or Kusama app to the latest version - depending on which network you are experiencing this error.
+
+### How do I figure out what a governance proposal is doing?
+
+There is no text stored on-chain to describe what change the proposal is making. Proposals change either the parameters of the chain or the runtime code itself directly. See https://wiki.polkadot.network/docs/learn-governance#referenda
+
+Text-based descriptions are generally put on Polkassembly, e.g. https://kusama.polkassembly.io/referendum/218, but the actual change is done automatically if it passed (see the "arguments" section for what the proposal is actually doing).
+
+During the proposal, only the hash of the proposal is submitted; the actual change should be submitted later. See https://wiki.polkadot.network/docs/maintain-guides-democracy#submitting-a-preimage
+
+(these links are obviously for Polkadot but the general idea is the same if you are using the democracy pallet no matter which chain you are using)
+
+### How do I know how much staking rewards I will get in the future?
+
+It's impossible to know exactly in advance. Staking rewards per era are based on era points, which are essentially impossible to predict ahead of time. The rate of inflationand staking rewards are also variable based on the staking rate (i.e., what percentage of total issuance of all DOT is staked), which will obviously vary based on people's opinions of if they should stake or not.
+
+The Polkadot-JS App Targets page provides estimates, but these are just that, estimates.
+
+If you want to know how much you have received in the past, you can view your actual staking rewards using most block explorers (e.g. Subscan) and calculate it. Here are the rewards of a random example account (whatever the last one to receive a reward was): https://polkadot.subscan.io/account/13s9RrQSFbnp2TneY7nkdLmGc3ijBw12YQct8pc8km36Z9hg?tab=reward
+
+Note that there is no such thing as "staking on Ledger". You can use Ledger to stake on-chain, but this does not change the fact that Ledger is just a tool to access the on-chain staking mechanism.
 
