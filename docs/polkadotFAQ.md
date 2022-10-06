@@ -377,6 +377,97 @@ Every time I try to run the staking-rewards-collector, I get an error from the S
 
 Solution: enter your own Subscan API key as a new JSON file element "subscan_apikey" in the config file.
 
+### Transferring Polkadot-JS Apps Accounts/Addresses From One Computer to Another
+
+
+Note: This will overwrite any existing accounts with the same pubkey on your new computer. This generally should not make a difference (since it can still access the same account), but might if you have e.g. an account which was stored externally in the extension on the old computer but was created directly in browser on the new one.
+
+This has been tested on Brave and Chrome, but not other browsers.
+
+1. Go to Polkadot-JS Apps
+2. Go to JavaScript console (on Brave, NOT on Polkadot-JS)
+3. Type in the command `JSON.stringify(localStorage)`
+4. Copy and paste the returned string to a text editor.
+5. Check that the string you pasted both begins and ends with a tick mark (`'`). If not, add one to the beginning and end.
+6. Save and send that JSON file to the new computer.
+7. On new computer, go to Polkadot-JS Apps
+8. Open the Javascript console
+9. Set a variable `raw` equal to the JSON you created =
+```
+raw = ... copy-pasted json from original computer ...
+```
+10. Run the following code:
+```
+accounts = JSON.parse(raw);
+for (var key in accounts) {
+    if (accounts.hasOwnProperty(key)) {
+        val = JSON.stringify(accounts[key]).replace(/\\/g,'').slice(1,-1);
+        console.log(key + " -> " + val);
+        localStorage.setItem(key, val);
+    }
+}
+```
+11. Refresh Polkadot-JS App browser and check Accounts and Addresses pages. All of your accounts and addresses should now be available.
+
+
+### Does everything need to be on the blockchain to be decentralized?
+
+
+IPFS is decentralized, even though it's not using blockchain ( https://ipfs.tech/ ) - it's not at all the same as putting something on a Google Cloud server. Same with Crust.
+
+Conversely, on-chain does not necessarily mean decentralized ( see this article from a former W3F Tech Ed team member - https://bitfalls.com/hr/2020/05/25/opinion-on-private-blockchains/ ).
+
+It's important to realize that technically, a blockchain is just a linked list with hash pointers. There's nothing about the blockchain data structure itself that promotes decentralization, just immutability. You can _use_ this data structure with other technology to _make_ something decentralized and there are a lot of benefits to doing so.
+
+Plenty of things can happen "off-chain" while still being decentralized. The chain can even prove that computations are happening correctly or are not being manipulated (see zero-knowledge proofs, various L2s, Substrate's off-chain workers, etc.)
+
+Regarding your question, I disagree completely. Yes, there are projects which are nothing more than money grabs, and there are chains which pay only lip service to decentralization. But personally, I see massive potential in having code and data which is provably immutable and transparent. I wouldn't be in this space otherwise.
+
+If you are interested in digging into all of this further, my lectures on blockchain fundamentals are (in my biased opinion, of course!) a good place to start - https://mooc.web3.foundation/
+
+Not to mention, you CAN use remarks to store data entirely on-chain if you want ( just like you could e.g. use OP_RETURN on Bitcoin). I'm just saying that if this causes scalability issues ( a common problem due to the blockchain model itself ), then there are other ways to do it and still remain decentralized.
+
+
+### What is the difference between XCM and XCMP?
+
+Yes. XCM is the cross-consensus message format; XCMP is a cross-chain messaging protocol. Think of sending a tax form to your government via the postal system - the form you send is the FORMAT of the message you are sending them, a very specific format; the mail system is the PROTOCOL of how it gets there.
+
+### Why am I stuck with the same validator?
+
+It's sometimes difficult to understand why Phragmen does what it does. It's a complicated algorithm -  https://wiki.polkadot.network/docs/learn-phragmen. I've definitely had times where I was stuck with the same validator for long periods of time (in one case, much to my detriment, as the validator had changed their commission rate to 100%... but I digress...)
+
+Generally, however, the reason this happens is because your amount of DOT/KSM fits very well to help reduce the variance (which is one of the big goals of Phragmen). So for example, if the mean amount of DOT on a validator is 1_000_000, and you are nominating that validator with 10_000 DOT and another account is nominating it with 990_000, you both will often find yourself nominating that validator since they "fit" so well.
+
+That said, nominating is essentially an "approval" process - you are saying that you would be OK with nominating any of the validators you select for nomination. If you're not OK with actively nominating that validator, on a regular basis or not, you shouldn't be nominating it.
+
+### Why can't I see certain pages on Polkadot-JS, such as Extrinsics or Sign and Verify?
+
+These pages require at least one account on Polkadot-JS. Go the Accounts page and add an account, and you should see these in the header bar.
+
+Note that these pages may load if you navigate directly to them (e.g. https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/extrinsics), but you won't be able to do anything there.
+
+### Why did my account make a duplicate transaction?
+
+
+Two submissions of the same extrinsic were made to the blockchain, about six hours apart. I'm not sure of _why_ this occurred (and I'm not familiar with Safepal), but I can explain _what_ happened.
+
+First, note that unlike most blockchains, a transaction hash is not a globally unique identifier in Polkadot (see the wiki: https://wiki.polkadot.network/docs/build-protocol-info#unique-identifiers-for-extrinsics ) The _extrinsic ID_ is (once a block is finalized, of course). So the fact that the tx hash is the same means that the exact same transaction was submitted multiple times. Looking at the history of that account, it looks to be about six hours apart.
+
+Also note that this transaction was submitted as immortal ( https://polkadot.subscan.io/extrinsic/0xccbbea4214ec68462b0581ca2c106118b2c2e6043f4cb3c75ea7e77bb15d810a ) - something that is specifically warned against, as it can allow replay attacks ( https://wiki.polkadot.network/docs/build-protocol-info#transaction-mortality ) . This is generally something in the control of the wallet, not the user.
+
+During the first tx, the account was reaped (i.e. all DOT was sent out from it) . You can see the event here: https://polkadot.subscan.io/extrinsic/0xccbbea4214ec68462b0581ca2c106118b2c2e6043f4cb3c75ea7e77bb15d810a?event=10906629-18
+
+Then a day later, the account was resurrected by sending in a little under 25 DOT - https://polkadot.subscan.io/extrinsic/0xfaed7db64a649d7979bf2d59d785495b6a95f6c31afae797ca4136b43b6248f0
+
+For some reason, the original immortal transaction was then re-submitted. Now the account existed again, and this was a valid immortal transaction, so it got executed again.
+
+
+### Why do I get call filtered error?
+
+system.ExtrinsicFailed
+system.CallFiltered
+
+usually system.CallFiltered is because your origin can't do that or just all calls to that module are blocked out. I'd talk to the specific team that implemented it.
 
 
 
