@@ -41,10 +41,12 @@ A few code editors and plugins recommeded by Rust developers
 
 (video tutorial)
 
-## Rust Control Flow
-
-(video tutorial)
 
 ## Rust Program Examples
 
 (video tutorial)
+
+## Exercises
+
+(Coding problems)
+
