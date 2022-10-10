@@ -7,6 +7,8 @@ sidebar_position: 1
 
 Developed by the Technical Education team at the Web3 Foundation, this course introduces programming in Rust for Blockchain applications.
 
+This course follows the free textbook, [The Rust Programming Language](https://doc.rust-lang.org/stable/book/) by Steve Klabnik and Carol Nichols.
+
 This course is designed to teach the fundamentals of Rust to a student who is already fluent in at least one other programming language. This course provides a strong foundation in general purpose Rust, and also emphasizes some aspects of Rust (such as [no_std], anvanced Generics, and the RustWasm toolchain) that are particularly useful when developing with the Substrate blockchain framework.
 
 ## Module 1 - Rust Basics
@@ -41,3 +43,4 @@ Generics vs dynamic dispatch. Conflicting type names. Associated types.
 ## Module 8 - Web Assembly
 
 A little core info about what wasm is and why it is valuable. The rust-wasm toolchain. How to add a target with rustup. How to cross compile to the new target. How to execute a wasm binary from within Rust (this is How the runtime is executed). How to package for the browser - Not directly Substrate related, but very cool, and very useful.
+
