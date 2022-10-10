@@ -173,8 +173,41 @@ module.exports = {
     {
       type: 'doc',
       id: 'introrust',
-      label: 'Rust Programming',
+      label: 'Syllabus',
     },
+    {
+      type: 'doc',
+      id: 'Rust/module1',
+    },
+    {
+      type: 'doc',
+      id: 'Rust/module2',
+    },
+    {
+      type: 'doc',
+      id: 'Rust/module3',
+    },
+    {
+      type: 'doc',
+      id: 'Rust/module4',
+    },
+    {
+      type: 'doc',
+      id: 'Rust/module5',
+    },
+    {
+      type: 'doc',
+      id: 'Rust/module6',
+    },
+    {
+      type: 'doc',
+      id: 'Rust/module7',
+    },
+    {
+      type: 'doc',
+      id: 'Rust/module8',
+    },
+    
     {
       type: 'link',
       label: 'Learn more',
