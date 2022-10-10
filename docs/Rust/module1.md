@@ -13,7 +13,7 @@ Please follow the instructions to [install Rust using rustup](https://www.rust-l
 
 A few code editors and plugins recommeded by Rust developers
 
-- [VS Code](https://code.visualstudio.com/) with (RustAnalyzer)[https://rust-analyzer.github.io/]
+- [VS Code](https://code.visualstudio.com/) with [RustAnalyzer](https://rust-analyzer.github.io/)
 - [Atom IDE-Rust](https://atom.io/packages/ide-rust)
 
 
