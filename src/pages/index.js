@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Web3 Education Initiative">
+      description="Polkadot Education Initiative">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
