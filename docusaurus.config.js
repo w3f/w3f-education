@@ -3,7 +3,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Web3 Education Initiative',
+  title: 'Polkadot Education Initiative',
   tagline: 'Powered by the community',
   url: 'https://w3f.github.io',
   baseUrl: '/w3f-education/',
