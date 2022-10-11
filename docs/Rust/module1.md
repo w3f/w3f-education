@@ -44,6 +44,14 @@ A few code editors and plugins recommeded by Rust developers
 
 ## Rust Variables
 
+- Usage of `let`to create variables
+- Immutability of Rust variables
+- How to make a Rust variable mutable?
+- Can a mutable Rust variable support different types of data?
+- Constant variables in Rust
+- Difference between shadowing a variable vs. making it mutable
+
+
 (video tutorial)
 
 ## Rust Data Types
