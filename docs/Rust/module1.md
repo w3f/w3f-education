@@ -48,11 +48,10 @@ A few code editors and plugins recommeded by Rust developers
 - Immutability of Rust variables
 - How to make a Rust variable mutable?
 - Can a mutable Rust variable support different types of data?
-- Constant variables in Rust
 - Difference between shadowing a variable vs. making it mutable
 
 
-(video tutorial)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3uv_XU4fR-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Rust Data Types
 
@@ -60,6 +59,7 @@ A few code editors and plugins recommeded by Rust developers
 - Scalar types - Integers, Floating point, Boolean and Character types
 - Integer overflow
 - Compound types - Tuples and Arrays
+- Constants in Rust
 
 (video tutorial)
 
