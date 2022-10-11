@@ -44,7 +44,7 @@ A few code editors and plugins recommeded by Rust developers
 
 ## Rust Variables
 
-- Usage of `let`to create variables
+- Usage of `let` to create variables
 - Immutability of Rust variables
 - How to make a Rust variable mutable?
 - Can a mutable Rust variable support different types of data?
@@ -56,9 +56,21 @@ A few code editors and plugins recommeded by Rust developers
 
 ## Rust Data Types
 
+- Rust is statically typed language
+- Scalar types - Integers, Floating point, Boolean and Character types
+- Integer overflow
+- Compound types - Tuples and Arrays
+
 (video tutorial)
 
 ## Rust Functions
+
+- main() function - the entry point of a Rust program
+- function parameters 
+- function signatures and parameter types
+- Rust is an expression based language
+- statements vs expressions
+- functions with return values
 
 (video tutorial)
 
