@@ -76,6 +76,11 @@ A few code editors and plugins recommeded by Rust developers
 
 ## Rust Control Flow
 
+- if/else if
+- while
+- for
+- loops and loop labels
+
 (video tutorial)
 
 
