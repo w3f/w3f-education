@@ -40,6 +40,8 @@ A few code editors and plugins recommeded by Rust developers
 - Cargo build --release
 - Substrate Node Template Repo cargo.toml file and cargo build, run
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NKj08cBw1WQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Rust Variables
 
 (video tutorial)
