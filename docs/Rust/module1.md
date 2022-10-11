@@ -19,7 +19,16 @@ A few code editors and plugins recommeded by Rust developers
 
 ## Hello World
 
-(video tutorial)
+- Writing comments in Rust programs
+- Writing the main function in Rust
+- Use curly brackets to encapsulate a function's body
+- Four space indentation
+- println macro for printing a line
+- Writing a string
+- Checking Rust compiler version
+- Compiling and executing a Rust program
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2Uq6W0W9Rhc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Cargo - Package Manager
 
