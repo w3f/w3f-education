@@ -32,7 +32,13 @@ A few code editors and plugins recommeded by Rust developers
 
 ## Cargo - Package Manager
 
-(video tutorial)
+- What is Cargo?
+- Use Cargo to create a "Hello world!" program
+- Cargo toml file
+- Crates - packages of code in Rust
+- Cargo build, run and check
+- Cargo build --release
+- Substrate Node Template Repo cargo.toml file and cargo build, run
 
 ## Rust Variables
 
