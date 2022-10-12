@@ -225,5 +225,10 @@ module.exports = {
       id: 'AtoZ/multisig',
       label: 'M for Multisig',
     },
+    {
+      type: 'doc',
+      id: 'AtoZ/npos',
+      label: 'N for Nominated Proof of Stake',
+    },
   ],
 };
