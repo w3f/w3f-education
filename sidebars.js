@@ -230,5 +230,10 @@ module.exports = {
       id: 'AtoZ/npos',
       label: 'N for Nominated Proof of Stake',
     },
+    {
+      type: 'doc',
+      id: 'AtoZ/on-chain-governance',
+      label: 'O for On-chain Governance',
+    },
   ],
 };
