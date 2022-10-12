@@ -220,5 +220,10 @@ module.exports = {
       id: 'AtoZ/launch',
       label: 'L for Polkadot Launch',
     },
+    {
+      type: 'doc',
+      id: 'AtoZ/multisig',
+      label: 'M for Multisig',
+    },
   ],
 };
