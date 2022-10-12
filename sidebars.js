@@ -215,5 +215,10 @@ module.exports = {
       id: 'AtoZ/kusama',
       label: 'K for Kusama',
     },
+    {
+      type: 'doc',
+      id: 'AtoZ/launch',
+      label: 'L for Polkadot Launch',
+    },
   ],
 };

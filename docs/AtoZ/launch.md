@@ -1,5 +1,5 @@
 ---
-id: polkadot-launch
+id: launch
 title: L for Polkadot Launch
 sidebar_position: 11
 ---
