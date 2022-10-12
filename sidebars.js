@@ -235,5 +235,10 @@ module.exports = {
       id: 'AtoZ/on-chain-governance',
       label: 'O for On-chain Governance',
     },
+    {
+      type: 'doc',
+      id: 'AtoZ/phragmén',
+      label: 'P for Phragmén',
+    },
   ],
 };
