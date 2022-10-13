@@ -72,6 +72,14 @@ A few code editors and plugins recommeded by Rust developers
 
 (video tutorial)
 
+## Importing Rust Libraries
+
+- Standard Libraries. Example: `use std::io;`
+- demo functionality from `std::io` library
+- Library crates. Adding to `Cargo.toml` file
+- demo functionality from `rand`crate
+
+
 ## Rust Functions
 
 - main() function - the entry point of a Rust program
@@ -94,6 +102,9 @@ A few code editors and plugins recommeded by Rust developers
 
 
 ## Rust Program Examples
+
+- Guess game
+- ??
 
 (video tutorial)
 
