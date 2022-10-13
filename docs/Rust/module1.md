@@ -63,6 +63,15 @@ A few code editors and plugins recommeded by Rust developers
 
 (video tutorial)
 
+## Rust Operators
+
+- Arithmetic - addition, subtraction, multiplication, division, remainder, exponent
+- Boolean - and, or, not
+- Comparison
+- Bitwise
+
+(video tutorial)
+
 ## Rust Functions
 
 - main() function - the entry point of a Rust program
