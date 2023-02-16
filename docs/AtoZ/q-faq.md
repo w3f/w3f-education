@@ -11,17 +11,22 @@ For the past two plus years that Polkadot has been live, there have been questio
 
 Staking on Polkadot uses Nominated Proof-of-Stake(NPoS), which is a flavor of PoS that allows for two types of participants, nominators and validators. Validators are the entities that run a full version of the Polkadot blockchain as a node, and they secure the network by bonding an amount of tokens, which in turn allows them to create blocks. Nominators are the entities that elect validators into the active validator set, which currently is 297 on Polkadot and 1000 on Kusama. 
 
-Note: The active validator set is an arbitrary value that can be changed via governance.
+
+:::info
+
+The active validator set is an arbitrary value that can be changed via governance.
+
+:::
 
 The role of staking is a part of the consensus mechanism. The mechanism allows token holders to be the on-chain entities that secure the network by putting up their tokens as a collateral. This incentive, baked into the protocol, allows any token holder to earn newly created tokens, which the network mints whenever there is a successful new block. In simple terms, this is the inflation portion of the monetary policy of the network.
 
 The reason why its design is complex is due to avoiding pitfalls of staking models. Mainly that of a few entities controlling the majority of the stake. Proof-of-Stake systems all come in a different flavor of choosing the staked entities as validators. And the goal here is to not favor certain entities more than others. That endevour in itself is a tough problem to solve. 
 
-For a detailed dive into NPoS read the letter N post of this blog series. And also be sure to checkout the wiki.
+For a detailed dive into NPoS read the [letter N](npos.md) post of this blog series. And also be sure to checkout the [Polkadot wiki](https://wiki.polkadot.network/docs/learn-phragmen).
 
-## Why is Polkadot-JS so complicated?
+## What is the Polkadot-JS UI?
 
-Polkadot-JS is a developer-centric interface that allows for granular control of Substrate-based chains. The idea with Polkadot-JS is to be a place where all extrinsics of all pallets can be engaged. For a tool like Polkadot-JS to stay up to date with the ever changing landscape of Substrate, functionality is the primary goal, and the user interface has to be a secondary consideration. Therefore, we should think of Polkadot-JS as a featureful tool, and not a user centric tool. For more user-centric tools, try one of the many wallets that support Substrate.
+[Polkadot-JS](polkadot-js.md) is a developer-centric interface that allows for granular control of Substrate-based chains. The idea with Polkadot-JS is to be a place where all [extrinsics](https://wiki.polkadot.network/docs/learn-extrinsics) of all pallets can be engaged. For a tool like Polkadot-JS to stay up to date with the ever changing landscape of Substrate, functionality is the primary goal, and the user interface has to be a secondary consideration. Therefore, we should think of Polkadot-JS as a featureful tool, and not a user centric tool. For more user-centric tools, try one of the many wallets that support Substrate.
 
 ## Why does a parachain need to connect to the Relay Chain?
 
@@ -29,7 +34,7 @@ The Relay Chain provides security for parachains. On a more granular level it al
 
 ## How is Polkadot different from Cosmos?
 
-A classic comparison. Polkadot vs Cosmos has been one of the most debated topics as they are competitors for a chain model that allows other layer 1 chains to connect and interoperate together. Interoperability is a cat that can be skinned in many different ways(sorry cat lovers, I love that analogy). 
+A classic comparison. Polkadot vs Cosmos has been one of the most debated topics as they are competitors for a chain model that allows other layer 1 chains to connect and interoperate together. See [this wiki page](https://wiki.polkadot.network/docs/learn-comparisons-cosmos) for more info about this topic.
 
 ## Why do different networks have different addresses but the same pubkey?
 
@@ -37,7 +42,7 @@ Substrate based chains use the SS58 format for generating their account keypairs
 
 ## Why is the unbonding period 28 days and why can’t I earn staking rewards when I’m unbonding?
 
-The unbonding feature is designed to make sure that those who stake are not simply able to remove their stake at will, which ensures security in the network. Technically you will earn staking rewards if you unbond in the middle of an era, for that era. However not for the following one.The time you will have to wait until your tokens serves as a cooldown. During this time you are unable to nominate and/or transfer, hence unable to earn staking rewards.
+The unbonding feature is designed to make sure that those who stake are not simply able to remove their stake at will, which ensures security in the network. Technically you will earn staking rewards if you unbond in the middle of an era, for that era. However not for the following one. The time you will have to wait until your tokens serves as a cooldown. During this time you are unable to nominate and/or transfer, hence unable to earn staking rewards.
 
 ## Is Kusama a testnet?
 
