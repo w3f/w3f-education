@@ -19,7 +19,7 @@ Accounts on Polkadot and Kusama are SS58-encoded key-network pairs. By represent
 
 Like any blockchain address, Polkadot and Kusama accounts are controlled with public-private key pairs. This is a cryptographic way of creating a public-facing id that is intrinsically linked to a private id, which should be kept secret. The address generation starts with a mnemonic phrase which is then converted into a public-private key pair. Because different wallets use different ways to derive the public and private keys from the mnemonic phrase, there can be issues with deriving the same public and private key pairs from the same mnemonic on different wallets.
 
-## What a mnemonic phrase looks like:
+## What a mnemonic phrase looks like
 
     way pumpkin card castle crystal domain mystery chalk dog twin chronic image
 
