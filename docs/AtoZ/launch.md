@@ -6,7 +6,7 @@ sidebar_position: 11
 
 ![L for Polkadot Launch](assets/L.png)
 
-At the end of 2021, Polkadot hit an important checkpoint with the rollout of parachains, marking the final phase of the original promise of the whitepaper that was published in 2016 and the Genesis block time stamped on May 26, 2020, at 15:36:21 UTC, marked the first phase of Polkadot’s launch. A planned, phased, and controlled transition from a centralized and closely controlled network into a decentralized one started. 5+ years have passed since the original whitepaper. In this post, I’d like to explain the phases the network went through. The reasoning behind them, as well as a peek into the future. The path is still being traversed, and we have a long road ahead, so let's dive into the details:
+At the end of 2021, Polkadot hit an important checkpoint with the rollout of parachains, marking the final phase of the original promise of the whitepaper that was published in 2016 and the Genesis block time stamped on May 26, 2020, at 15:36:21 UTC, marked the first phase of Polkadot’s launch. A planned, phased, and controlled process started to help the network transitioning from being centralized and closely controlled to being decentralized. More than five years have passed since the original whitepaper. In this post, I’d like to explain the phases the network went through and the reasoning behind them.
 
 **Phases (2016 - 2022)**
 
