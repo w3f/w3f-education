@@ -165,7 +165,7 @@ You can update your toolchains at any time by running `rustup update`, and you c
 
 Now that we have the Rust toolchain installed, let's install and configure a text editor. Throughout the course, I will be using VS Code. There are many other very good text editors and integrated development environments out there, and you are more than welcome to use whichever one you like. Nonetheless, I'll show how to install VS Code and configure it with some useful extensions for working with Rust. If you don't have a strong preference for editor, I recommend you use this setup.
 
-If your distribution supports the snappy package manager, you may simply run `sudo snap install code --classic` and wait for the package to download and install. Otherwise, you can find a `.deb`, `.rpm`, or plain `.tar.gz` file to install at https://code.visualstudio.com/Download. Teaching each package manager is beyond the scope of this tutorial, but if you have trouble a web search for "install vscode <my OS and distribution>" should get you going again.
+If your distribution supports the snappy package manager, you may simply run `sudo snap install code --classic` and wait for the package to download and install. Otherwise, you can find a `.deb`, `.rpm`, or plain `.tar.gz` file to install at https://code.visualstudio.com/Download. Teaching each package manager is beyond the scope of this tutorial, but if you have trouble a web search for `install vscode <my OS and distribution>` should get you going again.
 
 If you prefer an open source _and_ freely-licensed distribution of VS Code that omits telemetry, I can recommend the [VSCodium](https://vscodium.com/) project. See the project's site for installation and reasoning why you might want to use this over VS Code itself.
 
