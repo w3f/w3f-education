@@ -40,4 +40,12 @@ Hashing and encryption are related but different. **Hashing** is a one-way funct
 
 ### Hashing on Polkadot
 
-Polkadot and Kusama use an implementation called **BLAKE2b**, based on the BLAKE2 cryptographic hashing algorithm. BLAKE2 is also faster than SHA-2 and SHA-3, with similar or better security than SHA-3.  We chose BLAKE2 for its security, speed, and simplicity of implementation. The BLAKE2b implementation is optimized for 64-bit platforms and can be twice as performant compared to running the SHA-256 algorithm on a similar machine. Due to these advantages, the project ZCash transitioned to using BLAKE2 hashing from SHA-256, projecting that BLAKE2 is improving over time while SHA-256 is getting worse. 
+Polkadot and Kusama use an implementation called **BLAKE2b**, based on the BLAKE2 cryptographic hashing algorithm. BLAKE2 is also faster than SHA-2 and SHA-3, with similar or better security than SHA-3.  We chose BLAKE2 for its security, speed, and simplicity of implementation. The BLAKE2b implementation is optimized for 64-bit platforms and can be twice as performant compared to running the SHA-256 algorithm on a similar machine. Due to these advantages, the project ZCash transitioned to using BLAKE2 hashing from SHA-256, projecting that BLAKE2 is improving over time while SHA-256 is getting worse.
+
+Blake2b hashing would look like the following:
+
+    “Wow, such hash” = 
+    e530f3d3ddfc24213167e7c601733a1b688e6cf362277b46f1135e348aa63477
+
+    “Wow, such hash ” = 
+    f299f5ee1731f755d0f58bdc54ef3b0cadb94f7f959c3b18627e12138ed5c70e
