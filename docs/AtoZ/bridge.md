@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ## What are Bridges?
 
- Bridges are connections to the Polkadot relay chain that have special properties which allow them to communicate with other blockchains. They’re secured via the Polkadot consensus and are maintained by a group of participants called Collators which we will cover in next week's post for letter C. Bridges are the cornerstone of interoperability that Polkadot is looking to deliver in the blockchain ecosystem. We can think of them as communication channels for different isolated blockchains such as Bitcoin or Ethereum that will be able to send messages, mint new coins, secure locked funds, and burn tokens among other functionality. With a bridge we enable more complex applications to be developed that can use multiple blockchains for functionality and hence combating the issue of chain maximalism.
+Bridges are connections to the Polkadot relay chain that have special properties which allow them to communicate with other blockchains. They’re secured via the Polkadot consensus and are maintained by a group of participants called Collators which we will cover in next week's post for letter C. Bridges are the cornerstone of interoperability that Polkadot is looking to deliver in the blockchain ecosystem. We can think of them as communication channels for isolated blockchains, such as Bitcoin or Ethereum, that can send messages, mint new coins, securely lock funds, and burn tokens, among other functionality. With a bridge, we enable more complex applications to be developed that can use multiple blockchains for functionality, hence combating the issue of chain maximalism.
 
 ## How do Bridges work?
 
