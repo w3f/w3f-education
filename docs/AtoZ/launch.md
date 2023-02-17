@@ -26,14 +26,6 @@ Once there was enough signal from intended validators, it was time to start the 
 
 With Sudo removed, anything here on out required Governance to enable runtime upgrades. Balance transfers were enabled on block number 1,205,128 by the DOT token holders through a public proposal. With this runtime upgrade in place, DOT holders could now transfer funds between accounts.
 
-
-
-<!-- <p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip") -->
-
-
 **Parachain Rollout [October 13, 2021]**
 
 With over a year of development efforts, parachain functionality was first tested on the Rococo test network and then released via governance on Kusama before being announced during the Sub0 conference that parachain functionality was ready for Polkadot in October of 2021. With [Motion 118](https://polkadot.polkassembly.io/motion/118), proposing 2 batches of auctions parachains on Polkadot were on the way. The DOT community voted to pass this motion and auctions were set to start on November 11, 2021 and the first 5 parachains (Acala, Moonbeam, Parallel Finance, Astar, and Clover) were onboarded December 18, 2021. Currently(January, 14 2022) the 2nd batch of auctions are well on their way, with the 2nd batch due to get onboarded on or around March 11, 2022. 
