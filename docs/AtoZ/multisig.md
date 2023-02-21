@@ -6,7 +6,9 @@ sidebar_position: 12
 
 ![M for Multisig](assets/M.png)
 
-To have true ownership of your assets on the blockchain, we use accounts, and these accounts have addresses. An account is managed with keys, a public key, and a corresponding private key. Ownership of an account can be verified by the ability to prove you have the private key, which allows you to sign transactions. Without the private key, accounts on the blockchain are not usable. Losing your private key is equivalent to losing your wallet forever. Sometimes we need multiple accounts to sign off on transactions; think shared bank accounts or the government passing a bill requiring a certain amount of signatories. This is where multi-signature accounts come in and are possible on Substrate-based chains. A multisig can comprise two or more accounts, and a signature **threshold** needs to be defined. This value equals or is less than the number of accounts part of the multisig. The threshold is the number of signatures required to sign the transactions on the multisig to execute the transaction. Multisig accounts can execute any on-chain function that a regular account can, including staking, governance, and simple transfers. However, you should exercise caution when using a multisig for staking or crowdloans, which are time-sensitive.
+To have true ownership of your assets on the blockchain, we use accounts, and these accounts have addresses. An account is managed with keys: a public key with corresponding private key. Ownership of an account can be verified by the ability to prove you have the private key, which allows you to sign transactions. Without the private key, accounts on the blockchain are not usable. Losing your private key is equivalent to losing your wallet forever. 
+
+Sometimes we need multiple accounts to sign off on transactions; think shared bank accounts or the government passing a bill requiring a certain amount of signatories. This is where multi-signature accounts come in. A multisig can comprise two or more accounts, and a signature **threshold** needs to be defined. This value equals or is less than the number of accounts part of the multisig. The threshold is the number of signatures required to sign the transactions on the multisig to execute the transaction. Multisig accounts can execute any on-chain function that a regular account can, including staking, governance, and simple transfers. However, you should exercise caution when using a multisig for staking or crowdloans, which are time-sensitive.
 
 **Kind of cool**
 
@@ -22,10 +24,6 @@ Threshold: 2
 Multisig Address (SS58: 0): 15XPbLctpFzEwA9qZgvYbsfEwPaBN9KVe7MFQao6bEur8sfX
 --------------------------------
 ```
-
-
-┌( ಠ‿ಠ )┘
-
 **Some use cases**
 
 1. Two accounts can be used as two-factor authentication(2FA) for a larger stash account. And even 3FA, or if you choose 4FA, is possible; you can create as many
