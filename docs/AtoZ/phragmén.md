@@ -6,9 +6,9 @@ sidebar_position: 15
 
 ![P for Phragmén](assets/P.png)
 
-Phragmén is a collection of election mechanisms emphasizing fair representation created by or inspired by Lars Edvard Phragméns work. In the late 19th century he noticed that the most popular political party occupied the Swedish parliamentary seats and that minority parties were not represented. In order to have better voter representation in parliament he designed a method which would distribute votes across seats fairly. This became known as the Phragmén method, which works well for elections with multiple winners. Since several methods are associated with Lars Phragmén, in this post, I will talk about the specific method used in Polkadot called **sequential Phragmén(seq-Phragmén)**, and the newer optimization that will increase security qualities and improve the representation of voters called **Phragmms**.
+Phragmén is a collection of election mechanisms emphasizing fair representation created by or inspired by Lars Edvard Phragméns work. In the late 19th century he noticed that the most popular political party occupied the Swedish parliamentary seats and that minority parties were not represented. In order to have better voter representation in parliament he designed a method which would distribute votes across seats fairly. This became known as the Phragmén method, which works well for elections with multiple winners. Since several methods are associated with Lars Phragmén, in this post, I will talk about the specific method used in Polkadot called **sequential Phragmén (seq-Phragmén)**, and the newer optimization that will increase security qualities and improve the representation of voters called **Phragmms**.
 
-**seq-Phragmén and how is it used in Polkadot**
+**How seq-Phragmén is used in Polkadot**
 
 Fair representation is important when electing a pool of validators in **Nominated Proof of Stake (NPoS)**. Or when electing **Council members**. Both of these elections have many voters with varying stake, many candidates to elect or nominate, and many available seats in either the validator set or the council. seq-Phragmén has a property called proportional justified representation(PJR), which ensures that no candidate is over or under-represented; it is a method that finds a fair distribution of stake across the highest-backed candidates. By sequentially optimizing the elected set of candidates and the stake distributed across those elected, it gets us closer to ideals that would ensure high security of the network, better representation of token holders in elections, as well as decentralization of validators and council members. The algorithm has two critical roles:
 
@@ -40,7 +40,9 @@ NP-hard problems tend to be computationally heavy and tend to require optimizati
 When it comes to electing Council members, seq-Phragmén is also used. In each election cycle, the election yields 20 top-backed potential accounts and then picks the top 13 backed to be in the active Council and 7 to be runner-ups. 
 
 :::note
+
 Stake-backed voting might seem un-democratic at first sight, but it is straightforward to game a system that does not have a stake-backed voting system on a pseudonymous blockchain system. In a non-stake-backed system where one account has one vote, any entity could create multiple accounts, give their single vote to the same candidate, and make it look like many voters back them.
+
 :::
 
 **Off-chain Phragmén**
