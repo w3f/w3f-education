@@ -4,6 +4,8 @@ title: Q for FAQ
 sidebar_position: 16
 ---
 
+![J for Polkadot JS](assets/Q.png)
+
 For the past two-plus years that Polkadot has been live, questions from the community are frequently present in socials. In this post, I’ll be answering some of those questions. If you have any other questions that you think should be a part of this post, please leave a comment.
 
 ## How does staking work?
