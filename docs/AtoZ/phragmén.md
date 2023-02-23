@@ -12,26 +12,22 @@ Phragmén is a collection of election mechanisms with an emphasis on fair repres
 
 Fair representation is important when electing a pool of validators in **Nominated Proof of Stake (NPoS)**. Or when electing **Council members**. Both of these elections have many voters with varying stake, many candidates to elect or nominate, and many available seats in either the validator set or the council. seq-Phragmén has a property called proportional justified representation(PJR), which makes sure that no one candidate is over or under-represented; it is a method that finds a fair distribution of stake across the highest-backed candidates. By sequentially optimizing the elected set of candidates and the stake distributed across those elected, it gets us closer to ideals that would ensure high security of the network, better representation of token holders in elections, as well as decentralization of validators and council members. The algorithm has two important roles:
 
-1. **Elect the highest backed candidates**
-    1. Make sure that only the candidates with the highest backing get elected to the active set of validators or council
-2. **Distribute the stake evenly among them**
-    2. Make sure that all staked DOTs for a given election are as evenly distributed across the elected set as possible.
+1. **Elect the highest backed candidates**: Make sure that only the candidates with the highest backing get elected to the active set of validators or council
+2. **Distribute the stake evenly among them**: Make sure that all staked DOTs for a given election are as evenly distributed across the elected set as possible.
 
 **NPoS validator elections**
 
-For NPoS, the election needs to be designed in a way that maximizes security. NPoS nominators stake their DOTs in order to elect validators to build blocks. And since a proof-of-stake network's security partially depends on the amount staked in the system, and how decentralized that stake is across the participants, seq-Phragmén needs to take into account three points and optimize those as much as possible with a given sensible computation input. Those are:
-
-
+For NPoS, the election needs to be designed in a way that maximizes security. NPoS nominators stake their DOTs in order to elect validators to build blocks. And since a proof-of-stake network's security partially depends on the amount staked in the system, and how decentralized that stake is across the participants, seq-Phragmén needs to take into account three points and optimize those as much as possible with a given sensible computation input:
 
 1. **Maximize the total amount at stake.**
-    1. Meaning, elect the most backed validators into the active set.
-    2. More staked DOTs = higher security.
+    - Meaning, elect the most backed validators into the active set.
+    - More staked DOTs = higher security.
 2. **Maximize the stake behind the minimally staked validator.**
-    3. Meaning, distribute the total stake as evenly as possible among the elected validators.
-    4. This is an [NP-hard problem](https://en.wikipedia.org/wiki/NP-hardness), meaning it is computationally difficult and requires optimization.
+    - Meaning, distribute the total stake as evenly as possible among the elected validators.
+    - This is an [NP-hard problem](https://en.wikipedia.org/wiki/NP-hardness), meaning it is computationally difficult and requires optimization.
 3. **Minimize the variance of the stake in the active set.**
-    5. Meaning, the difference in stake between the most backed validator and the least backed validator is minimized.
-    6. Ensures higher security by raising the cost to attack the lowest-backed validator.
+    - Meaning, the difference in stake between the most backed validator and the least backed validator is minimized.
+    - Ensures higher security by raising the cost to attack the lowest-backed validator.
 
 Aiming to optimize these properties of the NPoS validator set will increase the security of the network and the payout that validators and nominators will gain.
 
