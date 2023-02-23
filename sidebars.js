@@ -332,5 +332,10 @@ module.exports = {
       id: 'AtoZ/phragmén',
       label: 'P for Phragmén',
     },
+    {
+      type: 'doc',
+      id: 'AtoZ/q-faq',
+      label: 'Q for FAQ',
+    },
   ],
 };
