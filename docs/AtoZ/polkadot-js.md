@@ -9,13 +9,13 @@ sidebar_position: 11
 Polkadot.js is a collection of tools that interfaces with the Polkadot blockchain in very granular ways. Polkadot.js as a term has multiple moving parts that are worth mentioning:
 
 
-1. **[Polkadot.js UI](https://polkadot.js.org/)**: This is the hosted application that loads when you navigate to your browser and click apps wallet(hosted). This is also sometimes called the “Polkadot-JS App”.
+1. **[Polkadot.js UI](https://polkadot.js.org/)**: This is the hosted application that loads when you navigate to your browser and click apps wallet (hosted). This is also sometimes called the “Polkadot-JS UI”.
 2. **[Polkadot.js API](https://github.com/polkadot-js/api)**: This is the JavaScript API, a reusable library to allow programs to interface with the functionality of Polkadot. 
 3. **[Polkadot.js Extension](https://polkadot.js.org/extension/)**: This Chrome extension allows you to manage your accounts and sign transactions. Note that all it does is sign messages; it has limited functionality compared to full-featured wallets and cannot connect to the Polkadot network.
 4. **[Polkadot.js codebase](https://github.com/polkadot-js/)**: The codebase contains all the code repositories required to have the suite of tools working. You can navigate to the codebase here.
 5. **[Polkadot.js Phishing List](https://polkadot.js.org/phishing/)**: The Phishing List website is a community-driven curation of a list of less-than-honest operators. This list of URLs and addresses is constantly updated, and the polkdot.js extension uses it as a source to warn you when you navigate to a URL included in the list and blocks the addresses from the apps UI. Users can also contribute suspicious sites and addresses if they come across them.
 
-## Polkadot JS UI
+## Polkadot-JS UI
 
 This post will focus on the UI, a powerful web application with granular functionality support when interacting with the Polkadot blockchain. It is not just a wallet; it has more abilities than creating accounts or sending and receiving transactions. 
 
@@ -30,15 +30,15 @@ Among other things, it also allows us to:
 5. Query chain metadata
 6. Query on-chain data using RPC calls
 
-Essentially, it allows you to perform all functionality that a  user can do on either the relay chain or any parachain (although the user interface may not be aligned precisely with the functionality of any individual parachain). Thanks to [Jaco](https://www.parity.io/blog/people-of-parity-jaco-greeff/) from Parity, it has been keeping up with the developments of the Polkadot runtime, which is implemented in Rust. As a developer, if you’re building a Substrate based blockchain, you can utilize the Polkadot.js UI to test your code's functionality.
+Essentially, the UI allows you to perform all functionalities that a user can do on either the relay chain or any parachain (although the user interface may not be aligned precisely with the functionality of any individual parachain). If you’re building a Substrate based blockchain, you can utilize the Polkadot.js UI to test your code's functionality.
 
 Interacting with the Polkadot JS UI involves either querying on-chain data or issuing an extrinsic. Let's talk about what that means exactly.
 
-## Querying on-chain data
+## Querying On-chain Data
 
 To populate the UI, the web application queries the Polkadot.js API. The API then queries a Polkadot node and uses JavaScript to return information that the UI will display on the screen. You can choose which node to connect to by changing it in the upper-left-hand corner of the screen.
 
-## Issuing an extrinsic
+## Issuing an Extrinsic
 
 Extrinsics are information from outside the chain and are included in a block. Extrinsics can be one of three types: **inherents**, **signed** and **unsigned transactions**. Most extrinsics made from the Polkadot JS UI will be signed transactions. **Inherits** are non-signed and non-gossiped pieces of information included in blocks by the block author, such as timestamps, which are “true” because a sufficient number of validators have agreed about validity. **Unsigned transactions** are information that does not require a signature but will require some spam prevention. **Signed transactions** are issued by the originator account of a transaction that contains a signature of that account, which will be subject to a fee to have it included on the chain. 
 
