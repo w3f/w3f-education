@@ -9,16 +9,11 @@ sidebar_position: 11
 Polkadot.js is a collection of tools that interfaces with the Polkadot blockchain in very granular ways. Polkadot.js as a term has multiple moving parts that are worth mentioning:
 
 
-1. **[Polkadot.js UI](https://polkadot.js.org/)**
-    1. This is the hosted application that loads when you navigate to in your browser and click apps wallet(hosted). This is also sometimes called “Polkadot-JS App”.
-2. **[Polkadot.js API](https://github.com/polkadot-js/api)**
-    2. This is the JavaScript API, a reusable library to allow programs to interface with the functionality of Polkadot. 
-3. **[Polkadot.js Extension](https://polkadot.js.org/extension/)**
-    3. This is the Chrome extension that allows you to manage your accounts and sign transactions. Note that all that it does is sign messages; it has limited functionality compared to full-featured wallets, and cannot connect to the Polkadot network itself.
-4. **[Polkadot.js codebase](https://github.com/polkadot-js/)**
-    4. The codebase contains all the repositories of code that are required to have the suite of tools working. You can navigate to the codebase here.
-5. **[Polkadot.js Phishing List](https://polkadot.js.org/phishing/)**
-    5. The Phishing List website is a community driven curation of a list of less-than-honest operators. This list of URLs and addresses are constantly updated and the polkdot.js extension uses it as a source to warn you when you navigate to a URL included in the list and blocks the addresses from the apps UI. Users can also contribute suspicious sites and addresses if they come across them.
+1. **[Polkadot.js UI](https://polkadot.js.org/)**: This is the hosted application that loads when you navigate to in your browser and click apps wallet(hosted). This is also sometimes called “Polkadot-JS App”.
+2. **[Polkadot.js API](https://github.com/polkadot-js/api)**: This is the JavaScript API, a reusable library to allow programs to interface with the functionality of Polkadot. 
+3. **[Polkadot.js Extension](https://polkadot.js.org/extension/)**: This is the Chrome extension that allows you to manage your accounts and sign transactions. Note that all that it does is sign messages; it has limited functionality compared to full-featured wallets, and cannot connect to the Polkadot network itself.
+4. **[Polkadot.js codebase](https://github.com/polkadot-js/)**: The codebase contains all the repositories of code that are required to have the suite of tools working. You can navigate to the codebase here.
+5. **[Polkadot.js Phishing List](https://polkadot.js.org/phishing/)**: The Phishing List website is a community driven curation of a list of less-than-honest operators. This list of URLs and addresses are constantly updated and the polkdot.js extension uses it as a source to warn you when you navigate to a URL included in the list and blocks the addresses from the apps UI. Users can also contribute suspicious sites and addresses if they come across them.
 
 ## Polkadot JS UI
 
