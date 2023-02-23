@@ -27,13 +27,9 @@ As mentioned, token holders can stake (lock) their tokens to become validators. 
 
 PoW is a consensus mechanism in which miners successfully solve computationally intensive problems to create blocks. Anyone with adequate hardware, access to the internet, and electricity can become a miner. However, as more miners join the network, the difficulty of mining increases. This causes the competition to be centralized toward those who can afford better hardware and pay lower electricity costs. Hardware frequently gets improved, constantly rendering even recent machines out of competition, and cheap electricity has a geopolitical implication that makes it difficult for those who live in certain parts of the world where electricity might be expensive to participate in the network as a miner. These two aspects have caused the centralization of mining efforts in PoW networks. PoS solves these issues.
 
-
-
-1. **Energy efficiency**: PoS is considerably more energy efficient. [Recent study](https://www.bloomberg.com/news/articles/2022-02-02/polkadot-has-smallest-carbon-footprint-crypto-researcher-says) done by the Crypto Carbon Ratings Institute Ava Labs found Polkadot to be the most cost efficient PoS blockchain. 
+1. **Energy efficiency**: PoS is considerably more energy efficient. [Recent study](https://www.bloomberg.com/news/articles/2022-02-02/polkadot-has-smallest-carbon-footprint-crypto-researcher-says) done by the Crypto Carbon Ratings Institute commissioned by Ava Labs found Polkadot to be the most cost efficient PoS blockchain. 
 2. **Lower barrier to entry**: PoS doesn’t have hardware or energy source barriers; token holders can become validators if they meet the minimum.
 3. **More conducive to decentralization**: simply, it is easier to become a validator in a PoS system; this, in theory, will create conditions for better decentralization.
-
-Despite the benefits, the minimum amount to stake may only be feasible for some token holders. For instance, Ethereum 2.0 has a minimum stake amount of 32 ETH, and Polkadot has a current minimum amount of approximately 300 DOT to become a nominator; however, [efforts](https://gist.github.com/kianenigma/aa835946455b9a3f167821b9d05ba376) to reduce this amount are being worked on.
 
 **Nominated Proof of Stake**
 
@@ -44,12 +40,13 @@ NPoS is the validator election mechanism of the consensus protocol on Polkadot, 
 
 Both roles are required to stake tokens. The total staked amount for a validator is the sum of their stake and the stake of the nominators backing them.
 
-
 :::caution
+
 Consensus on a blockchain is a multistep process, and NPoS is simply the part that decides who can be a validator on the network. It does not contain the logic for adding a block to the chain or chain finality. To have the full picture of consensus on Polkadot, read about [BABE](https://research.web3.foundation/en/latest/polkadot/block-production/Babe.html) the block production mechanism and [GRANDPA](https://research.web3.foundation/en/latest/polkadot/finality.html) the finality mechanism, in addition, to fully grasp Polkadot’s hybrid consensus implementation.
+
 :::
 
-There are elections in which nominators elect validators to an active validator set. A fixed number of validators (297 on Polkadot and 1000 on Kusama) are subject to change  via a runtime upgrade that passes governance.
+There are elections in which nominators elect validators to an active validator set. A fixed number of validators are subject to change via a runtime upgrade that passes governance.
 
 **Validator nomination, active set, and staking rewards**
 
@@ -65,7 +62,9 @@ In the end, consensus mechanisms are trying to solve the same problem, that is, 
 
 
 :::note
+
 This attack is relatively easy on a PoW network in its early life stages. Still, on a PoS network, as long as the distribution of tokens from the beginning is decentralized, it will be much more challenging to execute. And as networks mature, PoS has a higher ceiling of potential decentralization as long as the tokenomics are sound.
+
 :::
 
 At the current moment, there are a lot of exciting developments in PoS systems. This does not mean, though, that other consensus mechanisms do not exist, and indeed, there are many different approaches to consensus on blockchains. We are in the era of exploration, and seeing the competition of networks with other approaches is very exciting.
