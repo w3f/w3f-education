@@ -233,7 +233,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Learning Crate, Rust’s Package Management	 System, Basic Testing",
+      label: "Learning Cargo, Rust’s Package Management	 System, Basic Testing",
       items: [
         'Rust/section8/section-8-intro',
       ],

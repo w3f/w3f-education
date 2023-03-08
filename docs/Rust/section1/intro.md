@@ -2,7 +2,7 @@
 id: section-intro
 title: Why Learn Rust?
 sidebar_label: Why Learn Rust?
-description: An introduction to basic rust.
+description: An introduction to why Rust is relevant, especially in the context of web3.
 ---
 
 - What is Rust?

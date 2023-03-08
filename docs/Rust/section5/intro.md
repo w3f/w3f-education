@@ -2,7 +2,7 @@
 id: section-5-intro
 title: Intro to Intermediate Rust - Data Structs & Collections
 sidebar_label: Intro to Intermediate Rust - Data Structs & Collections
-description: An introduction to basic rust.
+description: An introduction to intermediate Rust, specifically how to utilize data structs and collections.
 ---
 
 - Structs

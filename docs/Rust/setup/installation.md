@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Rust 101 - Intro to Basic Rust
-sidebar_label: Installation
-description: An introduction to basic rust.
+title: Installing & Setting up a Rust Developer Environment
+sidebar_label: Installing & Setting up a Rust Developer Environment
+description: Installing Rust, and setting up your development environment.
 ---
