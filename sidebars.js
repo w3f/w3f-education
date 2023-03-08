@@ -173,41 +173,71 @@ module.exports = {
     {
       type: 'doc',
       id: 'introrust',
-      label: 'Syllabus',
+      label: 'Course Syllabus',
     },
     {
-      type: 'doc',
-      id: 'Rust/module1',
+      type: "category",
+      label: "Why Rust?",
+      items: [
+        'Rust/section1/section-intro',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module2',
+      type: "category",
+      label: "Installation & Development Environment Setup",
+      items: [
+        'Rust/setup/installation',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module3',
+      type: "category",
+      label: "Rust 101 - Intro to Basic Rust",
+      items: [
+        'Rust/section2/section-2-intro',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module4',
+      type: "category",
+      label: "Intro to Intermediate Rust: Ownership, Borrowing, & Slices",
+      items: [
+        'Rust/section3/section-3-intro',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module5',
+      type: "category",
+      label: "Intro to Intermediate Rust: Enums & Matching Patterns",
+      items: [
+        'Rust/section4/section-4-intro',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module6',
+      type: "category",
+      label: "Intro to Intermediate Rust: Data Structs & Collections",
+      items: [
+        'Rust/section5/section-5-intro',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module7',
+      type: "category",
+      label: "Intro to Advanced Rust: Traits, Generics, & Lifetimes",
+      items: [
+        'Rust/section6/section-6-intro',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module8',
+      type: "category",
+      label: "Intro to Advanced Rust: Iterators & Closures",
+      items: [
+        'Rust/section7/section-7-intro',
+      ],
     },
-    
+    {
+      type: "category",
+      label: "Learning Crate, Rust’s Package Management	 System, Basic Testing",
+      items: [
+        'Rust/section8/section-8-intro',
+      ],
+    },
     {
       type: 'link',
       label: 'Learn more',

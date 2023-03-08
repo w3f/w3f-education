@@ -3,7 +3,7 @@ id: module1
 sidebar_position: 1
 ---
 
-# 1. Rust Basics
+# 1. Installing Rust
 
 ## Installing Rust
 

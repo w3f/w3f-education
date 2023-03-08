@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 
 
-# 4. Types and Collections
+# 4. Intro to Advanced Rust
 
 Vectors. Hashmaps. More on Strings. Generic types. Traits and shared behaviour.
 
