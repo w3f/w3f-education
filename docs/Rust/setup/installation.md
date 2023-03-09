@@ -1,9 +1,11 @@
 ---
-id: module1
-sidebar_position: 1
+id: installation
+title: Installing & Setting up a Rust Developer Environment
+sidebar_label: Installing & Setting up a Rust Developer Environment
+description: Installing Rust, and setting up your development environment.
 ---
 
-# 1. Rust Basics
+# 1. Installing Rust
 
 ## Installing Rust
 

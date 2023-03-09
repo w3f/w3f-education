@@ -173,41 +173,101 @@ module.exports = {
     {
       type: 'doc',
       id: 'introrust',
-      label: 'Syllabus',
+      label: 'Course Syllabus',
     },
     {
-      type: 'doc',
-      id: 'Rust/module1',
+      type: "category",
+      label: "Why Rust?",
+      items: [
+        'Rust/section1/section-intro',
+        'Rust/section1/why-rust',
+        'Rust/section1/what-is-rust',
+        'Rust/section1/wasm-tldr'
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module2',
+      type: "category",
+      label: "Installation & Development Environment Setup",
+      items: [
+        'Rust/setup/installation',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module3',
+      type: "category",
+      label: "Rust 101 - Intro to Basic Rust",
+      items: [
+        'Rust/section2/section-2-intro',
+        'Rust/section2/variables-mutability',
+        'Rust/section2/data-types',
+        'Rust/section2/functions-comments',
+        'Rust/section2/loops'
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module4',
+      type: "category",
+      label: "Intro to Intermediate Rust: Ownership, Borrowing, & Slices",
+      items: [
+        'Rust/section3/section-3-intro',
+        'Rust/section3/borrowing',
+        'Rust/section3/slices',
+        'Rust/section3/ownership'
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module5',
+      type: "category",
+      label: "Intro to Intermediate Rust: Enums & Matching Patterns",
+      items: [
+        'Rust/section4/section-4-intro',
+        'Rust/section4/enums',
+        'Rust/section4/match',
+        'Rust/section4/pattern-matching',
+        'Rust/section4/error-handling'
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module6',
+      type: "category",
+      label: "Intro to Intermediate Rust: Data Structs & Collections",
+      items: [
+        'Rust/section5/section-5-intro',
+        'Rust/section5/collections',
+        'Rust/section5/structs',
+        'Rust/section5/struct-methods',
+        'Rust/section5/vectors-vs-strings'
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module7',
+      type: "category",
+      label: "Intro to Advanced Rust: Traits, Generics, & Lifetimes",
+      items: [
+        'Rust/section6/section-6-intro',
+        'Rust/section6/traits',
+        'Rust/section6/generics',
+        'Rust/section6/associated-generics',
+        'Rust/section6/lifetimes',
+      ],
     },
     {
-      type: 'doc',
-      id: 'Rust/module8',
+      type: "category",
+      label: "Intro to Advanced Rust: Iterators & Closures",
+      items: [
+        'Rust/section7/section-7-intro',
+        'Rust/section7/iterators',
+        'Rust/section7/closures',
+        'Rust/section7/loops-vs-iterators'
+      ],
     },
-    
+    {
+      type: "category",
+      label: "Learning Cargo, Rust’s Package Management	 System, Basic Testing",
+      items: [
+        'Rust/section8/section-8-intro',
+        'Rust/section8/defining-cargo-config',
+        'Rust/section8/defining-crate-features',
+        'Rust/section8/installing-crate',
+        'Rust/section8/unit-tests'
+
+      ],
+    },
     {
       type: 'link',
       label: 'Learn more',
