@@ -180,6 +180,9 @@ module.exports = {
       label: "Why Rust?",
       items: [
         'Rust/section1/section-intro',
+        'Rust/section1/why-rust',
+        'Rust/section1/what-is-rust',
+        'Rust/section1/wasm-tldr'
       ],
     },
     {
@@ -194,6 +197,10 @@ module.exports = {
       label: "Rust 101 - Intro to Basic Rust",
       items: [
         'Rust/section2/section-2-intro',
+        'Rust/section2/variables-mutability',
+        'Rust/section2/data-types',
+        'Rust/section2/functions-comments',
+        'Rust/section2/loops'
       ],
     },
     {

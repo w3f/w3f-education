@@ -5,7 +5,8 @@ sidebar_label: Intro to Basic Rust
 description: An introduction to basic Rust.
 ---
 
-- Variables & Mutability
-- Data Types
-- Functions & Comments
-- Loops & Common Logic
+- [Variables & Mutability](./variables-mutability.md)
+- [Data Types](./data-types.md)
+- [Functions & Comments](./functions-comments.md)
+- [Loops](./loops.md)
+

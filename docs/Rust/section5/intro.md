@@ -5,7 +5,7 @@ sidebar_label: Intro to Intermediate Rust - Data Structs & Collections
 description: An introduction to intermediate Rust, specifically how to utilize data structs and collections.
 ---
 
-- Structs
-- Defining Methods for Structs
-- Vectors, Strings & Hashmaps
-- Vectors vs Strings - what’s the difference?
+- [Structs](./structs.md)
+- [Defining Methods for Structs](./struct-methods.md)
+- [Vectors, Strings & Hashmaps](./collections.md)
+- [Vectors vs Strings - what’s the difference?](./vectors-vs-strings.md)
