@@ -208,6 +208,9 @@ module.exports = {
       label: "Intro to Intermediate Rust: Ownership, Borrowing, & Slices",
       items: [
         'Rust/section3/section-3-intro',
+        'Rust/section3/borrowing',
+        'Rust/section3/slices',
+        'Rust/section3/ownership'
       ],
     },
     {
@@ -215,6 +218,10 @@ module.exports = {
       label: "Intro to Intermediate Rust: Enums & Matching Patterns",
       items: [
         'Rust/section4/section-4-intro',
+        'Rust/section4/enums',
+        'Rust/section4/match',
+        'Rust/section4/pattern-matching',
+        'Rust/section4/error-handling'
       ],
     },
     {
@@ -222,6 +229,10 @@ module.exports = {
       label: "Intro to Intermediate Rust: Data Structs & Collections",
       items: [
         'Rust/section5/section-5-intro',
+        'Rust/section5/collections',
+        'Rust/section5/structs',
+        'Rust/section5/struct-methods',
+        'Rust/section5/vectors-vs-strings'
       ],
     },
     {
@@ -229,6 +240,10 @@ module.exports = {
       label: "Intro to Advanced Rust: Traits, Generics, & Lifetimes",
       items: [
         'Rust/section6/section-6-intro',
+        'Rust/section6/traits',
+        'Rust/section6/generics',
+        'Rust/section6/associated-generics',
+        'Rust/section6/lifetimes',
       ],
     },
     {
@@ -236,6 +251,9 @@ module.exports = {
       label: "Intro to Advanced Rust: Iterators & Closures",
       items: [
         'Rust/section7/section-7-intro',
+        'Rust/section7/iterators',
+        'Rust/section7/closures',
+        'Rust/section7/loops-vs-iterators'
       ],
     },
     {
@@ -243,6 +261,11 @@ module.exports = {
       label: "Learning Cargo, Rust’s Package Management	 System, Basic Testing",
       items: [
         'Rust/section8/section-8-intro',
+        'Rust/section8/defining-cargo-config',
+        'Rust/section8/defining-crate-features',
+        'Rust/section8/installing-crate',
+        'Rust/section8/unit-tests'
+
       ],
     },
     {
