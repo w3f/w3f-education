@@ -28,8 +28,8 @@ At its core, Wasm is a stack-based virtual machine, where each value is popped a
 
 On Polkadot, Web3 Foundation's flagship project, Wasm is a core part of the technology stack:
 
-- It's used for defining reliable state transition functions for relay chain runtimes
-- It's used for defining parachain validation functions (PVFs), which is a core part of how relay and parachain's agree on state.
-- The ink! smart contract language compiles to Wasm, which takes full advantage of the sandboxed and portable nature of Wasm.
+- It's used for defining reliable state transition functions for [relay chain runtimes](https://wiki.polkadot.network/docs/glossary#runtime).
+- It's used for defining [Parachain Validation Functions (PVFs)](https://wiki.polkadot.network/docs/learn-parachains-protocol), which is a core part of how relay and parachains agree on state.
+- The [ink!](https://use.ink/) smart contract language compiles to Wasm, which takes full advantage of the sandboxed and portable nature of Wasm.
 
 
