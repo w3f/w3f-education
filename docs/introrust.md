@@ -7,7 +7,7 @@ sidebar_position: 1
 
 Developed by the Technical Education team at the Web3 Foundation, this course introduces programming in Rust for Blockchain applications.
 
-This course follows the free textbook, [The Rust Programming Language](https://doc.rust-lang.org/stable/book/) by Steve Klabnik and Carol Nichols.
+This course follows the free textbook, [The Rust Programming Language](https://doc.rust-lang.org/stable/book/) by Steve Klabnik and Carol Nichols.  While it does follow this book, it also includes a multitude of hands-on examples, in-browser executable snippets, and some patterns commonly found in the context of blockchain based development.
 
 This course is designed to teach the fundamentals of Rust to a student who knows the basics of programming in another language, but does not quite know why Rust is used and how to use it.
 
