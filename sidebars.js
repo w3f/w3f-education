@@ -180,8 +180,8 @@ module.exports = {
       label: "Why Rust?",
       items: [
         'Rust/section1/section-intro',
-        'Rust/section1/why-rust',
         'Rust/section1/what-is-rust',
+        'Rust/section1/why-rust',
         'Rust/section1/wasm-tldr'
       ],
     },
