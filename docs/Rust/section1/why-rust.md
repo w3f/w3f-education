@@ -82,3 +82,7 @@ error[E0277]: cannot add `char` to `u32`
 
 For more information about this error, try `rustc --explain E0277`.
 ```
+
+## Resources
+
+- *Why Rust? by Dimitiy Kashitsyn at Parity Technologies* - https://www.parity.io/blog/why-rust

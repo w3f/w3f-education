@@ -24,3 +24,8 @@ fn main() {
 }
 ```
 
+## Resources
+
+- *Rust Programming Language* - https://www.rust-lang.org/
+- *Rust Book* - https://doc.rust-lang.org/book/
+
