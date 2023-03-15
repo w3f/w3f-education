@@ -5,7 +5,7 @@ sidebar_label: WASM TLDR
 description:  Why WASM is used, and it's support in Rust.
 ---
 
-WebAssembly (Wasm), is becoming a core part of many technology stacks.  It is a portable target for higher level languages to compile to, and has no direct limitations on where it can run (although it is mostly browser focused at the moment).  It can run near native speeds, and provides a sandboxed, agnostic set of instructions in which to run in any environment that supports it.
+WebAssembly (Wasm) is becoming a core part of many technology stacks.  It is a portable target for higher-level languages to compile to and has no direct limitations on where it can run (although it is mostly browser focused at the moment).  It can run near-native speeds and provides a sandboxed, agnostic set of instructions to run in any environment that supports it.
 
 Wasm has two common formats, `wat` and `wasm`.  
 
@@ -22,7 +22,7 @@ Fun fact: Wasm is what enables for **forkless upgrades** to occur on Polkadot, a
 
 ## Basic Wasm Architecture
 
-At its core, Wasm is a stack-based virtual machine, where each value is popped and pushed on an arbitrary stack. It's worth noting that Wasm is not a *register* machine, as it does not contain any context-specific registers for bytes to be held.
+At its core, Wasm is a stack-based virtual machine, where each value is popped and pushed on an arbitrary stack. It is worth noting that Wasm is not a *register* machine, as it contains no context-specific registers for bytes to be held.
 
 ## Wasm Usecases
 

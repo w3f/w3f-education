@@ -5,17 +5,17 @@ sidebar_label: What is Rust?
 description: An introduction to what the Rust programming language is, and how it compares to other languages.
 ---
 
-Rust is a systems programming language that is aimed to empower its users with high-level, ergonomic code whilst also being able to maintain a level of control akin to a language like C.  It's meant to empower and give confidence to whomever is writing it, and guarantee secure and reliable output.
+Rust is a systems programming language aimed to empower its users with high-level, ergonomic code while also maintaining a level of control akin to a language like C.  It is meant to empower and give confidence to whoever is writing it and guarantee secure and reliable output.
 
-It offers many solutions and unique takes in terms of combining the best of both object-oriented and functional programming concepts into one single language.  Rust is **statically typed**, focuses on code and memory safety, and a powerful memory management system that eliminates the need for a garbage collector.
+It combines the best of object-oriented and functional programming concepts into one single language.  Rust is **statically typed**, focuses on code and memory safety, and has a powerful memory management system that eliminates the need for a garbage collector.
 
 ## Learning Rust for Substrate
 
-In this course, we'll learn to program in the Rust programming language with a specific focus on the aspects of Rust that are used in the Substrate Blockchain framework. We do not assume any existing knowledge of Rust and will start from the beginning. However, we do assume some familiarity with programming in general, and that you are fluent in at least one other programming language. If you are brand new to programming, it is totally possible to start with Rust, but this course may seem a bit fast for you.
+In this course, we'll learn to program in the Rust programming language with a specific focus on the aspects of Rust that are used in the Substrate Blockchain framework. We do not assume any existing knowledge of Rust and will start from the beginning. However, we assume some general familiarity with programming and that you are fluent in at least one other programming language. If you are brand new to programming, starting with Rust is possible, but this course may be faster-paced for a beginner.
 
 Throughout the course, we will emphasize the differences and similarities between Rust and other programming languages that you may have encountered in the past. Design patterns that are used in the Substrate blockchain framework will also be emphasized, as well as general familiarity with coding techniques and patterns that you will encounter when using Substrate. 
 
-This course will still be very useful for someone who wants to learn Rust but has no intention to use Substrate.
+This course will still be beneficial for someone who wants to learn Rust but has no intention to use Substrate.
 
 ## Course Format
 
@@ -37,6 +37,7 @@ The classic "Hello, world" program in Rust.
 :::
 
 In every Rust program comes the `fn main()` function.  This function is the entry point for the program, and is where code is actually executed when compiled, and where **the execution of the program begins**.  Every Rust program must have a main function.  It takes no arguments, and returns what is called a unit type in Rust: `()`.
+
 
 ```rust
 // Define entry point.

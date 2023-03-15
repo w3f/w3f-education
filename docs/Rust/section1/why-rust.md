@@ -5,7 +5,7 @@ sidebar_label: Why Learn Rust?
 description: A brief overview of the pros of learning the Rust programming language.
 ---
 
-Before starting your Rust development journey, it's important to realize just exactly _why_ Rust was the language chosen for this course.  In fact, it could've been any other language, If you are new to programming, the reasons as to why Rust was chosen may be foreign.
+Before starting your Rust development journey, it is essential to realize just precisely _why_ Rust was the language chosen for this course.  In fact, it could have been any other language, If you are new to programming, the reasons as to why Rust was chosen may be foreign.
 
 :::info
 
@@ -23,7 +23,7 @@ It may be useful to know a few terms general programming terms and what they mea
 
 ## Rust is safe.
 
-The primary reason why Rust is used widely is how **safe** it is.  In the context of programming, **safe** means that the programmer can confidently write a program with the certainly that it will work as intended.  In more technical terms, a safe language ensures memory safety, and that a safe language cannot write a dangerous program (unless those safety features are bypassed).
+The primary reason why Rust is used widely is how **safe** it is. In the context of programming, **safe** means that the programmer can confidently write a program with the certainty that it will work as intended. In more technical terms, a safe language ensures memory safety, and a safe language cannot write a dangerous program (unless those safety features are bypassed).
 
 This safeness is mostly derived from two factors that work in tandem: 
 
@@ -32,18 +32,18 @@ This safeness is mostly derived from two factors that work in tandem:
 
 Essentially, if the Rust compiler that an issue might happen at some point with a variable within your program, it will (in a very friendly way) notify the programmer that this would become an issue in runtime.
 
-Safe programming is also a matter of security.  Many exploits and hacks occur due to the fact that the programs memory can be accessed and modified in an unsafe or unauthorized way. 
+Safe programming is also a matter of security. Many exploits and hacks occur because the program's memory can be accessed and modified in an unsafe or unauthorized way. 
 
-These factors are crucial when building applications and programs that make guarantees in impactful industries. For how strict the Rust compiler is, it essentially makes it very hard to write *bad* or *dangerous* code.
+These factors are crucial when building applications and programs that make guarantees in impactful industries. The Rust compiler's strictness makes it very hard to write *bad* or *dangerous* code.
 
 
 ## Safety does not sacrifice readability, ease of use, or speed.
 
-Because Rust is so strict at compile-time, there is no need for a **garbage collector**, or any other mechanism that operates with the runtime of the program.  Effectively, this means that all of Rust's powerful, strong typing system comes at effectively zero-cost.
+Because Rust is so strict at compile-time, there is no need for a **garbage collector**, or any other mechanism that operates with the runtime of the program.  Effectively, this means that all of Rust's powerful, strong typing system comes at effectively zero cost.
 
-This allows for a level of control which can be comparable to something lower-level, such as C, but is much more beginner friendly in terms of writing useful programs.  It also allows for flexibility for applications that require granular control and resource management, such as embedded systems, operating systems, and distributed ledgers.
+This allows for a level of control that can be comparable to something lower-level, such as C, but is much more beginner friendly in terms of writing useful programs.  It also allows for flexibility for applications that require granular control and resource management, such as embedded systems, operating systems, and distributed ledgers.
 
-Rust lowers the barriers when dealing with more complex, and before seen as high-barrier-to-entry concepts such as concurrency, low-level memory management, and and data representation,
+Rust lowers the barriers when dealing with more complex concepts such as concurrency, low-level memory management, and data representation.
 
 
 ## Rust Safety by Example
@@ -63,7 +63,7 @@ Take this example - if we try to compile this Rust code:
     println!("{the_number_ten}");
 ```
 
-The Rust compiler, before it has the ability to even run the program, gives a very detailed error as to *why* this is impossible to compile.  This may seem foreign right now, however, notice the level of detail the compiler gives to the programmer, including a reference as to why this may not compile.
+The Rust compiler, before it can even run the program, gives a very detailed error as to *why* this is impossible to compile.  This may seem foreign right now.  Notice the level of detail the compiler gives to the programmer, including a reference as to why this may not compile.
 
 ```
   Compiling playground v0.0.1 (/playground)
