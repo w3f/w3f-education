@@ -24,6 +24,7 @@ Throughout this course, it will follow mostly a particular format:
 1. Background information about a particular topic
 2. Relevant code example 
 3. Interactive portion made possible by the [Rust Playground](https://play.rust-lang.org/)
+4. A "What is happening here?" with a line by line explanation of what the code is accomplishing
 
 Here is an example of how that might look like:
 
