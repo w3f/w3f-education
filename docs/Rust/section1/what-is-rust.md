@@ -9,20 +9,42 @@ Rust is a systems programming language that is aimed to empower its users with h
 
 It offers many solutions and unique takes in terms of combining the best of both object-oriented and functional programming concepts into one single language.  Rust is **statically typed**, focuses on code and memory safety, and a powerful memory management system that eliminates the need for a garbage collector.
 
+## Learning Rust for Substrate
+
+In this course, we'll learn to program in the Rust programming language with a specific focus on the aspects of Rust that are used in the Substrate Blockchain framework. We do not assume any existing knowledge of Rust and will start from the beginning. However, we do assume some familiarity with programming in general, and that you are fluent in at least one other programming language. If you are brand new to programming, it is totally possible to start with Rust, but this course may seem a bit fast for you.
+
+Throughout the course, we will emphasize the differences and similarities between Rust and other programming languages that you may have encountered in the past. Design patterns that are used in the Substrate blockchain framework will also be emphasized, as well as general familiarity with coding techniques and patterns that you will encounter when using Substrate. 
+
+This course will still be very useful for someone who wants to learn Rust but has no intention to use Substrate.
+
+## Course Format
+
+Throughout this course, it will follow mostly a particular format: 
+
+1. Background information about a particular topic
+2. Relevant code example 
+3. Interactive portion made possible by the [Rust Playground](https://play.rust-lang.org/)
+
+Here is an example of how that might look like:
+
+### Hello, World in Rust.
+
 :::info
 
 The classic "Hello, world" program in Rust.
 
 :::
 
-```rust
+In every Rust program comes the `fn main()` function.  This function is the entry point for the program, and is where code is actually executed when compiled, and where **the execution of the program begins**.  Every Rust program must have a main function.  It takes no arguments, and returns what is called a unit type in Rust: `()`.
 
+```rust
 // Define entry point.
 fn main() {
-    // Writes to the output.
-    println!("Hello world!");
+
 }
 ```
+
+What does the program above do? Well, nothing.  There is no executable code within the curly brackets of the `main()` function, however it still is a valid Rust program.
 
 ## Try it yourself!
 
