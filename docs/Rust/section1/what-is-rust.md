@@ -41,6 +41,12 @@ The classic "Hello, world" program in Rust.
 In every Rust program comes the `fn main()` function.  This function is the entry point for the program, and is where code is actually executed when compiled, and where **the execution of the program begins**.  Every Rust program must have a main function.  It takes no arguments, and returns what is called a unit type in Rust: `()`.
 
 
+:::note
+
+[The unit type](https://doc.rust-lang.org/std/primitive.unit.html), or `()`, is a placeholder value that is used when no meaningful or real value is applicable. All functions without a return type default to returning a unit type in Rust.
+
+:::
+
 ```rust
 // Define entry point.
 fn main() {
