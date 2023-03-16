@@ -5,7 +5,7 @@ sidebar_label: What is Rust?
 description: An introduction to what the Rust programming language is, and how it compares to other languages.
 ---
 
-Rust is a systems programming language aimed to empower its users with high-level, ergonomic code while also maintaining a level of control akin to a language like C.  It is meant to empower and give confidence to whoever is writing it and guarantee secure and reliable output.
+Rust is a systems programming language aimed to empower its users with high-level, ergonomic code while also maintaining a level of control akin to a language like C.  It is meant to empower and give confidence to whoever is writing it and guarantee secure and reliable executable code.
 
 It combines the best of object-oriented and functional programming concepts into one single language.  Rust is **statically typed**, focuses on code and memory safety, and has a powerful memory management system that eliminates the need for a garbage collector.
 
