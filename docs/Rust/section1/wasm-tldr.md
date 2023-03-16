@@ -16,7 +16,7 @@ WebAssembly, while not exclusive to Rust by any means, is highly supported in Ru
 
 :::info 
 
-Fun fact: Wasm is what enables for **forkless upgrades** to occur on Polkadot, as each instance of the Polkadot Runtime compiles down to Wasm and is stored the blockchain's storage.
+Fun fact : Heard of **forkless upgrades** on Polkadot? It is Wasm that enables these seamless blockchain upgrades. Each instance of the Polkadot Runtime compiles to a Wasm blob and is stored in the blockchain's storage, which can be replaced through an on-chain governance based upgrade. 
 
 :::
 
