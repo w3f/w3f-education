@@ -5,7 +5,7 @@ sidebar_label: Introduction to Rust
 description: An introduction to why Rust is relevant, especially in the context of web3.
 ---
 
-Welcome to the *Introduction to Rust* course by Web3 Foundation. This introductory course focuses on bringing the Rust Programming Language's most impactful components to light and will point toward places to better your learning on your web3 journey.
+Welcome to the *Introduction to Rust* course by Web3 Foundation. This introductory course focuses on bringing the most impactful components of the Rust Programming Language to light and will highlight the key concepts to get you started with your Web3 learning journey.
 
 - [What is Rust?](./what-is-rust.md)
 - [Why Rust is the future](./why-rust.md)
