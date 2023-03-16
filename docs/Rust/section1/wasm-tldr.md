@@ -5,7 +5,7 @@ sidebar_label: WASM TLDR
 description:  Why WASM is used, and it's support in Rust.
 ---
 
-WebAssembly (Wasm) is becoming a core part of many technology stacks.  It is a portable target for higher-level languages to compile to and has no direct limitations on where it can run (although it is mostly browser focused at the moment).  It can run near-native speeds and provides a sandboxed, agnostic set of instructions to run in any environment that supports it.
+WebAssembly (Wasm) is becoming a core part of many technology stacks.  It is a portable target for higher-level languages to compile to and has no direct limitations on where it can run (although it is mostly browser focused at the moment).  It can run at near-native speeds and provides a sandboxed, agnostic set of instructions to run in any environment that supports it.
 
 Wasm has two common formats, `wat` and `wasm`.  
 
