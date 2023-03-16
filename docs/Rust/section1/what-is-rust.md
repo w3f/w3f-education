@@ -11,7 +11,7 @@ It combines the best of object-oriented and functional programming concepts into
 
 ## Learning Rust for Substrate
 
-In this course, we'll learn to program in the Rust programming language with a specific focus on the aspects of Rust that are used in the Substrate Blockchain framework. We do not assume any existing knowledge of Rust and will start from the beginning. However, we assume some general familiarity with programming and that you are fluent in at least one other programming language. If you are brand new to programming, starting with Rust is possible, but this course may be faster-paced for a beginner.
+In this course, we'll learn to program in the Rust programming language with a specific focus on the aspects of Rust that are used in the Substrate Blockchain framework. We do not assume any existing knowledge of Rust and will start from the beginning. However, we assume some general familiarity with programming and that you are fluent in at least one other programming language. If you are brand new to programming, starting with Rust is possible, but this course may be too fast-paced for a beginner.
 
 Throughout the course, we will emphasize the differences and similarities between Rust and other programming languages that you may have encountered in the past. Design patterns that are used in the Substrate blockchain framework will also be emphasized, as well as general familiarity with coding techniques and patterns that you will encounter when using Substrate. 
 
