@@ -19,7 +19,7 @@ This course will still be beneficial for someone who wants to learn Rust but has
 
 ## Course Format
 
-Throughout this course, it will follow mostly a particular format: 
+Each module in this course follows the format below: 
 
 1. Background information about a particular topic
 2. Relevant code example 
