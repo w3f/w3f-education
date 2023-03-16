@@ -12,7 +12,7 @@ Wasm has two common formats, `wat` and `wasm`.
 - `.wat` - a text-based format, called WebAssembly Text, that is a more human readable way of representing Wasm instructions.
 - `.wasm` - a binary-based format that defines an executable that is then executed by a Wasm virtual machine.
 
-WebAssembly, while not exclusive to Rust by any means, is highly supported in Rust.  This enables for Rust code to be even more portable in the context of web-based applications, for example (or any environment that supports WebAssembly).
+WebAssembly, while not exclusive to Rust by any means, is highly supported in Rust.  This enables Rust code to be even more portable in the context of web-based applications (or any environment that supports WebAssembly).
 
 :::info 
 
