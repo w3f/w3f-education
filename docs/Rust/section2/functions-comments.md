@@ -114,4 +114,32 @@ fn do_something_interesting(is_interesting: bool, name: &str) {
 
 In the last module, you'll learn how to properly document your code using comments in a way that Cargo can understand.
 
+## Try it out!
+
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn+main%28%29+%7B%0A++++%2F%2F+The+main+function+is+no+longer+alone+here..%0A++++do_something_interesting%28true%2C+%22Bader%22%29%3B%0A++++%2F%2F+Make+sure+to+call+your+function+here%21%0A%7D%0A%2F%2F+Hey%2C+I%27m+a+comment%21+I+explain+things%0A%2F%2F+This+function+does+something+interesting%2C+apparently.%0Afn+do_something_interesting%28is_interesting%3A+bool%2C+name%3A+%26str%29+%7B%0A++++println%21%28%22Hey%2C+%7Bname%7D%21++Is+this+interesting%3A+%7Bis_interesting%7D.%22%29%3B%0A%7D%0A%0A%0A%2F%2F+Change+this+function+to+take+a+parameter%2C+which+is+a+floating+point+number%0A%2F%2F+with+double+precison%2C+and+print+it.++%0A%2F%2F+Then%2C+call+it+in+the+main+function+and+run%21%0Afn+do_something_better%28%29+%7B%7D%0A"></iframe>
+
+## What is happening here?
+
+A new function with zero parameters is introduced, called `do_something_better`.  You should be able to add a new parameter, of type `f64` (for double precision) like so:
+
+```rust
+
+fn do_something_better(number: f64) {
+    println("{number}");
+}
+
+```
+
+To expand it, lets specify a return type - in this case, we want to return the number we passed in, but squared:
+
+
+```rust
+
+fn do_something_better(number: f64) -> f64 {
+    number * number
+}
+
+```
+
+Notice the lack of a semicolon, which denotes a resultant value in the form of an expression.
 

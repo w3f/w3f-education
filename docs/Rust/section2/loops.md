@@ -82,3 +82,13 @@ fn main() {
 Besides it being much more concise, there is no worry about having an `index out of bounds` error.  
 
 
+## Try it out!
+
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn+main%28%29+%7B%0A++++let+months+%3D+%5B%22Jan%22%2C+%22Feb%22%2C+%22Mar%22%2C+%22Apr%22%5D%3B%0A%0A++++%2F%2F+An+infinite+loop+-+comment+this+out+to+let+the+program+run%21%0A++++loop+%7B%0A++++++++println%21%28%22Print+forever%21..+Or+not+because+we+break.%22%29%3B%0A++++++++%2F%2F+Notice+the+use+of+break%2C+so+we+don%27t+%27break%27+the+playground%0A++++++++break%3B%0A++++%7D%0A%0A++++%2F%2F+A+conditional+while+loop%0A++++let+mut+x+%3D+0%3B%0A++++while+x+%3C%3D+10+%7B%0A++++++++println%21%28%22x+is+now%3A+%7Bx%7D%22%29%3B%0A++++++++x+%2B%3D+1%3B%0A++++%7D%0A++++%0A++++%0A++++%2F%2F+A+while+loop+acting+as+a+for+loop%0A++++let+mut+index+%3D+0%3B%0A++++while+index+%3C%3D+months.len%28%29+-+1+%7B%0A++++++++println%21%28%22The+month+is+now%3A+%7B%7D%22%2C+months%5Bindex%5D%29%3B%0A++++++++index+%2B%3D+1%3B%0A++++%7D%0A++++%0A++++%0A++++%2F%2F+A+for+loop+in+action.+%0A++++for+month+in+months%7B%0A++++++++println%21%28%22The+month+is+now%3A+%7B%7D%22%2C+month%29%3B%0A++++%7D%0A++++%0A%7D%0A"></iframe>
+
+## What is happening here?
+
+A the core loops are illustrated above.  Notice the `break` keyword being used within `loop`, so the playground does not run infinitely (and so other loops can run!).
+
+
+
