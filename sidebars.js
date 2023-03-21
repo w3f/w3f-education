@@ -172,6 +172,11 @@ module.exports = {
   rust: [
     {
       type: 'doc',
+      id: 'Rust/rust-glossary',
+      label: 'Glossary',
+    },
+    {
+      type: 'doc',
       id: 'introrust',
       label: 'Course Syllabus',
     },
