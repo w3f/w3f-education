@@ -91,6 +91,29 @@ let y = {
 
 Notice the lack of a semicolon at the end of `x + 1`.  As soon as you add a semicolon to the end of a line, it turns into a statement. Expressions do not have semicolons appended to the end of them.
 
+
+## Return types
+
+A key part of functions in Rust is the ability to specify a return type.  With the knowledge that we can use expressions to have a conclusion to a series of operations, we can use the following syntax to add a return type and result to our function: 
+
+```rust
+// This function takes a number and returns the squared version of it.
+fn square(x: i32) -> i32 {
+    x * x
+}
+```
+
+Notice the return type is denoted by the arrow (`->`) followed by the type we wish to return.  To return the type, we simply return the expression without a semicolon.  It's possible to also explicitly define a return statement:
+
+```rust
+// This function takes a number and returns the squared version of it.
+fn square(x: i32) -> i32 {
+    // This is also valid!
+    return x * x;
+}
+```
+
+
 # Comments
 
 Comments are nothing new in Rust, however there are a few you should be aware of. Comments are used to document parts of your code in order to provide clarification when needed.  Not every line needs to be commented, however it may be helpful to provide context in certain situations. They are preceded by double forward slashes in most cases (`//`).
