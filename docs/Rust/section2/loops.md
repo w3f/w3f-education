@@ -1,9 +1,85 @@
 ---
 id: loops
-title: Loops
-sidebar_label: Loops 
-description: Learn how to construct loops, and when to use different loops.
+title: Loops & Basic Logic
+sidebar_label: Loops & Basic Logic
+description: Learn how to construct loops, if statements, and when to use the two.
 ---
+
+This section will cover two foundational parts of Rust, and programming in general: loops and logic flows.
+
+# Basic Logic Flows
+
+Logic, or sometimes called control flows allow for conditional statements, such as `if` to be possible.  It allows for branching logic to be implemented for a program based off of `boolean` values.
+
+## Using `if`
+
+As said before, implementing logic based off of whether something is true or not would be very useful `if` statements are the cornerstone of conditional logic.
+
+```rust
+let this_is_true: bool = true;
+
+if this_is_true {
+    println!("Less trust, more truth!");
+}
+```
+
+The above code showcases a very simple example.  The statement `this_is_true` is set to a boolean value, `true`, which when evaluated by the `if` statement, will execute the code within the brackets.
+
+It's also possible to use an exclaimation mark (`!`) to further diverge logic:
+
+```rust
+let this_is_true: bool = true;
+if !this_is_true {
+    println!("Less trust, more truth!");
+}
+
+```
+
+This no longer prints, as it looks for the opposite of `true` - `false`.
+
+A more realistic example is checking if a number is higher or lower than expected, like seeing if an age is equal to or above 18:
+
+```rust
+let bank_balance = 101;
+if bank_balance >= 100 {
+    println!("More than 100 dollars");
+}
+```
+
+## Using `else if` and `else`
+
+A single `if` statement can only be used so much. Using `else if`, we can create branches of logic within a program:
+
+```rust
+let bank_balance = 56;
+
+if bank_balance >= 100 {
+    println!("More than, equal to, 100 dollars");
+} else if bank_balance % 2 == 0 {
+    println!("You have an even balance!");
+} else if bank_balance <= 0 {
+    println!("Uh oh, it appears you're in debt!");
+} else {
+    println!("More than 0, but less than 100!");
+}
+```
+
+## Using `match`
+
+You can also use a match statement to peform similar logic, which we will delve into later.  A `match` statement is the most basic form of pattern matching:
+
+```rust 
+let age = 18;
+
+match age {
+    16 => println!("Old enough to drive"),
+    18 => println!("An adult"),
+    _ => println!("Irrelavent age")
+}
+
+```
+
+# Iterating with loops
 
 Loops in Rust are very useful *expressions*, which if you recall, produce a value as a result of some operation.
 
