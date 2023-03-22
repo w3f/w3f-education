@@ -208,9 +208,9 @@ module.exports = {
       label: "Intro to Intermediate Rust: Ownership, Borrowing, & Slices",
       items: [
         'Rust/section3/section-3-intro',
+        'Rust/section3/ownership',
         'Rust/section3/borrowing',
         'Rust/section3/slices',
-        'Rust/section3/ownership'
       ],
     },
     {
