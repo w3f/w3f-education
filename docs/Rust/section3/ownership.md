@@ -11,7 +11,7 @@ While these rules may seem prohibitive at times, they ensure completely memory-s
 
 :::note 
 
-If you aren't familiar with what the stack and heap is, make sure you read this first, as it will provide context for why ownership is important when dealing with certain collections.
+If you aren't familiar with what the stack and heap is, make sure you [read this first](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#the-stack-and-the-heap), as it will provide context for why ownership is important when dealing with collections.
 
 :::
 
