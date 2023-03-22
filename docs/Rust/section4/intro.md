@@ -8,6 +8,6 @@ description: An introduction to intermediate Rust, specifically enums and how to
 In this module, you will become familiar with some of Rust's powerful pattern matching and enumeration capabilities.  
 
 - [Enums](./enums.md)
-- [Pattern Matching](./pattern-matching.md)
+- [Panic! In Rust](./panic.md)
 - [Using match vs if let](./match.md)
 - [Error handling with Result & Option with Result & Option](./error-handling.md)
