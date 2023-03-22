@@ -1,7 +1,7 @@
 ---
 id: loops
-title: Loops & Basic Logic
-sidebar_label: Loops & Basic Logic
+title: Loops & Basic Logic Flows
+sidebar_label: Loops & Basic Logic Flows
 description: Learn how to construct loops, if statements, and when to use the two.
 ---
 
