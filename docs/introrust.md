@@ -37,7 +37,7 @@ This course provides a strong foundation in general purpose Rust, and also empha
 - [Enums](../docs/Rust/section4/enums.md)
 - [Pattern Matching](../docs/Rust/section4/pattern-matching.md)
 - [Using match vs if let](../docs/Rust/section4/match.md)
-- [Error handling](../docs/Rust/section4/error-handling.md)
+- [Error handling with Result & Option](../docs/Rust/section4/error-handling.md)
 
 ## [Module 5 - Intro to Intermediate Rust - Data Structs & Collections](../docs/Rust/section5/intro.md)
 
