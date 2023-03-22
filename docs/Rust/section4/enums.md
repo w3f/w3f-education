@@ -44,7 +44,7 @@ This function takes a string literal as a name, `&str`, and specifically looks f
 
  However, this function is rather bland, and doesn't account for the other possibilities of `AnimalType`.
 
-## Pattern Matching with Enums
+## Basic Pattern Matching with Enums
 
 If you recall, we used a `match` statement in the last module to cover a case where a variable could either be `true` or `false`. Applying this same concept with enums, we can assure that all possible cases are covered.
 
