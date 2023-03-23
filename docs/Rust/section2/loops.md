@@ -5,15 +5,15 @@ sidebar_label: Loops & Basic Logic Flows
 description: Learn how to construct loops, if statements, and when to use the two.
 ---
 
-This section will cover two foundational parts of Rust, and programming in general: loops and logic flows.
+This section will cover two foundational parts of Rust and programming in general: loops and logic flow.
 
 # Basic Logic Flows
 
-Logic, or sometimes called control flows allow for conditional statements, such as `if` to be possible.  It allows for branching logic to be implemented for a program based off of `boolean` values.
+Logic flows, sometimes called control flows, allow for conditional statements, such as `if`, to be possible.  It allows for branching logic to be implemented for a program based on `boolean` values.
 
 ## Using `if`
 
-As said before, implementing logic based off of whether something is true or not would be very useful `if` statements are the cornerstone of conditional logic.
+As said before, implementing logic based on whether something is true or not would be very useful `if` statements are the cornerstone of conditional logic.
 
 ```rust
 let this_is_true: bool = true;
@@ -23,9 +23,9 @@ if this_is_true {
 }
 ```
 
-The above code showcases a very simple example.  The statement `this_is_true` is set to a boolean value, `true`, which when evaluated by the `if` statement, will execute the code within the brackets.
+The above code showcases a very simple example.  The statement `this_is_true` is set to a boolean value, `true`, which will execute the code within the brackets when evaluated by the `if` statement.
 
-It's also possible to use an exclaimation mark (`!`) to further diverge logic:
+It's also possible to use an exclamation mark (`!`) to further diverge logic:
 
 ```rust
 let this_is_true: bool = true;
@@ -37,7 +37,7 @@ if !this_is_true {
 
 This no longer prints, as it looks for the opposite of `true` - `false`.
 
-A more realistic example is checking if a number is higher or lower than expected, like seeing if an age is equal to or above 18:
+A more realistic example is checking if a number is higher or lower than expected, like seeing if a bank balance is over $100.
 
 ```rust
 let bank_balance = 101;
@@ -48,7 +48,7 @@ if bank_balance >= 100 {
 
 ## Using `else if` and `else`
 
-A single `if` statement can only be used so much. Using `else if`, we can create branches of logic within a program:
+A single `if` statement can only be used so much.  Using `else if`, we can create branches of logic within a program:
 
 ```rust
 let bank_balance = 56;
@@ -66,7 +66,7 @@ if bank_balance >= 100 {
 
 ## Using `match`
 
-You can also use a match statement to peform similar logic, which we will delve into later.  A `match` statement is the most basic form of pattern matching:
+You can also use a match statement to perform similar logic, which we will investigate later.  A `match` statement is the most basic form of pattern matching:
 
 ```rust 
 let age = 18;
@@ -74,24 +74,24 @@ let age = 18;
 match age {
     16 => println!("Old enough to drive"),
     18 => println!("An adult"),
-    _ => println!("Irrelavent age")
+    _ => println!("Irrelevant age")
 }
 
 ```
 
 # Iterating with loops
 
-Loops in Rust are very useful *expressions*, which if you recall, produce a value as a result of some operation.
+Loops in Rust are very useful *expressions*, which, if you recall, produce a value as a result of some operation.
 
 Although Rust supports [five types of loops](https://doc.rust-lang.org/reference/expressions/loop-expr.html), we will go over the most common types:
 
 - The `loop` expression - an infinite loop which goes till `break` is called.
-- The `while` expression - a loop which continues until a condition is true or false.
-- The `for` expression - a loop which is useful for iterating over a collection of items.
+- The `while` expression - a loop that continues until a condition is true or false.
+- The `for` expression - a loop that is useful for iterating over a collection of items.
 
 ## Infinite loops: `loop`
 
-Using the `loop` keyword, we can define an expression which iterates, or loops, infinitely: 
+Using the `loop` keyword, we can define an expression that iterates, or loops, infinitely: 
 
 ```rust
 fn main() {
@@ -105,7 +105,7 @@ This type of loop is typically used to keep trying some operation until a condit
 
 ## Conditional loops: `while`
 
-Using a `while` loop, it will automatically stop once a condition has been fulfilled. An example would be looping until a number has reached a certain limit:
+A `while` loop will automatically stop once a condition has been fulfilled.  An example would be looping until a number has reached a certain limit:
 
 ```rust
 
@@ -119,9 +119,9 @@ fn main() {
 
 ```
 
-In this case, we define a mutable variable `x`.  The while loop, which defines a condition while x is less than or equal to `10` (`x <= 10`), keeps executing the logic within until the condition for `x` is met.
+In this case, we define a mutable variable `x`.  The while loop, which defines a condition while x is less than or equal to `10` (`x <= 10`), executes the logic until the condition for `x` is met.
 
-A while loop could also iterate over a collection, if needed: 
+A while loop could also iterate over a collection if needed: 
 
 ```rust
 
@@ -136,11 +136,11 @@ fn main() {
 
 ```
 
-This is a bit clumsy, not to mention not friendly to any updates to the `months` array - an index could be out of bounds if we add or take away any elements from the array. Luckily, there is a better way to accomplish this.
+This is a bit clumsy, not to mention not friendly to any updates to the `months` array - an index could be out of bounds if we add or take away any elements from the array.  Luckily, there is a better way to accomplish this.
 
 ## Looping over collections: `for`
 
-The `for` loop is primarily used for looping over a collection of items, such as an array.  You may recall that we used a `for` loop to loop over a number of course modules. 
+The `for` loop is primarily used for looping over a collection of items, such as an array.  You may recall that we used a `for` loop to loop over several course modules. 
 
 Let's refactor the code from `while` to `for`:
 
@@ -155,7 +155,7 @@ fn main() {
 
 ```
 
-Besides it being much more concise, there is no worry about having an `index out of bounds` error.  
+Besides being much more concise, there is no worry about having an `index out of bounds` error.  
 
 
 ## Try it out!
