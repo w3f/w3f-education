@@ -87,6 +87,23 @@ let also_floating_double = 1.45;
 
 ```
 
+
+#### Operators
+
+As in any other programming language, there are a set of operators that allow for basic mathematics to be performed:
+
+```rust 
+
+let addition = 1 + 1; // 2
+let subtraction = 10 - 5; // 5
+let division = 8 / 4; // 2
+let multiplication = 4 * 4; // 16
+
+```
+
+Likewise, Rust also supports bitwise operators. A full list of Rust's operators and symbols may be [found here.](https://doc.rust-lang.org/book/appendix-02-operators.html)
+
+
 ### Boolean Types
 
 A boolean value can only have two possible states: `true`, or `false`.  Declaring a boolean in Rust is simple:
