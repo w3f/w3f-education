@@ -9,5 +9,4 @@ In this module, you will become familiar with some of Rust's powerful pattern ma
 
 - [Enums](./enums.md)
 - [Panic! In Rust](./panic.md)
-- [Using match vs if let](./match.md)
 - [Error handling with Result & Option with Result & Option](./error-handling.md)

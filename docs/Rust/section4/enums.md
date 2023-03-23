@@ -5,13 +5,14 @@ sidebar_label: Enums
 description: Learn what enums are and how to use them in Rust.
 ---
 
-Enumerations, or **enums** are data structures that allow for a list of pre-defined options in Rust.  They are useful for pattern matching, defining specific conditions, defining errors, and more.  
+Enumerations, or **enums** are data structures that allow for a list of pre-defined options in Rust.  They are useful for pattern matching, defining expected conditions, errors, and more.  
 
-An example of enums in use would be defining different types of animal classes: 
+An example of enums in use would be defining different types of animal classes.  An enum's values are called *variants*: 
 
 ```rust
 // Use the `enum` keyword to define an enum
 // This derive statement is a macro that ensures we can use the `==` to compare enum values
+// Here, we can see there are four variants that belong inside of the `AnimalType` enum.
 #[derive(PartialEq)]
 enum AnimalType {
     Mammal,
@@ -78,6 +79,11 @@ The syntax for specifying a `match` pattern starts with the keyword `match`, fol
 // The possiblity => output
  AnimalType::Mammal => println!("{name} is a mammal!"),
 ```
+
+
+## Using `if let`
+
+
 
 
 ## Try it yourself!
