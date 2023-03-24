@@ -7,30 +7,30 @@ description: Learn what slices are, how they work, and why they are useful.
 
 Slices are another type of reference.  As the name implies, they *refer* to a *slice* of information, in bytes, to an existing variable in memory.  
 
-Instead of having to handle an entire collection, which could be costly performance wise, using slices we can just handle a *reference* to those items.  These slices can be modified in-place, or returned as immutable as part of a function.
+Instead of handling an entire collection, which could be costly performance-wise, we can use slices to handle a *reference* to those items.  These slices can be modified in place or returned as immutable as part of a function.
 
 ## String slices
 
-Working with string and byte slices are one of the most common tasks when working with Rust, especially at a lower level.
+Working with string and byte slices is one of the most common tasks when working with Rust, especially at a lower level.
 
-A String slice is simply a reference to part, or slice, of a String:
+A String slice is simply a reference to a part, or slice, of a String:
 
 ```rust
 
 let name = String::from("Bader");
 // We can use the `..` operator to specify a range for the slice to cover
-// In this case, we just want the 'Bad' from Bader
+// In this case, we want the 'Bad' from Bader
 let bad_slice = &name[0..3];
 println!("{bad_slice}"); // Prints "Bad"
 
 ```
 
-The double period syntax (`..`) signifies a range.  It creates a variable that represents that specific string in memory from those specified positions (`[starting_index..ending_index]`).
+The double period syntax (`..`) signifies a range.  It creates a variable that represents that specific String in memory from those specified positions (`[starting_index..ending_index]`).
 
 
 ## Modifying a slice in-place
 
-It's possible to modify a mutable slice.  This is also called modifying it 'in-place', as you are manipulating the data within that specific starting and ending index. 
+It's possible to modify a mutable slice.  This is also called changing it 'in place', as you are manipulating the data within that specific starting and ending index. 
 
 ```rust
 
@@ -50,7 +50,7 @@ fn modify_in_place(s: &mut String) {
 
 ```
 
-It's possible that we can define simply a slice, versus the entire String.  This way, we can only act on part of the data given.
+We can define simply a slice versus the entire String.  This way, we can only act on the part of the data given.
 
 
 ## Try it yourself!
@@ -60,7 +60,7 @@ It's possible that we can define simply a slice, versus the entire String.  This
 
 ## What's happening here?
 
-The code above illustrates how to construct a basic string slice, as well as return it in a function. To make it interesting, try to pass `name` as a mutable reference - does it work? Why and why not?
+The code above illustrates how to construct a basic string slice as well as return it in a function.  To make it interesting, try to pass `name` as a mutable reference - does it work?  Why and why not?
 
 
 

@@ -5,13 +5,13 @@ sidebar_label: The Ownership Model
 description: Learn how the ownership model works in Rust, and why it allows for Rust to be safe at compile time.
 ---
 
-As mentioned in the intro, a crucial part of Rust's safety is its memory management.  **Ownership** in Rust is the concept that defines a set of rules for how to handle memory in a Rust program.  It does not affect performance - as  ownership checks happen at compile time.  
+As mentioned in the intro, a crucial part of Rust's safety is its memory management.  **Ownership** in Rust is the concept that defines a set of rules for how to handle memory in a Rust program.  It does not affect performance - as ownership checks happen at compile time.  
 
-While these rules may seem prohibitive at times, they ensure completely memory-safe code.
+While these rules may seem prohibitive, they sometimes ensure entirely memory-safe code.
 
 :::note 
 
-If you aren't familiar with what the stack and heap is, make sure you [read this first](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#the-stack-and-the-heap), as it will provide context for why ownership is important when dealing with collections.
+If you aren't familiar with the stack and heap, make sure you [read this first](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#the-stack-and-the-heap), as it will provide context for why ownership is essential when dealing with collections.
 
 :::
 
@@ -21,9 +21,9 @@ As stated in the Rust book, ownership has three primary concepts/rules:
 
 - Every single value (statement) has an owner
 - There can only be one owner at a time
-- Ownership is heavily dependent on scope. As soon as a statement goes out of scope, the ownership is dropped.
+- Ownership is heavily dependent on the scope.  When a statement goes out of scope, the ownership is dropped.
 
-These rules ensure that the ownership of a particular variable in memory is managed correctly and properly handled.Simply put - the scope defines the ownership of a particular variable, as you will see.
+These rules ensure that the ownership of a particular variable in memory is managed correctly and appropriately. Simply put - the scope defines the ownership of a particular variable, as you will see.
 
 ## Variable Scope
 
@@ -43,10 +43,10 @@ Let's run through an example to demonstrate the importance of scope and how it r
 // We cannot use `x` here!
 ```
 
-In terms of ownership, the *variable `x`* is owned by this scope, defined by curly brackets, until the end of the scope.  From here, the Rust compiler handles the the de-allocation of memory in a safe manner.
+In terms of ownership, the *variable `x`* is owned by this scope, defined by curly brackets, until the end of the scope.  From here, the Rust compiler handles the de-allocation of memory in a safe manner.
 
 
-Ownership gets more complex when dealing with values that aren't defined at compile-time.  For more information on the complexities of ownership, read the [Rust book's explanation](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html). 
+Ownership gets more complex when dealing with values not defined at compile-time.  For more information on the complexities of ownership, read the [Rust book's explanation](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html). 
 
 
 ## Try it out!
@@ -55,5 +55,5 @@ Ownership gets more complex when dealing with values that aren't defined at comp
 
 ## What's happening here?
 
-We define two variables here: `x` and `y`.  Both are fixed size, and known at compile time.  The difference between the two is that `y` is owned by the scope of the `main` function, while `x` is owned by another, inner scope.  The code illustrates that `x` is dropped after the inner scope ends, while `y` can still be used until the end of the `main` function's scope.
+We define two variables here: `x` and `y`.  Both are fixed size, and known at compile time.  The difference between the two is that `y` is owned by the scope of the `main` function, while `x` is owned by another inner scope.  The code illustrates that `x` is dropped after the inner scope ends, while `y` can still be used until the end of the `main` function's scope.
 
