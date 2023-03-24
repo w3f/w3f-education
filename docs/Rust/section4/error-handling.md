@@ -63,10 +63,24 @@ let maybe_value: Option<i32> = safe_access(1, &valid_array);
 
 // However, let's match the function directly:
 match safe_access(1, &valid_array) {
-    Some(value) => println!("We have a value!  {value}"),
+    Some(value) => println!("We have a value! {value}"),
     None => println!("It doesn't exist :()")
 };
 
+```
+
+## Using `if let` with Option
+
+Alternatively, an `if let` statement may be used instead of `match`. `if let` essentially will peform the same type of pattern matching, where it will look for `Some` value, assign it to a variable if it exists, and safely `unwrap` it:
+
+```rust 
+let valid_array = [1, 2, 3];
+
+if let Some(value) = safe_access(0, &valid_array) {
+    println!("{value}"); // 1
+} else {
+     println!("Nothing valid was found!");
+}
 ```
 
 ## Using Result
