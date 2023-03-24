@@ -28,4 +28,4 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
 There are a few methods that could cause a panic, namely within using `Result`.  Methods such as `unwrap()` and `expect()` an cause a panic if the `Result` is `None`, as the error is not being handled.  As a result, the program simply panics and closes to prevent any further unwanted behavior.
 
-The program should only panic if it could be in a "bad" state, where there is invalid data flowing within the program.  
+The program should only panic if it could be in a "bad" state, where there is invalid data flowing within the program.  Ideally, errors should be recoverable if possible.  Concepts like logic flows and pattern matching help with handling different types and Errors, which will be apparent in the next section.

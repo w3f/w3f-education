@@ -23,7 +23,7 @@ enum AnimalType {
 
 ```
 
-In a function, we can for example take any type that is `AnimalType`, which in turn means there are four possible values as to what it can be.  The program can choose to implement different behavior based on the value of the enum:
+In a function, we can, for example, take any type that is `AnimalType`, which in turn means there are four possible values as to what it can be.  The program can choose to implement different behavior based on the value of the enum:
 
 :::note
 
@@ -41,13 +41,13 @@ fn take_animal(name: &str, animal_type: AnimalType) {
 
 ```
 
-This function takes a string literal as a name, `&str`, and specifically looks for whether the passed in `AnimalType` is a mammal or not. Enum values are accessed using a double colon, `::`, and can be checked as a conditional statement if needed.
+This function takes a string literal as a name, `&str`, and specifically looks for whether the passed in `AnimalType` is a mammal or not.  Enum values are accessed using a double colon, `::`, and can be checked as a conditional statement if needed.
 
- However, this function is rather bland, and doesn't account for the other possibilities of `AnimalType`.
+ However, this function is rather bland and doesn't account for the other possibilities of `AnimalType`.
 
 ## Basic Pattern Matching with Enums
 
-If you recall, we used a `match` statement in the last module to cover a case where a variable could either be `true` or `false`. Applying this same concept with enums, we can assure that all possible cases are covered.
+If you recall, we used a `match` statement in the last module to cover a case where a variable could either be `true` or `false`.  Applying this same concept with enums, we can ensure that all possible cases are covered.
 
 This concept of matching a case to an outcome is called **pattern matching**, and is a very common design pattern in Rust.
 
@@ -69,18 +69,18 @@ fn take_animal(name: &str, animal_type: AnimalType) {
 
 ```
 
-While this could've been done with a series of `if` and `else if` statements, using `match` is a more concise and powerful way to pair a specific input to a specific output.  Depending on the value of `animal_type`, the `match` statement will print a line appropriate to that specific input.
+While this is entirely possible with a series of `if` and `else if` statements, using `match` is a more concise and powerful way to pair a specific input to a particular output.  The value of `animal_type`, the `match` statement will print a line appropriate to that specific input.
 
 :::info
 
-Anything that is 'conditional', i.e., true or false, can be pattern matched.  In future modules, you will see more examples of advanced pattern matching that takes advantage of this powerful feature.
+Anything that is 'conditional', i.e., true or false, can be pattern matched.  In future modules, you will see more examples of advanced pattern matching that take advantage of this powerful feature.
 
 :::
 
 The syntax for specifying a `match` pattern starts with the keyword `match`, followed by the name of the value you wish to pattern match.  Each possibility is then paired with a specific output using an arrow (`=>`):
 
 ```rust
-// The possiblity => output
+// The possibility => output
  AnimalType::Mammal => println!("{name} is a mammal!"),
 ```
 
@@ -90,4 +90,4 @@ The syntax for specifying a `match` pattern starts with the keyword `match`, fol
 
 ## What's happening here?
 
-This code defines an enum, `AnimalType`, with **four** variants.  A function is defined, `take_animal`, that calls for a string literal and `AnimalType` as parameters. A `match` statement then matches the input of `AnimalType` to the desired outcome.
+This code defines an enum, `AnimalType`, with **four** variants.  A function is defined, `take_animal`, that calls for a string literal and `AnimalType` as parameters.  A `match` statement then matches the input of `AnimalType` to the desired outcome.
