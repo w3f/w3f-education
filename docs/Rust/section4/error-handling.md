@@ -63,7 +63,7 @@ let maybe_value: Option<i32> = safe_access(1, &valid_array);
 
 // However, let's match the function directly:
 match safe_access(1, &valid_array) {
-    Some(value) => println!("We have a value! {value}"),
+    Some(value) => println!("We have a value: {value}"),
     None => println!("It doesn't exist :()")
 };
 
@@ -124,7 +124,6 @@ enum SafeArrayError {
 With this type defined, we can now change our function to the following:
 
 ```rust
-
 enum SafeArrayError {
     InvalidIndex
 }
@@ -140,5 +139,8 @@ fn safe_access_result(index: usize, slice: &[i32]) -> Result<i32, SafeArrayError
 
 ## Try it yourself!
 
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn+main%28%29+%7B%0A++++let+empty_array+%3D+%5B%5D%3B%0A++++let+valid_array+%3D+%5B1%2C+2%2C+3%5D%3B%0A++++%2F%2F+Pass+it+in+as+a+reference%2C+as+per+the+function+signature%0A%0A++++println%21%28%22%7B%3A%3F%7D%22%2C+safe_access%281%2C+%26empty_array%29%29%3B+%2F%2F+None%0A++++println%21%28%22%7B%3A%3F%7D%22%2C+safe_access%281%2C+%26valid_array%29%29%3B+%2F%2F+Some%282%29%0A%0A++++%2F%2F+Using+match%0A++++match+safe_access%281%2C+%26valid_array%29+%7B%0A++++++++Some%28value%29+%3D%3E+println%21%28%22We+have+a+value%3A+%7Bvalue%7D%22%29%2C%0A++++++++None+%3D%3E+println%21%28%22It+doesn%27t+exist+%3A%28%29%22%29%2C%0A++++%7D%3B%0A%0A++++%2F%2F+Using+if+let%0A++++if+let+Some%28value%29+%3D+safe_access%280%2C+%26valid_array%29+%7B%0A++++++++println%21%28%22%7Bvalue%7D%22%29%3B+%2F%2F+1%0A++++%7D+else+%7B%0A++++++++println%21%28%22Nothing+valid+was+found%21%22%29%3B%0A++++%7D%0A%0A++++%2F%2F+Using+Result%0A++++println%21%28%22%7B%3A%3F%7D%22%2C+safe_access_result%281%2C+%26empty_array%29%29%3B+%2F%2F+Err%28InvalidIndex%29%0A++++println%21%28%22%7B%3A%3F%7D%22%2C+safe_access_result%281%2C+%26valid_array%29%29%3B+%2F%2F+Ok%282%29%0A%7D%0A%0A%2F%2F+An+example+of+a+function+that+returns+an+Option%2C+aka%2C+Some%28i32%29+or+None.%0A%2F%2F+Notice+the+angled+brackets+which+contain+the+type+we%27re+expecting.%0Afn+safe_access%28index%3A+usize%2C+slice%3A+%26%5Bi32%5D%29+-%3E+Option%3Ci32%3E+%7B%0A++++%2F%2F+We+check+to+see+if+the+length+of+the+slice+is+zero%2C+or%0A++++%2F%2F+less+than+the+requested+index.++If+it+is%2C+we+return+%60None%60%0A++++if+slice.len%28%29+%3D%3D+0+%7C%7C+slice.len%28%29+%3C+index+%7B%0A++++++++return+None%3B%0A++++%7D%0A++++%2F%2F+Otherwise%2C+we%27re+good+to+return+the+requested+item%21%0A++++Some%28slice%5Bindex%5D%29%0A%7D%0A%0A%23%5Bderive%28Debug%29%5D%0Aenum+SafeArrayError+%7B%0A++++InvalidIndex%2C%0A%7D%0A%0Afn+safe_access_result%28index%3A+usize%2C+slice%3A+%26%5Bi32%5D%29+-%3E+Result%3Ci32%2C+SafeArrayError%3E+%7B%0A++++if+slice.len%28%29+%3D%3D+0+%7C%7C+slice.len%28%29+%3C+index+%7B%0A++++++++%2F%2F+Now%2C+we+return+a+context-specific+error.%0A++++++++return+Err%28SafeArrayError%3A%3AInvalidIndex%29%3B%0A++++%7D%0A++++Ok%28slice%5Bindex%5D%29%0A%7D%0A"></iframe>
 
 ## What's happening here?
+ 
+There are two functions, `safe_access` and `safe_access_result`. These functions both accomplish the same task - ensure a particular element of an array can be accessed safely.  A custom error type is also defined, `SafeArrayError`, which is utilized within the `safe_access_result` function.
