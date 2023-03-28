@@ -219,8 +219,7 @@ module.exports = {
       items: [
         'Rust/section4/section-4-intro',
         'Rust/section4/enums',
-        'Rust/section4/match',
-        'Rust/section4/pattern-matching',
+        'Rust/section4/panic',
         'Rust/section4/error-handling'
       ],
     },
