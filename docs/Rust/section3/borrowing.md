@@ -5,7 +5,7 @@ sidebar_label: Borrowing & References
 description: Learn how the borrowing model works in Rust, and how to utilize it properly.
 ---
 
-The borrowing model in Rust is quite trivial.  As mentioned, ownership issues may arise once dealing with values stored on the heap (in other words, values that aren't of fixed size and are defined at compile time).
+The borrowing model in Rust is quite trivial.  As mentioned, ownership issues may arise when dealing with values stored on the heap (in other words, values that aren't of fixed size and are defined at compile time).
 
 While ownership does ensure that all memory will be allocated appropriately/deallocated, it does introduce some complexity that references and borrowing solve.
 
