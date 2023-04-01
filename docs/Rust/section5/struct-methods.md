@@ -5,9 +5,9 @@ sidebar_label: Defining Methods for Structs
 description: Learn how to define methods for structs in Rust.
 ---
 
-**Methods** are very similar to **functions** - the difference here being that **methods** are applied to structs.  They breathe life into structs by provided associated logic that often utilizes its inner fields, and represents an instance of that struct.
+**Methods** are very similar to **functions** - the difference here being that **methods** are applied to structs.  They breathe life into structs by providing associated logic that often utilizes its inner fields and represents an instance of that struct.
 
-The syntax is nearly identical to a function, with the exception that it's a part of the **implementation** of the struct:
+The syntax is nearly identical to a function, with the exception that its part of the **implementation** of the struct:
 
 ```rust
 struct Person {
@@ -31,7 +31,7 @@ a_person.print_person();
 // This person's name is Bader and is 22 years old
 ```
 
-In the above **implementation**, we defined a method, `print_person`, which takes `&self` as a parameter.  `&self` is an immutable reference to that specific instance, in this case, `a_person`. To access these methods ,we must first have an instance of the struct defined, then use the dot operator (`.`) to access the method.  The `&self` parameter is actually a shorthand way of saying:
+In the above **implementation**, we defined a method, `print_person`, which takes `&self` as a parameter.  `&self` is an immutable reference to that specific instance, in this case, `a_person`.  To access these methods, we must first have an instance of the struct defined, then use the dot operator (`.`) to access the method.  The `&self` parameter is actually a shorthand way of saying:
 
 ```rust
 self: &Self -> person: &Person
@@ -73,7 +73,7 @@ a_person.is_older(&another_person_who_is_older); // false
 
 ## Associated Functions
 
-All functions under the `impl` (implementation) block are considered "associated" because they effectively become part of the type.  Up until now, you've seen all methods take `self` as as a parameter - but it is possible to have a function that doesn't require an existing instance of the struct to exist.  They are often used for constructors to create new instances of that struct, as seen below:
+All functions under the `impl` (implementation) block are considered "associated" because they effectively become part of the type.  Until now, you've seen all methods take `self` as a parameter - but it is possible to have a function that doesn't require an existing instance of the struct.  They are often used as constructors to create new instances of that struct, as seen below:
 
 ```rust
 impl Person {
