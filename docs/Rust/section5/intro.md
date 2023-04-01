@@ -5,6 +5,8 @@ sidebar_label: Intro to Intermediate Rust - Data Structs & Collections
 description: An introduction to intermediate Rust, specifically how to utilize data structs and collections.
 ---
 
+This module will delve into some more intermediate concepts: collections and data structs.
+
 - [Structs](./structs.md)
 - [Defining Methods for Structs](./struct-methods.md)
 - [Vectors, Strings & Hashmaps](./collections.md)
