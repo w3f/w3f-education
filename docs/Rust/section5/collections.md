@@ -13,10 +13,6 @@ There are three main commonly used collections in Rust:
 - Hashmaps - key value data structures that store a **map** of information.
 - Strings - a collection of characters which are stored on the heap.
 
-## Strings
-
-The `String` collection should be very familiar by now.  `String` is a collection of characters stored on the heap.  The `&str` type, or string slice/literal is different from this type, as it's a primitive type, whereas `String` is a data structure part of the Rust standard library.  At it's core, a String is actually a wrapped type that is a vector of bytes.  
-
 ## Vectors
 
 The official type declaration of a vector is `Vec<T>`, which represents a list of any generic type `T`.  We'll go over generics in the next module, but for now just know it used exactly how `T` is used in the `Option<T>` and `Result<T, E>` enums.  Like arrays, Vectors can only store values of the same type.
@@ -50,6 +46,25 @@ let four: i32 = &vector[2];
 
 A vector follows all rules of the borrow checker - meaning if the vector is mutable, then an immutable reference to an element is impossible to have.  Vectors also aren't limited to scalar types - you may define a struct, and store a list of structs within a vector if desired.
 
+## Strings
+
+The `String` collection should be very familiar by now.  `String` is a collection of characters stored on the heap.  The `&str` type, or string slice/literal is different from this type, as it's a primitive type, whereas `String` is a data structure part of the Rust standard library.  At it's core, a String is actually a wrapped type that is a vector of bytes.  
+
+Strings are rather complicated, yet very useful data structures.  If you desire to learn more about Strings at a more technical level, please read the Rust book, as this is just meant to serve as an introduction to how to use `String`.
+
+To create a new `String`, use the associated function `new()`, along with others:
+
+```rust
+// An empty string
+let s = String::new();
+
+// Push a string literal to a String
+s.push_str("Web");
+
+// Push a single char using .push()
+s.push('3');
+```
+
 ## Hashmaps
 
 Hashmaps store a mapping of `K` to `V`, and in other languages are often to referred to as a map, dictionary, or hash table.  As with `T` in `Vec<T>`, `K` and `V` are generic types used to refer to *any* type. As with vectors, values within the hashmap are stored on the heap.  If an external variable is placed as part of a hashmap insertion, then that variable is owned by the hashmap.
@@ -76,9 +91,11 @@ let bader_bal: Option<i32> = balances.get(&key);
 
 The `Option` returned must be handled properly, or a default value must be provided to `bader_bal`.  
 
-
 ## Try it yourself!
 
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=use+std%3A%3Acollections%3A%3AHashMap%3B%0A%0A%0Afn+main%28%29+%7B%0A%2F%2F+VECTORS%21%0A++++%2F%2F+Declare+a+new.+empty+vector%0A++++let+mut+vector%3A+Vec%3Ci32%3E+%3D+Vec%3A%3Anew%28%29%3B%0A++%0A++++%2F%2F+Add+new+elements+to+the+vector%0A++++vector.push%282%29%3B+%2F%2F+%5B2%5D%0A++++vector.push%283%29%3B+%2F%2F+%5B2%2C+3%5D%0A++++vector.push%284%29%3B+%2F%2F+%5B2%2C+3%2C+4%5D%0A++++%0A++++%2F%2F+Reading+via+.get%28%29%0A++++let+four%3A+Option%3C%26i32%3E+%3D+vector.get%282%29%3B+%2F%2F+retrieves+an+Option%2C+which+can+be+pattern+matched%0A++++%0A++++%2F%2F+Reading+a+vector+via+indexing+-+same+as+an+array%0A++++%2F%2F+use+with+caution%2C+the+index+may+not+exist%21%0A++++let+four%3A+%26i32+%3D+%26vector%5B2%5D%3B%0A++++%0A%0A%2F%2F+STRINGS%21%0A++++%2F%2F+An+empty+string%0A++++let+mut+s+%3D+String%3A%3Anew%28%29%3B%0A++++%2F%2F+Push+a+string+literal+to+a+String%0A++++s.push_str%28%22Web%22%29%3B%0A++++%2F%2F+Push+a+single+char+using+.push%28%29%0A++++s.push%28%273%27%29%3B%0A%0A%2F%2F+HASHMAPS%21%0A++++%2F%2F+An+empty+hashmap%0A++++let+mut+balances+%3D+HashMap%3A%3Anew%28%29%3B%0A++++%2F%2F+Insert+a+key%2C+value+type+of+String+-%3E+i32+%28a+name+to+balance%29%0A++++balances.insert%28String%3A%3Afrom%28%22Bader%22%29%2C+100%29%3B%0A++++%2F%2F+Create+a+key%2C+aka+a+String%0A++++let+key+%3D+String%3A%3Afrom%28%22Bader%22%29%3B%0A++++let+bader_bal%3A+Option%3C%26i32%3E+%3D+balances.get%28%26key%29%3B%0A%0A%7D%0A"></iframe>
 
 ## What's happening here?
+
+All three collections and their common, respective operations are shown above. For more info, be sure to checkout the [Rust Book](https://doc.rust-lang.org/book/ch08-00-common-collections.html) as well as the [Rust Standard Library's](https://doc.rust-lang.org/std/index.html) documentation for each of these data structures.
 

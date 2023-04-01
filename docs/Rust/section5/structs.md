@@ -13,7 +13,7 @@ To create a struct, the `struct` keyword is used, followed by the name, then a s
 
 ```rust
 struct Person {
-    age: u32,
+    age: i32,
     name: String,
 }
 ```
@@ -140,4 +140,8 @@ If you observed, we used `String`, an ownable data type, versus `&str` in our st
 
 ## Try it yourself!
 
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=%2F%2F+Defining+a+struct+that+represents+a+Person%0Astruct+Person+%7B%0A++++age%3A+u32%2C%0A++++name%3A+String%2C%0A%7D%0A%0A%2F%2F+Example+of+a+%22tuple-like%22+struct%0Astruct+RGB%28u32%2C+u32%2C+u32%29%3B%0A%0A%2F%2F+A+%22unit-type%22+struct%2C+which+has+no+fields%0Astruct+AlwaysEqual%3B%0A%0A%2F%2F+A+function+that+asks+for+two+parameters%3A+an+age%2C+and+name.%0A%2F%2F+It+returns+a+%60Person%60+from+this+information.%0Afn+create_person%28age%3A+u32%2C+name%3A+String%29+-%3E+Person+%7B%0A++++%2F%2F+Notice+we+can+use+the+expression+as+the+last+expression%0A++++%2F%2F+to+return+a+new+instance+of+%60Person%60%0A++++%2F%2F+Note+the+shorthand+syntax%21%0A++++Person+%7B%0A++++++++age%2C%0A++++++++name%0A++++%7D%0A%7D%0A%0Afn+main%28%29+%7B%0A++++%2F%2F+Defining+a+struct%2C+where+it+takes+%27age%27+as+an+i32+and+%27name%27+as+a+String%0A++++let+a_person+%3D+Person+%7B%0A++++++++age%3A+22%2C%0A++++++++name%3A+String%3A%3Afrom%28%22Bader%22%29%2C%0A++++%7D%3B%0A++++%0A++++%2F%2F+Using+the+dot+operator+to+access+the+%27age%27+field+of+the+struct%0A++++println%21%28%22The+age+of+the+person+is%3A+%7B%7D%22%2C+a_person.age%29%3B+%2F%2F+22%0A++++%0A++++let+other_bader%3A+Person+%3D+create_person%2825%2C+String%3A%3Afrom%28%22OtherBader%22%29%29%3B%0A++++%0A++++%2F%2F+Using+the+%27spread-like-operator%27+to+inherit+previous+struct+values%0A++++let+older_person_same_name+%3D+Person+%7B%0A++++age%3A+23%2C%0A++++%2F%2F+This+operator+now+allowed+for+this+instance+of+%60Person%60%0A++++%2F%2F+to+inherit+all+attributes+except+age%2C+because+we+specified+it.%0A++++..a_person%0A%7D%3B%0A++++%0A%7D%0A"></iframe>
+
 ## What's happening here?
+
+A struct is defined with two fields, `age` and `name`.  Several instances are constructed, as well as an updated version which uses some of the previous values to create a new struct.  Several other concepts are also illustrated, such as the use of the "tuple" and "unit" like structs.

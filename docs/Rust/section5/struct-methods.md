@@ -11,7 +11,7 @@ The syntax is nearly identical to a function, with the exception that it's a par
 
 ```rust
 struct Person {
-    age: u32,
+    age: i32,
     name: String,
 }
 
@@ -19,7 +19,7 @@ struct Person {
 // We can add methods on each instance of the struct
 impl Person {
     fn print_person(&self) {
-        println!("This person's name is {self.name} and is {self.age} years old.");
+        println!("This person's name is {} and is {} years old.", self.name, self.age);
     }
 }
 let a_person = Person {
@@ -28,7 +28,6 @@ let a_person = Person {
 };
 
 a_person.print_person();
-
 // This person's name is Bader and is 22 years old
 ```
 
@@ -50,7 +49,7 @@ It's also possible to accept more parameters of the same type as part of the met
 ```rust
 impl Person {
     fn print_person(&self) {
-        println!("This person's name is {self.name} and is {self.age} years old.");
+        println!("This person's name is {} and is {} years old.", self.name, self.age);
     }
 
     fn is_older(&self, other: &Person) -> bool {
@@ -94,4 +93,8 @@ let person = Person::new(22, String::from("Bader"));
 
 ## Try it yourself!
 
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=struct+Person+%7B%0A++++age%3A+i32%2C%0A++++name%3A+String%2C%0A%7D%0A%0Aimpl+Person+%7B%0A++++%2F%2F+Notice+the+return+type+is+%60Self%60%3A%0A++++fn+new%28age%3A+i32%2C+name%3A+String%29+-%3E+Self+%7B%0A++++++++%2F%2F+Shorthand+syntax+for+struct+fields+from+the+previous+lesson%21%0A++++++++Person+%7B+age%2C+name+%7D%0A++++%7D%0A%0A++++%2F%2F+Prints+a+person%0A++++fn+print_person%28%26self%29+%7B%0A++++++++println%21%28%22This+person%27s+name+is+%7B%7D+and+is+%7B%7D+years+old.%22%2C+self.name%2C+self.age%29%3B%0A++++%7D%0A%0A++++fn+is_older%28%26self%2C+other%3A+%26Person%29+-%3E+bool+%7B%0A++++++++%2F%2F+Return+if+the+other+person+is+older+or+not+as+an+expression%0A++++++++other.age+%3E+self.age%0A++++%7D%0A%7D%0A%0A%0Afn+main%28%29+%7B%0A++++let+a_person+%3D+Person+%7B%0A++++++++age%3A+22%2C%0A++++++++name%3A+String%3A%3Afrom%28%22Bader%22%29%2C%0A++++%7D%3B%0A%0A++++let+another_person_who_is_older+%3D+Person%3A%3Anew%2825%2C+%22Johnny%22.to_string%28%29%29%3B%0A%0A++++a_person.is_older%28%26another_person_who_is_older%29%3B+%2F%2F+false%0A++++%0A++++a_person.print_person%28%29%3B%0A++++another_person_who_is_older.print_person%28%29%3B%0A%7D%0A"></iframe>
+
 ## What's happening here?
+
+This example showcases how a `Person` can be printed, compared against other borrowed `Person`(s), and how an associated function can be used to create a new `Person`.
