@@ -5,13 +5,13 @@ sidebar_label: Lifetimes
 description: Learn the Rust lifetime model.
 ---
 
-If you recall in the Ownership section of this course, a value in Rust is only as useful as the scope it's in. Once it is out of scope, it is out of memory and disregarded. This concept is called a **lifetime**.  Every reference in Rust has a **lifetime**, although they are mostly inferred.
+If you recall, in the Ownership section of this course, a value in Rust is only as valid as its scope.  Once it is out of scope, it is out of memory and disregarded.  This concept is called a **lifetime**.  Every reference in Rust has a **lifetime**, although they are mostly inferred.
 
 ## When to Declare Explicit Lifetimes
 
-Lifetimes are a type of generic, and are used to **validate** references.  In essence, the lifetime is defined by the scope in which a particular reference is deemed valid. In other words, it uses the **borrow checker** to ensure that dangling pointers don't occur.
+Lifetimes are also generic, and are used to **validate** references.  In essence, the lifetime is defined by the scope in which a particular reference is deemed valid.  In other words, it uses the **borrow checker** to ensure that dangling pointers don't occur.
 
-Borrows are as valid as the original source:
+Borrows are as valid as the source:
 
 ```rust
 fn main() { // Lifetime "A", or 'a.
@@ -41,11 +41,11 @@ error[E0597]: `x` does not live long enough
  |                - borrow later used here
  ```
 
- Notice here, we have not explicitly defined lifetimes - as they are implicitly done for us.
+ Notice here that we have not explicitly defined lifetimes - as they are implicitly done for us.
 
 ## Lifetime Annotations
 
-Lifetime annocations, as mentioned, are generics. They follow the conventin of an apostrphe, `'`, followed by the letter of going from `a` onwards.
+Lifetime annotations, as mentioned, are generics.  They follow the convention of an apostrophe, `'`, followed by the letter of going from `a` onwards.
 
 ### Annotating Functions
 
@@ -54,13 +54,13 @@ To annotate a function with an explicit lifetime, use `'a` like any other generi
 ```rust
 fn bad_lifetime<'a>() -> &'a i32 {
     let _x: i32 = 19;
-    // ERROR: `_x` does not live long enough, it gets dropped at the end of the function!
+    // ERROR: `_x` does not live long enough; it gets dropped at the end of the function!
     let y: &'a i32 = &_x;
     y
 }
 ```
 
-However, as the function name suggests - this does not work, as `_x` does not live long enough and is deallocated from memory. `y` then points to that deallocated memory, which is a prime example of a **dangling pointer**.  To fix this, we must ensure that `_x` is a refernece that has the same lifetime as `y` as well as the function itself.
+However, as the function name suggests - this does not work, as `_x` does not live long enough and is deallocated from memory.  `y` then points to that deallocated memory, which is a prime example of a **dangling pointer**.  To fix this, we must ensure that `_x` is a reference that has the same lifetime as `y` as well as the function itself.
 
 ```rust
 fn fixed_lifetime<'a>() -> &'a i32 {
@@ -71,7 +71,7 @@ fn fixed_lifetime<'a>() -> &'a i32 {
 
 ## Static Lifetimes
 
-A special lifetime is called `'static`, which explicitly defines a reference as something that can live for the entirety of the program.  A prime example of a `'static` lifetime is `&'static str`, or string literals, as they are stored in the program's binary, making them always available.
+A unique lifetime is called `'static`, which explicitly defines a reference as something that can live for the entirety of the program.  A prime example of a `'static` lifetime is `&'static str`, or string literals, as they are stored in the program's binary, making them always available.
 
 ## Try it yourself!
 

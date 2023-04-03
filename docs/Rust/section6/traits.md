@@ -5,11 +5,11 @@ sidebar_label: Traits
 description: Learn how to bring data structs to life with traits in Rust.
 ---
 
-As there is no real concept of object-oriented-style inheritance in Rust **traits** introduce the notion of defining shared behavior for data structures.  A trait defines a set of shared functions, expectations, and behavior that can be used for an indefinite number of types.
+There is no genuine concept of object-oriented-style inheritance in Rust. **Traits** introduce the notion of defining shared behavior for data structures.  A trait defines a set of shared functions, expectations, and behavior that can be used for an indefinite number of types.
 
 ## Creating a Trait
 
-Defining a trait utilizes the `trait` keyword, followed by the name of the trait.  In this example, notice the use of the `pub` (public) keyword.  This exposes the trait to any external files within a Rust crate and project to utilize: 
+Defining a trait utilizes the `trait` keyword, followed by the name of the trait.  In this example, notice the use of the `pub` (public) keyword.  This exposes the trait to any external files within a Rust crate and project to utilize:
 
 ```rust
 pub trait DigitalBank {
@@ -17,21 +17,21 @@ pub trait DigitalBank {
 }
 ```
 
-This function defines a trait `DigitalBank`, which also define a **method signature**, called `transfer`.  This signature is a blueprint for what we expect any type that *implements* `DigitalBank` as a trait.
+This function defines a trait `DigitalBank`, which also defines a **method signature**, called `transfer`.  This signature is a blueprint for what we expect from any type that *implements* `DigitalBank` as a trait.
 
 ## Common Traits in Rust
 
-As you may have already seen, there are quite a few traits which are used in under-the-hood in Rust. A few common traits are: 
+As you may have already seen, there are quite a few traits that are used in Rust.  A few common traits are:
 
 - [Debug](https://doc.rust-lang.org/std/fmt/trait.Debug.html) - formats the output in a debugging context.
 - [PartialEq](https://doc.rust-lang.org/std/cmp/trait.PartialEq.html) - A trait for equality comparisons.
 - [Clone](https://doc.rust-lang.org/std/clone/trait.Clone.html) - Describes how a new value can be created, or "Cloned".
 
-There are many more, but these when used in conjunction with the `derive` macro with structs can be very useful in making structs more pleasant to handle.
+There are many more, but these, when used in conjunction with the `derive` macro with structs, can be very useful in making structs more pleasant to handle.
 
 ### Using the derive macro
 
-A line you may have encountered above a `struct` declaration is `#[derive()]`.  This is what is called a **procedural macros**, which create a sort of auto-implementation for a set of compatible traits.  Between the parentheses, any traits compatible with this macro along with the struct's fields within can be implemented: 
+A line you may have encountered above a `struct` declaration is `#[derive()]`.  This is what is called a **procedural macros**, which create a sort of auto-implementation for a set of compatible traits.  Between the parentheses, any traits compatible with this macro, along with the struct's fields within can be implemented:
 
 ```rust
 #[derive(Clone)]
@@ -56,7 +56,7 @@ pub struct Account {
 
 impl DigitalBank for Account {}
 ```
-If the above code was ran, we'd be presented with this error: 
+If the above code was run, we'd be presented with this error:
 
 ```rust
 error[E0046]: not all trait items implemented, missing: `transfer`
@@ -111,14 +111,14 @@ Because we implemented `DigitalBank` with this type, now any instance of the acc
     );
 ```
 
-In fact, *any* type that `impl`s `DigitalBank` now can transfer funds, so long as it's implemented correctly as per the method and trait signatures.
+In fact, *any* type that `impl`s `DigitalBank` can now transfer funds, so long as it's implemented correctly as per the method and trait signatures.
 
-To illustrate this, lets add a method signature to `DigitalBank` to drain all funds from an `Account`:
+To illustrate this let us add a method signature to `DigitalBank` to drain all funds from an `Account`:
 
-```rust 
+```rust
 pub trait DigitalBank {
     fn transfer(&mut self, who: &mut Account, amount: i32) -> i32;
-    /// New method signature! Now we *have* to implement it.
+    /// New method signature!  Now we *have* to implement it.
     fn drain_funds(&mut self) -> bool;
 }
 
@@ -141,7 +141,7 @@ impl DigitalBank for Account {
 }
 ```
 
-And as before, it's as simple as calling the `drain_funds` on any type, in this case `Account`, that implements the `DigitalBank`trait:
+And as before, it's as simple as calling the `drain_funds` on any type, in this case, `Account`, that implements the `DigitalBank`trait:
 
 ```rust
 // Account two's balance is now 0
@@ -152,7 +152,7 @@ Feel free to define more types and implement, or even expand `DigitalBank` with 
 
 ## Trait Parameters & Bounds
 
-A common use of traits is their use as **bounds** in functions, which can then be used to define **parameters** that abide by these bounds.  With generics, this becomes very possible and produces very reusable code:
+A common use of traits is their use as **bounds** in functions, which can then be used to define **parameters** that abide by these bounds.  With generics, this becomes possible and produces very reusable code:
 
 :::info
 
@@ -170,9 +170,9 @@ fn verify_entity(entity: &impl DigitalBank) {
 }
 ```
 
-The function's parameter, `entity` is saying something very particular here: **any** type which implements `DigitalBank` as a trait is a valid parameter.  If we were to define another type, say `SmartContract`, that implemented `DigitalBank`, then that would also be completely valid.
+The function's parameter, `entity`, is saying something very particular here: **any** type which implements `DigitalBank` as a trait is a valid parameter.  If we were to define another type, say `SmartContract`, that implemented `DigitalBank`, then that would also be completely valid.
 
-It can also be written using *trait bound syntax*, which allow for a better view of generics at work:
+It can also be written using *trait bound syntax*, which allows for a better view of generics at work:
 
 ```rust
 fn verify_entity<T: DigitalBank>(entity: &T) {
@@ -201,4 +201,3 @@ verify_entity::<Account>(&account);
 
 
 ## What's happening here?
-

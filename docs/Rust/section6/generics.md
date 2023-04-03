@@ -5,13 +5,13 @@ sidebar_label: Generic Types
 description: Learn what generic types are and how to use them in Rust.
 ---
 
-Generics are a powerful concept that allow for types to be "expected" or known, without knowing what they are.  Previously, you've encountered generics when dealing with the `Option<T>` enum, where `T` is a generic that can accept any type. They are **placeholder** types that optionally can use traits to define a set of expectations, while still being abstract and generic.
+Generics are a powerful concept allowing types to be "expected" or known without knowing what they are.  Previously, you've encountered generics when dealing with the `Option<T>` enum, where `T` is a generic that can accept any type.  They are **placeholder** types that optionally can use traits to define a set of expectations while still being abstract and generic.
 
 Generics can be used in traits, methods, functions, enums, and structs.
 
 ## Scenario: Why Generic Code is Useful
 
-Let's assume that I wish to have a simple function which is meant to square two numbers, as we've previously done:
+Let's assume that I wish to have a simple function that is meant to square two numbers, as we've previously done:
 
 ```rust
 fn square(x: i32) -> i32 {
@@ -19,9 +19,9 @@ fn square(x: i32) -> i32 {
 }
 ```
 
-This is very acceptable - however, there is a problem. What if other number types must be compared? After all, this same function *could* apply to `f32`, `f64`, `u32`, and so on.
+The above code is acceptable - however, there is a problem.  What if other number types must be compared?  After all, this same function *could* apply to `f32`, `f64`, `u32`, and so on.
 
-Generics remove this redundancy by defining an abstract type, usually referred to as `T`, which allows for this function to be compatible with a multitude of types.
+Generics remove this redundancy by defining an abstract type, usually referred to as `T`, which allows this function to be compatible with many types.
 
 ## Defining Generics: Functions
 
@@ -33,7 +33,7 @@ fn square<T>(x: T) -> T {
 }
 ```
 
-The most glaring difference is the introduction of `<T>`.  This syntax precedes the parameters list, and defines what the generic *is called* and *what properties it should entail in terms of traits (more on that next!).*
+The most glaring difference is the introduction of `<T>`.  This syntax precedes the parameters list, defining what the generic *is called* and *what properties it should entail regarding traits (more on that next!).*
 
 The type `T` in this context quite literally means *any type*, meaning the function can now be called as follows (note the use of `::` to define the type):
 
@@ -41,19 +41,19 @@ The type `T` in this context quite literally means *any type*, meaning the funct
 let squared = square::<i32>(10); // 5
 ```
 
-When we go to call this function, we replace the `<T>` with the type we wish to represent - in this case, `i32`.  Taking a closer look at the function's signature, it essentially converts from `T` to `i32` across the board:
+When we call this function, we replace the `<T>` with the type we wish to represent - in this case, `i32`.  Taking a closer look at the function's signature, it essentially converts from `T` to `i32` across the board:
 
 ```rust
 fn square<i32>(square: i32) -> i32;
 ```
 
-Now this is possible for any number! With one caveat - not all types can utilize the `*` operator. For example if I used a String, this function would panic, as it is not possible to compare Strings directly this way. In fact, the above code shouldn't work all together, as the compiler is not sure what to expect since it can expect *any* type.
+Now, this is possible for any number!  With one caveat - not all types can utilize the `*` operator.  For example, if you used a String, this function would panic, as it is impossible to compare Strings directly this way.  The above code shouldn't work together, as the compiler is unsure what to expect since it can expect *any* type.
 
 ### Adding Trait Bounds to Generics
 
-Traits will be covered more in depth in the next section.  However, know that they can define certain behavior for generics to ensure the type is **compatible** with the function.  This particular trait, `Mul`, is a trait that ensures that a type can be multiplied.  By using the syntax `T: Mul`, we limit all possible types `T` could be to anything that implements `Mul`:
+Traits will be covered more in-depth in the next section.  However, know that they can define certain behavior for generics to ensure the type is **compatible** with the function.  This particular trait, `Mul`, is a trait that ensures that a type can be multiplied.  By using the syntax `T: Mul`, we limit all possible types `T` could be to anything that implements `Mul`:
 
-`Output` is an **assoicated type**, will be covered later as well.
+`Output` is an **associated type**, which will also be covered later.
 
 ```rust
 fn square<T: Mul<Output = T> + Copy>(x: T) -> T {
@@ -64,9 +64,9 @@ fn square<T: Mul<Output = T> + Copy>(x: T) -> T {
 This translates into our code being compatible with a whole host of various types that already implement this trait, `Mul`, by default.
 
 ```rust
-// 32 Bit Signed Integer, note how you can also use ::<type> to define what type to expect.
+// 32-Bit Signed Integer, note how you can also use ::<type> to define what type to expect.
 let squared_i32 = square::<i32>(10);
-// 32 Bit Unsigned Integer
+// 32-Bit Unsigned Integer
 let squared_u32: u32 = square(10);
 // Floating Point Number
 let squared_f32: f32 = square(10.0);
@@ -85,7 +85,7 @@ struct Point<T> {
 }
 ```
 
-Multiple generics may be used, meaning the type of `x` must be different from `y`. Generic labels usually follow this convention, but in theory can be named anything:
+Multiple generics may be used, meaning the type of `x` must differ from the type of `y`.  Generic labels usually follow this convention, but in theory, can be named anything:
 
 ```rust
 struct Point<T, U> {
@@ -94,7 +94,7 @@ struct Point<T, U> {
 }
 ```
 
-`Point` now can be created with different types for both `x` and `y` fields.
+`Point` can now be created with different types for `x` and `y` fields.
 
 If we were to define some methods for `Point`, generics may also be used to further provide type dynamism:
 
