@@ -49,7 +49,7 @@ fn square<i32>(square: i32) -> i32;
 
 Now this is possible for any number! With one caveat - not all types can utilize the `*` operator. For example if I used a String, this function would panic, as it is not possible to compare Strings directly this way. In fact, the above code shouldn't work all together, as the compiler is not sure what to expect since it can expect *any* type.
 
-### Adding Trait Bounds
+### Adding Trait Bounds to Generics
 
 Traits will be covered more in depth in the next section.  However, know that they can define certain behavior for generics to ensure the type is **compatible** with the function.  This particular trait, `Mul`, is a trait that ensures that a type can be multiplied.  By using the syntax `T: Mul`, we limit all possible types `T` could be to anything that implements `Mul`:
 
@@ -61,7 +61,7 @@ fn square<T: Mul<Output = T> + Copy>(x: T) -> T {
 }
 ```
 
-This translates into our code being compatible with a whole host of various types that already implement this trait, `Mul`, by default.  Trait bounds are very powerful, and will be covered more in depth in the next section of this module.
+This translates into our code being compatible with a whole host of various types that already implement this trait, `Mul`, by default.
 
 ```rust
 // 32 Bit Signed Integer, note how you can also use ::<type> to define what type to expect.
