@@ -23,16 +23,16 @@ At first glance, this appears to be the same syntax and functionality as a norma
     }
 ```
 
-Both serve the same purpose, but behave differently.  Iterators operate on **references**, whereas a `for` loop directly takes possession of the value for the scope of the loop.  Calling:
+Both serve the same purpose but behave differently.  Iterators operate on **references**, whereas a `for` loop directly takes possession of the value for the loop's scope.  Calling:
 
 ```rust
 for val in my_vec.iter() {}
 ```
 
-Is effectively the same as calling:
+It is effectively the same as calling:
 
 ```rust
 for val in &my_vec {}
 ```
 
-In general, it is a better design decision to utilize a reference-based approach, as `my_vec` would be unusable after a traditional `for` loop that takes ownership.
+It is generally a better design decision to utilize a reference-based approach, as `my_vec` would be unusable after a traditional `for` loop that takes ownership.
