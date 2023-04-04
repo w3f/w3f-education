@@ -36,7 +36,3 @@ for val in &my_vec {}
 ```
 
 In general, it is a better design decision to utilize a reference-based approach, as `my_vec` would be unusable after a traditional `for` loop that takes ownership.
-
-## Try it yourself!
-
-## What's going on here?
