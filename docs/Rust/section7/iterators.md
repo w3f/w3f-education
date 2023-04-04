@@ -4,3 +4,9 @@ title: Iterators in Rust
 sidebar_label: Iterators
 description: Learn how to use iterators in Rust.
 ---
+
+
+
+## Try it yourself!
+
+## What's going on here?
