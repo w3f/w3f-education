@@ -24,7 +24,6 @@ let my_vec = vec![1, 2, 3, 4, 5];
 for val in my_vec.iter() {
     println!("Value: {}", val);
 }
-
 ```
 
 You may notice that this looks familar to a regular `for` loop. This will be discussed in more depth in [Loops vs Iterators](./loops-vs-iterators.md), but know they are different!
