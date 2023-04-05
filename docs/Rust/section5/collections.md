@@ -15,7 +15,7 @@ There are three commonly used collections in Rust:
 
 ## Vectors
 
-The official type declaration of a vector is `Vec<T>`, which represents a list of any generic type `T`.  We'll go over generics in the next module, but for now, know it used exactly how `T` is used in the `Option<T>` and `Result<T, E>` enums.  Like arrays, Vectors can only store values of the same type.
+The official type declaration of a vector is `Vec<T>`, which represents a list of any generic type `T`.  We'll go over generics in the next module, but for now, know it is used exactly how `T` is used in the `Option<T>` and `Result<T, E>` enums.  Like arrays, Vectors can only store values of the same type.
 
 To create a new, empty vector, we call the associated method `new()`:
 
