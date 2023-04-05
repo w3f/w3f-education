@@ -9,7 +9,7 @@ We've already dealt with several collections.  Rust's standard library provides 
 
 There are three commonly used collections in Rust: 
 
-- Vectors - similar to arrays, where a list of items stored in chronological order is defined.
+- Vectors -  re-sizable arrays. Like slices, their size is not known at compile time, but they can grow or shrink at any time. 
 - Hashmaps - key-value data structures that store a **map** of information.
 - Strings - a collection of characters that are stored on the heap.
 
