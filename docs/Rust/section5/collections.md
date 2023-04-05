@@ -50,7 +50,7 @@ A vector follows all rules of the borrow checker - meaning if the vector is muta
 
 The `String` collection should be very familiar by now.  `String` is a collection of characters stored on the heap.  The `&str` type, or string slice/literal is different from this type, as it's a primitive type, whereas `String` is a data structure part of the Rust standard library.  At its core, a String is a wrapped `Vec` of bytes.  
 
-Strings are rather complicated yet advantageous data structures.  If you want to learn more about Strings at a more technical level, please read the Rust book, as this is just meant to introduce how to use `String`.
+Strings are rather complicated yet advantageous data structures.  If you want to learn more about Strings at a more technical level, please read the [Rust book](https://doc.rust-lang.org/stable/book/), as this is just meant to introduce how to use `String`.
 
 To create a new `String`, use the associated function `new()`, along with others:
 
