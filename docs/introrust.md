@@ -48,7 +48,7 @@ This course provides a strong foundation in general purpose Rust, and also empha
 ## [Module 6 - Intro to Advanced Rust - Traits, Generics, & Lifetimes](../docs/Rust/section6/intro.md)
 
 - [Defining behavior with Traits](../docs/Rust/section6/traits.md)
-- [Expanding Traits with Generics](../docs/Rust/section6/generics.md)
+- [Reducing Duplication with Generics](../docs/Rust/section6/generics.md)
 - [Associated Types vs Generics](../docs/Rust/section6/associated-generics.md)
 - [Lifetimes in Rust](../docs/Rust/section6/lifetimes.md)
 
