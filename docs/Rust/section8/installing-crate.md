@@ -45,4 +45,4 @@ Updating crates.io index
 
 This will have the same effect as directly putting it within the TOML file.
 
-For more information regarding Cargo and dependencies, be sure to visit the official [Cargo documentation](https://doc.rust-lang.org/cargo/index.html).
+For more information regarding Cargo and dependencies, visit the official [Cargo documentation](https://doc.rust-lang.org/cargo/index.html).
