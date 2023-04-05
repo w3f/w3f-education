@@ -5,7 +5,7 @@ sidebar_label: Collections - Vectors, Strings, Hashmaps
 description: Learn what collections are, and when to use which in Rust.
 ---
 
-We've already dealt with several collections.  Rust's standard library provides these data structures and aid in **dynamic** data manipulation and representation.  Similar arrays and tuples, collections can store more than value.  In contrast to such compound types, collections point to items stored on the **heap**.    The benefit of it being managed on the heap allows collections to be growable and generally more modifiable in runtime.  One collection you have already encountered numerous times throughout this course is `String`, which represents a list of characters.
+We've already dealt with several collections.  Rust's standard library provides these data structures and aid in **dynamic** data manipulation and representation.  Similar to arrays and tuples, collections can store more than value.  In contrast to such compound types, collections point to items stored on the **heap**.    The benefit of it being managed on the heap allows collections to be growable and generally more modifiable in runtime.  One collection you have already encountered numerous times throughout this course is `String`, which represents a list of characters.
 
 There are three commonly used collections in Rust: 
 
