@@ -5,17 +5,17 @@ sidebar_label: Unit Testing
 description: Understand how to unit test your Rust code.
 ---
 
-With a basic understanding of how dependencies work in Rust, you may now learn how to write and structure a basic testing structure for your Cargo project.
+With a basic understanding of how dependencies work in Rust, you may learn how to write and structure a basic testing structure for your Cargo project.
 
 **Unit tests** allow you to *test* your code for bugs using a set of predefined functions.
 
-Be sure to have your project, `first-cargo`, open, as that is the repo that we will be testing.
+Be sure to open your project, `first-cargo`, as that is the repo we will be testing.
 
-## Putting tests below main
+## Putting tests below the main function
 
-Tests are defined using the `#[test]` macro, and are usually either in their own seperate directoy on the same level of `src`, or in some cases included in the project file.
+Tests are defined using the `#[test]` macro and are usually either in their separate directory on the same level as `src` or, in some cases, included in the project file.
 
-Defining tests typically involves defining a seperate module using the `mod` keyword and a special macro to indicate testing is taking place below the `main()` function:
+Defining tests involves defining a separate module using the `mod` keyword and a special macro to indicate testing is taking place below the `main()` function:
 
 ```rust
 #[cfg(test)]
@@ -37,21 +37,21 @@ mod tests {
 }
 ```
 
-Taking a further look at this function in particular, `fn it_works()`, notice the `#[test]` macro, which is used to denote that this function is a unit test.
+Looking further at this function, `fn it_works()`, notice the `#[test]` macro, which denotes that this function is a unit test.
 
 ### Additional Testing Macros
 
-`assert_eq!()`, `assert!()`, `assert_ne!()` and other macros are used within tests to make an **asseration** about a particualar value.
+`assert_eq!()`, `assert!()`, `assert_ne!()` and other macros are used within tests to make an **assertion** about a particular value.
 
-- `assert_eq!(value1, value2)` - tests the equality of two values, the test passes if they are equal to one another.
+- `assert_eq!(value1, value2)` - tests the equality of two values.  The test passes if they are equal.
 
-- `assert!(value)` - tests whether a value is true (or not), the test passes if the value within is true.
+- `assert!(value)` - tests whether a value is true (or not). The test passes if the value within is true.
 
 - `assert_ne!(value1, value2)` - tests whether two values are **not** equal,  the tests passes if two values are **not** equal.
 
 ## Writing & running a test
 
-The above test would work, but is a bit *bland*. Let's import some external functions and run tests using `cargo test`.  Similar to `cargo run`, `cargo test` is a command that only runs the functions specified as unit tests:
+The above test would work but is a bit *bland*.  Let's import some external functions and run tests using `cargo test`.  Similar to `cargo run`, `cargo test` is a command that only runs the functions specified as unit tests:
 
 ```rust
 // The function we want to test
