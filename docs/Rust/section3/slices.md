@@ -1,11 +1,11 @@
 ---
 id: slices
 title: Slices in Rust
-sidebar_label: Slices 
+sidebar_label: Slices
 description: Learn what slices are, how they work, and why they are useful.
 ---
 
-Slices are another type of reference.  As the name implies, they *refer* to a *slice* of information, in bytes, to an existing variable in memory.  
+Slices are another type of reference.  As the name implies, they *refer* to a *slice* of information, in bytes, to an existing variable in memory.
 
 Instead of handling an entire collection, which could be costly performance-wise, we can use slices to handle a *reference* to those items.  These slices can be modified in place or returned as immutable as part of a function.
 
@@ -30,28 +30,22 @@ The double period syntax (`..`) signifies a range.  It creates a variable that r
 
 ## Modifying a slice in-place
 
-It's possible to modify a mutable slice.  This is also called changing it 'in place', as you are manipulating the data within that specific starting and ending index. 
+It's possible to modify a mutable slice.  This is also called changing it 'in place', as you are manipulating the data within that specific starting and ending index.
 
 ```rust
-
 fn main() {
-    let mut name = String::from("Bader");
-    // Pass in a mutable reference, where this function will
-    // Borrow the value, clear it, then return ownership
-    // Back to the main function's scope.
-    modify_in_place(&mut name);
-    println!("{name}"); // Prints nothing! the String is empty.
+    let mut arr = [1, 2, 3, 4, 5];
+    modify_in_place(&mut arr[2..4]); // pass in a mutable slice that refers to elements 3 and 4 of the array
+    println!("{:?}", arr); // prints "[1, 2, 6, 8, 5]"
 }
 
-
-fn modify_in_place(s: &mut String) {
-    s.clear();
+fn modify_in_place(slice: &mut [i32]) {
+    for i in 0..slice.len() {
+        slice[i] *= 2; // double each element in the slice
 }
-
 ```
 
-We can define simply a slice versus the entire String.  This way, we can only act on the part of the data given.
-
+We can modify a slice, or part of the array (`arr`) versus the entire array.  This way, we can only act on the part of the data given.
 
 ## Try it yourself!
 
@@ -61,6 +55,3 @@ We can define simply a slice versus the entire String.  This way, we can only ac
 ## What's happening here?
 
 The code above illustrates how to construct a basic string slice as well as return it in a function.  To make it interesting, try to pass `name` as a mutable reference - does it work?  Why and why not?
-
-
-
