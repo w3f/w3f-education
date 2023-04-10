@@ -182,11 +182,11 @@ Arrays are typically used less often than** vectors**, which is a type of collec
 
 ```rust
 
-let my_pets_ages[3; i32] = [4, 5, 3];
+let my_pets_ages: [i32; 3] = [4, 5, 3];
 
 ```
 
-Notice in the type declaration, `[3; i32]`, that the first part denotes how many elements should be in the array (in other words, the **maximum amount of elements an array can hold**) with each type being an `i32`.  It's possible to do without this explicit declaration, as the compiler will interpret it as it stands. 
+Notice in the type declaration, `[i32; 3]`, that the first part denotes the type of **each element** within the array with each type being an `i32`.  The second portion within the square brackets, `3`, denotes the **maximum amount of elements an array can hold**.  It's possible to do without this explicit declaration, as the compiler will interpret it as it stands. 
 
 
 To access specific elements within an array is done using square brackets, along with the index of the element you wish to access.  As with tuples, all arrays start at index `0`: 
