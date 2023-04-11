@@ -172,6 +172,11 @@ module.exports = {
   rust: [
     {
       type: 'doc',
+      id: 'Rust/rust-appendix',
+      label: 'appendix',
+    },
+    {
+      type: 'doc',
       id: 'introrust',
       label: 'Course Syllabus',
     },
