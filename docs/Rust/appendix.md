@@ -1,7 +1,7 @@
 ---
-id: rust-glossary
-title: Glossary & Shortcuts
-sidebar_label: Glossary & Shortcuts
+id: rust-appendix
+title: Course Appendix
+sidebar_label: Course Appendix
 ---
 
 This page will cover any parts which may seem ambiguous or not explained as explicitly as other topics may be (i.e., `println!()`, macros etc).  As mentioned before, this course is largely based on the [Rust Book](https://doc.rust-lang.org/book/title-page.html), as well as parts of [Rust by Example](https://doc.rust-lang.org/rust-by-example/) and the [Rust Reference](https://doc.rust-lang.org/reference/index.html).  It is highly encouraged to use these comprehensive and esteemed resources to solidify your learning further.

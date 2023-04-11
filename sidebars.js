@@ -172,8 +172,8 @@ module.exports = {
   rust: [
     {
       type: 'doc',
-      id: 'Rust/rust-glossary',
-      label: 'Glossary',
+      id: 'Rust/rust-appendix',
+      label: 'appendix',
     },
     {
       type: 'doc',
