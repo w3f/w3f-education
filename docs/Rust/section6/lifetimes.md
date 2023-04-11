@@ -80,4 +80,4 @@ A unique lifetime is called `'static`, which explicitly defines a reference as s
 
 ## What's happening here?
 
-Lifetimes prevent dangling pointers via the Rust borrow checker.  In the above example, a fixed lifetime is defined.  This lifetime is valid because the lifetime, labeled `'a`, on `_x` matches that of the function signature `<'a>`.
+Lifetimes prevent dangling pointers via the Rust borrow checker. In the above example, a fixed lifetime is defined.  This lifetime is valid because the lifetime, labeled `'a`, on `_x` matches that of the function signature `<'a>`.
