@@ -115,4 +115,4 @@ impl<T, U> Point<T, U> {
 
 ## What is happening here?
 
-This example features two primary usages of Rust generics.  The first illustrates the usage of generics within a function, which reduces the boilerplate for supporting multiple compatible types that want to utilize `fn square`.  Generics may also be used as a part of a struct, as seen with `Point`.  An associated type is also "hidden" in the first example, where the associated type `Output` is defined as part of the `Mul` trait when declaring the trait bound.
+This example features two primary usages of Rust generics. The first illustrates the usage of generics within a function, which reduces the boilerplate for supporting multiple compatible types that want to utilize `fn square`.  Generics may also be used as a part of a struct, as seen with `Point`.  An associated type is also "hidden" in the first example, where the associated type `Output` is defined as part of the `Mul` trait when declaring the trait bound.
