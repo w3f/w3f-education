@@ -75,6 +75,9 @@ A unique lifetime is called `'static`, which explicitly defines a reference as s
 
 ## Try it yourself!
 
-https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=%0Afn+fixed_lifetime%3C%27a%3E%28%29+-%3E+%26%27a+i32+%7B%0A++++let+_x%3A+%26%27a+i32+%3D+%2619%3B%0A++++_x%0A%7D%0A%0Afn+main%28%29+%7B%0A++++%0A++++let+a+%3D+fixed_lifetime%28%29%3B%0A++++println%21%28%22%7B%7D%22%2C+a%29%3B%0A++++%0A%7D
+
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=%0Afn+fixed_lifetime%3C%27a%3E%28%29+-%3E+%26%27a+i32+%7B%0A++++let+_x%3A+%26%27a+i32+%3D+%2619%3B%0A++++_x%0A%7D%0A%0Afn+main%28%29+%7B%0A++++%0A++++let+a+%3D+fixed_lifetime%28%29%3B%0A++++println%21%28%22%7B%7D%22%2C+a%29%3B%0A++++%0A%7D"></iframe>
 
 ## What's happening here?
+
+Lifetimes prevent dangling pointers via the Rust borrow checker. In the above example, a fixed lifetime is defined.  This lifetime is valid because the lifetime, labeled `'a`, on `_x` matches that of the function signature `<'a>`.
