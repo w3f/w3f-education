@@ -202,4 +202,4 @@ verify_entity::<Account>(&account);
 
 ## What's happening here?
 
-In this example, we define a common trait `DigitalBank`, which allows a strut to define and access three methods: `transfer`, `is_legit`, and `drain_funds`.  When a struct implements this trait, it must specify the functionality for each method.  A function, `verify_entity`, also introduces a **trait bound** `T: DigitalBank`.  This bound ensures that only types that have correctly implemented `DigitalBank` are to be valid arguments.
+In this example, we define a common trait `DigitalBank`, which allows a struct to define and access three methods: `transfer`, `is_legit`, and `drain_funds`.  When a struct implements this trait, it must specify the functionality for each method.  A function, `verify_entity`, also introduces a **trait bound** `T: DigitalBank`.  This bound ensures that only types that have correctly implemented `DigitalBank` are to be valid arguments.
