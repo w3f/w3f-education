@@ -4,7 +4,7 @@ title: Course Appendix
 sidebar_label: Course Appendix
 ---
 
-This page will cover parts that may seem ambiguous or not explained as explicitly as other topics (i.e., `println!()`, macros, etc.).  As mentioned before, this course is primarily based on the [Rust Book](https://doc.rust-lang.org/book/title-page.html), as well as parts of [Rust by Example](https://doc.rust-lang.org/rust-by-example/) and the [Rust Reference](https://doc.rust-lang.org/reference/index.html). Using these comprehensive and esteemed resources to solidify your learning further is highly encouraged.
+This page will cover parts that may seem ambiguous or not explained as explicitly as other topics (i.e., `println!()`, macros, etc.).  This course is primarily based on the [Rust Book](https://doc.rust-lang.org/book/title-page.html), as well as parts of [Rust by Example](https://doc.rust-lang.org/rust-by-example/) and the [Rust Reference](https://doc.rust-lang.org/reference/index.html). Using these comprehensive and esteemed resources to solidify your learning further is highly encouraged.
 
 ## Common Formatting & Macros
 
