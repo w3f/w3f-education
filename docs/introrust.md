@@ -7,11 +7,11 @@ sidebar_position: 1
 
 Developed by the Technical Education team at the Web3 Foundation, this course introduces programming in Rust for Blockchain applications.
 
-This course follows the free textbook, [The Rust Programming Language](https://doc.rust-lang.org/stable/book/) by Steve Klabnik and Carol Nichols.  While it does follow this book, it also includes a multitude of hands-on examples, in-browser executable snippets, and some patterns commonly found in the context of blockchain based development.
+This course follows the free textbook [The Rust Programming Language](https://doc.rust-lang.org/stable/book/) by Steve Klabnik and Carol Nichols, with the addition of hands-on examples, in-browser executable snippets, and some patterns commonly found in blockchain-based development.
 
-This course is designed to teach the fundamentals of Rust to a student who knows the basics of programming in another language, but does not quite know why Rust is used and how to use it.
+This course is designed to teach the fundamentals of Rust to people who know the basics of programming in another language, and are curious about why Rust is used and how to use it.
 
-This course provides a strong foundation in general purpose Rust, and also emphasizes some aspects of Rust (such as `[no_std]`, advanced traits, and the use of Rust & Wasm development toolchain) that are particularly useful when developing with the Substrate blockchain framework.
+This course provides a strong foundation in general-purpose Rust. Also, it emphasizes some aspects of Rust (such as `[no_std]`, advanced traits, and the use of Rust & Wasm development toolchain) that are particularly useful when developing with the [Substrate](https://substrate.io/) blockchain framework.
 
 ## [Module 1 - Why Learn Rust?](../docs/Rust/section1/intro.md)
 
