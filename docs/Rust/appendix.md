@@ -12,7 +12,7 @@ Throughout this course, the `println!()` macro will be used excessively, which p
 
 - The two curly brackets indicate a placeholder for some value. Those brackets are called the "format syntax", as they format data into an existing String. For example, `println!("Hello, {}", "World")` would print "Hello, World".  Using this shortcut, most values that implement the `Debug` or `Display` trait can be displayed using `println!()`.  Most primitive data types already implement this trait.
   
-- Sometimes, the format syntax, `{}` may be used inline the quotes.  For example: `println!("{some_variable}")`  This accomplishes the same as above but with a slightly shortened syntax.
+- Sometimes, the format syntax `{}` may be used inline the quotes.  For example, `println!("{some_variable}")` accomplishes the same as above but with a slightly shortened syntax.
 
 ## Commonly Used Types
 
