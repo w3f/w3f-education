@@ -56,7 +56,7 @@ Take this example - if we try to compile this Rust code (note that the lines of 
     println!("{the_number_ten}");
 ```
 
-The Rust compiler, before it can even run the program, gives a very detailed error as to *why* this is impossible to compile.  This may seem foreign right now.  Notice the level of detail the compiler gives the programmer, including a reference for why this may not compile.
+The Rust compiler, before we even run the program, gives an error as to *why* this is impossible to compile. See below the level of detail the compiler gives the programmer, including a reference for why this may not compile.
 
 ```
   Compiling playground v0.0.1 (/playground)
