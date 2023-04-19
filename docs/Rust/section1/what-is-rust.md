@@ -28,7 +28,7 @@ Each module in this course follows the format below:
 
 Here is an example of how that might look like:
 
-### Hello, World in Rust.
+### "Hello World" in Rust
 
 :::info
 
