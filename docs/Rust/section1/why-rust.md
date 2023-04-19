@@ -41,19 +41,16 @@ This allows for a level of control comparable to something lower-level, such as 
 
 Rust lowers the barriers when dealing with more complex concepts such as concurrency, low-level memory management, and data representation.
 
-
 ## Rust Safety by Example
 
-Take this example - if we try to compile this Rust code:
+Take this example - if we try to compile this Rust code (note that the lines of code starting with `//` are comments that are not executed):
 
-```rust
+```
     // Here, the number five variable is, well, the number 5. It is a number that can be added and subtracted.
     let the_number_five: u32 = 5;
-    // Here is another variable - but instead, it's a character, as denoted by the `char` type, and the single
-    // quotes surrounding the 5 ('5')
+    // Here is another variable - but instead of being a number it's a character, as denoted by the `char` type and the single quotes surrounding the 5 ('5')
     let imposter_number_five: char = '5';
-    // Let’s say we want to add them - this shouldn't work, as this is the same as trying to add a number 
-    // to a word.
+    // Let’s say we want to add them - this shouldn't work, as this is the same as trying to add a number to a word.
     let the_number_ten: u32 = the_number_five + imposter_number_five;
     // FAILURE!
     println!("{the_number_ten}");
