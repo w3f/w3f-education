@@ -26,7 +26,7 @@ Safety is mainly derived from two factors that work in tandem:
 1. Rust's strict type system
 2. Rust's robust and pedantic compiler that checks every single line of code to ensure it will not be invalid now, *or* in the future.
 
-For example, if the Rust compiler detects an issue with a variable within your program, it will notify the programmer that this would become an issue in runtime.
+For example, if the Rust compiler detects an issue with a variable within your program, it will notify the programmer that this would become an issue in runtime and the program will not be allowed to compile.
 
 Safe programming is also a matter of security. Many exploits and hacks occur because the program's memory can be accessed and modified in an unsafe or unauthorized way.
 
@@ -73,7 +73,7 @@ error[E0277]: cannot add `char` to `u32`
             <u32 as Add<&u32>>
             <u32 as Add>
 
-Try `rustc —explain E0277` for more information about this error.
+For more information about this error, try `rustc --explain E0277`.
 ```
 
 ## Resources
