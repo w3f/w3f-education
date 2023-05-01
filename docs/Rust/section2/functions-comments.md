@@ -5,6 +5,8 @@ sidebar_label: Functions & Comments
 description: Learn how functions and comments work, and how to create them in Rust.
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QZQq9fepWWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 With the knowledge of variables and data types, it is time to put them to use.  **Functions** in Rust should be familiar.  The `main` function is one, for example, that you have already seen several times in the Rust Playground.
 
 ```rust 
