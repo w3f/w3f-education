@@ -35,7 +35,7 @@ These factors are crucial when building applications and programs that make guar
 
 ## Safety
 
-Because Rust is so strict at compile-time, there is no need for a **garbage collector** or any other mechanism that operates with the program’s runtime.  Effectively, this means that Rust’s powerful, robust typing system comes at zero cost.
+Because Rust is so strict at compile-time, there is no need for a **garbage collector** or any other mechanism that operates with the program’s runtime.  Effectively, this means that Rust’s powerful, robust typing system comes at zero cost.  These abstractions do not sacrifice the readability, ease of use, or speed of Rust.
 
 This allows for a level of control comparable to something lower-level, such as C, but is much more beginner friendly in terms of writing useful programs.  It also allows for flexibility for applications that require granular control and resource management, such as embedded systems, operating systems, and distributed ledgers.
 
