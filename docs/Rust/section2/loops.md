@@ -7,6 +7,8 @@ description: Learn how to construct loops, if statements, and when to use the tw
 
 This section will cover two foundational parts of Rust and programming in general: loops and logic flow.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0kaZ4Wd9XaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 # Basic Logic Flows
 
 Logic flows, sometimes called control flows, allow for conditional statements, such as `if`, to be possible.  It allows for branching logic to be implemented for a program based on `boolean` values.
