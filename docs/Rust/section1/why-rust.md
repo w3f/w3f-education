@@ -19,7 +19,7 @@ Before starting your Rust development journey, it is essential to understand _wh
 
 ## Rust is safe
 
-The primary reason why Rust is used is because of **safety** reasons. In the context of programming, **safety** means that the programmer can confidently write a program with the certainty that it will work as intended. In more technical terms, a safe language ensures memory safety and a safe language cannot write a dangerous program (unless those safety features are bypassed).
+The primary reason why Rust is used is because of **safety** reasons. In the context of programming, safety means that the programmer can confidently write a program with the certainty that it will work as intended. In more technical terms, a safe language ensures memory safety and a safe language cannot write a dangerous program (unless those safety features are bypassed).
 
 Safety is mainly derived from two factors that work in tandem: 
 
@@ -33,15 +33,15 @@ Safe programming is also a matter of security. Many exploits and hacks occur bec
 These factors are crucial when building applications and programs that make guarantees in impactful industries. The Rust compiler's strictness makes it hard to write *bad* or *dangerous* code.
 
 
-## Safety does not sacrifice readability, ease of use, or speed
+## Safety
 
-Because Rust is so strict at compile-time, there is no need for a **garbage collector** or any other mechanism that operates with the program’s runtime.  Effectively, this means that Rust’s powerful, robust typing system comes at zero cost.
+Because Rust is so strict at compile-time, there is no need for a **garbage collector** or any other mechanism that operates with the program’s runtime.  Effectively, this means that Rust’s powerful, robust typing system comes at zero cost.  These abstractions do not sacrifice the readability, ease of use, or speed of Rust.
 
 This allows for a level of control comparable to something lower-level, such as C, but is much more beginner friendly in terms of writing useful programs.  It also allows for flexibility for applications that require granular control and resource management, such as embedded systems, operating systems, and distributed ledgers.
 
 Rust lowers the barriers when dealing with more complex concepts such as concurrency, low-level memory management, and data representation.
 
-## Rust Safety by Example
+### Rust Safety by Example
 
 Take this example - if we try to compile this Rust code (note that the lines of code starting with `//` are comments that are not executed):
 
@@ -75,6 +75,8 @@ error[E0277]: cannot add `char` to `u32`
 
 For more information about this error, try `rustc --explain E0277`.
 ```
+
+In this specific case we cannot add a type number with a character.
 
 ## Resources
 
