@@ -19,7 +19,7 @@ Before starting your Rust development journey, it is essential to understand _wh
 
 ## Rust is safe
 
-The primary reason why Rust is used is because of **safety** reasons. In the context of programming, **safety** means that the programmer can confidently write a program with the certainty that it will work as intended. In more technical terms, a safe language ensures memory safety and a safe language cannot write a dangerous program (unless those safety features are bypassed).
+The primary reason why Rust is used is because of **safety** reasons. In the context of programming, safety means that the programmer can confidently write a program with the certainty that it will work as intended. In more technical terms, a safe language ensures memory safety and a safe language cannot write a dangerous program (unless those safety features are bypassed).
 
 Safety is mainly derived from two factors that work in tandem: 
 
@@ -75,6 +75,8 @@ error[E0277]: cannot add `char` to `u32`
 
 For more information about this error, try `rustc --explain E0277`.
 ```
+
+In this specific case we cannot add a type number with a character.
 
 ## Resources
 
