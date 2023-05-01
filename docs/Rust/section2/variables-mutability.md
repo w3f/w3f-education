@@ -20,15 +20,15 @@ println!("My name is {my_name} and I am {age} years old.");
 
 As in other languages, variables in Rust behave mostly the same except for a few unique properties, the most prominent being **mutability** and **shadowing**.
 
-:::info
+:::info Variable are immutable by default
 
-All variables in Rust are immutable by default.  Immutable variables cannot be changed unless explicitly declared as mutable.  This prevents unwanted changes to values in code.  
+All variables in Rust are immutable by default.  Immutable variables cannot be changed unless explicitly declared as mutable.  This prevents unwanted changes to values in code.
 
 :::
 
 ## Immutability in Rust
 
-As mentioned before, by default, all variables in Rust are immutable.  This means that the value within cannot be changed once a variable has been declared.
+As mentioned before, by default, all variables in Rust are immutable.  This means that changes are not allowed once a variable has been declared.
 
 ```rust
 // The compiler won't allow this to be changed. 
@@ -53,7 +53,7 @@ error[E0384]: cannot assign twice to immutable variable `age`
    | ^^^^^^^^ cannot assign twice to an immutable variable
 ```
 
-This is another example of how the Rust compiler prevents unwanted operations, along with a descriptive way of letting the developer know.  The most interesting line to note is `cannot assign twice to immutable variable`, as this clearly shows the immutability property of the variable.
+This is another example of how the Rust compiler prevents unwanted operations, along with a description about the error and suggested solutions.  The most interesting line to note is `cannot assign twice to immutable variable`, as this shows the immutability property of the variable.
 
 This same error is handy, as in some cases, we sometimes want to keep the value of a variable the same.  The Rust compiler, by default, keeps this *safe* by keeping it immutable.  There are many practical reasons for this, i.e., multi-developer projects, where one developer can see the program's intentions by whether a variable is mutable.  
 
@@ -130,12 +130,12 @@ Try out some of these concepts yourself!  There are a few things that may seem u
 - `u32` means that a variable is a number.
 - `&str` means that the variable is a string literal.
 
-<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=%2F%2F+%0Afn+main%28%29+%7B%0A%0A%2F%2F+We+start+by+creating+two+variables+-+one+is+mutable.%0A%2F%2F+In+the+context+of+this+program%2C+it+makes+sense+-+an+age+can+change%2C%0A%2F%2F+but+a+name+never+usually+changes.%0A%0Alet+mut+age%3A+%26str+%3D+%2222%22%3B%0Alet+name%3A+%26str+%3D+%22Bader%22%3B%0A%0Aprintln%21%28%22%7Bname%7D%3A+%7Bage%7D%22%29%3B%0A%0A%2F%2F+Seems+there+is+a+problem.+Notice+the+age+isnt%27+a+number%2C+but+a+string+of+text%21%0A%2F%2F+It%27s+rather+cumbersome+to+have+to+add+numbers+to+strings+-+not+to+mention+very+impractical.%0A%2F%2F+How+can+we+change+that%3F%0A%0A%2F%2F+To+turn+a+string+into+a+number%2C+we+can+use+the+following+syntax%3A+%0A%2F%2F+age.parse%28%29.unwrap%28%29%3B%0A%2F%2F+Write+a+variable+that+shadows+the+existing+%60age%60+variable+as+a+number.%0A%2F%2F+Make+sure+you+declare+it+as+mutable.%0A%2F%2F+Lastly%2C+add+one+to+it+to+increment+the+age+%28one+year+as+passed%21%29%0A%0Alet+mut+age%3A+u32+%3D+age.parse%28%29.unwrap%28%29%3B%0Aage+%2B%3D+1%3B%0Aprintln%21%28%22%7Bname%7D%3A+%7Bage%7D%22%29%3B%0A%0A%2F%2F+What+has+changed+here%3F+Hint%3A+Take+a+look+at+age+and+see%21%0A%0A%7D"></iframe>
+<iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=%2F%2F+%0Afn+main%28%29+%7B%0A%0A%2F%2F+We+start+by+creating+two+variables+-+one+is+mutable.%0A%2F%2F+In+the+context+of+this+program%2C+it+makes+sense+-+age+can+change%2C%0A%2F%2F+but+a+name+does+not+usually+change%0A%0Alet+mut+age%3A+%26str+%3D+%2222%22%3B%0Alet+name%3A+%26str+%3D+%22Bader%22%3B%0A%0Aprintln%21%28%22%7Bname%7D%3A+%7Bage%7D%22%29%3B%0A%0A%2F%2F+Seems+there+is+a+problem.+Notice+the+age+isnt%27+a+number%2C+but+a+string+of+text%21%0A%2F%2F+It%27s+rather+cumbersome+to+have+to+add+numbers+to+strings+-+not+to+mention+very+impractical.%0A%2F%2F+How+can+we+change+that%3F%0A%0A%2F%2F+To+turn+a+string+into+a+number%2C+we+can+use+the+following+syntax%3A+%0A%2F%2F+age.parse%28%29.unwrap%28%29%3B%0A%2F%2F+Write+a+variable+that+shadows+the+existing+%60age%60+variable+as+a+number.%0A%2F%2F+Make+sure+you+declare+it+as+mutable.%0A%2F%2F+Lastly%2C+add+one+to+it+to+increment+the+age+%28one+year+has+passed%21%29%0A%0Alet+mut+age%3A+u32+%3D+age.parse%28%29.unwrap%28%29%3B%0Aage+%2B%3D+1%3B%0Aprintln%21%28%22%7Bname%7D%3A+%7Bage%7D%22%29%3B%0A%0A%2F%2F+What+has+changed+here%3F+Hint%3A+Take+a+look+at+age+and+see%21%0A%0A%7D"></iframe>
 
 ## What is happening here?
 
 
-Three primary concepts are used here - **immutability** and **shadowing**.  Initially, we declare two variables - `name` and `age`.  `age` is mutable, as age is expected to change. However, a name is meant to be immutable.  However, `age` is set to a type that we can't add to easily.
+Three primary concepts are used here - **immutability** and **shadowing**.  Initially, we declare two variables - `name` and `age`.  `age` is mutable, as age is expected to change while a name is meant to be immutable.  However, `age` is set to a type that we can't add to easily.
 
 This is where shadowing comes into play.  Using shadowing, redefine `age` to be a number of type `u32` instead.  This allows us to add to the age easily.
 
