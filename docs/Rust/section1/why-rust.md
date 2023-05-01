@@ -33,7 +33,7 @@ Safe programming is also a matter of security. Many exploits and hacks occur bec
 These factors are crucial when building applications and programs that make guarantees in impactful industries. The Rust compiler's strictness makes it hard to write *bad* or *dangerous* code.
 
 
-## Safety does not sacrifice readability, ease of use, or speed
+## Safety
 
 Because Rust is so strict at compile-time, there is no need for a **garbage collector** or any other mechanism that operates with the program’s runtime.  Effectively, this means that Rust’s powerful, robust typing system comes at zero cost.
 
@@ -41,7 +41,7 @@ This allows for a level of control comparable to something lower-level, such as 
 
 Rust lowers the barriers when dealing with more complex concepts such as concurrency, low-level memory management, and data representation.
 
-## Rust Safety by Example
+### Rust Safety by Example
 
 Take this example - if we try to compile this Rust code (note that the lines of code starting with `//` are comments that are not executed):
 
