@@ -15,9 +15,9 @@ In this section, you will:
 
 ## Rustup
 
-There is a common tool in the Rust ecosystem called `rustup`. This tool allows you to easily install and manage multiple versions of Rust, and use different versions of Rust on a per-project basis. It is similar in some ways to a tool like `nvm`, the node version manager, in the Javascript ecosystem. In addition to managing version of Rust itself, it also installs `cargo` the rust build tool, and various language components such as different target architectures and clippy, the Rust linting tool.
+There is a standard tool in the Rust ecosystem called `rustup`. This tool allows you to easily install and manage multiple Rust versions and use different Rust versions on a per-project basis. It is similar to a tool like `nvm`, the node version manager in the Javascript ecosystem. In addition to managing the version of Rust itself, it also installs `cargo` the Rust build tool, and various language components such as different target architectures, and clippy, the Rust linting tool.
 
-To install `rustup`, simply run this install script:
+To install `rustup`, run this install script below:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -29,7 +29,7 @@ This script installs several tools:
 - [`cargo`](https://doc.rust-lang.org/cargo/index.html), the Rust package manager,
 - `rustc`, the official compiler for the Rust language,
 
-This is executing a script from the internet, so if you prefer to be careful, it is encouraged to check the contents of the script to make sure it isn't doing anything unwanted.
+This is executing a script from the internet, so if you prefer to be careful, check its contents to ensure it isn't doing anything unwanted.
 
 Select **Option 1** for the standard install. We will add more components later in the course as needed.
 
@@ -67,7 +67,7 @@ cargo 1.68.0 (387270bc7 2022-09-16)
 
 ```
 
-This course will use version 1.68, but again, similar versions will work just as well.
+This course will use version 1.68, but similar versions will work just as well.
 
 You can update your toolchains at any time by running `rustup update`, and you can even update rustup itself by running `rustup self update`.
 
@@ -81,14 +81,14 @@ Throughout the course, VSCode will be the primary editor of choice. There are ot
 
 Please head to https://code.visualstudio.com/download to install VSCode.
 
-If you prefer an open source _and_ freely-licensed distribution of VS Code that omits telemetry, [VSCodium](https://vscodium.com/) is also a viable option. See the project's site for installation and reasoning why you might want to use this over VSCode itself.
+If you prefer an open source _and_ freely-licensed distribution of VS Code that omits telemetry, [VSCodium](https://vscodium.com/) is also viable. See the project's installation site and the reason why you might want to use this over VSCode itself.
 
 
 ### Extensions
 
 Once VSCode is installed, there are a couple of extensions that will smooth the development experience.
 
-The first extension that we'll add is Rust Analyzer, a powerful static analysis tool for the Rust programming language. This extension provides some basics such as syntax highlighting and goto definition, as well as some more powerful features such as code completion, and documentation by hovering over code.
+The first extension we'll add is Rust Analyzer, a powerful static analysis tool for the Rust programming language. This extension provides some basics such as syntax highlighting and goto definition, as well as more powerful features such as code completion and documentation by hovering over code.
 
 To install it, enter VS Code's command pallet with `Ctrl + Shift + P`, and paste:
 
@@ -96,7 +96,7 @@ To install it, enter VS Code's command pallet with `Ctrl + Shift + P`, and paste
 ext install rust-lang.rust-analyzer
 ```
 
-The second extension is optional, but recommended if you like to do step debugging on your coding projects. It is the Code LLDB extension which provides seamless integration between LLDB, the low level debugger, and VS Code. To install it, enter the command pallet again (`Ctrl + Shift + P`) and paste:
+The second extension is optional but recommended if you like to do step debugging on your coding projects. It is the Code LLDB extension that provides seamless integration between LLDB, the low-level debugger, and VS Code. To install it, enter the command pallet again (`Ctrl + Shift + P`) and paste:
 
 ```bash
 ext install vadimcn.vscode-lldb
@@ -107,7 +107,7 @@ We will not use this extension actively in this course, but it is a great tool t
 
 ## The Rust Playground
 
-The Rust playground is an in-browser implementation of a Rust development environment.  Feel free to use it to run snippets of code if setting up a proper development environment is somehow in accessible.  Throughout this course, you will notice it embedded within the page as follows: 
+The Rust playground is an in-browser implementation of a Rust development environment.  Feel free to use it to run snippets of code if setting up a proper development environment is somehow inaccessible.  Throughout this course, you will notice it embedded within the page as follows: 
 
 
 <iframe width="100%" height="580" src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=%2F%2F+Define+entry+point.%0Afn+main%28%29+%7B%0A++++%2F%2F+Writes+to+the+output.+Delete+the+%27%2F%2F%27+before+println+and+see+what+happens%21%0A+++%2F%2F+println%21%28%22Hello+world%21%22%29%3B%0A%7D"></iframe>
