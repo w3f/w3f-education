@@ -5,6 +5,8 @@ sidebar_label: Variables & Mutability
 description: How variables and mutability works in Rust.
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eE5x17yRzUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 If you have ever used another programming language, the concept of **variables** should be familiar. 
 
 ```rust
