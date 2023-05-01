@@ -5,20 +5,18 @@ sidebar_label: Variables & Mutability
 description: How variables and mutability works in Rust.
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eE5x17yRzUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 If you have ever used another programming language, the concept of **variables** should be familiar. 
 
 ```rust
-// A couple Rust variables. 
+// A couple of Rust variables. 
 // The first holds a name (a slice of text), and the other, an age (a number).
 let my_name: &str = "Bader";
 let age: u32 = 22;
-// We'll dive more into this line later, but just know that it is a way to print information.
+// We'll dive more into this line later but know it is a way to print information.
 println!("My name is {my_name} and I am {age} years old.");
 ```
 
-As in other languages, variables in Rust behave mostly the same with the exception of a few unique properties, the most prominent being **mutability** and **shadowing** .
+As in other languages, variables in Rust behave mostly the same except for a few unique properties, the most prominent being **mutability** and **shadowing**.
 
 :::info
 
@@ -28,7 +26,7 @@ All variables in Rust are immutable by default.  Immutable variables cannot be c
 
 ## Immutability in Rust
 
-As mentioned before, by default, all variables in Rust are immutable.  This means that once a variable has been declared, the value within cannot be changed.
+As mentioned before, by default, all variables in Rust are immutable.  This means that the value within cannot be changed once a variable has been declared.
 
 ```rust
 // The compiler won't allow this to be changed. 
@@ -53,9 +51,9 @@ error[E0384]: cannot assign twice to immutable variable `age`
    | ^^^^^^^^ cannot assign twice to an immutable variable
 ```
 
-This is yet another example of how the Rust compiler prevents any illegal operations, along with a descriptive way of letting the developer know.  The most interesting line to note is `cannot assign twice to immutable variable`, as this clearly shows the immutability property of the variable.
+This is another example of how the Rust compiler prevents unwanted operations, along with a descriptive way of letting the developer know.  The most interesting line to note is `cannot assign twice to immutable variable`, as this clearly shows the immutability property of the variable.
 
-This same error is actually incredibly useful, as in some cases, we sometimes want to keep the value of a variable the same.  The Rust compiler, by default, keeps this *safe* by keeping it immutable.  There are many practical reasons for this, i.e., multi-developer projects, where one developer can see the program's intentions by whether a variable is mutable.  
+This same error is handy, as in some cases, we sometimes want to keep the value of a variable the same.  The Rust compiler, by default, keeps this *safe* by keeping it immutable.  There are many practical reasons for this, i.e., multi-developer projects, where one developer can see the program's intentions by whether a variable is mutable.  
 
 A variable's value changing unintentionally can also cause trivial bugs, but luckily the Rust compiler deals with it elegantly using immutability.
 
@@ -82,9 +80,9 @@ println!("{x}");
 
 At first glance, this may seem odd - why are there two variables with the same name *and* different type?  Shouldn't Rust's type system prevent this from occurring?
 
-This is what's called shadowing.  The Rust compiler will take the latest value assigned to that variable name, in this case from the number `10` to `Hello!`, and utilize that until either the scope ends or it is shadowed again.
+This is what's called shadowing.  The Rust compiler will take the latest value assigned to that variable name, from the number `10` to `Hello!`, and utilize that until either the scope ends or it is shadowed again.
 
-Shadowing is not the same as declaring a variable mutable with `mut`, as it remains immutable after being shadowed.  The `let` keyword must also be used to shadow a variable, take a look at the following example: 
+Shadowing is not the same as declaring a variable mutable with `mut`, as it remains immutable after being shadowed.  The `let` keyword must also be used to shadow a variable; take a look at the following example: 
 
 ```rust
 
@@ -108,7 +106,7 @@ error[E0308]: mismatched types
 
   ```
 
-Shadowing with `let` reassigns the variable to a new type and value, redefining it altogether.
+Shadowing with `let` reassigns the variable to a new type and value, redefining it.
 
 ## Constants in Rust
 
@@ -135,6 +133,7 @@ Try out some of these concepts yourself!  There are a few things that may seem u
 ## What is happening here?
 
 
-Three primary concepts are being put to use here - namely, **immutability** and **shadowing**.  Initially, we declare two variables - `name` and `age`.  `age` is mutable, as age is expected to change, however, a name is meant to be immutable.  However, `age` is set to a type that we can't add to easily.
+Three primary concepts are used here - **immutability** and **shadowing**.  Initially, we declare two variables - `name` and `age`.  `age` is mutable, as age is expected to change. However, a name is meant to be immutable.  However, `age` is set to a type that we can't add to easily.
 
 This is where shadowing comes into play.  Using shadowing, redefine `age` to be a number of type `u32` instead.  This allows us to add to the age easily.
+
