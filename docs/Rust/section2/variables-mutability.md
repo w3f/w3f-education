@@ -88,7 +88,7 @@ Shadowing is not the same as declaring a variable mutable with `mut`, as it rema
 
 ```rust
 
-let x = 10u32;
+let x: u32 = 10; // Note that the syntax 'let x = 10u32' is also possible.
 x = "Hello!";
 
 ```
@@ -101,7 +101,7 @@ Compiling playground v0.0.1 (/playground)
 error[E0308]: mismatched types
  --> src/main.rs:3:5
   |
-2 | let x = 10u32;
+2 | let x u32 = 10;
   |         ----- expected due to this value
 3 | x = "Hello!";
   |     ^^^^^^^^ expected `u32`, found `&str`
