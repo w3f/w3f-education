@@ -12,6 +12,8 @@ Rust has two kinds of **primitive**, or base, data types:
  - Scalar - single point types, such as numbers and booleans (`true` or `false` statements)
  - Compound - arrays, and tuples
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G9I-HdPsLmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Scalar Types
 
 Scalar types represent a single value, such as a number or boolean.  Rust has four core Scalar types, which you have most likely seen in other programming languages: 
