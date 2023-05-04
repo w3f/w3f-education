@@ -14,7 +14,7 @@ With the knowledge of variables and data types, it is time to put them to use.  
 fn main() {}
 ```
 
-Functions contain pieces of logic in a context-specific scope.  They are useful for splitting your program into more digestible pieces rather than just using a single main function to operate.
+Functions contain pieces of logic in a context-specific scope.  They help split your program into more digestible parts rather than just using a single main function to operate.
 
 Declaring a function is simple - start with `fn`, followed by the name and two empty parentheses, and closed with curly brackets:  
 
@@ -34,7 +34,7 @@ You may have noticed that we called the `do_something_interesting()` function wi
 
 ## Parameters
 
-Functions in this form aren't useful.  The above is pointless; we could accomplish the same result with less code.
+Functions in this form could be more helpful.  The above is pointless; we could accomplish the same result with less code.
 
 **Parameters** allow for functions to have more dynamic and custom input.  For example, let's take the previous example and add a parameter:
 
@@ -91,7 +91,7 @@ let y = {
 
 ```
 
-Notice the lack of a semicolon at the end of `x + 1`.  As soon as you add a semicolon to a line's end, it becomes a statement.  Expressions do not have semicolons appended to the end of them.
+Notice the lack of a semicolon at the end of `x + 1`.  When you add a semicolon to a line's end, it becomes a statement.  Expressions do not have semicolons appended to the end of them.
 
 
 ## Return types
@@ -105,7 +105,7 @@ fn square(x: i32) -> i32 {
 }
 ```
 
-Notice the return type is denoted by the arrow (`->`) followed by the type we wish to return.  To return the type, we simply return the expression without a semicolon.  It's possible to also explicitly define a return statement:
+Notice the return type is denoted by the arrow (`->`) followed by the type we wish to return.  To return the type, we return the expression without a semicolon.  It's possible to also explicitly define a return statement:
 
 ```rust
 // This function takes a number and returns the squared version of it.
@@ -118,7 +118,7 @@ fn square(x: i32) -> i32 {
 
 # Comments
 
-Comments are used to document parts of your code in order to provide clarification when needed.  Not every line needs to be commented on.  However, it may be helpful to provide context in certain situations.  Double forward slashes usually precede them (`//`).
+Comments document parts of your code to provide clarification when needed.  Not every line needs to be commented on.  However, it may be helpful to provide context in certain situations.  Double-forward slashes usually precede them (`//`).
 
 Comments are purely for developers and not realized in the compiler.
 
@@ -130,14 +130,14 @@ fn main() {
     do_something_interesting(true, "Bader");
 }
 // Hey, I'm a comment!  I explain things
-// This function does something interesting, apparently.
+// This function does something interesting.
 fn do_something_interesting(is_interesting: bool, name: &str) {
     println!("Hey, {name}!  Is this interesting: {is_interesting}.");
 }
 // Output: Hey, Bader!  Is this interesting: true.
 ```
 
-In the last module, you'll learn how to properly document your code using comments in a way that Cargo can understand.
+In the last module, you'll learn how to correctly document your code using comments in a way that Cargo can understand.
 
 ## Try it out!
 
@@ -167,3 +167,4 @@ fn do_something_better(number: f64) -> f64 {
 ```
 
 Notice the lack of a semicolon, which denotes a resultant value in the form of an expression.
+
