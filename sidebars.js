@@ -290,6 +290,9 @@ module.exports = {
       label: "Introduction to Substrate",
       items: [
         'Substrate/section1/section-intro',
+        'Substrate/section1/what-is-substrate',
+        'Substrate/section1/substrate-history',
+        'Substrate/section1/substrate-design'
       ],
     },
     {
@@ -297,6 +300,9 @@ module.exports = {
       label: "Substrate Development 101",
       items: [
         'Substrate/section2/section-2-intro',
+        'Substrate/section2/substrate-runtime',
+        'Substrate/section2/substrate-storage',
+        'Substrate/section2/substrate-pallets',
       ],
     },
     {
@@ -304,6 +310,10 @@ module.exports = {
       label: "Installing Dependencies & Node Template",
       items: [
         'Substrate/section3/section-3-intro',
+        'Substrate/section3/install-deps',
+        'Substrate/section3/node-template-tour',
+        'Substrate/section3/explore-pallet-template',
+        'Substrate/section3/install-explore-frontend',
       ],
     },
     {
@@ -311,6 +321,10 @@ module.exports = {
       label: "Building a Custom FRAME Pallet: Intro",
       items: [
         'Substrate/section4/section-4-intro',
+        'Substrate/section4/project-structure',
+        'Substrate/section4/pallet-config',
+        'Substrate/section4/create-storage-map',
+        'Substrate/section4/events-errors',
       ],
     },
     {
@@ -318,6 +332,9 @@ module.exports = {
       label: "Building a Custom FRAME Pallet: Making our pallet actionable",
       items: [
         'Substrate/section5/section-5-intro',
+        'Substrate/section5/dispatchable',
+        'Substrate/section5/unit-tests',
+        'Substrate/section5/coupling-balances',
       ],
     },
     {
@@ -325,6 +342,9 @@ module.exports = {
       label: "Building a Custom FRAME Pallet: Deploying & Testing",
       items: [
         'Substrate/section6/section-6-intro',
+        'Substrate/section6/run-node',
+        'Substrate/section6/test-frontend',
+        'Substrate/section6/use-polkadotjs',
       ],
     },
     {
@@ -332,6 +352,10 @@ module.exports = {
       label: "Building a Custom FRAME Pallet: Pallet & FRAME best practices",
       items: [
         'Substrate/section7/section-7-intro',
+        'Substrate/section7/blockchain-dev',
+        'Substrate/section7/runtime-panics',
+        'Substrate/section7/how-to-test-frame',
+
       ],
     },
     {
@@ -339,6 +363,10 @@ module.exports = {
       label: "Substrate Deepdive",
       items: [
         'Substrate/section8/section-8-intro',
+        'Substrate/section8/origins-calls',
+        'Substrate/section8/chain-genesis-spec',
+        'Substrate/section8/pallet-coupling',
+        'Substrate/section8/benchmarking',
       ],
     },
     {
