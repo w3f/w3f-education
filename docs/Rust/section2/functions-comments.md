@@ -7,7 +7,7 @@ description: Learn how functions and comments work, and how to create them in Ru
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZQq9fepWWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-With the knowledge of variables and data types, it is time to put them to use.  **Functions** in Rust should be familiar.  The `main` function is one, for example, that you have already seen several times in the Rust Playground.
+With the knowledge of variables and data types, it is time to put them to use.  Here we will talk about **functions** in Rust. The concepts should be familiar. In fact, `main` is one example of a Rust function you have seen several times in the Rust Playground.
 
 ```rust 
 // This is a function!
@@ -30,13 +30,13 @@ fn do_something_interesting() {
 }
 ```
 
-You may have noticed that we called the `do_something_interesting()` function within our main function.  It doesn't matter where this function is declared or what it does.  It will execute as long as it's valid, safe Rust code.
+You may have noticed that we declared the `do_something_interesting()` function outside the `main` function, and we called the `do_something_interesting()` function within the `main` function.  It doesn't matter where this new function is declared or what it does.  It will execute as long as it's valid and safe Rust code, and it is called within the `main` function.
 
 ## Parameters
 
-Functions in this form could be more helpful.  The above is pointless; we could accomplish the same result with less code.
+Functions in this form specified above are not useful since they do not have **parameters** changing the output of the function. Ideally, we would like to feed the function with some parameter values so that we get different outputs.
 
-**Parameters** allow for functions to have more dynamic and custom input.  For example, let's take the previous example and add a parameter:
+Parameters allow for functions to have more dynamic and custom input. Let's take the previous example and add one parameter:
 
 ```rust
 fn main() {
