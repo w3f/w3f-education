@@ -12,6 +12,12 @@ Rust has two kinds of **primitive**, or base, data types:
  - Scalar - single point types, such as numbers and booleans (`true` or `false` statements)
  - Compound - arrays, and tuples
 
+:::info Primitives
+
+Primitives are the smallest, most basic type of processing unit in a programming language. No other types can be derived from them, as they are the basic building block for building more advanced types and data manipulation.
+
+:::
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G9I-HdPsLmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Scalar Types
@@ -30,7 +36,7 @@ An integer in Rust is the same as in mathematics - a non-fractional, whole numbe
 - Signed integers are denoted by the `i`, followed by the length of the number: `i32`.  
 - Unsigned integers start with `u,` followed by the length of the number: `u32`.
 
-The `32` that follows whether an integer is signed or unsigned denotes the length of the number.  Take this table from the [Rust Book](https://doc.rust-lang.org/book/ch03-02-data-types.html), which states all possible integer variants: 
+The `32` (that follows whether an integer is signed or unsigned) denotes the length of the number.  See the table below taken from the [Rust Book](https://doc.rust-lang.org/book/ch03-02-data-types.html), which shows all possible integer variants: 
 
 | Length    | Signed    | Unsigned  |
 |---------  |--------   |---------- |
@@ -178,9 +184,17 @@ let location: (i32, i32) = (10, 45);
 
 ### Arrays
 
-An **array** is a collection of multiple values.  Unlike tuples, these values must be the same type.  Arrays are like lists - helpful in storing a fixed amount of types and data on the **stack**.  
+An **array** is a collection of multiple values.  Unlike tuples, these values must be the same type.  Arrays are like lists - helpful in storing a fixed amount of types and data on the **stack memory**.  
 
-Arrays are typically used less often than** vectors**, a type of collection that includes several convenience methods for sorting and manipulating the values within the collection.  Vectors can grow and shrink in size, as the data is managed by the **heap**, whereas arrays are fixed-length and stored on the stack.
+Arrays are typically used less often than** vectors**, a type of collection that includes several convenience methods for sorting and manipulating the values within the collection.  Vectors can grow and shrink in size, as the data is managed by the **heap memory**, whereas arrays are fixed-length and stored on the stack.
+
+:::info Stack vs. Heap Memory
+
+Every time a function is used, the machine allocates some stack memory for it. Allocations make the stack memory grow, and after the function returns, the stack memory of the function is deallocated. As a consequence, all local variables become invalid. The allocation and deallocation for stack memory is automatically done.
+
+Heap memory is more permanent that the stack memory, it is allocated explicitly by programmers and it will not be deallocated until it is explicitly freed.
+
+:::
 
 ```rust
 
