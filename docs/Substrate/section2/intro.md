@@ -1,6 +1,6 @@
 ---
 id: section-2-intro
-title: Why Learn Substrate?
-sidebar_label: Introduction to Substrate
-description: An introduction to why Substrate matters in the broader context of web3 development.
+title: Substrate 101 - Overview of the Substrate Framework
+sidebar_label: Substrate 101 - Overview of the Substrate Framework
+description: Learn how the runtime, storage, and pallets make up a Substrate-based blockchain.
 ---
