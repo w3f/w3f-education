@@ -77,7 +77,7 @@ If the above code was run, we'd be presented with this error:
 error[E0046]: not all trait items implemented, missing: `transfer`
   --> src/main.rs:11:1
    |
-8  |     fn transfer(&mut self, who: &mut Account, amount: i32) -> i32;
+8  |     fn transfer(&mut self, who: &mut Self, amount: i32) -> i32;
    |     ------------------------------------------- `transfer` from trait
 ...
 11 | impl Transferrable for Account {}
@@ -92,7 +92,7 @@ Now, we may implement our `Transferrable` trait to properly reflect the method s
 
 ```rust
 impl Transferrable for Account {
-    fn transfer(&mut self, who: &mut Account, amount: i32) -> i32 {
+    fn transfer(&mut self, who: &mut Self, amount: i32) -> i32 {
         // Take from our (self) balance,
         self.balance = self.balance - amount;
         // Add that amount to someone else's balance,
@@ -133,13 +133,13 @@ To illustrate this let us add a method signature to `Transferrable` to drain all
 
 ```rust
 pub trait Transferrable {
-    fn transfer(&mut self, who: &mut Account, amount: i32) -> i32;
+    fn transfer(&mut self, who: &mut Self, amount: i32) -> i32;
     /// New method signature!  Now we *have* to implement it.
     fn drain_funds(&mut self) -> bool;
 }
 
 impl Transferrable for Account {
-    fn transfer(&mut self, who: &mut Account, amount: i32) -> i32 {
+    fn transfer(&mut self, who: &mut Self, amount: i32) -> i32 {
         // Take from our (self) balance,
         self.balance = self.balance - amount;
         // Add that amount to someone else's balance,
