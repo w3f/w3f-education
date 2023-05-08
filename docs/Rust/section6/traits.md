@@ -17,9 +17,16 @@ pub trait Transferrable {
 }
 ```
 
-This function defines a trait `Transferrable`, which also defines a **method signature**, called `transfer`.  This signature is a blueprint for what we expect from any type that *implements* `Transferrable` as a trait. As implied by the name, the use of this trait would allow for a particular type to now possess these methods.
+This function defines a trait `Transferrable`, which also defines a **method signature**, called `transfer`.  This signature is a blueprint for what we expect from any type that *implements* `Transferrable` as a trait. As implied by the name, this trait would allow a type to send currency from the caller to `who`. The use of this trait would allow for a particular type to now possess these methods in order to achieve this functionality.
 
 In order these methods to be used, however, they must be implemented on that specific type.
+
+
+:::info 
+
+Take note of the difference of usage between `self` and `Self`.  Remember, `self` refers to an already *instantiated* instance of that type, whereas `Self` refers to simply that type.  The use of `Self` here allows for this trait to look for the specific type being implemented when it comes to `who` should receive currency.
+
+:::
 
 ## Common Traits in Rust
 
