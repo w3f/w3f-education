@@ -56,7 +56,7 @@ This course provides a strong foundation in general-purpose Rust. Also, it empha
 
 - [Using Closures for Ultimate Code Reuse](../docs/Rust/section7/closures.md)
 - [Using Iterators with Vectors](../docs/Rust/section7/iterators.md)
-- [Loops or Iterators?](../docs/Rust/section7/loops-vs-iterators.md)
+- [Macros](../docs/Rust/section7/macros.md)
 
 ## [Module 8 - Learning Cargo, Rust’s Package Management System & Unit Testing](../docs/Rust/section8/intro.md)
 

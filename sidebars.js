@@ -257,7 +257,7 @@ module.exports = {
         'Rust/section7/section-7-intro',
         'Rust/section7/iterators',
         'Rust/section7/closures',
-        'Rust/section7/loops-vs-iterators'
+        'Rust/section7/macros'
       ],
     },
     {

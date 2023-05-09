@@ -26,7 +26,7 @@ for val in my_vec.iter() {
 }
 ```
 
-You may notice that this looks familiar to a regular `for` loop.  This will be discussed more deeply in [Loops vs. Iterators](./loops-vs-iterators.md), but know they are different!
+You may notice that this looks familiar to a regular `for` loop.  This will be discussed in more depth in a later section, but know they are different!
 
 ## A closer look at the `Iterator` trait
 
@@ -96,6 +96,41 @@ As some of these methods return an iterator, it's possible to chain them:
 // Both maps then filter on the returned iterator from `map`
 let chained_iter = my_vec.iter().map(|x| x + 1).filter(|x| *x % 2 == 0);
 ```
+
+## Loops vs Iterators - when to use which?
+
+In the previous section, a piece of code looked just like a `for` loop that was covered in the Loops module:
+
+```rust
+    let my_vec = vec![1, 2, 3, 4, 5];
+    for val in my_vec.iter() {
+        println!("Value: {}", val);
+    }
+```
+
+At first glance, this appears to be the same syntax and functionality as a normal `for` loop:
+
+```rust
+    let my_vec = vec![1, 2, 3, 4, 5];
+    for val in my_vec {
+        println!("Value: {}", val);
+    }
+```
+
+Both serve the same purpose but behave differently.  Iterators operate on **references**, whereas a `for` loop directly takes possession of the value for the loop's scope.  Calling:
+
+```rust
+for val in my_vec.iter() {}
+```
+
+It is effectively the same as calling:
+
+```rust
+for val in &my_vec {}
+```
+
+It is generally a better design decision to utilize a reference-based approach, as `my_vec` would be unusable after a traditional `for` loop that takes ownership.
+
 
 ## Try it yourself!
 
