@@ -266,8 +266,8 @@ module.exports = {
       items: [
         'Rust/section8/section-8-intro',
         'Rust/section8/defining-cargo-config',
-        'Rust/section8/defining-crate-features',
         'Rust/section8/installing-crate',
+        'Rust/section8/defining-crate-features',
         'Rust/section8/unit-tests'
 
       ],
