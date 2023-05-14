@@ -7,7 +7,7 @@ description: An introduction to intermediate Rust, specifically how to utilize d
 
 This module will delve into some more intermediate concepts: collections and data structs.
 
+- [Vectors, Strings & Hashmaps](./collections.md)
 - [Structs](./structs.md)
 - [Defining Methods for Structs](./struct-methods.md)
-- [Vectors, Strings & Hashmaps](./collections.md)
 - [Vectors vs Strings - what’s the difference?](./vectors-vs-strings.md)

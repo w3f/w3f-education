@@ -7,6 +7,6 @@ description: An introduction to advanced Rust, specifically iterators and closur
 
 Delving deeper into more of the Rust Standard Library's extended functionality and more advanced concepts: iterators and closures.
 
-- [Using Closures for Ultimate Code Reuse](./closures.md)
 - [Using Iterators with Vectors](./iterators.md)
+- [Using Closures for Ultimate Code Reuse](./closures.md)
 - [Macros](./macros.md)

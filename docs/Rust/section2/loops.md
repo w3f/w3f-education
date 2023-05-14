@@ -166,7 +166,7 @@ Besides being much more concise, there is no worry about having an `index out of
 
 ## What is happening here?
 
-A the core loops are illustrated above.  Notice the `break` keyword being used within `loop`, so the playground does not run infinitely (and so other loops can run!).
+All the core loops are illustrated above.  Notice the `break` keyword being used within `loop`, so the playground does not run infinitely (and so other loops can run!).
 
 
 
