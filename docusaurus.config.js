@@ -9,7 +9,7 @@ module.exports = {
   baseUrl: '/w3f-education/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/Web3Foundation.png',
+  favicon: 'img/favicon-32x32.png',
   organizationName: 'w3f', // Usually your GitHub org/user name.
   trailingSlash: false,
   projectName: 'w3f-education', // Usually your repo name.
@@ -24,14 +24,14 @@ module.exports = {
       title: 'Technical Education',
       logo: {
         alt: 'Polkadot Education Initiative',
-        src: 'img/Web3Foundation.png',
+        src: 'img/w3f_logo.svg',
       },
       items: [
 
         {
           type: 'dropdown',
           label: 'Courses',
-          position: 'left',
+          position: 'right',
           items: [
             {
               to: 'docs/introblock',
@@ -55,7 +55,7 @@ module.exports = {
         {
           type: 'dropdown',
           label: 'Resources',
-          position: 'left',
+          position: 'right',
           items: [
             {
               to: 'docs/introatoz',
