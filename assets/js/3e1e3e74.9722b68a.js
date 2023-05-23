@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkw3f_education=self.webpackChunkw3f_education||[]).push([[543],{3873:function(a){a.exports=JSON.parse('{"allTagsPath":"/w3f-education/blog/tags","slug":"polkadot","name":"polkadot","count":1,"permalink":"/w3f-education/blog/tags/polkadot"}')}}]);

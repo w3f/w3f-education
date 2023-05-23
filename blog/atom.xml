@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://w3f.github.io/w3f-education/blog</id>
+    <id>https://education.web3.foundation/blog</id>
     <title>Polkadot Education Initiative Blog</title>
     <updated>2021-08-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://w3f.github.io/w3f-education/blog"/>
+    <link rel="alternate" href="https://education.web3.foundation/blog"/>
     <subtitle>Polkadot Education Initiative Blog</subtitle>
-    <icon>https://w3f.github.io/w3f-education/img/Web3Foundation.png</icon>
+    <icon>https://education.web3.foundation/img/Web3Foundation.png</icon>
     <entry>
         <title type="html"><![CDATA[Polkadot MOOC]]></title>
         <id>Polkadot MOOC</id>
-        <link href="https://w3f.github.io/w3f-education/blog/Polkadot MOOC"/>
+        <link href="https://education.web3.foundation/blog/Polkadot MOOC"/>
         <updated>2021-08-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course]]></summary>
     </entry>

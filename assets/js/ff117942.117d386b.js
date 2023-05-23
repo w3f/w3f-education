@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkw3f_education=self.webpackChunkw3f_education||[]).push([[6922],{3408:function(e){e.exports=JSON.parse('{"permalink":"/w3f-education/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
