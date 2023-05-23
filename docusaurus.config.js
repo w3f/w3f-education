@@ -5,8 +5,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'Polkadot Education Initiative',
   tagline: 'Powered by the community',
-  url: 'https://w3f.github.io',
-  baseUrl: '/w3f-education/',
+  url: 'https://education.web3.foundation/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/Web3Foundation.png',
