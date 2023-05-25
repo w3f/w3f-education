@@ -8,6 +8,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Introduction to Blockchain',
+      collapsed: false,
       items: [
         'Blockchain/Module1/blockchain',
         'Blockchain/Module1/money-trust',

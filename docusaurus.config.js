@@ -62,10 +62,6 @@ module.exports = {
               label: 'A - Z ELI5 series ',
             },
             {
-              to: 'https://wiki.polkadot.network/',
-              label: 'Polkadot Wiki',
-            },
-            {
               to: 'docs/polkadotFAQ',
               label: 'Polkadot FAQ ',
             },
@@ -73,6 +69,9 @@ module.exports = {
         },
 
         {to: '/blog', label: 'Blog', position: 'right'},
+
+        {to: 'https://wiki.polkadot.network/', label: 'Wiki', position: 'right'},
+
         {
           href: 'https://github.com/w3f/w3f-education',
           label: 'GitHub',
