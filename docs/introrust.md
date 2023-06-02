@@ -23,6 +23,7 @@ This course provides a strong foundation in general-purpose Rust. Also, it empha
 
 - [Variables & Mutability](../docs/Rust/section2/variables-mutability.md)
 - [Data Types](../docs/Rust/section2/data-types.md)
+- [The Heap vs. The Stack](../docs/Rust/section2/heap-vs-stack.md)
 - [Functions & Comments](../docs/Rust/section2/functions-comments.md)
 - [Loops & Logic Flows](../docs/Rust/section2/loops.md)
 
