@@ -203,6 +203,7 @@ module.exports = {
       items: [
         'Rust/section2/section-2-intro',
         'Rust/section2/variables-mutability',
+        'Rust/section2/heap-vs-stack',
         'Rust/section2/data-types',
         'Rust/section2/functions-comments',
         'Rust/section2/loops'
