@@ -6,10 +6,16 @@ sidebar_position: 1
 # Introduction to Substrate & FRAME
 
 Developed by the Technical Education team at the Web3 Foundation, this course provides a comprehensive overview of the Substrate blockchain framework and building blockchains. 
- 
-It is not meant to be wholly in-depth, but rather provide a solid foundation in navigating the creation and modification of custom blockchain modules, called **pallets**.  This course will serve as an introduction into becoming a Substrate developer, the factors involved, as well as a guided, hands on portion to building a custom FRAME pallet. 
 
-### Objectives
+:::note Prerequisites
+
+Before starting, it would be wise to either have experience with Rust, or have taken our [Intro to Rust course](introrust.md).  Substrate depends heavily on Rust, and it will be elaborated on extensively in this course.
+
+:::
+ 
+This course will provide a solid foundation in navigating the creation and modification of custom blockchain modules, called **pallets**.  This course will serve as an introduction into becoming a Substrate developer, the factors involved, as well as a guided, hands on portion to building a custom FRAME pallet. 
+
+In this course, you will:
 
 - Learn about FRAME, the primary mode of implementation for Substrate
 - Learn at high-level how storage, the runtime, and pallets work in FRAME
@@ -17,10 +23,6 @@ It is not meant to be wholly in-depth, but rather provide a solid foundation in 
 - Learn basic testing of a FRAME pallet
 - Learn best practices and important considerations when building a FRAME pallet
 - Build and deploy a basic, social-network like blockchain pallet called `connect`
-
-### Prerequisites
-
-- Experience with Rust, or have taken our [Intro to Rust course](introrust.md).
 
 
 ## [Module 1 - Why Learn Substrate?](./Substrate/section1/intro.md)
