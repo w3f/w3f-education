@@ -1,14 +1,12 @@
-/* stylelint-disable docusaurus/copyright-header */
-
 .features {
   display: flex;
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+  background-color: var(--ifm-color-secondary);
 }
 
 .featureSvg {
-  background-color: white;
   height: 200px;
   width: 200px;
 }

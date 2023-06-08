@@ -8,6 +8,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Introduction to Blockchain',
+      collapsed: false,
       items: [
         'Blockchain/Module1/blockchain',
         'Blockchain/Module1/money-trust',
@@ -97,6 +98,7 @@ module.exports = {
     {
       type: 'category',
       label: 'What is Polkadot?',
+      collapsed: false,
       items: [
         'Polkadot/Module1/polkadot',
         'Polkadot/Module1/architecture',
@@ -108,6 +110,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Interact with Polkadot',
+      collapsed: false,
       items: [
         'Polkadot/Module2/account',
         'Polkadot/Module2/dotutility',
