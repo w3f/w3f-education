@@ -371,11 +371,6 @@ module.exports = {
       ],
     },
     {
-      type: 'doc',
-      id: 'Substrate/workshop',
-      label: 'Substrate Workshop',
-    },
-    {
       type: 'link',
       label: 'Learn more',
       href: 'https://docs.substrate.io/',
