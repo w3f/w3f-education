@@ -284,7 +284,7 @@ module.exports = {
     {
       type: 'doc',
       id: 'introsubstrate',
-      label: 'Substrate',
+      label: 'Course Syllabus',
     },
     {
       type: "category",
