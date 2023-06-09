@@ -2,4 +2,4 @@
 id: crypto-defi
 ---
 
-# Cryptocurrencies and De-Fi
+# Cryptocurrencies and DeFi
