@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkw3f_education=self.webpackChunkw3f_education||[]).push([[1713],{3457:o=>{o.exports=JSON.parse('{"polkadot":{"allTagsPath":"/blog/tags","slug":"polkadot","name":"polkadot","count":1,"permalink":"/blog/tags/polkadot"},"mooc":{"allTagsPath":"/blog/tags","slug":"mooc","name":"mooc","count":1,"permalink":"/blog/tags/mooc"}}')}}]);
