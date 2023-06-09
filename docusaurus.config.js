@@ -14,12 +14,16 @@ module.exports = {
   trailingSlash: false,
   projectName: 'w3f-education', // Usually your repo name.
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
 
-      },
+    },
     navbar: {
       title: 'Technical Education',
       logo: {
@@ -68,9 +72,9 @@ module.exports = {
           ],
         },
 
-        {to: '/blog', label: 'Blog', position: 'right'},
+        { to: '/blog', label: 'Blog', position: 'right' },
 
-        {to: 'https://wiki.polkadot.network/', label: 'Wiki', position: 'right'},
+        { to: 'https://wiki.polkadot.network/', label: 'Wiki', position: 'right' },
 
         {
           href: 'https://github.com/w3f/w3f-education',
