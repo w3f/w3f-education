@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Polkadot Education Initiative Blog</title>
         <link>https://education.web3.foundation/blog</link>
@@ -7,12 +7,17 @@
         <lastBuildDate>Thu, 12 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
         <item>
             <title><![CDATA[Polkadot MOOC]]></title>
             <link>https://education.web3.foundation/blog/Polkadot MOOC</link>
-            <guid>Polkadot MOOC</guid>
+            <guid>https://education.web3.foundation/blog/Polkadot MOOC</guid>
             <pubDate>Thu, 12 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course]]></description>
+            <content:encoded><![CDATA[<p>The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course
+on Polkadot. This will be a Massively Online Open Course (MOOC) hosted on a platform that can issue credentials for course completion. The MOOC development will be in the open and will be driven by the contributions from the community which will be curated by Web3 Foundation.</p>]]></content:encoded>
+            <category>Polkadot</category>
+            <category>MOOC</category>
         </item>
     </channel>
 </rss>

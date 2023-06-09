@@ -6,12 +6,20 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://education.web3.foundation/blog"/>
     <subtitle>Polkadot Education Initiative Blog</subtitle>
-    <icon>https://education.web3.foundation/img/Web3Foundation.png</icon>
+    <icon>https://education.web3.foundation/img/favicon-32x32.png</icon>
     <entry>
         <title type="html"><![CDATA[Polkadot MOOC]]></title>
-        <id>Polkadot MOOC</id>
+        <id>https://education.web3.foundation/blog/Polkadot MOOC</id>
         <link href="https://education.web3.foundation/blog/Polkadot MOOC"/>
         <updated>2021-08-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course]]></summary>
+        <content type="html"><![CDATA[<p>The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course
+on Polkadot. This will be a Massively Online Open Course (MOOC) hosted on a platform that can issue credentials for course completion. The MOOC development will be in the open and will be driven by the contributions from the community which will be curated by Web3 Foundation.</p>]]></content>
+        <author>
+            <name>Radha</name>
+            <uri>https://github.com/DrW3RK</uri>
+        </author>
+        <category label="Polkadot" term="Polkadot"/>
+        <category label="MOOC" term="MOOC"/>
     </entry>
 </feed>
