@@ -7,7 +7,7 @@ const FeatureList = [
   {
     image: '/img/courses.webp',
     title: 'Blockchain and Web3 Courses',
-    link: '/w3f-education/docs/introblock',
+    link: 'https://www.edx.org/school/web3x',
   },
   {
     image: '/img/wiki.webp',
