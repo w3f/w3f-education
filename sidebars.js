@@ -287,7 +287,7 @@ module.exports = {
     {
       type: 'doc',
       id: 'introsubstrate',
-      label: 'Substrate',
+      label: 'Course Syllabus',
     },
     {
       type: "category",
@@ -372,11 +372,6 @@ module.exports = {
         'Substrate/section8/pallet-coupling',
         'Substrate/section8/benchmarking',
       ],
-    },
-    {
-      type: 'doc',
-      id: 'Substrate/workshop',
-      label: 'Substrate Workshop',
     },
     {
       type: 'link',

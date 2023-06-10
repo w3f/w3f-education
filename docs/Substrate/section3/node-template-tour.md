@@ -1,6 +1,6 @@
 ---
 id: node-template-tour
-title: Node template tour & overview
-sidebar_label: Node template tour & overview
+title: Node Template Tour & Overview
+sidebar_label: Node Template Tour & Overview
 description: Get familiar with the Substrate node template and its various components.
 ---
