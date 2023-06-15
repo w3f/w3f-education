@@ -275,3 +275,8 @@ a:hover.navbar__item{
     padding: 3em 2em;
   }
 }
+
+.docusaurus-mermaid-container  {
+  text-align: center;
+  margin: 20px;
+}

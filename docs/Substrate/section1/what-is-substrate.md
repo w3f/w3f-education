@@ -35,6 +35,19 @@ These, along with many more, all pertain to building certain aspects of a partic
 
 ## A Brief Introduction to FRAME (Framework for Runtime Aggregation of Modularized Entities)
 
+```mermaid
+---
+title: Substrate's Relationship with FRAME
+---
+flowchart LR
+    S[Substrate Core Libraries] --> SP[sp_*]
+    S --> SC[sc_*]
+    S --> FR[frame_*]
+    SC --> FRAME[FRAME - Framework for Runtime Aggregation of Modularized Entities]
+    FR --> FRAME
+    SP --> FRAME
+```
+
 A common question is: _If Substrate exists, then what is FRAME for? Why is it mentioned so often?_.
 
 FRAME, or Framework for Runtime Aggregation of Modularized Entities, is another abstraction on top of Substrate. It introduces a set of conventions and structure for building a blockchain with Susbtrate through a number of Rust macros.  These macros enable for the powerful, and trivial to use system of **pallets** to construct **runtimes** using Substrate. A **runtime**, also called a **state transition function (STF)**, is used to define the state transitions for a particular blockchain.  
