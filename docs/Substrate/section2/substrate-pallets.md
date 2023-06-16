@@ -1,11 +1,9 @@
 ---
 id: substrate-pallets
-title: Substrate Pallets
-sidebar_label: Substrate Pallets
+title: Pallets
+sidebar_label: Pallets
 description: Learn what pallets are, and how they fit into FRAME.
 ---
-
-## Pallets In FRAME
 
 FRAME, or the **Framework for Runtime Aggregation of Modularized Entities,** essentially heavily simplifies runtime development for us.  It gives us the ability to put together different modules in our runtime to customize our blockchain. Things like consensus, staking, governance, balances, and the like are all pallets covered under FRAME.   
 

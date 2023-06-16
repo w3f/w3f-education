@@ -8,6 +8,6 @@ description: Learn how the runtime, storage, and pallets make up a FRAME and Sub
 This module will dive deeper into FRAME and crucial concepts to be aware of before starting development of your pallet. 
 
 - [Substrate (FRAME) Development 101 - Crucial Concepts](./intro.md)
-- [FRAME - Runtime](./substrate-runtime.md)
+- [FRAME - Runtime & Outer Node](./substrate-runtime.md)
 - [FRAME - Storage](./substrate-storage.md)
 - [FRAME - Pallets](./substrate-pallets.md)
