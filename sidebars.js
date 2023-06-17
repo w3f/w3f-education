@@ -314,10 +314,10 @@ module.exports = {
       label: "Installing Dependencies & Node Template",
       items: [
         'Substrate/section3/section-3-intro',
+        'Substrate/section3/install-explore-frontend',
         'Substrate/section3/install-deps',
         'Substrate/section3/node-template-tour',
         'Substrate/section3/explore-pallet-template',
-        'Substrate/section3/install-explore-frontend',
       ],
     },
     {
