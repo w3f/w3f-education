@@ -14,6 +14,6 @@ Please make sure you have Rust installed, as it's necessary going forward!
 :::
 
 - [Installing & exploring the frontend template](./install-explore-frontend.md)f
-- [Installing Dependencies & Node Template](./install-deps.md)
+- [Install, configure, and run the Node Template](./install-deps.md)
 - [Node template architecture](./node-template-tour.md)
 - [Explore the `connect-pallet`](./explore-pallet-template.md)
