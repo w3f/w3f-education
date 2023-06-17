@@ -35,10 +35,13 @@ This link will automatically connect to your `localhost` node, where you can vie
 
 ### Observing Chain State
 
- By navigating to `Developer > Chain State`, it is possible to get the state of various storage mappings or values that were previously defined by the pallets in the runtime.  These are called **State Queries.**
+By navigating to `Developer > Chain State`, it is possible to get the state of various storage mappings or values that were previously defined by the pallets in the runtime.  These are called **State Queries.**
 
 For example, you can select the `timestamp` state query and click the plus button on the far right to get the time for the node:
 
+### Modifying Chain State
+
+It is also possible to modify the chain's state via **extrinsics**.  An extrinsic is similar to the concept of a transaction, as it represents a unit of change within a chain's particular state, i.e., transferring currency that changes two users' balances:
 
 
 You can also simply search storage by raw hexadecimal key, however most of the time it’s easier to perform state queries via the respective pallet and its associated storage items.
