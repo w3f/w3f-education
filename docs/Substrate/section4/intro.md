@@ -5,7 +5,9 @@ sidebar_label: Intro to Building a Custom FRAME Pallet
 description: Begin creating your custom FRAME pallet.
 ---
 
-- [Structuring our project](./project-structure.md)
+This module, along with the next modules will focus on practical work with `pallet_connect`, learning crucial FRAME aspects, and developing a pallet.
+
+- [lib.rs Structure Deepdive](./project-structure.md)
 - [Adjusting Pallet Config & Runtime Overview](./pallet-config.md)
 - [Creating storage maps](./create-storage-map.md)
 - [Events & Errors](./events-errors.md)

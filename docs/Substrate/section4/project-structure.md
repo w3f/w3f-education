@@ -1,6 +1,12 @@
 ---
 id: project-structure
-title: Structuring our project
-sidebar_label: Structuring our project
-description: Learn how to structure the project, including where all pieces of how events, errors, and dispatchable functions fit together.
+title: lib.rs Structure Deepdive
+sidebar_label: lib.rs Structure Deepdive
+description: Learn the structure of the pallet works, including how events, errors, and dispatchable functions fit together.
 ---
+
+## Crucial Macros
+
+## Pallet Configuration - `Config<T>`
+
+### Use of generics
