@@ -186,8 +186,8 @@ module.exports = {
     {
       type: "category",
       label: "Why Rust?",
+      link: {type:'doc', id: 'Rust/section1/index'},
       items: [
-        'Rust/section1/section-intro',
         'Rust/section1/what-is-rust',
         'Rust/section1/why-rust',
         'Rust/section1/wasm-tldr'
@@ -196,15 +196,13 @@ module.exports = {
     {
       type: "category",
       label: "Installation & Development Environment Setup",
-      items: [
-        'Rust/setup/installation',
-      ],
+      link: {type:'doc', id: 'Rust/setup/installation'},
     },
     {
       type: "category",
       label: "Rust 101 - Intro to Basic Rust",
+      link: {type:'doc', id: 'Rust/section2/index'},
       items: [
-        'Rust/section2/section-2-intro',
         'Rust/section2/variables-mutability',
         'Rust/section2/heap-vs-stack',
         'Rust/section2/data-types',
@@ -215,8 +213,8 @@ module.exports = {
     {
       type: "category",
       label: "Intro to Intermediate Rust: Ownership, Borrowing, & Slices",
+      link: {type:'doc', id: 'Rust/section3/index'},
       items: [
-        'Rust/section3/section-3-intro',
         'Rust/section3/ownership',
         'Rust/section3/borrowing',
         'Rust/section3/slices',
@@ -225,8 +223,8 @@ module.exports = {
     {
       type: "category",
       label: "Intro to Intermediate Rust: Enums & Matching Patterns",
+      link: {type:'doc', id: 'Rust/section4/index'},
       items: [
-        'Rust/section4/section-4-intro',
         'Rust/section4/enums',
         'Rust/section4/panic',
         'Rust/section4/error-handling'
@@ -235,8 +233,8 @@ module.exports = {
     {
       type: "category",
       label: "Intro to Intermediate Rust: Data Structs & Collections",
+      link: {type:'doc', id: 'Rust/section5/index'},
       items: [
-        'Rust/section5/section-5-intro',
         'Rust/section5/collections',
         'Rust/section5/structs',
         'Rust/section5/struct-methods',
@@ -246,8 +244,8 @@ module.exports = {
     {
       type: "category",
       label: "Intro to Advanced Rust: Traits, Generics, & Lifetimes",
+      link: {type:'doc', id: 'Rust/section6/index'},
       items: [
-        'Rust/section6/section-6-intro',
         'Rust/section6/traits',
         'Rust/section6/generics',
         'Rust/section6/associated-generics',
@@ -257,8 +255,8 @@ module.exports = {
     {
       type: "category",
       label: "Intro to Advanced Rust: Iterators & Closures",
+      link: {type:'doc', id: 'Rust/section7/index'},
       items: [
-        'Rust/section7/section-7-intro',
         'Rust/section7/iterators',
         'Rust/section7/closures',
         'Rust/section7/macros'
@@ -267,8 +265,8 @@ module.exports = {
     {
       type: "category",
       label: "Learning Cargo, Rust’s Package Management	 System, Basic Testing",
+      link: {type:'doc', id: 'Rust/section8/index'},
       items: [
-        'Rust/section8/section-8-intro',
         'Rust/section8/defining-cargo-config',
         'Rust/section8/installing-crate',
         'Rust/section8/defining-crate-features',
