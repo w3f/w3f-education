@@ -3,17 +3,17 @@ id: introsubstrate
 sidebar_position: 1
 ---
 
-# indexduction to Substrate & FRAME
+# Introduction to Substrate & FRAME
 
 Developed by the Technical Education team at the Web3 Foundation, this course provides a comprehensive overview of the Substrate blockchain framework and building blockchains. 
 
 :::note Prerequisites
 
-Before starting, it would be wise to either have experience with Rust, or have taken our [index to Rust course](indexrust.md).  Substrate depends heavily on Rust, and it will be elaborated on extensively in this course.
+Before starting, it would be wise to either have experience with Rust, or have taken our [Intro to Rust course](introrust.md).  Substrate depends heavily on Rust, and it will be elaborated on extensively in this course.
 
 :::
  
-This course will provide a solid foundation in navigating the creation and modification of custom blockchain modules, called **pallets**.  This course will serve as an indexduction into becoming a Substrate developer, the factors involved, as well as a guided, hands on portion to building a custom FRAME pallet. 
+This course will provide a solid foundation in navigating the creation and modification of custom blockchain modules, called **pallets**.  This course will serve as an introduction into becoming a Substrate developer, the factors involved, as well as a guided, hands on portion to building a custom FRAME pallet. 
 
 In this course, you will:
 
@@ -46,7 +46,7 @@ In this course, you will:
 - [Node Template Tour & Overview](./Substrate/section3/explore-pallet-template.md)
 - [Installing & exploring the frontend template](./Substrate/section3/install-explore-frontend.md)
 
-## [Module 4 - index to Building a Custom FRAME Pallet](./Substrate/section4/index.md)
+## [Module 4 - Intro to Building a Custom FRAME Pallet](./Substrate/section4/index.md)
 
 - [Structuring our project](./Substrate/section4/project-structure.md)
 - [Adjusting Pallet Config & Runtime Overview](./Substrate/section4/pallet-config.md)
@@ -76,7 +76,7 @@ In this course, you will:
 - [Origins / Privileged Calls](./Substrate/section8/origins-calls.md)
 - [Chain & Genesis specification](./Substrate/section8/chain-genesis-spec.md)
 - [Pallet coupling (loose vs tight)](./Substrate/section8/pallet-coupling.md)
-- [indexduction to benchmarking](./Substrate/section8/benchmarking.md)
+- [Introduction to benchmarking](./Substrate/section8/benchmarking.md)
 
 
 
