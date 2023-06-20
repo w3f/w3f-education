@@ -3,17 +3,17 @@ id: introsubstrate
 sidebar_position: 1
 ---
 
-# Introduction to Substrate & FRAME
+# indexduction to Substrate & FRAME
 
 Developed by the Technical Education team at the Web3 Foundation, this course provides a comprehensive overview of the Substrate blockchain framework and building blockchains. 
 
 :::note Prerequisites
 
-Before starting, it would be wise to either have experience with Rust, or have taken our [Intro to Rust course](introrust.md).  Substrate depends heavily on Rust, and it will be elaborated on extensively in this course.
+Before starting, it would be wise to either have experience with Rust, or have taken our [index to Rust course](indexrust.md).  Substrate depends heavily on Rust, and it will be elaborated on extensively in this course.
 
 :::
  
-This course will provide a solid foundation in navigating the creation and modification of custom blockchain modules, called **pallets**.  This course will serve as an introduction into becoming a Substrate developer, the factors involved, as well as a guided, hands on portion to building a custom FRAME pallet. 
+This course will provide a solid foundation in navigating the creation and modification of custom blockchain modules, called **pallets**.  This course will serve as an indexduction into becoming a Substrate developer, the factors involved, as well as a guided, hands on portion to building a custom FRAME pallet. 
 
 In this course, you will:
 
@@ -25,58 +25,58 @@ In this course, you will:
 - Build and deploy a basic, social-network like blockchain pallet called `connect`
 
 
-## [Module 1 - Why Learn Substrate?](./Substrate/section1/intro.md)
+## [Module 1 - Why Learn Substrate?](./Substrate/section1/index.md)
 
-- [Why Learn Substrate?](./Substrate/section1/intro.md)
+- [Why Learn Substrate?](./Substrate/section1/index.md)
 - [What is Substrate?](./Substrate/section1/what-is-substrate.md)
 - [History Behind Substrate](./Substrate/section1/substrate-history.md)
 - [Substrate’s Design Choices](./Substrate/section1/substrate-design.md)
 
-## [Module 2 - Substrate 101 - Overview of the Substrate Framework](./Substrate/section2/intro.md)
+## [Module 2 - Substrate 101 - Overview of the Substrate Framework](./Substrate/section2/index.md)
 
-- [Substrate 101 - Overview of the Substrate Framework](./Substrate/section2/intro.md)
+- [Substrate 101 - Overview of the Substrate Framework](./Substrate/section2/index.md)
 - [FRAME Runtime](./Substrate/section2/substrate-runtime.md)
 - [FRAME Storage](./Substrate/section2/substrate-storage.md)
 - [FRAME Pallets](./Substrate/section2/substrate-pallets.md)
 
-## [Module 3 - Installing Dependencies & Node Template](./Substrate/section3/intro.md)
+## [Module 3 - Installing Dependencies & Node Template](./Substrate/section3/index.md)
 
 - [Installing Dependencies & Node Template](./Substrate/section3/install-deps.md)
 - [Install, configure, and run the Node Template](./Substrate/section3/node-template-tour.md)
 - [Node Template Tour & Overview](./Substrate/section3/explore-pallet-template.md)
 - [Installing & exploring the frontend template](./Substrate/section3/install-explore-frontend.md)
 
-## [Module 4 - Intro to Building a Custom FRAME Pallet](./Substrate/section4/intro.md)
+## [Module 4 - index to Building a Custom FRAME Pallet](./Substrate/section4/index.md)
 
 - [Structuring our project](./Substrate/section4/project-structure.md)
 - [Adjusting Pallet Config & Runtime Overview](./Substrate/section4/pallet-config.md)
 - [Creating storage maps](./Substrate/section4/create-storage-map.md)
 - [Events & Errors](./Substrate/section4/events-errors.md)
 
-## [Module 5 - Building a Custom FRAME Pallet - Making our pallet actionable](./Substrate/section5/intro.md)
+## [Module 5 - Building a Custom FRAME Pallet - Making our pallet actionable](./Substrate/section5/index.md)
 
 - [Creating dispatchable functions](./Substrate/section5//dispatchable.md)
 - [Writing unit tests for pallets](./Substrate/section5/unit-tests.md)
 - [Using the Balance pallet](./Substrate/section5/coupling-balances.md)
 
-## [Module 6 - Building a Custom FRAME Pallet - Deploying & Testing](./Substrate/section6/intro.md)
+## [Module 6 - Building a Custom FRAME Pallet - Deploying & Testing](./Substrate/section6/index.md)
 
 - [Running the node template](./Substrate/section6/run-node.md)
 - [Use the frontend-template to test your pallet](./Substrate/section6/test-frontend.md)
 - [Using Polkadot.js to explore your storage](./Substrate/section6/use-polkadotjs.md)
 
-## [Module 7 - Building a Custom FRAME Pallet - FRAME Best Practices](./Substrate/section7/intro.md)
+## [Module 7 - Building a Custom FRAME Pallet - FRAME Best Practices](./Substrate/section7/index.md)
 
 - [Thinking in terms of blockchain development](./Substrate/section7/blockchain-dev.md)
 - [Runtime Panics & FRAME Best Practices](./Substrate/section7/runtime-panics.md)
 - [How to approach testing in FRAME](./Substrate/section7/how-to-test-frame.md)
 
-## [Module 8 - Substrate Deepdive](./Substrate/section8/intro.md)
+## [Module 8 - Substrate Deepdive](./Substrate/section8/index.md)
 
 - [Origins / Privileged Calls](./Substrate/section8/origins-calls.md)
 - [Chain & Genesis specification](./Substrate/section8/chain-genesis-spec.md)
 - [Pallet coupling (loose vs tight)](./Substrate/section8/pallet-coupling.md)
-- [Introduction to benchmarking](./Substrate/section8/benchmarking.md)
+- [indexduction to benchmarking](./Substrate/section8/benchmarking.md)
 
 
 
