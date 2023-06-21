@@ -7,7 +7,7 @@ description: Begin creating your custom FRAME pallet.
 
 This module, along with the next modules will focus on practical work with `pallet_connect`, learning crucial FRAME aspects, and developing a pallet.
 
-- [lib.rs Structure Deepdive](./project-structure.md)
 - [Adjusting Pallet Config & Runtime Overview](./pallet-config.md)
+- [lib.rs Structure Deepdive](./project-structure.md)
 - [Creating storage maps](./create-storage-map.md)
 - [Events & Errors](./events-errors.md)

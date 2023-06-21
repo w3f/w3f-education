@@ -5,8 +5,8 @@ sidebar_label: Events & Errors
 description: Define the necessary events and errors needed for our pallet
 ---
 
-## Defining Events
+## Defining Events - Adding a New Event
 
-## Defining Errors
+## Defining Errors - Adding a New Error
 
 ## When to emit an event? How many errors?
