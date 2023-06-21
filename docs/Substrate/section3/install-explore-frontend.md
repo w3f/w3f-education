@@ -33,5 +33,5 @@ Once there, you can click the upper left, select `Development` at the bottom of 
 
 ![Polkadot JS Switch](../assets/polkadot_js_switch.png)
 
-Optionally, this [link will also take you directly to it](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944), although it won't show anything if a local node is not running:
+Optionally, this [link will also take you directly to it](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944), although it won't show anything if a local node is not running.
 
