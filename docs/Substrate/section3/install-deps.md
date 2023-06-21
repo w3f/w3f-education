@@ -16,7 +16,7 @@ You should already have the Rust toolset installed on your system.  If not, go a
 Remember that this repo is a clone from the original substrate-node-template, but with a few tweaks to make it easier to work with when we start our pallet development.
 
 ```bash
-git clone https://github.com/CrackTheCode016/substrate-mooc-node
+git clone https://github.com/w3f/substrate-mooc-node
 cd substrate-mooc-node/
 # This will build and launch the node
 # If you wish to just build it, then run cargo build --release
@@ -31,7 +31,9 @@ For immediate results to ensure our chain is up, go ahead and visit the Polkadot
 
 [Polkadot/Substrate Portal](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944)
 
-This link will automatically connect to your `localhost` node, where you can view all chain stats.  For example,  accounts, their balances, blocks, and on-chain events. 
+This link will automatically connect to your `localhost` node, where you can view all chain stats.  For example,  accounts, their balances, blocks, and on-chain events:
+
+![Polkadot JS Dev](../assets/polkadot_js_dev.png)
 
 ### Observing Chain State
 
@@ -47,14 +49,15 @@ You can also simply search storage by raw hexadecimal key.  However, most of the
 
 ## Using the `substrate-frontend-template`
 
-While the explorer is an ideal place for general functions, the `substrate-frontend-template` is another way to interact with the node. 
+While the explorer is an ideal place for general functions, the [`substrate-frontend-template`](https://github.com/substrate-developer-hub/substrate-front-end-template) is another way to interact with the node. 
 
-Navigate to where you installed it, and run `yarn start` (assuming you have run `yarn install` to install its local dependencies).  This should launch the frontend:
+Navigate to where you installed it, and run `yarn start` (assuming you have run `yarn install` to install its local dependencies):
 
+This should launch the frontend, located at [localhost:8000](http://localhost:8000/substrate-front-end-template):
 
+![Substrate Frontend Template](../assets/frontend_template.png)
 
 You now have most functionality and access to your chain through a single-page GUI.  For example, you can use the `transfer` pallet to transfer currency between accounts, upgrade your runtime via a forkless upgrade, and interact with pallets to modify the state of the chain directly.
-
 
 Feel free to play around here and experiment as much as possible with this interface, as a lot can be gleaned from observing this structure.  If you notice in the dropdown — one of the pallets is called `connect`. 
 

@@ -23,11 +23,15 @@ More info can be found at the [repository](https://github.com/substrate-develope
 
 ## The Polkadot.js Explorer
 
-The Polkadot.js explorer is also a great way for developers to get more insight into your node’s operations:
+The [Polkadot.js explorer](https://polkadot.js.org/apps/#/explorer) is also a great way for developers to get more insight into your node’s operations:
 
-[Polkadot/Substrate Portal](https://polkadot.js.org/apps/#/explorer)
+![Polkadot JS Main](../assets/polkadot_js_main.png)
 
-Once there, you can click the upper left, select `Development` at the bottom of the menu, select `Local Node`, and click `Switch` in the top right:
+The image above shows the live telemetry from the Polkadot relay chain.
+
+Once there, you can click the upper left, select `Development` at the bottom of the menu, select `Local Node`, and click `Switch` in the top right: 
 
 ![Polkadot JS Switch](../assets/polkadot_js_switch.png)
+
+Optionally, this [link will also take you directly to it](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944), although it won't show anything if a local node is not running:
 
