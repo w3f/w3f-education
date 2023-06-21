@@ -1,7 +1,7 @@
 ---
 id: section-2-intro
-title: Substrate (FRAME) Development 101 - Crucial Concepts
-sidebar_label: Substrate (FRAME) Development 101 - Crucial Concepts
+title: Introduction to FRAME
+sidebar_label: Introduction to FRAME
 description: Learn how the runtime, storage, and pallets make up a FRAME and Substrate-based blockchain.
 ---
 

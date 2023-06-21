@@ -301,7 +301,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Substrate (FRAME) Development 101",
+      label: "Introduction to FRAME",
       items: [
         'Substrate/section2/section-2-intro',
         'Substrate/section2/substrate-runtime',
