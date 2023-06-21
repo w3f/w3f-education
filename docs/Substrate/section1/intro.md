@@ -5,6 +5,14 @@ sidebar_label: Intro to Substrate - Module 1
 description: Why you should learn Substrate - the framework for building blockchains.
 ---
 
+:::info The prerequisites to learning Substrate
+
+You should have good knowledge of computer science and basic blockchain concepts.  Terminology like header, **block**, **client**, **hash**, **transaction** and **signature** should be familiar. Substrate is built on the [Rust Programming language](https://www.rust-lang.org/), which makes use of novel design patterns to enable the development of code that is safe and fast.  Although you don't need to know Rust to start with Substrate, understanding Rust will allow you to become a better Substrate developer.
+
+If you would like to brush up or learn the basics of Rust, feel free to take our [Intro to Rust course](../../introrust.md).
+
+:::
+
 In this first module, you will learn what Substrate (and **FRAME**) is, the context behind its existence, and the design choices that make it a unique solution in the wider web3 industry.  This module will set the tone for the rest of the course, where you will get hands-on with Substrate and FRAME.
 
 

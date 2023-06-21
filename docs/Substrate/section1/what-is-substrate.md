@@ -9,13 +9,9 @@ Substrate is a modular framework that enables you to create domain-specific bloc
 
 Substrate may be utilized to create a solo chain and parachain for a relay chain like Polkadot (respectively).  At its core, it is a set of Rust crates that provide the most basic primitives and protocols to implement a distributed state machine, such as a blockchain.
 
+:::info An analogy: React, the library for web and native user interfaces
+
 Another way to think about Substrate is similar to how a web developer may use/think about React.  Where React provides core libraries for manipulating the elements of the DOM via developer-defined components, Substrate also provides the base libraries and primitives needed to create a blockchain.  It was designed to not be opinionated via a highly generic codebase, enabling high customizability.
-
-:::info The prerequisites to learning Substrate
-
-You should have good knowledge of computer science and basic blockchain concepts.  Terminology like header, **block**, **client**, **hash**, **transaction** and **signature** should be familiar. Substrate is built on the [Rust Programming language](https://www.rust-lang.org/), which makes use of novel design patterns to enable the development of code that is safe and fast.  Although you don't need to know Rust to start with Substrate, understanding Rust will allow you to become a better Substrate developer.
-
-If you would like to brush up or learn the basics of Rust, feel free to take our [Intro to Rust course](../../introrust.md).
 
 :::
 
@@ -52,10 +48,12 @@ A common question is: _If Substrate exists, what is FRAME for?  Why is it mentio
 
 FRAME, or Framework for Runtime Aggregation of Modularized Entities, is another abstraction on top of Substrate.  It introduces a set of conventions and structures for building a blockchain with Substrate through numerous Rust macros.  These macros enable the powerful and trivial to use a system of **pallets** to construct **runtimes** using Substrate.  A **runtime**, also called a **state transition function (STF)**, defines the state transitions for a particular blockchain.  
 
-Remember, a state machine is the core concept of a blockchain.  FRAME facilitates the way for state to propagate and change in a more developer-friendly way.
-
 :::info
 
 As we advance, terminologies such as **pallets**, and custom bundles of business logic that make up a runtime will be expected.  If a term here is unfamiliar and undefined, reference the glossary.
 
 :::
+
+Remember, a state machine is the core concept of a blockchain.  FRAME facilitates the way for state to propagate and change in a more developer-friendly way.
+
+The outcome of developing on Substrate, particularly FRAME, is almost always a **runtime** (compiled to WebAssembly, or Wasm), also called a **state transition function (STF)**.  This runtime defines the core logic that determines how state propagates and changes in a blockchain.  In the coming lessons, you will learn more about how a runtime works and eventually dive deeper into its structure.
