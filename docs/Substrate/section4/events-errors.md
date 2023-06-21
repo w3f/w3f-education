@@ -13,6 +13,12 @@ For this section, you should be in: `pallets/connect/lib.rs` to follow along.
 
 Although our node and pallet compile, it does not contain all the functionality we need to fulfill the project's requirements.
 
+We have three overarching components we need to take care of to fulfill our functionality:
+
+1. **Implement events and errors**
+2. Implement storage items
+3. Implement dispatchable functions (extrinisics)
+
 This section will focus on adding a new events and errors to `pallet_connect` in order to prepare for creating state changes.
 
 ## Defining Events - Adding a New Event
