@@ -5,7 +5,7 @@ sidebar_label: Installing & exploring the frontend template
 description: Install and explore the frontend template for debugging and developing your pallet.
 ---
 
-The [front end template](https://github.com/substrate-developer-hub/substrate-front-end-template) is a valuable source that will allow us to quickly verify and test our Substrate chain with minimal interference.  
+The [front-end template](https://github.com/substrate-developer-hub/substrate-front-end-template) is a valuable source that will allow us to quickly verify and test our Substrate chain with minimal interference.  
 
 ## Installation
 
