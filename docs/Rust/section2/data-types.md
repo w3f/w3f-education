@@ -25,12 +25,12 @@ Scalar types represent a single value, such as a number or boolean.  Rust has fo
 
 ### Integers & Floating-point Types
 
-An integer in Rust is the same as in mathematics - a non-fractional, whole number that can be either positive or negative.  There are two types of integers: *signed* (real, positive numbers) and *unsigned* (real, negative *or* positive numbers).  
+An integer in Rust is the same as in mathematics - a non-fractional, whole number that can be either positive or negative.  There are two types of integers: *unsigned* (positive numbers) and *signed* (negative *or* positive numbers).  
 
 - Signed integers are denoted by the `i`, followed by the length of the number: `i32`.  
 - Unsigned integers start with `u,` followed by the length of the number: `u32`.
 
-The `32` that follows whether an integer is signed or unsigned denotes the length of the number.  Take this table from the [Rust Book](https://doc.rust-lang.org/book/ch03-02-data-types.html), which states all possible integer variants: 
+The numeric characters `32` that follow whether an integer is signed or unsigned denotes the length of the number.  Take this table from the [Rust Book](https://doc.rust-lang.org/book/ch03-02-data-types.html), which states all possible integer variants: 
 
 | Length    | Signed    | Unsigned  |
 |---------  |--------   |---------- |
