@@ -1,12 +1,14 @@
 ---
-id: coupling-balances
-title: Using the Balance pallet
-sidebar_label: Using the Balance pallet
-description: Learn how to couple and utilize the Balances pallet.
+id: coupling-pallets
+title: Using other pallets
+sidebar_label: Using other pallets
+description: Learn how coupling other pallets can extend your own pallet's functionality
 ---
 
 
-## Calling the `Balances` pallet within `register`
+## Softly coupling pallets via `Config`
+
+## Calling the `Balances` and `Randomness` pallet within `register`
 
 ### Type breakdown
 
