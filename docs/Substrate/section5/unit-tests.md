@@ -31,6 +31,18 @@ let bob_account: u64 = 1;
 
 This is for simplifying the testing process.
 
+### Test Externalities
+
+In order to actually configure and produce an environment, notice the function at the bottom of `mock.rs`:
+
+```rust
+// Build genesis storage according to the mock runtime.
+pub fn new_test_ext() -> sp_io::TestExternalities {
+	frame_system::GenesisConfig::default().build_storage::<Test>().unwrap().into()
+}
+```
+
+This is used to produce a sort of 'testbed' for your tests to take place to simulate things like the storage layer.
 
 ## Writing a unit test for `register`
 
@@ -44,7 +56,19 @@ Unit tests are placed within `tests.rs`.  They utilize the mock environment and 
 
 Using unit tests, we can test extrinsics, storage, errors, and events using our mock environment.
 
-### Low balance test
+### Unit Test Cheatsheet
+
+For testing, there are numerous macros and APIs one could call:
+
+-  `assert!`, `assert_ok!`, and `assert_eq!` work as per normal unit testing in Rust.
+-  To check if an event has been emitted, use `System::assert_last_event()` with the Event as the parameter.  You may need to use `.into()`.
+-  To check if an error has been emitted, use `assert_noop!(call, Error::<Test>::SomeError);`. Notice the `::<Test>::` turbofish syntax used to call the error with the Test config as the generic parameter.
+-  If events aren't seemingly emitted, be sure to set the testing environment to a height of at least **one**: `System::set_block_number(1);`
+
+### Low balance test example
+
+While all the tests are in `tests.rs`, here is an example of a unit test.  There are numerous helper APIs provided by FRAME, such as `System` to perform actions like setting the block height for the test environment.  See it in action below:
+
 
 ```rust
 #[test]
