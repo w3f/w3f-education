@@ -6,6 +6,7 @@ description: Use Polkadot.js to view events, errors, and storage relating to you
 ---
 
 
+
 ## Getting detailed storage and events
 
 ## Sending an extrinsic: Polkadot.js edition
