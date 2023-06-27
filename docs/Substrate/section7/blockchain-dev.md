@@ -5,7 +5,12 @@ sidebar_label: Thinking in terms of blockchain development
 description: How to think like a runtime developer and avoid common pitfalls.
 ---
 
+If you have come from a web2 background, it can be a learning-curve to "think like a blockchain developer".
+
+While this course merely touches on the capability of Substrate, there are some key practices and concepts to keep in mind when starting to develop blockchains.
+
+## Cryptography - "Don't roll your own crypto"
 
 ## Handling Storage
 
-## Cryptography - "Don't roll your own crypto"
+A large part of blockchain development is contingent on the management of storage.
