@@ -362,7 +362,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Substrate Deepdive",
+      label: "FRAME Deepdive",
       link: {type:'doc', id: 'Substrate/section8/index'},
       items: [
         'Substrate/section8/origins-calls',
