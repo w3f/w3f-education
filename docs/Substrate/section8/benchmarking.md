@@ -1,8 +1,8 @@
 ---
 id: benchmarking
-title: Introduction to benchmarking
-sidebar_label: Introduction to benchmarking
-description: A basic introduction to benchmarking in Substrate
+title: Introduction to Benchmarking
+sidebar_label: Introduction to Benchmarking
+description: A basic introduction to benchmarking in FRAME
 ---
 
 ## Weights in Substrate
