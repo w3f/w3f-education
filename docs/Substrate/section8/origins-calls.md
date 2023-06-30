@@ -5,7 +5,7 @@ sidebar_label: Origins (Privileged Calls) in FRAME
 description: Learn how origins and calls work in Substrate and FRAME.
 ---
 
-In [Module 5](../section5/dispatchable.md), you created a dispatchable function called `register` that defined an extrinsic.  The first parameter in that function, `OriginFor<T>`, enabled you also to interpret the call's sender, or **origin**,.  There are different types of origins, which can be used in various ways to filter out where a call should come from.
+In [Module 5](../section5/dispatchable.md), you created a dispatchable function called `register` that defined an extrinsic.  The first parameter in that function, `OriginFor<T>`, enabled you also to interpret the call's sender, or **origin**.  There are different types of origins, which can be used in various ways to filter out where a call should come from.
 
 ## Origin Overview
 
