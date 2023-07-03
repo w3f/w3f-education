@@ -7,6 +7,12 @@ description: Learn how storage works in Substrate, and how it is crucial for man
 
 When building a custom pallet, **storage** of some kind will be needed.  As with any other application, we need a place to store information after submitting state changes to the network.  Whether we’re looking to store a simple value or complex data structures with mappings, a set of APIs are provided to implement it accordingly.
 
+:::info Fun Fact: Polkadot and Kusama's Runtime is 1.5 MB
+
+The runtime itself is stored using this storage instance of the Substrate node under a unique key within the underlying key-value database.  The entirety of the runtime's Wasm code can be accessed on-chain.
+
+:::
+
 FRAME storage items allow a developer to define and store new items in our blockchain’s state.  Substrate's underlying `sp_io` is responsible, where they make calls accordingly to the storage layer of Substrate. 
 
 ## Substrate Storage Overview
