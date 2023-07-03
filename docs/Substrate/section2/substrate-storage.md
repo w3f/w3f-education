@@ -5,7 +5,7 @@ sidebar_label: Storage
 description: Learn how storage works in Substrate, and how it is crucial for managing state.
 ---
 
-When building a custom pallet, **storage** of some kind will be needed.  As with any other application, we need a place to store information after submitting state changes to the network.  Whether we’re looking to store a simple value or complex data structures with mappings, a set of APIs are provided to implement it accordingly.
+When building a custom pallet, **storage** of some kind will be needed.  As with any other application, we need a place to store information after submitting state changes to the network.  Whether we’re looking to store a simple value or complex data structures with mappings, a set of APIs are provided to implement it accordingly.  It is essential to realize that storage via blockchain is considered costly and should be used wisely by any pallet in the runtime.
 
 :::info Fun Fact: Polkadot and Kusama's Runtime is 1.5 MB
 
