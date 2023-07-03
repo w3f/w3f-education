@@ -5,7 +5,7 @@ sidebar_label: Runtime & Outer Node
 description: Learn what the runtime in Substrate is, and how it defines a state transition function.
 ---
 
-The runtime is the heart of our blockchain.  It defines precisely how our blockchain will handle new data, whether it will react to a change in the network's state, and communicates with storage and networking layers as needed.  Each runtime is a Wasm runtime, which enables forkless upgrades to be possible.
+The runtime is the heart of our blockchain.  It defines precisely how our blockchain will handle new data, whether it will react to a change in the network's state, and communicates with storage and networking layers as needed.  Each runtime is a Wasm Virtual Machine. It is possible to update runtime by modifying/replacing Wasm VM, which enables forkless upgrades on Substrate Blockchains to be possible.
 
 
 ```mermaid
