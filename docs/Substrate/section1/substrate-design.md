@@ -19,7 +19,7 @@ Blockchains often have standard 'primitives':  Polkadot, Bitcoin, or Ethereum al
 
 ## What are the challenges?
 
-There can be a degree of complexity for the developers maintaining a Substrate-based codebase due to its generic nature.  If you are a developer working closely with Substrate libraries, then intimate knowledge of how this generic design (and subsequently, [Rust's generic type system](https://doc.rust-lang.org/book/ch10-01-syntax.html)) works is crucial.
+There can be a degree of complexity for the developers maintaining a Substrate-based codebase due to its generic nature.  If you are a developer working closely with Substrate libraries, then intimate knowledge of how this generic design (and subsequently, [Rust's generic type system](https://doc.rust-lang.org/book/ch10-01-syntax.html)) works is highly useful.
 
 Luckily with FRAME, abstractions are provided to mitigate this, allowing a developer to take full advantage of Substrate.
 
