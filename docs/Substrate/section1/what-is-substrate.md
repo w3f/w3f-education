@@ -19,7 +19,7 @@ Another way to think about Substrate is similar to how a web developer may use/t
 
 Substrate, as mentioned, is a collection of Rust crates that define a generic way to implement a blockchain.  Although you will only use a few of these libraries directly in this course, know that everything you use is built upon them. 
 
-You will encounter two primary prefixes when developing with Substrate crates: `sc-` and `sp-`.  Crates prefixed with `sc-` usually refer to network-related functionalities, such as peer-to-peer networking or consensus.  The `sp-` prefix usually indicates that the library in question is for allowing the outer node and runtime to communicate. 
+You will encounter two primary prefixes when developing with Substrate crates: `sc-` (**Substrate Client**) and `sp-` (**Substrate Primitive**).  Crates prefixed with `sc-` usually refer to network-related functionalities, such as peer-to-peer networking or consensus.  The `sp-` prefix usually indicates that the library provides primitives for a particular aspect of Substrate, such as runtime-related primitives.
 
  A few significant crates that you will encounter are: 
 
