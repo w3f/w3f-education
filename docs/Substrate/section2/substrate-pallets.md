@@ -23,7 +23,7 @@ To view all pallets included with FRAME, look at the [repository on GitHub](http
 
 ## Our Pallet: pallet_connect
 
-The pallet you will help build and modify is called `pallet_connect`.  It is a basis for a simple, Sybil-resistant social network, showing several vital functionalities and practices for building pallets using FRAME.  
+As a part of this course, the pallet you will build and modify is called `pallet_connect`.  It is a basis for a simple, Sybil-resistant social network, demonstrating several vital functionalities and practices for building pallets using FRAME.  
 
 Below you may find a list of the exact features this pallet provides: 
 
