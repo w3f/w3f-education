@@ -14,7 +14,7 @@ If you would like to brush up or learn the basics of Rust, feel free to take our
 
 :::
 
-In this first module, you will learn what Substrate (and **FRAME**) is, the context behind its existence, and the design choices that make it a unique solution in the wider web3 industry.  This module will set the tone for the rest of the course, where you will get hands-on with Substrate and FRAME.
+In this first module, you will learn what Substrate (and **FRAME**) is, the context behind its existence, and the design choices that make it a unique solution in the wider Web3 industry.  This module will set the tone for the rest of the course, where you will get hands-on experience with Substrate and FRAME.
 
 
 - [What is Substrate?](./what-is-substrate.md)
