@@ -17,7 +17,7 @@ Blockchains often have standard 'primitives':  Polkadot, Bitcoin, or Ethereum al
 
  We only really need to define these primitives one time for the chain.  In FRAME, this is done using a Rust trait called `Config`, which uses associated types to group all relevant primitives together in a way defined only once for the entire blockchain.
 
-## Are there any drawbacks?
+## What are the challenges?
 
 There can be a degree of complexity for the developers maintaining the Substrate codebase, as there is a learning curve.  If you are a developer working closely with Substrate libraries, then intimate knowledge of how Rust typing works is crucial.
 
