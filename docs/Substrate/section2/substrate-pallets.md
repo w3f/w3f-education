@@ -17,7 +17,7 @@ Several standard pallets built using FRAME are used in many networks and relay c
 
 - `pallet_balances` - The Balances pallet provides account and balance functionality.
 - `pallet_system` - The System pallet provides low-level access to core types and cross-cutting utilities.  It is the base layer for other pallets interacting with the Substrate framework components.
-- `pallet_referenda` - The Referenda pallet handles the administration of general stakeholder voting.  This pallet is what drives Polkadot and Kusama's on-chain governance, OpenGov.
+- `pallet_referenda` - The Referenda pallet handles the administration of general stakeholder voting.  This pallet along with other pallets like `pallet_conviction_voting` drives Polkadot OpenGov - the next generation of decentralized on-chain governance.
 
 To view all pallets included with FRAME, look at the [repository on GitHub](https://github.com/paritytech/substrate/tree/master/frame).
 
