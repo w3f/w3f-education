@@ -7,7 +7,7 @@ description: Learn what Substrate it is, and why it's the future of building inf
 
 Substrate is a modular framework that enables you to create domain-specific blockchains by composing custom or pre-built components.  The *Framework for Runtime Aggregation of Modularized Entities (**FRAME**)* is a set of modules and support libraries that simplify runtime development.  In Substrate, these modules are called **pallets**, each hosting domain-specific logic to include in a chain's runtime.
 
-Substrate may be utilized to create a solo chain and parachain for a relay chain like Polkadot (respectively).  At its core, it is a set of Rust crates that provide the most basic primitives and protocols to implement a distributed state machine, such as a blockchain.
+Substrate may be utilized to create a solo chain or a parachain for a relay chain like Polkadot or Kusama.  At its core, it is a set of Rust crates that provide the most basic primitives and protocols to implement a distributed state machine, such as a blockchain.
 
 :::info An analogy: React, the library for web and native user interfaces
 
