@@ -9,7 +9,7 @@ FRAME, or the **Framework for Runtime Aggregation of Modularized Entities,** ess
 
 These modules are called **pallets.**  In short, they contain the business logic for custom blockchain functionality and are added and managed by the runtime.  In theory, you can build a Substrate based chain without them.  However, they contain a lot of core functionality that serves as a valuable base for a new Substrate based chain.
 
-We’ll be making a custom pallet later in this course, where you will see in action how you can mix and match pallets to create your very own blockchain.  The pallets handle the signing and submission of extrinsics on Substrate, allowing us to implement custom functionality directly into the chain.
+We’ll create a custom pallet later in this course, where you will see how to mix and match pallets to create your own blockchain.  The pallets handle the signing and submission of extrinsics on Substrate, allowing us to implement custom functionality directly into the chain.
 
 ## Common Pallets in FRAME
 
