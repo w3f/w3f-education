@@ -7,7 +7,7 @@ description: Learn how the design choices of Substrate were made, and why they m
 
 The Substrate code base was designed to be **highly** generic.  This enables high customizability and definition of various primitives for creating a blockchain with Substrate.
 
-From networking to defining how the state of a blockchain mutates, most of what makes Substrate adaptable comes from its heavy use of Rust's generic typing system.
+From networking to defining how the state of a blockchain mutates, most of what makes Substrate adaptable comes from its heavy use of [Rust's generic typing system](https://doc.rust-lang.org/book/ch10-01-syntax.html).
 
 ## What is a generic code base?
 
