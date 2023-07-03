@@ -13,7 +13,7 @@ We’ll create a custom pallet later in this course, where you will see how to m
 
 ## Common Pallets in FRAME
 
-Several standard pallets built using FRAME are used in many networks, as well as relay chains like Polkadot or Kusama.  The standard pallet naming convention is `pallet_` followed by the actual name.  The following are standard pallets that you will encounter:
+Several standard pallets built using FRAME are used in many networks and relay chains like Polkadot or Kusama.  The standard pallet naming convention is `pallet_` followed by the actual name.  Here are a few standard pallets that you might often encounter as a developer:
 
 - `pallet_balances` - The Balances pallet provides account and balance functionality.
 - `pallet_system` - The System pallet provides low-level access to core types and cross-cutting utilities.  It is the base layer for other pallets interacting with the Substrate framework components.
