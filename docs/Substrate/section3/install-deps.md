@@ -11,7 +11,7 @@ As a part of this course, a pre-configured pallet and node runtime are already p
 
 ## Cloning & Building
 
-You should already have the Rust toolset installed on your system.  If not, go ahead and follow those, then come back here.  Remember, this may take a bit to build and run, so feel free to get a cup of coffee or read an awesome Medium article while you wait.
+You should already have the Rust toolset installed on your system.  If not, go ahead and follow the [instructions to install](https://docs.substrate.io/install/) and come back to this section.  Remember, this may take a bit to build and run, so feel free to get a cup of coffee or read an awesome Medium article while you wait.
 
 Remember that this repo is a clone from the original substrate-node-template, but with a few tweaks to make it easier to work with when we start our pallet development.
 
