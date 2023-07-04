@@ -29,6 +29,6 @@ In most pallets, including our template, you will also see the following files: 
 
 ## benchmarking.rs and weights.rs
 
-Benchmarking and weights are used to measure an extrinsic's performance, or **weight**.  Substrate is built around the concept of **weight**, where each state change carries how much computation is required to execute it on-chain.  Using benchmarking, `weights.rs` can be generated; a weight can be assigned to each extrinsic.  This weight defines how much a user will pay to execute that state change.
+Benchmarking and weights measure an extrinsic's performance, or **weight**.  Substrate is built around the concept of **weight**, which measures how much computation is required to execute it on-chain.  Using benchmarking, weight can be assigned to each extrinsic, and the `weights.rs` file is generated.  Often, this weight corresponds to how much a user will pay to execute that state change. Weights also ensure that the transactions within a block can be executed successfully within the block production time window.
 
 Although these two won't be covered in this course in-depth at a technical level, they are both crucial concepts to learn if one wishes to create a production-grade pallet.
