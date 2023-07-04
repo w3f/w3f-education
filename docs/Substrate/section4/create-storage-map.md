@@ -5,7 +5,7 @@ sidebar_label: Creating storage maps
 description: Define and create storage maps for our pallet.
 ---
 
-:::caution
+:::info
 
 For this section, you should be in: `pallets/connect/lib.rs` to follow along.
 
