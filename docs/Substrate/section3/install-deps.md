@@ -23,7 +23,7 @@ cd substrate-mooc-node/
 cargo run --release -- --dev
 ```
 
-Once built, we have multiple ways of interacting and running with our node.
+Once built, we have multiple ways of running and interacting with our node.
 
 ## Running & Viewing our Development Chain
 
