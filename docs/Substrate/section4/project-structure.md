@@ -76,7 +76,7 @@ pframesupport(["#[frame_support::pallet]"])--> MACRO
 
 ## Pallet Configuration - `Config<T>`
 
-A common pattern you may notice is a seemingly ambiguous generic type: `T`.  If you are unfamiliar with generic types and their usage in Rust, below is a quick breakdown of how they work in this context.
+A common pattern you may notice is a seemingly ambiguous generic type: `T`.  If you are unfamiliar with generic types and their usage in Rust, below is a quick explanation of how they work in this context.
 
 ### Use of generics and associated types
 
