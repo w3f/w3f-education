@@ -19,7 +19,7 @@ This section will focus on adding a new FRAME storage item to `pallet_connect`. 
 
 ## Defining a Storage Item
 
-While we have errors to define **user** as out of bounds and events that emit when someone successfully registers, there is currently no place to store the user in underlying storage.
+While we have errors to define **user** as out of bounds and events that emit when someone successfully registers, there is currently no place to store the data about the user in underlying storage.
 
 There are several types of storage items in FRAME.  We will use a `StorageMap`, which works similarly to a `HashMap` in principle.  Navigate to the struct called `UserMetadata`, and right under it, add this type alias:
 
