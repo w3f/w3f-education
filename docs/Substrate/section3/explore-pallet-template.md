@@ -18,7 +18,7 @@ Our pallet, called `pallet-connect`, defines our custom logic that is then enabl
 pub struct Pallet<T>(_);
 ```
 
-We will go into more detail on the structure of `lib.rs` later but know for now that this makes a FRAME pallet at the most basic level.  Pallets, just like this one, are later imported as a crate to the runtime, where the aforementioned `construct_runtime!` macro is responsible for defining a runtime based on the collection of pallets and their respective configurations.
+We will go into more detail on the structure of `lib.rs` later but know for now that this makes a FRAME pallet at the most basic level.  Pallets, just like this one, are later imported as a crate to the runtime, where the aforementioned `construct_runtime!` macro is responsible for defining and constructing a runtime based on the collection of pallets and their respective configurations.
 
 ## mock.rs and tests.rs
 
