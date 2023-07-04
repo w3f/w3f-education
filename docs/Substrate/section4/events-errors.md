@@ -5,7 +5,7 @@ sidebar_label: Events & Errors
 description: Define the necessary events and errors needed for our pallet
 ---
 
-:::caution
+:::info
 
 For this section, you should be in: `pallets/connect/lib.rs` to follow along.
 
