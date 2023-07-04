@@ -315,7 +315,6 @@ module.exports = {
         'Substrate/section3/install-deps',
         'Substrate/section3/node-template-tour',
         'Substrate/section3/explore-pallet-template',
-        'Substrate/section3/install-explore-frontend',
       ],
     },
     {
