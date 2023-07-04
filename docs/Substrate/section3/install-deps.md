@@ -7,7 +7,7 @@ description: Install the substrate-node-template, which will jump-start the deve
 
 It’s time to download the Substrate Node Template.  This repository will give us everything to run, test, and create a custom FRAME-based pallet.
 
-As a part of this course, a pre-configured pallet and node runtime are already provided for you, which you may find here.
+As a part of this course, a pre-configured pallet and node runtime are already provided for you, which you will find here.
 
 ## Cloning & Building
 
