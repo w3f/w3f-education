@@ -19,10 +19,12 @@ module.exports = {
   },
   themes: ["@docusaurus/theme-mermaid"],
   themeConfig: {
+    mermaid: {
+      theme: { light: 'neutral', dark: 'neutral' },
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
-
     },
     navbar: {
       title: 'Technical Education',
