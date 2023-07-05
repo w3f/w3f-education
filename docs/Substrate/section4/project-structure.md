@@ -82,7 +82,7 @@ A common pattern you may notice is a seemingly ambiguous generic type: `T`.  If 
 
 Remember that Substrate is built to be generic, saving the developer the pains of implementing blockchain-related primitives from scratch.  FRAME and Substrate both make use of two crucial Rust-related concepts:
 
-- [Macros](../../Rust/section8/intro.md)
+- [Macros](../../Rust/section7/macros.md)
 - [Generics / Associated Types](../../Rust/section6/generics.md)
 
 `T` refers to a generic or **placeholder** type.  Where macros enable a relatively easy experience implementing various mandatory functionality, generics allow the code to be highly configurable.  The `Config` trait uses generics to provide a generic implementation of an overarching configuration which may derive many blockchain primitives therein.
