@@ -322,8 +322,9 @@ module.exports = {
       label: "Building a Custom FRAME Pallet: Intro",
       link: {type:'doc', id: 'Substrate/section4/index'},
       items: [
-        'Substrate/section4/project-structure',
+        'Substrate/section4/section-4-intro',
         'Substrate/section4/pallet-config',
+        'Substrate/section4/project-structure',
         'Substrate/section4/create-storage-map',
         'Substrate/section4/events-errors',
       ],
