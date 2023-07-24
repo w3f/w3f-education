@@ -17,7 +17,7 @@ const FeatureList = [
   {
     image: '/img/tutorials.webp',
     title: 'Our Tutorials',
-    link: '/',
+    link: 'https://www.youtube.com/playlist?list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8',
   },
 ];
 
