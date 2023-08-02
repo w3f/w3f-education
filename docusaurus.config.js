@@ -65,7 +65,7 @@ module.exports = {
           items: [
             {
               to: 'docs/introparachain',
-              label: 'Parachain',
+              label: 'Guide to Developing Parachains',
             },
           ],
         },
