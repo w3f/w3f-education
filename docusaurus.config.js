@@ -60,6 +60,18 @@ module.exports = {
 
         {
           type: 'dropdown',
+          label: 'Guides',
+          position: 'right',
+          items: [
+            {
+              to: 'docs/introparachain',
+              label: 'Parachain',
+            },
+          ],
+        },
+
+        {
+          type: 'dropdown',
           label: 'Resources',
           position: 'right',
           items: [
