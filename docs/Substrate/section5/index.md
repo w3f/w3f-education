@@ -1,5 +1,5 @@
 ---
-title: Building a Custom FRAME Pallet - Making our pallet actionable
+title: Building a FRAME Pallet
 ---
 
 import DocCardList from '@theme/DocCardList';
