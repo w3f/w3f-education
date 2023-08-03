@@ -57,7 +57,7 @@ In this course, you will:
 
 - [Creating dispatchable functions](./Substrate/section5//dispatchable.md)
 - [Writing unit tests for pallets](./Substrate/section5/unit-tests.md)
-- [Using the Balance pallet](./Substrate/section5/coupling-balances.md)
+- [Using the Balance pallet](./Substrate/section5/coupling-pallets.md)
 
 ## [Module 6 - Building a Custom FRAME Pallet - Deploying & Testing](./Substrate/section6/index.md)
 

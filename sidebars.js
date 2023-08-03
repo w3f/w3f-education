@@ -335,7 +335,7 @@ module.exports = {
       items: [
         'Substrate/section5/dispatchable',
         'Substrate/section5/unit-tests',
-        'Substrate/section5/coupling-balances',
+        'Substrate/section5/coupling-pallets',
       ],
     },
     {
