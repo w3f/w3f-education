@@ -390,6 +390,53 @@ module.exports = {
     },
   ],
 
+  parachain: [
+    {
+      type: 'doc',
+      id: 'introparachain',
+      label: 'Course Syllabus',
+    },
+    {
+      type: "category",
+      label: "Parachain Architecture Overview",
+      link: {type:'doc', id: 'Parachain/beginner/section1/index'},
+      items: [
+        'Parachain/beginner/section1/network-components',
+        'Parachain/beginner/section1/relay-chain',
+        'Parachain/beginner/section1/parachain',
+      ],
+    },
+    {
+      type: "category",
+      label: "Dependency Installation",
+      link: {type:'doc', id: 'Parachain/beginner/section2/index'},
+      items: [
+        'Parachain/beginner/section2/install-binary',
+        'Parachain/beginner/section2/install-template',
+        'Parachain/beginner/section2/running-chains',
+      ],
+    },
+    {
+      type: "category",
+      label: "Creating & Registering Parachain",
+      link: {type:'doc', id: 'Parachain/beginner/section3/index'},
+      items: [
+        'Parachain/beginner/section3/creating-auction',
+        'Parachain/beginner/section3/creating-parathread',
+        'Parachain/beginner/section3/developing-parachain',
+      ],
+    },
+    {
+      type: "category",
+      label: "Moving Forward",
+      link: {type:'doc', id: 'Parachain/beginner/section4/index'},
+      items: [
+        'Parachain/beginner/section4/initatives',
+        'Parachain/beginner/section4/road-to-production',
+      ],
+    },
+  ],
+
   atoz: [
     {
       type: 'doc',
