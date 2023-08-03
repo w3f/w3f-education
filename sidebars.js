@@ -362,12 +362,12 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Substrate Deepdive",
+      label: "FRAME Deepdive",
       link: {type:'doc', id: 'Substrate/section8/index'},
       items: [
         'Substrate/section8/origins-calls',
-        'Substrate/section8/chain-genesis-spec',
         'Substrate/section8/pallet-coupling',
+        'Substrate/section8/chain-genesis-spec',
         'Substrate/section8/benchmarking',
       ],
     },
