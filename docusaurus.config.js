@@ -19,6 +19,10 @@ module.exports = {
   },
   themes: ["@docusaurus/theme-mermaid"],
   themeConfig: {
+    prism: {
+      additionalLanguages: ['rust'],
+      theme: require('prism-react-renderer/themes/dracula'),
+    },
     mermaid: {
       theme: { light: 'neutral', dark: 'neutral' },
     },
@@ -142,10 +146,7 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Web3 Foundation. Built with Docusaurus.`,
     },
-    prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
-    },
+
   },
   presets: [
     [
