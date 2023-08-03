@@ -21,6 +21,7 @@ module.exports = {
   themeConfig: {
     prism: {
       additionalLanguages: ['rust'],
+      theme: require('prism-react-renderer/themes/dracula'),
     },
     mermaid: {
       theme: { light: 'neutral', dark: 'neutral' },
