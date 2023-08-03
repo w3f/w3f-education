@@ -294,7 +294,8 @@ module.exports = {
       items: [
         'Substrate/section1/what-is-substrate',
         'Substrate/section1/substrate-history',
-        'Substrate/section1/substrate-design'
+        'Substrate/section1/substrate-design',
+        'Substrate/section1/capstone-project'
       ],
     },
     {
