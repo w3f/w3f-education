@@ -1,5 +1,5 @@
 ---
-title: Installing Dependencies & Node Template
+title: Substrate Node Template
 ---
 
 import DocCardList from '@theme/DocCardList';
