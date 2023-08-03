@@ -310,7 +310,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Installing Dependencies & Node Template",
+      label: "Substrate Node Template",
       link: {type:'doc', id: 'Substrate/section3/index'},
       items: [
         'Substrate/section3/install-deps',
@@ -320,7 +320,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Building a Custom FRAME Pallet: Intro",
+      label: "Custom FRAME Pallet",
       link: {type:'doc', id: 'Substrate/section4/index'},
       items: [
         'Substrate/section4/pallet-config',
@@ -331,7 +331,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Building a Custom FRAME Pallet: Making our pallet actionable",
+      label: "Building a Custom FRAME Pallet",
       link: {type:'doc', id: 'Substrate/section5/index'},
       items: [
         'Substrate/section5/dispatchable',
@@ -341,7 +341,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Building a Custom FRAME Pallet: Deploying & Testing",
+      label: "FRAME Pallet Tests and Deployment",
       link: {type:'doc', id: 'Substrate/section6/index'},
       items: [
         'Substrate/section6/run-node',
@@ -351,7 +351,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Building a Custom FRAME Pallet: Pallet & FRAME best practices",
+      label: "FRAME - Best Practices",
       link: {type:'doc', id: 'Substrate/section7/index'},
       items: [
         'Substrate/section7/blockchain-dev',
