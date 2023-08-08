@@ -53,14 +53,16 @@ If you are on macOS, below is the current best way to install `polkadot`:
     ./target/release/polkadot --help
     ```
 
-:::tip Add to your local path!
+:::tip Create a symlink to easily run your Polkadot binary.
 
-For ease of use, consider adding the target executable to your local path:
-
+For ease of use, consider adding the target executable to your local path or creating a symlink:
+ 
 ```bash
-export PATH= ./target/release/polkadot
-
+# Replace <path> with the path to your cloned polkadot repo
+# The last line may need to be replaced! 
+ln -s <path>/polkadot/target/release/polkadot /usr/local/bin/polkadot 
 # Use directly in path!
+
 polkadot --help
 ```
 
@@ -93,13 +95,19 @@ Once Polkadot is compiled, we must ensure we have a valid `chain_spec` file to l
 It is possible to also generate your own, custom chain specification.  This is usually done after changing the `polkadot` source code, as the `code` field within the chain spec would need to be updated.  Once you modify the chain spec, you can run the following command to generate it:
 
 ```bash
+# Run from locally compiled repository
 ./target/release/polkadot build-spec > /tmp/chain-spec-plain.json
+# or, with symlink
+polkadot build-spec > /tmp/chain-spec-plain.json
 ```
 
 Once this is built, also build the **raw**, SCALE-encoded file:
 
 ```bash
+# Run from locally compiled repository
 ./target/release/polkadot build-spec > /tmp/chain-spec-plain.json
+# or, with symlink
+polkadot build-spec > /tmp/chain-spec-plain.json
 ```
 
 

@@ -40,16 +40,18 @@ The `substrate-parachain-template` is a Cumulus ready node template.  If you hav
 
 Once your parachain is compiled, the process of altering it (if required) and recompiling will be trivial. 
 
-:::tip Add to your local path!
+:::tip Create a symlink to easily run your parachain binary.
 
-For ease of use, consider adding the target executable to your local path:
+For ease of use, consider adding the target executable to your local path or creating a symlink:
+ 
+```bash
+# Replace <path> with the path to your cloned substrate-parachain-template repo
+# The last line may need to be replaced! 
+ln -s <path>/polkadot/target/release/substrate-parachain-template /usr/local/bin/substrate-parachain-template 
+# Use directly in path!
 
-    ```bash
-    export PATH= ./target/release/substrate-parachain-template
-
-    # Use directly in path!
-    substrate-parachain-template --help
-    ```
+substrate-parachain-template --help
+```
 
 :::
 
@@ -61,13 +63,19 @@ Just as the relay chain had a chain spec, the parachain must have one as well.  
 1. Firstly, generate the JSON file:
 
     ```bash
+    # Run from locally compiled repository
     ./target/release/substrate-parachain-template build-spec > /tmp/parachain_chain_spec.json
+    # or, with symlink:
+    substrate-parachain-template build-spec > /tmp/parachain_chain_spec.json
     ```
 
 2. Once this is built, also build the **raw**, SCALE-encoded file:
 
     ```bash
-    ./target/release/polkadot build-spec > /tmp/parachain_chain_spec.json
+    # Run from locally compiled repository
+    ./target/release/substrate-parachain-template build-spec > /tmp/parachain_chain_spec.json
+    # or, with symlink:
+    substrate-parachain-template build-spec > /tmp/parachain_chain_spec.json
     ```
 
 
@@ -81,12 +89,16 @@ The genesis configuration must also be configured, as the relay chain will requi
 
 ```bash
 ./target/release/parachain-template-node export-genesis-wasm --chain raw-parachain-chainspec.json para-2000-wasm
+# or, with symlink:
+parachain-template-node export-genesis-wasm --chain raw-parachain-chainspec.json para-2000-wasm
 ```
 
 ### Generating the Genesis Wasm Bundle
 
 ```bash
 ./target/release/parachain-template-node export-genesis-state --chain raw-parachain-chainspec.json para-2000-genesis-state
+# or, with symlink:
+parachain-template-node export-genesis-state --chain raw-parachain-chainspec.json para-2000-genesis-state
 ```
 
 By now, you should have three total files generated: 
