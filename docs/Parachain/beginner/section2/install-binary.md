@@ -30,32 +30,39 @@ If you are on macOS, below is the current best way to install `polkadot`:
 
 1. Clone the latest, stable branch of Polkadot (1.0.0 at the time of this writing):
    
-```bash
-git clone --branch release-v1.0.0 https://github.com/paritytech/polkadot.git
-```
+    ```bash
+    git clone --branch release-v1.0.0 https://github.com/paritytech/polkadot.git
+    ```
 
 
 2. Use `cargo` to build the binary
 
+    ```bash
+    cargo build --release
+    ```
+
+    :::caution ⌛ This will take some time
+
+    Depending on your machine, this may take 45-60 minutes.
+
+    :::
+
+3. Once compiled, ensure it runs:
+
+    ```bash
+    ./target/release/polkadot --help
+    ```
+
+:::tip Add to your local path!
+
+For ease of use, consider adding the target executable to your local path:
+
 ```bash
-cargo build --release
+export PATH= ./target/release/polkadot
+
+# Use directly in path!
+polkadot --help
 ```
-
-:::caution 
-
-Depending in your machine, this can take 45-60 minute to build.
-
-:::
-
-1. Once compiled, ensure it runs:
-
-```bash
-./target/release/polkadot --help
-```
-
-:::tip Add to your local path
-
-Adding your newly compiled `polkadot` binary will help in ensuring you can focus on launching your chain locally.
 
 :::
 
@@ -89,5 +96,10 @@ It is possible to also generate your own, custom chain specification.  This is u
 ./target/release/polkadot build-spec > /tmp/chain-spec-plain.json
 ```
 
+Once this is built, also build the **raw**, SCALE-encoded file:
+
+```bash
+./target/release/polkadot build-spec > /tmp/chain-spec-plain.json
+```
 
 
