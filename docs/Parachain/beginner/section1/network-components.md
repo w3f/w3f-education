@@ -46,9 +46,13 @@ Relay chains can also be thought of as **blockspace** allocators, where parachai
 
 The primary idea behind having a series of parachains is to introduce the notion of **sharding**.  Each parachain can run its own, unique application specific state transition function (also referred to as a **runtime**).  Parachains can now work in parallel to one another, focusing on their specific application, whilst still being finalized by the relay chain's validator set.
 
+![](../../assets/relay_chain.png)
+
 :::
 
 **Parachains** are also full-fledged blockchains, but unlike a **solo chain**, they are able to interoperate with other parachains on the relay chain.  Parachains have the advantage of the relay chain finalizing and validating their state transitions - meaning the relay chain represents the state of all of its parachains on the network.
+
+![](../../assets/relay_chain_zoomed.png)
 
 Polkadot is a relay chain that contains functionality for balances, staking, governance, and this validation logic for hosting parachains.  
 
