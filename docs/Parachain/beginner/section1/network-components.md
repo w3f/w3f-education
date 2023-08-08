@@ -42,7 +42,9 @@ flowchart TD
 
 Relay chains can also be thought of as **blockspace** allocators, where parachains pay for the secure blockspace that relay chains inherently provide as a result of their economic security.
 
-:::info Relay Chains - Blockchain Sharding?
+:::info Relay Chains and Sharding
+
+You will often hear Polkadot described as a "sharded" blockchain network, which enables scalability in an otherwise resource-constrained environment.
 
 The primary idea behind having a series of parachains is to introduce the notion of **sharding**.  Each parachain can run its own, unique application specific state transition function (also referred to as a **runtime**).  Parachains can now work in parallel to one another, focusing on their specific application, whilst still being finalized by the relay chain's validator set.
 
