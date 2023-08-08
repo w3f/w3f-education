@@ -12,6 +12,7 @@ In this page, you will:
 - Install and compile the `substrate-parachain-template`
 - Configure the ParaID & Chain Spec
 - Generate your parachain's runtime and genesis state (Wasm)
+- If you don't wish to customize or go through this process, refer to the parachain-guide-resources repository
 
 ## Install the `substrate-parachain-template`
 
