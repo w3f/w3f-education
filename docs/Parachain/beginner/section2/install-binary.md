@@ -19,6 +19,8 @@ Before starting, you should have the following already on your system:
 
 For more information, view the **General Prerequisites** page.
 
+For the best experience in following this guide, consider also cloning this repository: [`parachain-guide-resources`](https://github.com/CrackTheCode016/parachain-guide-resources)
+
 ## Installing `polkadot`
 
 For this guide, we will ensure a consistent environment by installing Polkadot.  This is how we will provision and start our relay chain instance:
@@ -60,7 +62,7 @@ For ease of use, consider adding the target executable to your local path or cre
 ```bash
 # Replace <path> with the path to your cloned polkadot repo
 # The last line may need to be replaced! 
-ln -s <path>/polkadot/target/release/polkadot /usr/local/bin/polkadot 
+ln -s <path-to-polkadot>/polkadot/target/release/polkadot /usr/local/bin/polkadot 
 # Use directly in path!
 
 polkadot --help
@@ -88,15 +90,17 @@ apt install polkadot
 
 ## Chain Specification
 
-Once Polkadot is compiled, we must ensure we have a valid `chain_spec` file to launch our local relay chain.  For the purposes of this guide, you can download the one located here: parachain_development_guide_chain_spec.json. Keep this at hand, as this will be used to run your relay chain.
+Once Polkadot is compiled, we must ensure we have a valid `chain_spec` file to launch our local relay chain.  
 
-### Generating a Custom Chain Specification
+For the purposes of this guide, you can use the one located here with your cloned repository at `relaychain/relaychain_chain_spec.json` and `relaychain/relaychain_chain_spec_raw.json` and. Keep this at hand, as this will be used to run your relay chain.
+
+### Optional: Generating a Custom Chain Specification
 
 It is possible to also generate your own, custom chain specification.  This is usually done after changing the `polkadot` source code, as the `code` field within the chain spec would need to be updated.  Once you modify the chain spec, you can run the following command to generate it:
 
 ```bash
 # Run from locally compiled repository
-./target/release/polkadot build-spec > /tmp/chain-spec-plain.json
+./polkadot/target/release/polkadot build-spec > /tmp/chain-spec-plain.json
 # or, with symlink
 polkadot build-spec > /tmp/chain-spec-plain.json
 ```
@@ -105,7 +109,7 @@ Once this is built, also build the **raw**, SCALE-encoded file:
 
 ```bash
 # Run from locally compiled repository
-./target/release/polkadot build-spec > /tmp/chain-spec-plain.json
+./polkadot/target/release/polkadot build-spec > /tmp/chain-spec-plain.json
 # or, with symlink
 polkadot build-spec > /tmp/chain-spec-plain.json
 ```

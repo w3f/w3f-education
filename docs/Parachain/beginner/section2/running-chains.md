@@ -23,7 +23,7 @@ If you followed the steps to add a `symlink`, you may replace the preceded: `./t
 
 - Launch Alice: 
     ```bash
-    ./target/release/polkadot \
+    ./polkadot/target/release/polkadot \
         --alice \
         --validator \
         --base-path /tmp/relay/alice \
@@ -33,7 +33,7 @@ If you followed the steps to add a `symlink`, you may replace the preceded: `./t
     ```
 - Launch Bob:
     ```bash
-    ./target/release/polkadot \
+    ./polkadot/target/release/polkadot \
         --bob \
         --validator \
         --base-path /tmp/relay/bob \
@@ -66,7 +66,7 @@ With the relay chain actively producing blocks, we now need to launch a **collat
 
 - Launch a collator
     ```bash
-    ./target/release/parachain-template-node \
+    ./substrate-parachain-template/target/release/parachain-template-node \
         --alice \
         --collator \
         --force-authoring \

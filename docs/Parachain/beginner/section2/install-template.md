@@ -86,27 +86,29 @@ If you recall, the runtime of every Substrate-based chain is compiled down to We
 
 The genesis configuration must also be configured, as the relay chain will require it when registering it in the next section.  These both depend on the `parachain_chain_spec.json` which we previously generated.
 
-### Generating The Runtime Wasm Bundle
+As always, these are already available within 
+
+### Optional: Generating The Runtime Wasm Bundle
 
 ```bash
-./target/release/parachain-template-node export-genesis-wasm --chain raw-parachain-chainspec.json para-2000-wasm
+./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-wasm --chain ./parachain/parachain_chain_spec_raw.json parachain-wasm
 # or, with symlink:
-parachain-template-node export-genesis-wasm --chain raw-parachain-chainspec.json para-2000-wasm
+parachain-template-node export-genesis-wasm --chain ./parachain/parachain_chain_spec_raw.json parachain-wasm
 ```
 
 ### Generating the Genesis Wasm Bundle
 
 ```bash
-./target/release/parachain-template-node export-genesis-state --chain raw-parachain-chainspec.json para-2000-genesis-state
+./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-state --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-genesis-state
 # or, with symlink:
-parachain-template-node export-genesis-state --chain raw-parachain-chainspec.json para-2000-genesis-state
+parachain-template-node export-genesis-state --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-genesis-state
 ```
 
 By now, you should have three total files generated: 
 
-- **Parachain Runtime**: `para-2000-wasm`
-- **Genesis State**: `para-2000-genesis-state`
-- **Raw Chain Spec**: `raw-parachain-chainspec.json`
+- **Parachain Runtime**: `parachain-wasm`
+- **Genesis State**: `parachain-genesis-state`
+- **Raw Chain Spec**: `parachain_chain_spec_raw.json`
 
 With these, we are now able to run our relay chain validators, run our parachain collator, and finally register our parachain.
 
