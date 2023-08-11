@@ -42,8 +42,8 @@ If you followed the steps to add a `symlink`, you may replace the preceded: `./t
         --validator \
         --base-path /tmp/relay/bob \
         --chain ./relaychain/relaychain_spec_raw.json \
-        --port 30333 \
-        --rpc-port 9944 \
+        --port 30334 \
+        --rpc-port 9945 \
         --disable-worker-version-check
     ```
 
@@ -89,6 +89,19 @@ If Bob and Alice are not syncing, you may run `bob` with this command:
 
 :::
 
+If both nodes are syncing, you should be seeing the block count increase and new consensus sessions being started:
+
+```bash
+2023-08-11 10:58:18 🙌 Starting consensus session on top of parent 0x7389b78dbb3a94bf09aa53802c338131e242b78678f5959f170e4902ccf24422
+2023-08-11 10:58:20 ParentBlockRandomness did not provide entropy
+2023-08-11 10:58:20 ParentBlockRandomness did not provide entropy
+2023-08-11 10:58:20 🎁 Prepared block for proposing at 1 (3 ms) [hash: 0xcc797177284f6f7c6e1bc544b0f73624007909c0f94cb6079d1d4dd18fbb6056; parent_hash: 0x7389…4422; extrinsics (2): [0xdf06…3c14, 0x2cde…129c]
+2023-08-11 10:58:20 🔖 Pre-sealed block for proposal at 1. Hash now 0x8934f6a5aa897e16fa3ba97e4be1ebb67372d6729737871b235b4208bf08dc5b, previously 0xcc797177284f6f7c6e1bc544b0f73624007909c0f94cb6079d1d4dd18fbb6056.
+2023-08-11 10:58:20 👶 New epoch 0 launching at block 0x8934…dc5b (block slot 281960983 >= start slot 281960983).
+2023-08-11 10:58:20 👶 Next epoch starts at slot 281960993
+2023-08-11 10:58:20 ✨ Imported #1 (0x8934…dc5b)
+```
+
 Congratulations, your relay chain is up and running!
 
 ## Launching the Parachain
@@ -131,6 +144,33 @@ CLI parameter `--execution` has no effect anymore and will be removed in the fut
 2023-08-11 10:52:48 [Relaychain] 👶 Creating empty BABE epoch changes on what appears to be first startup.
 2023-08-11 10:52:48 [Relaychain] 🏷  Local node identity is: 12D3KooWKdqvh5Lzt1p8Rm54QNC1UwWtBabyBPUYtkdAt1SKkYpG
 ```
+
+Your parachain should be syncing with the relay chain, and will look similar to the below.  Notice the blocks being imported and matching the height of the relay chain:
+
+```bash
+2023-08-11 11:22:04 [Relaychain] 💤 Idle (2 peers), best: #237 (0x3069…400d), finalized #235 (0xa85b…c64c), ⬇ 48.2kiB/s ⬆ 1.9kiB/s
+2023-08-11 11:22:05 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
+2023-08-11 11:22:06 [Relaychain] ✨ Imported #238 (0x5a36…447c)
+2023-08-11 11:22:09 [Relaychain] 💤 Idle (2 peers), best: #238 (0x5a36…447c), finalized #235 (0xa85b…c64c), ⬇ 1.7kiB/s ⬆ 1.2kiB/s
+2023-08-11 11:22:10 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
+2023-08-11 11:22:12 [Relaychain] ✨ Imported #239 (0x546a…53eb)
+2023-08-11 11:22:14 [Relaychain] 💤 Idle (2 peers), best: #239 (0x546a…53eb), finalized #236 (0x6b32…4ead), ⬇ 1.0kiB/s ⬆ 0.5kiB/s
+2023-08-11 11:22:15 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
+2023-08-11 11:22:04 [Relaychain] 💤 Idle (2 peers), best: #237 (0x3069…400d), finalized #235 (0xa85b…c64c), ⬇ 48.2kiB/s ⬆ 1.9kiB/s
+2023-08-11 11:22:05 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
+2023-08-11 11:22:06 [Relaychain] ✨ Imported #238 (0x5a36…447c)
+2023-08-11 11:22:09 [Relaychain] 💤 Idle (2 peers), best: #238 (0x5a36…447c), finalized #235 (0xa85b…c64c), ⬇ 1.7kiB/s ⬆ 1.2kiB/s
+2023-08-11 11:22:10 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
+2023-08-11 11:22:12 [Relaychain] ✨ Imported #239 (0x546a…53eb)2023-08-11 11:22:18 [Relaychain] 👶 New epoch 24 launching at block 0xf339…e676 (block slot 281961223 >= start slot 281961223).
+2023-08-11 11:22:18 [Relaychain] 👶 Next epoch starts at slot 281961233
+2023-08-11 11:22:18 [Relaychain] ✨ Imported #240 (0xf339…e676)
+2023-08-11 11:22:19 [Relaychain] 💤 Idle (2 peers), best: #240 (0xf339…e676), finalized #237 (0x3069…400d), ⬇ 1.4kiB/s ⬆ 0.7kiB/s
+2023-08-11 11:22:20 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
+```
+
+It's possible you may also need to specify a bootnode for the parachain as well.
+
+
 
 ## Observing State & Verifying Orchestration
 
