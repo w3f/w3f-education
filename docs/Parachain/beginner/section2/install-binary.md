@@ -57,12 +57,25 @@ If you are on macOS, below is the current best way to install `polkadot`:
 
 :::tip Create a symlink to easily run your Polkadot binary.
 
-For ease of use, consider adding the target executable to your local path or creating a symlink:
+For ease of use, consider adding the target executable to your local path or creating a symlink. There are three binaries that need to be linked if you choose to do this:
+
+- `polkadot`
+- `polkadot-execute-worker`
+- `polkadot-prepare-worker`
  
 ```bash
 # Replace <path> with the path to your cloned polkadot repo
 # The last line may need to be replaced! 
-ln -s <path-to-polkadot>/polkadot/target/release/polkadot /usr/local/bin/polkadot 
+
+# Polkadot
+ln -s <path-to-polkadot>/target/release/polkadot /usr/local/bin/polkadot 
+
+# Polkadot Prepare Worker
+ln -s <path-to-polkadot>/target/release/polkadot-prepare-worker /usr/local/bin/polkadot-prepare-worker 
+
+# Polkadot Execute Worker
+ln -s <path-to-polkadot>/target/release/polkadot-execute-worker /usr/local/bin/polkadot-execute-worker 
+
 # Use directly in path!
 
 polkadot --help
