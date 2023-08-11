@@ -12,7 +12,9 @@ In this page, you will:
 - Install and compile the `substrate-parachain-template`
 - Configure the ParaID & Chain Spec
 - Generate your parachain's runtime and genesis state (Wasm)
-- If you don't wish to customize or go through this process, refer to the parachain-guide-resources repository
+- If you don't wish to customize or go through this process, refer to the `parachain-guide-resources` repository
+
+
 
 ## Install the `substrate-parachain-template`
 
@@ -56,6 +58,12 @@ substrate-parachain-template --help
 
 :::
 
+:::tip If you don't wish to customize or go through this process, refer to the [`parachain-guide-resources`](https://github.com/CrackTheCode016/parachain-guide-resources) repository
+
+The repository has everything required to proceed to running your chains.
+
+:::
+
 ## Parachain Chain Specification
 
 Just as the relay chain had a chain spec, the parachain must have one as well.  It is generated in the same way:
@@ -90,21 +98,21 @@ As always, these are already available within
 
 ### Optional: Generating The Runtime Wasm Bundle
 
-```bash
-./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-wasm --chain ./parachain/parachain_chain_spec_raw.json parachain-wasm
-# or, with symlink:
-parachain-template-node export-genesis-wasm --chain ./parachain/parachain_chain_spec_raw.json parachain-wasm
-```
+    ```bash
+    ./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-wasm --chain ./parachain/parachain_chain_spec_raw.json parachain-wasm
+    # or, with symlink:
+    parachain-template-node export-genesis-wasm --chain ./parachain/parachain_chain_spec_raw.json parachain-wasm
+    ```
 
-### Generating the Genesis Wasm Bundle
+### Optional: Generating the Genesis Wasm Bundle
 
-```bash
-./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-state --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-genesis-state
-# or, with symlink:
-parachain-template-node export-genesis-state --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-genesis-state
-```
+    ```bash
+    ./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-state --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-genesis-state
+    # or, with symlink:
+    parachain-template-node export-genesis-state --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-genesis-state
+    ```
 
-By now, you should have three total files generated: 
+By now, you should have three total files generated and/or available: 
 
 - **Parachain Runtime**: `parachain-wasm`
 - **Genesis State**: `parachain-genesis-state`

@@ -11,7 +11,6 @@ In this final page, we will do the following:
 - Run **one** parachain collator to supply block data to our relay chain.
 - Observe the state changing on both chains, and what they mean.
 
-
 :::note All commands are in the context of the `parachain-guide-resources` repository
 :::
 
