@@ -168,9 +168,9 @@ Your parachain should be syncing with the relay chain, and will look similar to 
 2023-08-11 11:22:20 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
 ```
 
-It's possible you may also need to specify a bootnode for the parachain as well.
+It's possible you may also need to specify a bootnode for the parachain as well.  
 
-
+Our parachain is not making any blocks; and that is normal, as we still need to register it onto the relay chain.
 
 ## Observing State & Verifying Orchestration
 
