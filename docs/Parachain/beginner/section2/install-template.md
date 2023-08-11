@@ -50,7 +50,7 @@ For ease of use, consider adding the target executable to your local path or cre
 ```bash
 # Replace <path> with the path to your cloned substrate-parachain-template repo
 # The last line may need to be replaced! 
-ln -s <path>/polkadot/target/release/substrate-parachain-template /usr/local/bin/substrate-parachain-template 
+ln -s <path>/target/release/substrate-parachain-template /usr/local/bin/substrate-parachain-template 
 # Use directly in path!
 
 substrate-parachain-template --help

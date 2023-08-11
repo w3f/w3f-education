@@ -101,7 +101,7 @@ With the relay chain actively producing blocks, we now need to launch a **collat
         --alice \
         --collator \
         --force-authoring \
-        --chain ./raw-parachain-chainspec.json \
+        --chain ./parachain/parachain_chain_spec_raw.json \
         --base-path /tmp/parachain/alice \
         --port 40333 \
         --rpc-port 8844 \
@@ -111,6 +111,26 @@ With the relay chain actively producing blocks, we now need to launch a **collat
         --port 30343 \
         --rpc-port 9977
     ```
+
+With the output looking like: 
+
+```bash
+2023-08-11 10:52:44 Parachain Collator Template
+2023-08-11 10:52:44 ✌️  version 0.1.0-38c8589a9f8
+2023-08-11 10:52:44 ❤️  by Anonymous, 2020-2023
+2023-08-11 10:52:44 📋 Chain specification: Local Testnet
+2023-08-11 10:52:44 🏷  Node name: Alice
+2023-08-11 10:52:44 👤 Role: AUTHORITY
+2023-08-11 10:52:44 💾 Database: RocksDb at /tmp/parachain/alice/chains/local_testnet/db/full
+CLI parameter `--execution` has no effect anymore and will be removed in the future!
+2023-08-11 10:52:45 Parachain Account: 5Ec4AhPZk8STuex8Wsi9TwDtJQxKqzPJRCH7348Xtcs9vZLJ
+2023-08-11 10:52:45 Is collating: yes
+2023-08-11 10:52:46 [Parachain] 🔨 Initializing Genesis block/state (state: 0xde8e…66b5, header-hash: 0x2717…55b5)
+2023-08-11 10:52:47 [Relaychain] 🔨 Initializing Genesis block/state (state: 0x98e3…789f, header-hash: 0x7389…4422)
+2023-08-11 10:52:47 [Relaychain] 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2023-08-11 10:52:48 [Relaychain] 👶 Creating empty BABE epoch changes on what appears to be first startup.
+2023-08-11 10:52:48 [Relaychain] 🏷  Local node identity is: 12D3KooWKdqvh5Lzt1p8Rm54QNC1UwWtBabyBPUYtkdAt1SKkYpG
+```
 
 ## Observing State & Verifying Orchestration
 
