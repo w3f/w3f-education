@@ -13,7 +13,7 @@ the course of the Treasury.
 Funds for Treasury are raised in two ways:
 1. by channeling some of the validator rewards that come from minting of new tokens, and
 2. by channeling a fraction of transaction fees and of slashings.
-The  rst method allows us to maintain a  xed in
+The first method allows us to maintain a fixed in
 ation rate while simultaneously having the
 validator rewards be dependent of the staking level: the difference between the
 scheduled minted tokens and the validator rewards is assigned to Treasury in each era. We also

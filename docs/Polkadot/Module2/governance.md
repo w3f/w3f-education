@@ -4,14 +4,14 @@ id: governance
 
 # On-Chain Governance
 
-The relay chain's logic itself will need updating occasionally. The governance mechanism 
+The relay chain's logic itself will need updating occasionally. The governance mechanism
 allows Polkadot token holders to participate in the decision-making process rather than
 having any changes to the system be imposed by a central authority { or in the case of some de-
 centralised systems, by a team of developers. Too often, a contentious code change has led existing
 blockchains to an impasse or a permanent fork. We want a mechanism that balances being able
 to make uncontentious changes quickly when needed, while also providing the tools to deal with
 contentious proposals in a decisive and fair manner. The ultimate arbiters of Polkadot are the DOT
-token holders and so all important decisions, such as code changes, are made by state-weighted referenda. 
+token holders and so all important decisions, such as code changes, are made by state-weighted referenda.
 There is an elected council, responsible for making smaller decisions and partially setting
 the priority for referenda, in such a way that they cannot block a change that a majority wants.
 
@@ -46,7 +46,7 @@ Turnout biasing: It may seem restrictive to force a full stakeholder-based proce
 thing as little as, say, nudging the block time down by 5%. However, without this rule the network
 would likely be unstable, as placing its control outside of the hands of stakeholders would create a
 misalignment that may lead to inaction or worse. However, by taking advantage of the fact that
-turnout is rarely 100%, we can e ect di erent outcomes depending on the circumstances, crafting
+turnout is rarely 100%, we can effect different outcomes depending on the circumstances, crafting
 a balance of power between active and passive stakeholders. For example, simple voting systems
 typically introduce a notion of quorum, whereby a minimum amount of turnout must be reached
 before a change is passed.

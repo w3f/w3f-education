@@ -15,12 +15,12 @@ Interacts with parachain collators, but need not participate in a parachain as a
 be done from a light client, and they need not have any awareness of parachains.
 
 - Collator: collects and submits parachain data to the relay chain, subject to protocol rules
-described below. They are chosen as de ned by the parachain, and must be full nodes of it.
+described below. They are chosen as defined by the parachain, and must be full nodes of it.
 
 ## Validators
 
 A validator is the highest in charge and helps seal new blocks on the Polkadot
-network. The validators role is contingent upon a su ciently high bond being deposited, though
+network. The validators role is contingent upon a sufficiently high bond being deposited, though
 we allow other bonded parties to nominate one or more validators to act for them and as such
 some portion of the validators bond may not necessarily be owned by the validator itself but
 rather by these nominators. A validator must run a relay-chain client implementation with high
@@ -30,11 +30,11 @@ involves receiving, validating and republishing candidate blocks. The parachain 
 random and changes frequently. Since the validator cannot reasonably be expected to maintain a
 fully-synchronised database of all parachains, the task of devising a suggested new parachain block
 will be delegated to a third-party, known as a collator. Once all new parachain blocks have been
-properly rati ed by their appointed validator subgroups, validators must then ratify the relay-chain
+properly ratified by their appointed validator subgroups, validators must then ratify the relay-chain
 block itself. This involves updating the state of the transaction queues (essentially moving data
 from a parachains output queue to another parachains input queue), processing the transactions of
-the rati ed relay-chain transaction set and ratifying the  nal block, including the  nal parachain
-changes. A validator provably not ful lling their role will be slashed i.e. part or all of their bond
+the ratified relay-chain transaction set and ratifying the final block, including the final parachain
+changes. A validator provably not fulfilling their role will be slashed i.e. part or all of their bond
 will be taken. In some sense, validators are similar to the mining pools of current PoW blockchains.
 
 ## Nominators
@@ -48,7 +48,7 @@ miners of the present-day PoW networks.
 
 ## Collators
 
-Transaction collators (collators for short) are parties who assist validators in producing valid parachain blocks. 
+Transaction collators (collators for short) are parties who assist validators in producing valid parachain blocks.
 They maintain a full-node for a particular parachain; meaning that
 they retain all necessary information to be able to author new blocks and execute transactions in
 much the same way as block producers do on current blockchains. Under normal circumstances,
