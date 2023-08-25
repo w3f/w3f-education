@@ -66,6 +66,5 @@ The goal of designing an electoral system that achieves proportional representat
 present in the literature for a very long time. Of special note is the work of Scandinavian math-
 ematicians Edvard Phragmén and Thorvald Thiele in the late nineteenth century. Very recently,
 there has been considerable effort in the research community to formalise the notion of proportional
-representation, and revisit the methods by Phragmén and Thiele and optimise them algorithmi-
-cally. Our validator selection protocol is an adaptation of Phragmén's methods and is guaranteed
+representation, and revisit the methods by Phragmén and Thiele and optimise them algorithmically. Our validator selection protocol is an adaptation of Phragmén's methods and is guaranteed
 to observe the technical property of proportional justified representation (PJR)

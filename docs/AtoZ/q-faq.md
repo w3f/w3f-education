@@ -10,8 +10,7 @@ For the past two-plus years that Polkadot has been live, questions from the comm
 
 ## How does staking work?
 
-Staking on Polkadot uses Nominated Proof-of-Stake(NPoS), a flavor of PoS that allows for two types of participants, nominators and validators. Validators are the entities that run a full version of the Polkadot blockchain as a node, and they secure the network by bonding a number of tokens, which in turn allows them to create blocks. Nominators are the entities that elect validators into the active validator set, which currently is 297 on Polkadot and 1000 on Kusama. 
-
+Staking on Polkadot uses Nominated Proof-of-Stake(NPoS), a flavor of PoS that allows for two types of participants, nominators and validators. Validators are the entities that run a full version of the Polkadot blockchain as a node, and they secure the network by bonding a number of tokens, which in turn allows them to create blocks. Nominators are the entities that elect validators into the active validator set, which currently is 297 on Polkadot and 1000 on Kusama.
 
 :::info
 
@@ -21,7 +20,7 @@ The active validator set is an arbitrary value that can be changed via governanc
 
 The role of staking is a part of the consensus mechanism. The mechanism allows token holders to be the on-chain entities that secure the network by putting up their tokens as collateral. This incentive, baked into the protocol, allows any token holder to earn newly created tokens, which the network mints whenever there is a successful new block. In simple terms, this is the inflation portion of the monetary policy of the network.
 
-The reason why its design is complex is due to avoid the pitfalls of staking models. Mainly that of a few entities controlling the majority of the stake. Proof-of-Stake systems all have a different flavor of choosing the staked entities as validators. And the goal here is not to favor certain entities more than others. That endevour in itself is a challenging problem to solve. 
+The reason why its design is complex is due to avoid the pitfalls of staking models. Mainly that of a few entities controlling the majority of the stake. Proof-of-Stake systems all have a different flavor of choosing the staked entities as validators. And the goal here is not to favor certain entities more than others. That endeavour in itself is a challenging problem to solve.
 
 For a detailed dive into NPoS read the [letter N](npos.md) post of this blog series. And also be sure to checkout the [Polkadot wiki](https://wiki.polkadot.network/docs/learn-phragmen).
 
@@ -31,7 +30,7 @@ For a detailed dive into NPoS read the [letter N](npos.md) post of this blog ser
 
 ## Why does a parachain need to connect to the Relay Chain?
 
-The Relay Chain provides security for parachains. On a more granular level, it also provides a marketplace for parachains to compete. Via the parachain auctions, this competition can be considered healthy, as it incentivizes good product development and disincentivizes scams. The security of the Relay Chain is inherited by the parachains, making them as secure as the Relay Chain. This is a big improvement to previous models of blockchain development - as previously blockchains would have needed to develop their network security from scratch. 
+The Relay Chain provides security for parachains. On a more granular level, it also provides a marketplace for parachains to compete. Via the parachain auctions, this competition can be considered healthy, as it incentivizes good product development and disincentivizes scams. The security of the Relay Chain is inherited by the parachains, making them as secure as the Relay Chain. This is a big improvement to previous models of blockchain development - as previously blockchains would have needed to develop their network security from scratch.
 
 ## How is Polkadot different from Cosmos?
 
