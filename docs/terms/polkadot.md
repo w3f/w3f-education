@@ -1,7 +1,5 @@
 ---
 id: polkadot
-title: Example term
-hoverText: This is an example term
+title: Polkadot
+hoverText: A heterogeneous, multi-chain network allowing various blockchains of different characteristics to perform arbitrary, cross-chain communication under shared security.
 ---
-
-This is a more detailed explanation for the term. The `hoverText` metadata provides a preview of the explanation.
