@@ -18,4 +18,5 @@ jobs:
         with:
           use-quiet-mode: "yes"
           use-verbose-mode: "yes"
+          config-file: '.github/workflows/markdown.config.json'
       - uses: actions/checkout@v3

@@ -41,7 +41,7 @@ context-specific registers for holding bytes.
 On [Polkadot](https://polkadot.network/), Wasm is a core part of the technology stack:
 
 - It defines reliable state transition functions for the
-  [relay chain runtimes](https://wiki.polkadot.network/docs/appendix#runtime).
+  [relay chain runtimes](https://wiki.polkadot.network/docs/glossary#runtime).
 - It defines
   [Parachain Validation Functions (PVFs)](https://wiki.polkadot.network/docs/learn-parachains-protocol),
   which is a core part of how relay and parachains agree on their respective state.

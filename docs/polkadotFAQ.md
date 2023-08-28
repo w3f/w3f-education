@@ -8,7 +8,7 @@ sidebar_position: 1
 ### Where can I find a list of academic and in-depth articles and information about Polkadot?
 
 - Polkadot Wiki: https://wiki.polkadot.network/
-- Web3 Research Papers: https://research.web3.foundation/en/latest/index.html
+- Web3 Research Papers: https://research.web3.foundation/research
 - Overview of Polkadot and its Design Considerations: https://arxiv.org/abs/2005.13456.
 - Polkadot Specification: https://spec.polkadot.network/
 - Analysis of Polkadot: Architecture, Internals, and Contradictions:
@@ -573,8 +573,7 @@ for (var key in accounts) {
 IPFS is decentralized, even though it's not using blockchain ( https://ipfs.tech/ ) - it's not at
 all the same as putting something on a Google Cloud server. Same with Crust.
 
-Conversely, on-chain does not necessarily mean decentralized ( see this article from a former W3F
-Tech Ed team member - https://bitfalls.com/hr/2020/05/25/opinion-on-private-blockchains/ ).
+Conversely, on-chain does not necessarily mean decentralized.
 
 It's important to realize that technically, a blockchain is just a linked list with hash pointers.
 There's nothing about the blockchain data structure itself that promotes decentralization, just
