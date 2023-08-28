@@ -13,13 +13,13 @@ possibly malicious but no consideration is given to malicious edges. A security 
 > 1=3 of nodes are honest in the model, in fact translates to > 1=3 of nodes are honest and can
 all communicate perfectly reliably with each other all the time in reality. Conversely, if an edge
 is controlled by a malicious ISP in reality, it is the corresponding node(s) that must be treated as
-malicious in any analysis under the model. More signi cantly, if the underlying communications
+malicious in any analysis under the model. More significantly, if the underlying communications
 network is centralised, this can give the central parties the ability to corrupt > 1=3 of nodes within
 the model thereby breaking its security assumptions, even if they don't actually have arbitrary
 execution rights on that many nodes.
 In this section we outline and enumerate the communication primitives that we require in
 Polkadot, and sketch a high-level design on how we achieve these in a decentralised way, with the
-specifics to be re ned as we move forward with a production system.
+specifics to be refined as we move forward with a production system.
 
 
 ## Why Decentralize?

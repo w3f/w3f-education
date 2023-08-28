@@ -194,7 +194,7 @@ TODO
 
 We saw previously how we can write functions that take our custom data types as parameters or return our custom data types. Rust also supports the notion of a method. A method is a special function that is defined in the context of a particular type.
 
-If you are familiar with Object Oriented languages like Java, methods will be very familiar. In Rust, methods are defined in a separate block than the type itself, unlike Java where the methods and data are all part of the same class. This adds some flexibility to Rust as we will see. Methods always take function 
+If you are familiar with Object Oriented languages like Java, methods will be very familiar. In Rust, methods are defined in a separate block than the type itself, unlike Java where the methods and data are all part of the same class. This adds some flexibility to Rust as we will see. Methods always take function
 
 Methods are very similar to functions in syntax. The only difference is that they go in an `impl` block. As an illustrative example, lets re-write the `multiply_fraction` function the we looked at earlier as a method.
 
@@ -263,7 +263,7 @@ It is also valid, although not particularly idiomatic, to mix some uses of `Self
 
 ## API Methods
 
-We've seen already that we can access fields of our `Fraction` type by using the dot operator and the name of the field. However, this only works if we are in the same module that defines the struct, or if thei fields are declared as public with the `pub` keyword. We will discuss visibility and API design later in this unit. But for now, know that it is often not possible to access the fields of types that are defined in foreign code.
+We've seen already that we can access fields of our `Fraction` type by using the dot operator and the name of the field. However, this only works if we are in the same module that defines the struct, or if their fields are declared as public with the `pub` keyword. We will discuss visibility and API design later in this unit. But for now, know that it is often not possible to access the fields of types that are defined in foreign code.
 
 Rather, it is often the case that a programmer-friendly API is defined on the types to prevent accidentally introducing inconsistent data. Some of the most common such methods are accessor and modifier methods aka "getters" and "setters".
 
@@ -464,7 +464,7 @@ There are a few new things happening in this function signature. The first is th
 
 By using this trait bound, we ensure that any type passed to this function implements the necessary area trait. And if you try to pass a different type, for example `bool`, then your code won't compile.
 
-## Conditional Method Implementation.
+## Conditional Method Implementation
 
 It turns out that trait bounds are the exact tool we need to make our generic Fraction type work. Let's take a look at how we can use trait bounds here.
 
@@ -492,7 +492,7 @@ impl<T> Fraction<T> {
 }
 ```
 
-First notice the syntax for implementing a method on a struct that has generics. we start with `impl<T>` which can be understood as "for all types, `T`, implement the following. Then, as before, we name the type that we are associating this method with. 
+First notice the syntax for implementing a method on a struct that has generics. we start with `impl<T>` which can be understood as "for all types, `T`, implement the following. Then, as before, we name the type that we are associating this method with.
 
 ```text
 error[E0369]: cannot multiply `T` by `T`
@@ -607,6 +607,7 @@ TODO flesh this out.
 
 Types
 ------
+
 Vec
 String
 BTreeMap
@@ -614,6 +615,7 @@ BTreeSet - Note there are also hashtable based maps and sets with similar interf
 
 Traits
 ------
+
 Iterator
 Display
 Debug

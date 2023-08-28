@@ -8,13 +8,13 @@ sidebar_position: 3
 
 Polkadot's validators are selected by the NPoS scheme. Nominated Proof-of-Stake
 or NPoS is our adaptation of PoS where an unlimited amount of token holders can participate as
-nominators, backing with their stake a large but limited set of validators. This paradigm simultaneously 
+nominators, backing with their stake a large but limited set of validators. This paradigm simultaneously
 achieves high levels of security and scalability, as well as an unprecedented level of
-decentralization by ensuring a property known in voting theory as proportional justified representation. 
-Nominators, who are economically vested in the security of the system, act as watchdogs over the validators' 
+decentralization by ensuring a property known in voting theory as proportional justified representation.
+Nominators, who are economically vested in the security of the system, act as watchdogs over the validators'
 performance. Based on the nominators' expressed preferences over candidates, every era the system selects a
-set of validators with stake backings that are as high. and as evenly distributed as possible. Nominators 
-are also economically disincentivized from concentrating their votes on too few validators, which helps 
+set of validators with stake backings that are as high. and as evenly distributed as possible. Nominators
+are also economically disincentivized from concentrating their votes on too few validators, which helps
 keep the system decentralised over time.
 
 Furthermore, the election mechanism is highly adaptive to sudden changes, such as some validators
@@ -38,7 +38,6 @@ where on average each blockchain is backed by 1/100-th of the stake, and thus on
 1/100-th the level of security. We guarantee availability by using erasure coding of each parachain
 block to make the validators collectively and robustly responsible for the availability of these blocks
 without breaking scalability.
-
 
 ## Proof of Stake (PoS) Overview
 
@@ -65,8 +64,7 @@ to ensure user satisfaction.
 
 The goal of designing an electoral system that achieves proportional representation has been
 present in the literature for a very long time. Of special note is the work of Scandinavian math-
-ematicians Edvard Phragm en and Thorvald Thiele in the late nineteenth century. Very recently,
-there has been considerable e ort in the research community to formalise the notion of proportional
-representation, and revisit the methods by Phragm en and Thiele and optimise them algorithmi-
-cally. Our validator selection protocol is an adaptation of Phragm en's methods and is guaranteed
+ematicians Edvard Phragmén and Thorvald Thiele in the late nineteenth century. Very recently,
+there has been considerable effort in the research community to formalise the notion of proportional
+representation, and revisit the methods by Phragmén and Thiele and optimise them algorithmically. Our validator selection protocol is an adaptation of Phragmén's methods and is guaranteed
 to observe the technical property of proportional justified representation (PJR)

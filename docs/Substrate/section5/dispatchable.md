@@ -31,7 +31,7 @@ We are going to create a function called `register`, which will take several par
 - Check if they have enough balance to lock, and if so, lock it.  Else, they cannot register.
 - Generate a profile picture for our user
 - If the user meets the requirements, we store them in our `StorageMap`.
-- Emit an event that they registered. 
+- Emit an event that they registered.
 
 ### Defining our sender and function
 
@@ -112,7 +112,6 @@ let user_metadata: UserMetadata<T> = UserMetadata {
     account_id: sender.clone(),
 };
 ```
-
 
 ### Lock balance and store our user
 
@@ -200,7 +199,7 @@ The entire register function should end up looking like this by the end:
         let (value, _) = T::Randomness::random(&sender.encode());
         let random_pfp = Self::generate_hex_values(value);
 
-        // 4. Construct our UserMetadata.  Ideally, we could also create an implemention to make
+        // 4. Construct our UserMetadata.  Ideally, we could also create an implementation to make
         // this easier to create!
         let user_metadata: UserMetadata<T> = UserMetadata {
             name: name_bounded.clone(),
@@ -241,4 +240,3 @@ The entire register function should end up looking like this by the end:
         Ok(())
     }
 ```
-

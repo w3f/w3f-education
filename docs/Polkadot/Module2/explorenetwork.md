@@ -4,7 +4,6 @@ id: explorenetwork
 
 # Exploring Polkadot Network
 
-
 ## Polkadot as a State Machine
 
 Polkadot is a replicated sharded state machine where shards are the parachains and the
@@ -19,10 +18,10 @@ of state transition governed by transactions grouped in the relay chain blocks.
 The state is represented through the use of an associative array data structure composed
 by a collection of (key; value) pairs where each key is unique. There is no assumption on the
 format of the key or the value stored under it besides the fact that they both the key and the value
-need to be  nite byte arrays.
+need to be finite byte arrays.
 The (key; value) pairs which comprise the relay chain state are arranged in a Merkle radix-16
-tree. The root of this tree canonically identi es the current state of the relay chain. The Merkle
-tree also provides an e cient mean to produce the proof of inclusion for an individual pair in the
+tree. The root of this tree canonically identifies the current state of the relay chain. The Merkle
+tree also provides an efficient mean to produce the proof of inclusion for an individual pair in the
 state.
 To keep the state size in control, the relay chain state is solely used to facilitate the relay chain
 operations such as staking and identifying validators. The Merkle Radix tree is not supposed to
@@ -33,7 +32,7 @@ store any information regarding the internal operation of the parachains.
 Like any transaction-based transition system, Polkadot state changes via an
 executing ordered set of instructions, known as extrinsics. These extrinsics include transactions
 submitted by the public. They cover any data provided from \outside" of the machine's state which
-can a ect state transition. Polkadot relay chain is divided into two major components, namely the
+can affect state transition. Polkadot relay chain is divided into two major components, namely the
 \Runtime" and the \Runtime environment". The execution logic of the state-transition function
 is mainly encapsulated in the Runtime while all other generic operations, commonly shared among
 modern blockchain-based replicated state machines, are embedded into the Runtime environment.
@@ -71,11 +70,11 @@ on three parameters: its type, its on-chain length, and its expected resource us
 differentiation is used to reflect the different costs that a transaction incurs on the network and
 on the state, and to encourage the processing of certain types of transactions over others. A
 fraction of every transaction fee is paid to the block producer, while another fraction goes to
- nance the Treasury. We highlight that, for a block producer, the rewards coming
+finance the Treasury. We highlight that, for a block producer, the rewards coming
 from transaction fees may constitute only a small fraction of their overall revenue, just enough to
 incentivise inclusion on the block.
 We also run an adaptive transaction fee schedule that reacts to the traffic level, and ensures
-that blocks are typically far from full, so that peaks of activity can be dealt with e ectively and
+that blocks are typically far from full, so that peaks of activity can be dealt with effectively and
 long inclusion times are rare. In particular, the fee of each transaction is multiplied by a parameter
 that evolves over time depending on the current network traffic.
 We make fees evolve slowly enough, so that the fee of any transaction can be predicted accu-
