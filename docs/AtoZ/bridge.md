@@ -27,7 +27,7 @@ Learn more about how Bitcoin and Ethereum can cooperate and collaborate through 
 
 ## How can we achieve Bridges?
 
-There are a couple ways to develop a Bridge on Polkadot. Primary way is to use the Bridge pallet through the Substrate framework, which the Polkadot and Kusama blockchains are also built with. Another way is to use smart contracts, especially if the blockchain being bridged is not a Substrate chain. For example, bridging Ethereum will require this approach where a smart contract living on Ethereum can execute the logic that the bridge requires. And lastly we can use Higher-order protocols like XClaim, a base protocol on which we can build bridges on top of. This is only recommended if the asset being bridged does not have a smart contract platform on-chain, such as BTC.
+There are a couple ways to develop a Bridge on Polkadot. Primary way is to use the Bridge [pallet](./terms/pallet) through the Substrate framework, which the Polkadot and Kusama blockchains are also built with. Another way is to use smart contracts, especially if the blockchain being bridged is not a Substrate chain. For example, bridging Ethereum will require this approach where a smart contract living on Ethereum can execute the logic that the bridge requires. And lastly we can use Higher-order protocols like XClaim, a base protocol on which we can build bridges on top of. This is only recommended if the asset being bridged does not have a smart contract platform on-chain, such as BTC.
 
 ## What are some projects that’re building Bridges, and how can you build a Bridge?
 
