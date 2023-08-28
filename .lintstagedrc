@@ -1,3 +1,4 @@
 {
-  "*": " prettier --write"
+  "*": " prettier --write",
+  "*.md": "markdown-link-check --quiet"
 }
