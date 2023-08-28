@@ -18,5 +18,4 @@ jobs:
         with:
           use-quiet-mode: "yes"
           use-verbose-mode: "yes"
-          folder-path: "docs/*/**.md"
       - uses: actions/checkout@v3
