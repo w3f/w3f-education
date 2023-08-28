@@ -2,9 +2,9 @@ name: Markdown Links Check
 
 # Check links on main branch push
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * * ' # At the end of everyday
+  workflow_dispatch: # Or manually from GitHub UI
 
 jobs:
   check-links:
