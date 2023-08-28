@@ -31,7 +31,7 @@ There are runtime differences that make Kusama more conducive to testing out fea
    </td>
   </tr>
   <tr>
-   <td><a href="https://wiki.polkadot.network/docs/appendix#epoch">Epoch</a>
+   <td><a href="https://wiki.polkadot.network/docs/glossary#epoch">Epoch</a>
    </td>
    <td>4 hours
    </td>
@@ -39,7 +39,7 @@ There are runtime differences that make Kusama more conducive to testing out fea
    </td>
   </tr>
   <tr>
-   <td><a href="https://wiki.polkadot.network/docs/appendix#era">Era</a>
+   <td><a href="https://wiki.polkadot.network/docs/glossary#era">Era</a>
    </td>
    <td>24 hours
    </td>

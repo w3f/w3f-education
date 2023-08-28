@@ -28,6 +28,6 @@ A soft fork is a backward-compatible upgrade. The clients on the network will no
 Substrate-based chains can upload the runtime bytecode as a Wasm(WebAssembly, which we will discuss when we get to the letter W) blob. This is done through Polkadot on-chain governance system. The next block will include the runtime upgrade if a new runtime is successfully voted on and the network agrees to the upgrade. The participants on the web will then get the latest runtime and start building blocks with the latest version. Forkless upgrades
 
 ## Further reading
-- https://wiki.polkadot.network/docs/learn-runtime-upgrades&sa=D&source=editors&ust=1628347324659000&usg=AOvVaw0nEApwum2xo4s3Ggr9rVcp
+- https://wiki.polkadot.network/docs/learn-runtime-upgrades#forkless-upgrades
 
 - https://wiki.polkadot.network/docs/learn-wasm

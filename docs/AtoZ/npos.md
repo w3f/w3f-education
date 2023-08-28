@@ -46,7 +46,7 @@ Both roles are required to stake tokens. The total staked amount for a validator
 
 
 :::caution
-Consensus on a blockchain is a multistep process, and NPoS is simply the part that decides who can be a validator on the network. It does not contain the logic for adding a block to the chain or chain finality. To have the full picture of consensus on Polkadot, read about [BABE](https://research.web3.foundation/en/latest/polkadot/block-production/Babe.html) the block production mechanism and [GRANDPA](https://research.web3.foundation/en/latest/polkadot/finality.html) the finality mechanism, in addition, to fully grasp Polkadot’s hybrid consensus implementation.
+Consensus on a blockchain is a multistep process, and NPoS is simply the part that decides who can be a validator on the network. It does not contain the logic for adding a block to the chain or chain finality. To have the full picture of consensus on Polkadot, read about [BABE](https://research.web3.foundation/Polkadot/protocols/block-production/Babe) the block production mechanism and [GRANDPA](https://research.web3.foundation/Polkadot/protocols/finality) the finality mechanism, in addition, to fully grasp Polkadot’s hybrid consensus implementation.
 :::
 
 There are elections in which nominators elect validators to an active validator set. A fixed number of validators (297 on Polkadot and 1000 on Kusama) are subject to change  via a runtime upgrade that passes governance.

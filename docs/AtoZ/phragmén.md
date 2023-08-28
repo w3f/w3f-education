@@ -59,6 +59,6 @@ One of the risks of combating only underrepresentation is that some minorities m
 
 [Polkadot Wiki: Sequential Phragmén](https://wiki.polkadot.network/docs/learn-phragmen)
 
-[W3F Research: Overview of NPoS](https://research.web3.foundation/en/latest/polkadot/NPoS/1.%20Overview.html?highlight=Phragm%C3%A9n#the-election-process)
+[W3F Research: Overview of NPoS](https://research.web3.foundation/Polkadot/protocols/NPoS/Overview)
 
 [Phragmms research paper](https://arxiv.org/pdf/2004.12990.pdf)

@@ -14,5 +14,5 @@ Collators are the maintainers of Parachains, which we will cover in more detail 
 Using Cross-chain message passing(XCMP), which will be covered in letter X, Collators can communicate with other Collators of different parachains. This is imperative for allowing multi chain applications to work seamlessly.
 If you’re curious about how the technical details of Collators work, check out Cumulous, a set of tools created by Parity to build Polkadot parachains. 
 
-Workshop/tutorial: https://substrate.dev/cumulus-workshop/#/  
+Workshop/tutorial: https://education.web3.foundation/docs/introparachain
 Cumulus code: https://github.com/paritytech/cumulus/. 
