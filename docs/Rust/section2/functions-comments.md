@@ -7,17 +7,20 @@ description: Learn how functions and comments work, and how to create them in Ru
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZQq9fepWWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-With the knowledge of variables and data types, it is time to put them to use.  **Functions** in Rust should be familiar.  The `main` function is one, for example, that you have already seen several times in the Rust Playground.
+With the knowledge of variables and data types, it is time to put them to use. **Functions** in Rust
+should be familiar. The `main` function is one, for example, that you have already seen several
+times in the Rust Playground.
 
-```rust 
+```rust
 // This is a function!
 fn main() {}
 ```
 
-Functions contain pieces of logic in a context-specific scope.  They are useful for splitting your program into more digestible pieces rather than just using a single main function to operate.
+Functions contain pieces of logic in a context-specific scope. They are useful for splitting your
+program into more digestible pieces rather than just using a single main function to operate.
 
-Declaring a function is simple - start with `fn`, followed by the name and two empty parentheses, and closed with curly brackets:  
-
+Declaring a function is simple - start with `fn`, followed by the name and two empty parentheses,
+and closed with curly brackets:
 
 ```rust
 fn main() {
@@ -30,13 +33,17 @@ fn do_something_interesting() {
 }
 ```
 
-You may have noticed that we called the `do_something_interesting()` function within our main function.  It doesn't matter where this function is declared or what it does.  It will execute as long as it's valid, safe Rust code.
+You may have noticed that we called the `do_something_interesting()` function within our main
+function. It doesn't matter where this function is declared or what it does. It will execute as long
+as it's valid, safe Rust code.
 
 ## Parameters
 
-Functions in this form aren't useful.  The above is pointless; we could accomplish the same result with less code.
+Functions in this form aren't useful. The above is pointless; we could accomplish the same result
+with less code.
 
-**Parameters** allow for functions to have more dynamic and custom input.  For example, let's take the previous example and add a parameter:
+**Parameters** allow for functions to have more dynamic and custom input. For example, let's take
+the previous example and add a parameter:
 
 ```rust
 fn main() {
@@ -50,7 +57,10 @@ fn do_something_interesting(is_interesting: bool) {
 // Output: Is this interesting: true.
 ```
 
-A parameter is added within the previously empty parentheses.  It takes the name, `is_interesting` followed by a colon (`:`), and the type, `bool`.  This tells the function that it also expects a boolean to be included as a parameter when it is called.  These parameters become part of the *function's signature*, or the unique layout of the function.
+A parameter is added within the previously empty parentheses. It takes the name, `is_interesting`
+followed by a colon (`:`), and the type, `bool`. This tells the function that it also expects a
+boolean to be included as a parameter when it is called. These parameters become part of the
+_function's signature_, or the unique layout of the function.
 
 You can include multiple parameters of multiple types:
 
@@ -68,19 +78,21 @@ fn do_something_interesting(is_interesting: bool, name: &str) {
 
 ## Statements and Expressions
 
-It's essential to differentiate **statements** versus **expressions** in Rust.  Functions in Rust are **statements** that can end in an **expression**.  The difference is: 
+It's essential to differentiate **statements** versus **expressions** in Rust. Functions in Rust are
+**statements** that can end in an **expression**. The difference is:
 
-- *Statements* perform some modification and do not return any value.
-- *Expressions* provide a conclusion in the form of a value.
+- _Statements_ perform some modification and do not return any value.
+- _Expressions_ provide a conclusion in the form of a value.
 
-A simple way to think about this is when you declare something purely definitive in Rust, whether a variable or a function, it is a **statement**.  
+A simple way to think about this is when you declare something purely definitive in Rust, whether a
+variable or a function, it is a **statement**.
 
 ```rust
 // This is a statement - it states that x is `10` and does not return anything.
 let x = 10;
 ```
 
-For expressions, they must evaluate and **express** a final value.  Take this example: 
+For expressions, they must evaluate and **express** a final value. Take this example:
 
 ```rust
 // Defining a new scope within main.
@@ -91,12 +103,14 @@ let y = {
 
 ```
 
-Notice the lack of a semicolon at the end of `x + 1`.  As soon as you add a semicolon to a line's end, it becomes a statement.  Expressions do not have semicolons appended to the end of them.
-
+Notice the lack of a semicolon at the end of `x + 1`. As soon as you add a semicolon to a line's
+end, it becomes a statement. Expressions do not have semicolons appended to the end of them.
 
 ## Return types
 
-A key part of functions in Rust is the ability to specify a return type.  With the knowledge that we can use expressions to have a conclusion to a series of operations, we can use the following syntax to add a return type and result to our function: 
+A key part of functions in Rust is the ability to specify a return type. With the knowledge that we
+can use expressions to have a conclusion to a series of operations, we can use the following syntax
+to add a return type and result to our function:
 
 ```rust
 // This function takes a number and returns the squared version of it.
@@ -105,7 +119,9 @@ fn square(x: i32) -> i32 {
 }
 ```
 
-Notice the return type is denoted by the arrow (`->`) followed by the type we wish to return.  To return the type, we simply return the expression without a semicolon.  It's possible to also explicitly define a return statement:
+Notice the return type is denoted by the arrow (`->`) followed by the type we wish to return. To
+return the type, we simply return the expression without a semicolon. It's possible to also
+explicitly define a return statement:
 
 ```rust
 // This function takes a number and returns the squared version of it.
@@ -115,14 +131,16 @@ fn square(x: i32) -> i32 {
 }
 ```
 
-
 # Comments
 
-Comments are used to document parts of your code in order to provide clarification when needed.  Not every line needs to be commented on.  However, it may be helpful to provide context in certain situations.  Double forward slashes usually precede them (`//`).
+Comments are used to document parts of your code in order to provide clarification when needed. Not
+every line needs to be commented on. However, it may be helpful to provide context in certain
+situations. Double forward slashes usually precede them (`//`).
 
 Comments are purely for developers and not realized in the compiler.
 
-You have already seen comments in action within the examples in this course.  Take the previous example: 
+You have already seen comments in action within the examples in this course. Take the previous
+example:
 
 ```rust
 fn main() {
@@ -137,7 +155,8 @@ fn do_something_interesting(is_interesting: bool, name: &str) {
 // Output: Hey, Bader!  Is this interesting: true.
 ```
 
-In the last module, you'll learn how to properly document your code using comments in a way that Cargo can understand.
+In the last module, you'll learn how to properly document your code using comments in a way that
+Cargo can understand.
 
 ## Try it out!
 
@@ -145,7 +164,8 @@ In the last module, you'll learn how to properly document your code using commen
 
 ## What is happening here?
 
-A new function with zero parameters is introduced, called `do_something_better`.  You should be able to add a new parameter of type `f64` (for double precision) like so:
+A new function with zero parameters is introduced, called `do_something_better`. You should be able
+to add a new parameter of type `f64` (for double precision) like so:
 
 ```rust
 
@@ -155,8 +175,8 @@ fn do_something_better(number: f64) {
 
 ```
 
-To expand it, let's specify a return type - in this case, we want to return the number we passed in but squared:
-
+To expand it, let's specify a return type - in this case, we want to return the number we passed in
+but squared:
 
 ```rust
 

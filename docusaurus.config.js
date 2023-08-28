@@ -1,18 +1,18 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Polkadot Education Initiative',
-  tagline: 'Powered by the community',
-  url: 'https://education.web3.foundation/',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon-32x32.png',
-  organizationName: 'w3f', // Usually your GitHub org/user name.
+  title: "Polkadot Education Initiative",
+  tagline: "Powered by the community",
+  url: "https://education.web3.foundation/",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon-32x32.png",
+  organizationName: "w3f", // Usually your GitHub org/user name.
   trailingSlash: false,
-  projectName: 'w3f-education', // Usually your repo name.
+  projectName: "w3f-education", // Usually your repo name.
 
   markdown: {
     mermaid: true,
@@ -20,165 +20,161 @@ module.exports = {
   themes: ["@docusaurus/theme-mermaid"],
   themeConfig: {
     prism: {
-      additionalLanguages: ['rust'],
-      theme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ["rust"],
+      theme: require("prism-react-renderer/themes/dracula"),
     },
     mermaid: {
-      theme: { light: 'neutral', dark: 'neutral' },
+      theme: { light: "neutral", dark: "neutral" },
     },
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: "light",
       disableSwitch: true,
     },
     navbar: {
-      title: 'Technical Education',
+      title: "Technical Education",
       logo: {
-        alt: 'Polkadot Education Initiative',
-        src: 'img/w3f_logo.svg',
+        alt: "Polkadot Education Initiative",
+        src: "img/w3f_logo.svg",
       },
       items: [
-
         {
-          type: 'dropdown',
-          label: 'Courses',
-          position: 'right',
+          type: "dropdown",
+          label: "Courses",
+          position: "right",
           items: [
             {
-              to: 'docs/introblock',
-              label: 'Blockchain',
+              to: "docs/introblock",
+              label: "Blockchain",
             },
             {
-              to: 'docs/introdot',
-              label: 'Polkadot',
+              to: "docs/introdot",
+              label: "Polkadot",
             },
             {
-              to: 'docs/introrust',
-              label: 'Rust Programming',
+              to: "docs/introrust",
+              label: "Rust Programming",
             },
             {
-              to: 'docs/introsubstrate',
-              label: 'Substrate',
+              to: "docs/introsubstrate",
+              label: "Substrate",
             },
           ],
         },
 
         {
-          type: 'dropdown',
-          label: 'Guides',
-          position: 'right',
+          type: "dropdown",
+          label: "Guides",
+          position: "right",
           items: [
             {
-              to: 'docs/introparachain',
-              label: 'Parachain Development',
+              to: "docs/introparachain",
+              label: "Parachain Development",
             },
           ],
         },
 
         {
-          type: 'dropdown',
-          label: 'Resources',
-          position: 'right',
+          type: "dropdown",
+          label: "Resources",
+          position: "right",
           items: [
             {
-              to: 'docs/introatoz',
-              label: 'A - Z ELI5 series ',
+              to: "docs/introatoz",
+              label: "A - Z ELI5 series ",
             },
             {
-              to: 'docs/polkadotFAQ',
-              label: 'Polkadot FAQ ',
+              to: "docs/polkadotFAQ",
+              label: "Polkadot FAQ ",
             },
           ],
         },
 
-        { to: '/blog', label: 'Blog', position: 'right' },
+        { to: "/blog", label: "Blog", position: "right" },
 
-        { to: 'https://wiki.polkadot.network/', label: 'Wiki', position: 'right' },
+        { to: "https://wiki.polkadot.network/", label: "Wiki", position: "right" },
 
         {
-          href: 'https://github.com/w3f/w3f-education',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/w3f/w3f-education",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Courses',
+          title: "Courses",
           items: [
             {
-              label: 'Blockchain Fundamentals',
-              to: 'docs/introblock',
+              label: "Blockchain Fundamentals",
+              to: "docs/introblock",
             },
             {
-              label: 'Introduction to Polkadot',
-              to: 'docs/introdot',
+              label: "Introduction to Polkadot",
+              to: "docs/introdot",
             },
             {
-              label: 'Introduction to Rust Programming',
-              to: 'docs/introrust',
+              label: "Introduction to Rust Programming",
+              to: "docs/introrust",
             },
             {
-              label: 'Introduction to Substrate',
-              to: 'docs/introsubstrate',
+              label: "Introduction to Substrate",
+              to: "docs/introsubstrate",
             },
           ],
         },
         {
-          title: 'Links',
+          title: "Links",
           items: [
             {
-              label: 'Wiki',
-              href: 'https://wiki.polkadot.network/',
+              label: "Wiki",
+              href: "https://wiki.polkadot.network/",
             },
             {
-              label: 'Website',
-              href: 'https://web3.foundation/',
+              label: "Website",
+              href: "https://web3.foundation/",
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/Web3foundation',
+              label: "Twitter",
+              href: "https://twitter.com/Web3foundation",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/w3f/w3f-education',
+              label: "GitHub",
+              href: "https://github.com/w3f/w3f-education",
             },
           ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Web3 Foundation. Built with Docusaurus.`,
     },
-
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          editUrl:
-            'https://github.com/w3f/w3f-education/edit/main/',
+          editUrl: "https://github.com/w3f/w3f-education/edit/main/",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/w3f/w3f-education/edit/main/blog/',
+          editUrl: "https://github.com/w3f/w3f-education/edit/main/blog/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

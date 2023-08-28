@@ -6,14 +6,15 @@ id: polkadotvision
 
 The Internet was originally designed for and built upon decentralised protocols such as TCP/IP,
 however, its commercialisation has led to the centralization of all popular web applications today.
-We refer not to any centralisation of physical infrastructure, but rather to the logical centralization
-of power and control over the infrastructure. A central entity controlling a system poses many risks 
-for everyone. For example, they can stop the service at any moment, can sell users' data to third parties, 
-and manipulate how the service is working without the users' agreement. This is in particular critical to users who 
-heavily rely upon these services for business or private purposes.
+We refer not to any centralisation of physical infrastructure, but rather to the logical
+centralization of power and control over the infrastructure. A central entity controlling a system
+poses many risks for everyone. For example, they can stop the service at any moment, can sell users'
+data to third parties, and manipulate how the service is working without the users' agreement. This
+is in particular critical to users who heavily rely upon these services for business or private
+purposes.
 
-With all the current interest related to personal data ownership, there is a growing need for
-a better security, freedom and control for net users, and with this a countermovement for more
+With all the current interest related to personal data ownership, there is a growing need for a
+better security, freedom and control for net users, and with this a countermovement for more
 decentralised applications where no single entity controls the system. This tendency towards
 decentralisation is not new; it has been used in a number of areas of the development of web and
 other systems, such as the free software movement.

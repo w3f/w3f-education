@@ -5,7 +5,8 @@ sidebar_position: 1
 
 # Parachain Development Guide
 
-This guide aims to jumpstart a developer from an overview of Polkadot architecture, creating their own parachain, and going through the process of registering it to a locally available relay chain.
+This guide aims to jumpstart a developer from an overview of Polkadot architecture, creating their
+own parachain, and going through the process of registering it to a locally available relay chain.
 
 - Learn the basics of how Polkadot works as a network.
 - Learn the roles of the relay and parachain architecture.

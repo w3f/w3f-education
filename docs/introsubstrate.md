@@ -5,15 +5,21 @@ sidebar_position: 1
 
 # Introduction to Substrate & FRAME
 
-Developed by the Technical Education team at the Web3 Foundation, this course provides a comprehensive overview of the Substrate blockchain framework and building blockchains. 
+Developed by the Technical Education team at the Web3 Foundation, this course provides a
+comprehensive overview of the Substrate blockchain framework and building blockchains.
 
 :::note Prerequisites
 
-Before starting, it would be wise to either have experience with Rust, or have taken our [Intro to Rust course](introrust.md).  Substrate depends heavily on Rust, and it will be elaborated on extensively in this course.
+Before starting, it would be wise to either have experience with Rust, or have taken our
+[Intro to Rust course](introrust.md). Substrate depends heavily on Rust, and it will be elaborated
+on extensively in this course.
 
 :::
- 
-This course will provide a solid foundation in navigating the creation and modification of custom blockchain modules, called **pallets**.  This course will serve as an introduction into becoming a Substrate developer, the factors involved, as well as a guided, hands on portion to building a custom FRAME pallet. 
+
+This course will provide a solid foundation in navigating the creation and modification of custom
+blockchain modules, called **pallets**. This course will serve as an introduction into becoming a
+Substrate developer, the factors involved, as well as a guided, hands on portion to building a
+custom FRAME pallet.
 
 In this course, you will:
 
@@ -23,7 +29,6 @@ In this course, you will:
 - Learn basic testing of a FRAME pallet
 - Learn best practices and important considerations when building a FRAME pallet
 - Build and deploy a basic, social-network like blockchain pallet called `connect`
-
 
 ## [Module 1 - Why Learn Substrate?](./Substrate/section1/index.md)
 
@@ -77,8 +82,3 @@ In this course, you will:
 - [Chain & Genesis specification](./Substrate/section8/chain-genesis-spec.md)
 - [Pallet coupling (loose vs tight)](./Substrate/section8/pallet-coupling.md)
 - [Introduction to benchmarking](./Substrate/section8/benchmarking.md)
-
-
-
-
-
