@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn markdown-link-check --quiet ./docs/*/**.md
+yarn prettier --write .
