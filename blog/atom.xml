@@ -12,9 +12,11 @@
         <id>https://education.web3.foundation/blog/Polkadot MOOC</id>
         <link href="https://education.web3.foundation/blog/Polkadot MOOC"/>
         <updated>2021-08-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course]]></summary>
-        <content type="html"><![CDATA[<p>The technical education team at the Web3 Foundation is pioneering the initiative of creating an introductory course
-on Polkadot. This will be a Massively Online Open Course (MOOC) hosted on a platform that can issue credentials for course completion. The MOOC development will be in the open and will be driven by the contributions from the community which will be curated by Web3 Foundation.</p>]]></content>
+        <summary type="html"><![CDATA[The technical education team at the Web3 Foundation is pioneering the initiative of creating an]]></summary>
+        <content type="html"><![CDATA[<p>The technical education team at the Web3 Foundation is pioneering the initiative of creating an
+introductory course on Polkadot. This will be a Massively Online Open Course (MOOC) hosted on a
+platform that can issue credentials for course completion. The MOOC development will be in the open
+and will be driven by the contributions from the community which will be curated by Web3 Foundation.</p>]]></content>
         <author>
             <name>Radha</name>
             <uri>https://github.com/DrW3RK</uri>
