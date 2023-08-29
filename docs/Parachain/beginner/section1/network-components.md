@@ -27,7 +27,7 @@ Before elaborating on the network components of a network like Polkadot, the fol
 
 In most blockchain systems, when we refer to blocks being stored, it almost **always** meaning that the **header** (or some other representation) of the block is stored.  Doing so would cause a lot of on-chain bloats, especially considering the state of other parachains, where each parachain may have varying amounts of data per block.
 
-The same goes for parablocks - it's the **candidate receipt** being stored within the relay chain block, not the actual state transition itself.  A **candidate receipt** is the summary of the exchange of information that occurs between the parachain and relay chain.
+The same goes for parablocks - it's the [**candidate receipt**](https://wiki.polkadot.network/docs/learn-parachains-protocol#candidate-receipts) being stored within the relay chain block, not the actual state transition itself.  A **candidate receipt** is the summary of the exchange of information that occurs between the parachain and relay chain.
 
 :::
 
