@@ -6,12 +6,25 @@ sidebar_position: 10
 
 ![K for Kusama](assets/K.png)
 
-It is known as the canary network for Polkadot and has been called a “value-bearing test network” by Gavin Wood. At its core, Kusama is a blockchain network that shares an almost identical code base with Polkadot, with the caveat that it might be slightly more advanced since code gets tested first on Kusama and vetted before moving onto Polkadot (but not always); the slight differences in parameters make it a good testing ground, but also a great place for startups and teams that want to move fast. For example, [this](https://polkadot.network/blog/grandpa-equivocation-and-sysinfo-process-collection-results-in-slashing-on-kusama-network-a-post-mortem/) postmortem of when a slashing bug was found on Kusama and fixed before it could impact Polkadot. As the slogan goes, “Expect Chaos”. The Kusama community tends to be a bit more developer-focused and smaller than the one on Polkadot. And even though it started as a value-bearing test network, we are now seeing projects that will only deploy on Kusama with no plans to deploy to Polkadot, so we are witnessing Kusama become its own fully-fledged network in its own right.
+It is known as the canary network for Polkadot and has been called a “value-bearing test network” by
+Gavin Wood. At its core, Kusama is a blockchain network that shares an almost identical code base
+with Polkadot, with the caveat that it might be slightly more advanced since code gets tested first
+on Kusama and vetted before moving onto Polkadot (but not always); the slight differences in
+parameters make it a good testing ground, but also a great place for startups and teams that want to
+move fast. For example,
+[this](https://polkadot.network/blog/grandpa-equivocation-and-sysinfo-process-collection-results-in-slashing-on-kusama-network-a-post-mortem/)
+postmortem of when a slashing bug was found on Kusama and fixed before it could impact Polkadot. As
+the slogan goes, “Expect Chaos”. The Kusama community tends to be a bit more developer-focused and
+smaller than the one on Polkadot. And even though it started as a value-bearing test network, we are
+now seeing projects that will only deploy on Kusama with no plans to deploy to Polkadot, so we are
+witnessing Kusama become its own fully-fledged network in its own right.
 
 ## Some functionality differences between Kusama and Polkadot
 
-There are runtime differences that make Kusama more conducive to testing out features. In general, Kusama is 4x as fast as Polkadot. This allows for an environment where runtime changes and parachain features can be tested “quicker”. Not everything is 4x as fast; for instance, the block time and speed of the chain grow is the same, at 6 seconds per block. Some of the main differences:
-
+There are runtime differences that make Kusama more conducive to testing out features. In general,
+Kusama is 4x as fast as Polkadot. This allows for an environment where runtime changes and parachain
+features can be tested “quicker”. Not everything is 4x as fast; for instance, the block time and
+speed of the chain grow is the same, at 6 seconds per block. Some of the main differences:
 
 <table>
   <tr>
@@ -31,7 +44,7 @@ There are runtime differences that make Kusama more conducive to testing out fea
    </td>
   </tr>
   <tr>
-   <td><a href="https://wiki.polkadot.network/docs/appendix#epoch">Epoch</a>
+   <td><a href="https://wiki.polkadot.network/docs/glossary#epoch">Epoch</a>
    </td>
    <td>4 hours
    </td>
@@ -39,7 +52,7 @@ There are runtime differences that make Kusama more conducive to testing out fea
    </td>
   </tr>
   <tr>
-   <td><a href="https://wiki.polkadot.network/docs/appendix#era">Era</a>
+   <td><a href="https://wiki.polkadot.network/docs/glossary#era">Era</a>
    </td>
    <td>24 hours
    </td>
@@ -128,13 +141,41 @@ There are runtime differences that make Kusama more conducive to testing out fea
   </tr>
 </table>
 
-
-The 4x faster environment allows for more experimentation, such as passing new runtime upgrades quicker; this requires diligence from the participants to stay up to date. Regarding parachain slots, the team at Parity has suggested that the Kusama to Polkadot ratio will be 4:3, meaning Polkadot should have a 75% parachain slot capacity as Kusama to ensure stability guarantees.
+The 4x faster environment allows for more experimentation, such as passing new runtime upgrades
+quicker; this requires diligence from the participants to stay up to date. Regarding parachain
+slots, the team at Parity has suggested that the Kusama to Polkadot ratio will be 4:3, meaning
+Polkadot should have a 75% parachain slot capacity as Kusama to ensure stability guarantees.
 
 ## Testing in the world of blockchains
 
-We need Kusama because Web 3.0 functionality has high stakes due to blockchains' monetary aspect. It is important to note that testing features of blockchain networks is more complex than features of Web 2.0 applications. Failed features of blockchain technologies can lead to significant financial losses. The Ethereum DAO [story](https://news.coinsquare.com/blockchain/the-dao-how-a-failed-project-may-still-impact-the-world/) is a perfect example, where a smart contract was drained of $150 million worth of ETH. In Web 2.0 applications, testing a feature can be as easy as putting it on a test server where it can be confirmed to work before it is released into production. This effort can take anywhere between a couple of minutes to a day or two, depending on the size of the feature. Blockchains, however, have a few aspects that make testing more difficult. Blockchains are heavily game theoretic; participants’ behavior is incentivized through value-bearing tokens (cryptocurrencies). If for some reason, a runtime upgrade contains some gameable bug, this can be difficult to foresee and could take the malicious participant a while to find. Hence, to test changes to code, we need a network where the real value is being used, and we can find such errors there. Kusama acts as that value-bearing network. When functionality is tested, and the code is audited, we can be more confident of its validity before putting it on Polkadot.
+We need Kusama because Web 3.0 functionality has high stakes due to blockchains' monetary aspect. It
+is important to note that testing features of blockchain networks is more complex than features of
+Web 2.0 applications. Failed features of blockchain technologies can lead to significant financial
+losses. The Ethereum DAO
+[story](https://news.coinsquare.com/blockchain/the-dao-how-a-failed-project-may-still-impact-the-world/)
+is a perfect example, where a smart contract was drained of $150 million worth of ETH. In Web 2.0
+applications, testing a feature can be as easy as putting it on a test server where it can be
+confirmed to work before it is released into production. This effort can take anywhere between a
+couple of minutes to a day or two, depending on the size of the feature. Blockchains, however, have
+a few aspects that make testing more difficult. Blockchains are heavily game theoretic;
+participants’ behavior is incentivized through value-bearing tokens (cryptocurrencies). If for some
+reason, a runtime upgrade contains some gameable bug, this can be difficult to foresee and could
+take the malicious participant a while to find. Hence, to test changes to code, we need a network
+where the real value is being used, and we can find such errors there. Kusama acts as that
+value-bearing network. When functionality is tested, and the code is audited, we can be more
+confident of its validity before putting it on Polkadot.
 
 ## Kusama becoming its own network
 
-It is interesting to see that the canary paradigm of Kusama also reflects in the parachains deployed on it. Projects in the Polkadot ecosystem tend to test their functionalities on their respective Kusama parachain first and then plan to deploy them on their Polkadot parachain. However, we are slowly seeing projects that still need plans to deploy their projects to Polkadot and only stay on Kusama.** **Both chains are running smoothly and are onboarding more parachains as we speak. As of today (Jan 7, 2022), Kusama has 16+1 and Polkadot has 5+1, the +1 being Statemine and Statemint, respectively, the common-good parachains deployed and maintained by the team at Parity. To learn more about Kusama, check out the [guide](https://guide.kusama.network/) and check out all the parachains on Kusama [here](https://parachains.info/#!). Kusama has funded 72,590KSM to proposals through its Treasury, including a few chain state scanners like Subscan and Polkascan and wallets like Fearless and Polkawallet. Check out all the Treasury activity on Kusama [here](https://www.dotreasury.com/ksm/).
+It is interesting to see that the canary paradigm of Kusama also reflects in the parachains deployed
+on it. Projects in the Polkadot ecosystem tend to test their functionalities on their respective
+Kusama parachain first and then plan to deploy them on their Polkadot parachain. However, we are
+slowly seeing projects that still need plans to deploy their projects to Polkadot and only stay on
+Kusama.\*\* \*\*Both chains are running smoothly and are onboarding more parachains as we speak. As
+of today (Jan 7, 2022), Kusama has 16+1 and Polkadot has 5+1, the +1 being Statemine and Statemint,
+respectively, the common-good parachains deployed and maintained by the team at Parity. To learn
+more about Kusama, check out the [guide](https://guide.kusama.network/) and check out all the
+parachains on Kusama [here](https://parachains.info/#!). Kusama has funded 72,590KSM to proposals
+through its Treasury, including a few chain state scanners like Subscan and Polkascan and wallets
+like Fearless and Polkawallet. Check out all the Treasury activity on Kusama
+[here](https://www.dotreasury.com/ksm/).

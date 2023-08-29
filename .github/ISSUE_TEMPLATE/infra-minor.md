@@ -1,10 +1,9 @@
 ---
 name: Minor Infra Refactor
-about: 'For minor changes regarding configuration of Docusaurus and its deployment.'
+about: "For minor changes regarding configuration of Docusaurus and its deployment."
 title: "[Infra Refactor] TITLE-HERE"
 labels: Minor Infra Refactor
-assignees: ''
-
+assignees: ""
 ---
 
 ## Highlight the main issue(s) below:
