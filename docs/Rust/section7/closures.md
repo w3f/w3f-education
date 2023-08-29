@@ -5,7 +5,9 @@ sidebar_label: Closures
 description: Learn how to use function closures.
 ---
 
-Closures are one of Rust's functional programming-esque features that can create **anonymous functions**.  Closures, like functions, execute blocks of logic within.  They are fundamentally different in how they operate and handle ownership.
+Closures are one of Rust's functional programming-esque features that can create **anonymous
+functions**. Closures, like functions, execute blocks of logic within. They are fundamentally
+different in how they operate and handle ownership.
 
 They may even be used as a return type, as shown in examples such as `unwrap_or_else()`:
 
@@ -13,11 +15,15 @@ They may even be used as a return type, as shown in examples such as `unwrap_or_
 let some_result: i32 = dangerous_value().unwrap_or_else(|| 42);
 ```
 
-The two vertical pipes within `unwrap_or_else` signify that it is a closure, and 42 is the returned value.  Closures can be used in generics using the `Fn` trait or even as a parameter for an actual function.
+The two vertical pipes within `unwrap_or_else` signify that it is a closure, and 42 is the returned
+value. Closures can be used in generics using the `Fn` trait or even as a parameter for an actual
+function.
 
 ## Defining & Using Closures
 
-Defining closures is similar to defining a variable.  It utilizes two vertical pipes to signify any parameters.  A return type can also be specified as part of the closure.  Closures are called the same way a function is called:
+Defining closures is similar to defining a variable. It utilizes two vertical pipes to signify any
+parameters. A return type can also be specified as part of the closure. Closures are called the same
+way a function is called:
 
 ```rust
 fn main() {
@@ -34,11 +40,13 @@ fn main() {
 
 ### Type Inference
 
-Where functions require explicit type declarations for their parameter and return types, closures don't have this requirement.  They are able to infer both types, depending on how one uses it:
+Where functions require explicit type declarations for their parameter and return types, closures
+don't have this requirement. They are able to infer both types, depending on how one uses it:
 
 :::note
 
-This also can shorten the closure into one line, as the curly brackets are omitted, and the return type is directly specified.  If this was a multi-line closure, then curly brackets would be required.
+This also can shorten the closure into one line, as the curly brackets are omitted, and the return
+type is directly specified. If this was a multi-line closure, then curly brackets would be required.
 
 :::
 
@@ -62,7 +70,8 @@ let greeting_two = greet_closure(123);
 
 ### Capturing Environments
 
-Unlike functions, closures can capture their environment.  A closure can utilize local variables within a scope that the closure is defined:
+Unlike functions, closures can capture their environment. A closure can utilize local variables
+within a scope that the closure is defined:
 
 ```rust
 fn main() {
@@ -82,4 +91,6 @@ fn main() {
 
 ## What's going on here?
 
-The code above showcases two examples of closures in use.  The first example accepts a parameter, of which its type is inferred.  The second example removes the parameter and instead captures a variable outside of the closure but within the same scope.
+The code above showcases two examples of closures in use. The first example accepts a parameter, of
+which its type is inferred. The second example removes the parameter and instead captures a variable
+outside of the closure but within the same scope.

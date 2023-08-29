@@ -11,7 +11,8 @@ We are now working in the node's root directory (`substrate-mooc-node`), not the
 
 :::
 
-With all of our functionality in place, it is finally time to run and view our node running in an actual environment. 
+With all of our functionality in place, it is finally time to run and view our node running in an
+actual environment.
 
 ## Running tests
 
@@ -23,11 +24,12 @@ cargo test
 
 ## Launching the node
 
-If the tests pass, you may now launch the node.  Ensure you are in the root directory of the node:
+If the tests pass, you may now launch the node. Ensure you are in the root directory of the node:
 
 :::info
 
-Note that we are running in dev mode, meaning our node has finalization without needing another node to run.
+Note that we are running in dev mode, meaning our node has finalization without needing another node
+to run.
 
 :::
 
@@ -35,7 +37,7 @@ Note that we are running in dev mode, meaning our node has finalization without 
 cargo run -- --dev
 ```
 
-This may take some time to build and run.  Once it does, you should see the following output:
+This may take some time to build and run. Once it does, you should see the following output:
 
 ```bash
 2023-06-21 17:13:03 Substrate Node
@@ -63,5 +65,8 @@ This may take some time to build and run.  Once it does, you should see the foll
 2023-06-21 17:13:12 ✨ Imported #1 (0x8010…a834)
 ```
 
-If you get this output, congratulations!  You can see your network producing blocks, as stated by `🎁 Prepared block for proposing at 1`.  With your node running, you can now use either the [`substrate-frontend-template`](../section3/install-explore-frontend.md) or the [Polkadot.js](../section3/install-explore-frontend.md) app to interact with your node and view network stats. 
-
+If you get this output, congratulations! You can see your network producing blocks, as stated by
+`🎁 Prepared block for proposing at 1`. With your node running, you can now use either the
+[`substrate-frontend-template`](../section3/install-explore-frontend.md) or the
+[Polkadot.js](../section3/install-explore-frontend.md) app to interact with your node and view
+network stats.

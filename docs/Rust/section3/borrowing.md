@@ -5,13 +5,18 @@ sidebar_label: Borrowing & References
 description: Learn how the borrowing model works in Rust, and how to utilize it properly.
 ---
 
-The borrowing model in Rust is quite trivial.  As mentioned, ownership issues may arise when dealing with values stored on the heap (in other words, values that aren't of fixed size and are defined at compile time).
+The borrowing model in Rust is quite trivial. As mentioned, ownership issues may arise when dealing
+with values stored on the heap (in other words, values that aren't of fixed size and are defined at
+compile time).
 
-While ownership does ensure that all memory will be allocated appropriately/deallocated, it does introduce some complexity that references and borrowing solve.
+While ownership does ensure that all memory will be allocated appropriately/deallocated, it does
+introduce some complexity that references and borrowing solve.
 
 ## Problem: Heap-stored Values
 
-Data types that aren't fixed size and have the potential to grow in size during runtime are stored on the **heap**.  Because the compiler can't tell what the value *could* be at compile time, it's managed during the runtime.  
+Data types that aren't fixed size and have the potential to grow in size during runtime are stored
+on the **heap**. Because the compiler can't tell what the value _could_ be at compile time, it's
+managed during the runtime.
 
 The primary issue with this is when a potential **move**, or change in ownership, occurs:
 
@@ -32,13 +37,18 @@ fn take_my_string(s: String) {
 
 ```
 
-There is a problem with this code - that's that, in order to maintain memory safety and follow the rules of ownership, the variable`name` was moved to the `fn take_my_string` function.  In other words, it owns it because it is stored on the heap.  
+There is a problem with this code - that's that, in order to maintain memory safety and follow the
+rules of ownership, the variable`name` was moved to the `fn take_my_string` function. In other
+words, it owns it because it is stored on the heap.
 
-Fixed-size variables are copied - as the compiler knows exactly *what* to copy, whereas values on the heap are *moved*.  Once moved, they cannot be used within that context.
+Fixed-size variables are copied - as the compiler knows exactly _what_ to copy, whereas values on
+the heap are _moved_. Once moved, they cannot be used within that context.
 
 ## Borrowing & Moving (Lack thereof)
 
-The borrowing system in Rust solves this issue.  Using **references**, which are denoted by `&,` we can avoid moving the String directly and instead just use a reference to it.  This references points to where it exists in memory, in contrast to moving it all together:
+The borrowing system in Rust solves this issue. Using **references**, which are denoted by `&,` we
+can avoid moving the String directly and instead just use a reference to it. This references points
+to where it exists in memory, in contrast to moving it all together:
 
 ```rust
 
@@ -58,16 +68,20 @@ fn take_my_string(s: &String) {
 }
 
 ```
-Using a reference to `name`, we allow `take_my_string` to **borrow** the value versus taking complete ownership.  We can perform whatever we want with it, but as soon as the function is complete, `name` returns back to main's ownership.
+
+Using a reference to `name`, we allow `take_my_string` to **borrow** the value versus taking
+complete ownership. We can perform whatever we want with it, but as soon as the function is
+complete, `name` returns back to main's ownership.
 
 ## Mutable & Immutable References
 
-Mutable references are also possible - just be aware that like borrowing and references also have several rules:
+Mutable references are also possible - just be aware that like borrowing and references also have
+several rules:
 
 - Only one mutable reference is allowed at a time
 - Any number of immutable references is allowed
-- References must always be valid (no *dangling* references: variables that return a reference that ends up getting dropped at the end of some scope).
-
+- References must always be valid (no _dangling_ references: variables that return a reference that
+  ends up getting dropped at the end of some scope).
 
 As an example, let's modify the value of a variable, then give ownership back via borrowing:
 
@@ -94,10 +108,11 @@ fn take_my_string_and_change_it(s: &mut String) {
 
 ### Mutable Reference Rules
 
+The compiler looks for any instances where more than one mutable reference may exist at a time, but
+more than one immutable references are fine. However, once an immutable reference is defined, no
+mutable reference can be made:
 
-The compiler looks for any instances where more than one mutable reference may exist at a time, but more than one immutable references are fine.  However, once an immutable reference is defined, no mutable reference can be made:
-
-```rust 
+```rust
 
 let mut name = String::from("Bader");
 
@@ -110,9 +125,10 @@ let mut_ref_to_name = &mut name;
 
 ```
 
-This is primarily to avoid *data races* - going back to Rust's memory safety; it prevents multiple pointers from attempting to modify the same value in the program.
+This is primarily to avoid _data races_ - going back to Rust's memory safety; it prevents multiple
+pointers from attempting to modify the same value in the program.
 
-```rust 
+```rust
 
 let mut name = String::from("Bader");
 
@@ -125,7 +141,8 @@ println!("{mut_ref_to_name}, {mut_ref_to_name_2}");
 
 ```
 
-This won't compile, as the compiler will recognize that we have two potentially modifiable references to the same variable.
+This won't compile, as the compiler will recognize that we have two potentially modifiable
+references to the same variable.
 
 ## Try it out!
 
@@ -133,5 +150,6 @@ This won't compile, as the compiler will recognize that we have two potentially 
 
 ## What's happening here?
 
-
-This example shows cases of a mutable variable being borrowed by a function, modified, then returned to the scope of `main`.  Notice we can still use the variable, even after it has been passed to the function.
+This example shows cases of a mutable variable being borrowed by a function, modified, then returned
+to the scope of `main`. Notice we can still use the variable, even after it has been passed to the
+function.
