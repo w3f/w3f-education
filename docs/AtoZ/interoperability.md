@@ -19,7 +19,7 @@ From a societal development perspective, we scaled as communities into nation-st
 
 ## XCM
 
-Cross-Consensus Messaging (XCM) is a messaging format/paradigm that allows interoperability of Layer 1 blockchains. It is implemented at Layer 0 and has multiple message-passing functionalities. From Layer 1 to Layer 1, there is Cross-chain Message Passing(XCMP). From Layer 1 to Layer 0, i.e. from parachains to the relay chain, there is Upwards Message Passing (UMP), while from Layer 0 to Layer 1 (i.e. from the relay chain to parachains) we have Downwards Message Passing(DMP). XCM is un-opinionated about the structure of the chains on the sending and receiving end and can pass information unstructured to many types of chains. Hence, allowing any chain to utilize it for interoperability. We will cover this in more detail when we get to letter X.
+Cross-Consensus Messaging (XCM) is a messaging format/paradigm that allows interoperability of Layer 1 blockchains. It is implemented at Layer 0 and has multiple message-passing functionalities. From Layer 1 to Layer 1, there is Cross-chain Message Passing(XCMP). From Layer 1 to Layer 0, i.e. from parachains to the relay chain, there is Upwards Message Passing (UMP), while from Layer 0 to Layer 1 (i.e. from the relay chain to parachains) we have Downwards Message Passing(DMP). [XCM](./terms/xcm) is un-opinionated about the structure of the chains on the sending and receiving end and can pass information unstructured to many types of chains. Hence, allowing any chain to utilize it for interoperability. We will cover this in more detail when we get to letter X.
 
 ## Interoperable chains: parathreads/parachains/bridges
 
