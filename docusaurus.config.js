@@ -10,16 +10,10 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon-32x32.png',
-  organizationName: 'w3f', 
+  organizationName: 'w3f', // Usually your GitHub org/user name.
   trailingSlash: false,
-  projectName: 'w3f-education', 
-  plugins: [
-    ['@grnet/docusaurus-terminology', {
-      termsDir: './docs/terms',
-      docsDir: './docs/',
-      glossaryFilepath: './docs/glossary.md'
-    }],
-  ],
+  projectName: 'w3f-education', // Usually your repo name.
+
   markdown: {
     mermaid: true,
   },

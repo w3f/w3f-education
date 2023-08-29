@@ -85,13 +85,13 @@ Once VS Code is installed, there are a couple of extensions that will smooth the
 
 The first extension we'll add is Rust Analyzer, a powerful static analysis tool for the Rust programming language. This extension provides some basics such as syntax highlighting and goto definition, as well as more powerful features such as code completion and documentation by hovering over code.
 
-To install it, enter VS Code's command [pallet](./terms/pallet) with `Ctrl + Shift + P`, and paste:
+To install it, enter VS Code's command pallet with `Ctrl + Shift + P`, and paste:
 
 ```bash
 ext install rust-lang.rust-analyzer
 ```
 
-The second extension is optional but recommended if you like to do step debugging on your coding projects. It is the Code LLDB extension that provides seamless integration between LLDB, the low-level debugger, and VS Code. To install it, enter the command [pallet](./terms/pallet) again (`Ctrl + Shift + P`) and paste:
+The second extension is optional but recommended if you like to do step debugging on your coding projects. It is the Code LLDB extension that provides seamless integration between LLDB, the low-level debugger, and VS Code. To install it, enter the command pallet again (`Ctrl + Shift + P`) and paste:
 
 ```bash
 ext install vadimcn.vscode-lldb

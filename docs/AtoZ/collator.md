@@ -15,4 +15,4 @@ Using Cross-chain message passing(XCMP), which will be covered in letter X, Coll
 If you’re curious about how the technical details of Collators work, check out Cumulous, a set of tools created by Parity to build Polkadot parachains. 
 
 Workshop/tutorial: https://substrate.dev/cumulus-workshop/#/  
-[Cumulus](../terms/cumulus) code: https://github.com/paritytech/cumulus
+Cumulus code: https://github.com/paritytech/cumulus/. 

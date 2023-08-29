@@ -31,9 +31,9 @@ Account keys and session keys. Overview of networking - gossiping, distributed s
 
 ## Module 5 - Interoperability and Scalability
 
-Polkadot interoperability protocol in depth. Relay chain vs parachain. Auction process and parachain slots. Path of a parachain block. Validity and availability. Cross chain messaging ([XCM](./terms/xcm)). Introduction to parathreads and common good parachains. Statemint. Teleporting assets.
+Polkadot interoperability protocol in depth. Relay chain vs parachain. Auction process and parachain slots. Path of a parachain block. Validity and availability. Cross chain messaging (XCM). Introduction to parathreads and common good parachains. Statemint. Teleporting assets.
 
 
 ## Module 6 - Polkadot for Developers
 
-Introduction to Rust. Introduction to [Substrate](./terms/substrate) and FRAME. Polkadot-JS and APIs. SPREE. Wasm and Polkadot as a Wasm meta-protocol . Polkadot ecosystem and developers social channels. SmolDOT - blockchain light clients. Substrate recipes and Playground. Westend and Rococo. Canvas INK smart contracts. Future of development on Polkadot
+Introduction to Rust. Introduction to Substrate and FRAME. Polkadot-JS and APIs. SPREE. Wasm and Polkadot as a Wasm meta-protocol . Polkadot ecosystem and developers social channels. SmolDOT - blockchain light clients. Substrate recipes and Playground. Westend and Rococo. Canvas INK smart contracts. Future of development on Polkadot

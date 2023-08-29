@@ -100,7 +100,7 @@ Ahh better description here:
 
 https://github.com/paritytech/substrate/blob/5527263978a763bafc78d60955c662c20f465d18/frame/staking/src/pallet/mod.rs#L307
 
-The current era = This is the latest planned era, depending on how the Session [pallet](./terms/pallet) queues the validator set, it might be active or not.
+The current era = This is the latest planned era, depending on how the Session pallet queues the validator set, it might be active or not.
 
 The active era = The era being currently rewarded. Validator set of this era must be equal to [SessionInterface::validators].
 
@@ -197,7 +197,7 @@ Text-based descriptions are generally put on Polkassembly, e.g. https://kusama.p
 
 During the proposal, only the hash of the proposal is submitted; the actual change should be submitted later. See https://wiki.polkadot.network/docs/maintain-guides-democracy#submitting-a-preimage
 
-(these links are obviously for Polkadot but the general idea is the same if you are using the democracy [pallet](./terms/pallet) no matter which chain you are using)
+(these links are obviously for Polkadot but the general idea is the same if you are using the democracy pallet no matter which chain you are using)
 
 ### How do I know how much staking rewards I will get in the future?
 
@@ -217,9 +217,9 @@ Other validators can verify that this is correct and slash an offending validato
 
 Of course this elides a LOT of detail and wrinkles in operation. If you want to dig in deeper, I really recommend reading the Wiki page on the topic, or if you want to really dive in, reading the chapter on AnV (availability and validity) in the Polkadot Specification, put together by our great Spec Team.
 
-How does [XCM](./terms/xcm) work?
+How does XCM work?
 
-[XCM](./terms/xcm) allows different chains to have a common way of interacting with each other using an "Esperanto" (common language) instead of every chain having to know exactly how other chains operate.
+XCM allows different chains to have a common way of interacting with each other using an "Esperanto" (common language) instead of every chain having to know exactly how other chains operate.
 
 This is obviously a very high-level description! For more detail, I recommend reading Gav's description in the Medium post here: https://medium.com/polkadot-network/xcm-the-cross-consensus-message-format-3b77b1373392 or if you really want to dig in, you can review the code here: https://github.com/paritytech/polkadot/tree/59aa955576e963942c60e3ae8f8316444b66cafb/xcm
 
@@ -428,9 +428,9 @@ If you are interested in digging into all of this further, my lectures on blockc
 Not to mention, you CAN use remarks to store data entirely on-chain if you want ( just like you could e.g. use OP_RETURN on Bitcoin). I'm just saying that if this causes scalability issues ( a common problem due to the blockchain model itself ), then there are other ways to do it and still remain decentralized.
 
 
-### What is the difference between [XCM](./terms/xcm) and XCMP?
+### What is the difference between XCM and XCMP?
 
-Yes. [XCM](./terms/xcm) is the cross-consensus message format; XCMP is a cross-chain messaging protocol. Think of sending a tax form to your government via the postal system - the form you send is the FORMAT of the message you are sending them, a very specific format; the mail system is the PROTOCOL of how it gets there.
+Yes. XCM is the cross-consensus message format; XCMP is a cross-chain messaging protocol. Think of sending a tax form to your government via the postal system - the form you send is the FORMAT of the message you are sending them, a very specific format; the mail system is the PROTOCOL of how it gets there.
 
 ### Why am I stuck with the same validator?
 
