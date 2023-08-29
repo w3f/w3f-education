@@ -7,10 +7,19 @@
 
 # Technical Education at Web3 Foundation
 
+This repository houses core course material for the Polkadot ecosystem.  
+
 ## Contribution Guidelines
 
 The Technical Education team at Web3 Foundation are the primary maintainers of this repository and will review 
-all issues and pull requests created here. If you notice typos or grammatical errors, please feel free 
+all issues and pull requests created here. 
+
+It is preferred that: 
+
+1. You open an issue using one of the [**issue templates**](https://github.com/w3f/w3f-education/issues/new/choose).
+2. Open a PR referencing the issue.
+
+If you notice typos or grammatical errors, please feel free 
 to create pull requests with these corrections directly. It is generally preferable to create a pull request 
 over an issue to propose a change to the content.
 
