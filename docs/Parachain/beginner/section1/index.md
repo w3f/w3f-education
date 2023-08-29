@@ -6,7 +6,7 @@ Before beginning the journey to starting your parachain, it's important to reali
 
 :::tip Clone this repository!
 
-If you plan on following along, clone this repository which contains everything you need to follow the guide: [`parachain-guide-resources`](https://github.com/CrackTheCode016/parachain-guide-resources)
+If you plan on following along, clone this repository which contains everything you need to follow the guide: [`parachain-guide-resources`](https://github.com/w3f/parachain-guide-resources)
 
 :::
 
