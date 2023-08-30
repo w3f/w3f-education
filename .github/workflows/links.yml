@@ -1,0 +1,19 @@
+name: Markdown Links Check
+
+# Check links on main branch push
+on:
+  schedule:
+    - cron: '0 0 * * * ' # At the end of everyday
+  workflow_dispatch: # Or manually from GitHub UI
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: "yes"
+          use-verbose-mode: "yes"
+          config-file: '.github/workflows/markdown.config.json'
+      - uses: actions/checkout@v3

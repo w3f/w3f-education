@@ -1,10 +1,9 @@
 ---
 name: Content Refactor
-about: 'For refactoring existing content and addressing inaccuracies. '
+about: "For refactoring existing content and addressing inaccuracies. "
 title: "[Content Refactor] TITLE-HERE"
 labels: Content Refactor
-assignees: ''
-
+assignees: ""
 ---
 
 ## Which page(s)? Please link them below.

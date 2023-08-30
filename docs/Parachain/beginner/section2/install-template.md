@@ -119,5 +119,3 @@ By now, you should have three total files generated and/or available:
 - **Raw Chain Spec**: `parachain_chain_spec_raw.json`
 
 With these, we are now able to run our relay chain validators, run our parachain collator, and finally register our parachain.
-
-

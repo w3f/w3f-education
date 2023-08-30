@@ -4,12 +4,12 @@ id: architecture
 
 # Architecture of Polkadot
 
-Polkadot utilises a central chain called the relay chain which communicates with mul-
-tiple heterogeneous and independent sharded chains called parachains (parallel
-chains). The relay chain is responsible for providing shared security for all parachains, as well as
-trust-free interchain transactability between parachains. In other words, the issues that Polkadot
-aims to address are those discussed above: interoperability, scalablility, and weaker security due
-to splitting the security power.
+Polkadot utilises a central chain called the relay chain which communicates with mul- tiple
+heterogeneous and independent sharded chains called parachains (parallel chains). The relay chain is
+responsible for providing shared security for all parachains, as well as trust-free interchain
+transactability between parachains. In other words, the issues that Polkadot aims to address are
+those discussed above: interoperability, scalablility, and weaker security due to splitting the
+security power.
 
 ## Architecture - Polkadot vs Ethereum
 

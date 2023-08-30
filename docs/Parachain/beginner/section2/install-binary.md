@@ -126,5 +126,3 @@ Once this is built, also build the **raw**, SCALE-encoded file:
 # or, with symlink
 polkadot build-spec > /tmp/chain-spec-plain.json
 ```
-
-
