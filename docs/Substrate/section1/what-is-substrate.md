@@ -5,11 +5,14 @@ sidebar_label: What is Substrate and FRAME?
 description: Learn what Substrate it is, and why it's the future of building infrastructure in web3.
 ---
 
-Substrate is a modular framework that enables you to create domain-specific blockchains by composing
-custom or pre-built components. The _Framework for Runtime Aggregation of Modularized Entities
-(**FRAME**)_ is a set of modules and support libraries that simplify runtime development. In
-Substrate, these modules are called **pallets**, each hosting domain-specific logic to include in a
-chain's runtime.
+[Substrate](https://paritytech.github.io/substrate/master/substrate/index.html) is a modular
+framework that enables you to create domain-specific blockchains by composing custom or pre-built
+components. It is part of the Polkadot SDK, and is responsible for providing the tools needed to
+build blockchain **runtimes**.
+
+The _Framework for Runtime Aggregation of Modularized Entities (**FRAME**)_ is a set of modules and
+support libraries that simplify runtime development within Substrate. In Substrate, these modules
+are called **pallets**, each hosting domain-specific logic to include in a chain's runtime.
 
 Substrate may be utilized to create a solo chain or a parachain for a relay chain like Polkadot or
 Kusama. At its core, it is a set of Rust crates that provide the most basic primitives and protocols
@@ -38,14 +41,22 @@ runtime-related primitives.
 
 A few significant crates that you will encounter are:
 
-- [`sp_runtime`](https://crates.parity.io/sp_runtime/index.html) - Runtime modules shared primitive
-  types
-- [`sp_core`](https://crates.parity.io/sp_core/index.html) - Shareable Substrate types
-- [`sp_io`](https://crates.parity.io/sp_io/index.html) - I/O host interface for substrate runtime.
-  Substrate runtime standard library as compiled when linked with Rust’s standard library.
+- [`sp_runtime`](https://paritytech.github.io/substrate/master/sp_runtime/index.html) - Runtime
+  modules shared primitive types
+- [`sp_core`](https://paritytech.github.io/substrate/master/sp_core/index.html) - Shareable
+  Substrate types
+- [`sp_io`](https://paritytech.github.io/substrate/master/sp_io/index.html) - I/O host interface for
+  substrate runtime. Substrate runtime standard library as compiled when linked with Rust’s standard
+  library.
 
-These, along with many more, all pertain to building certain aspects of a particular distributed
-system.
+These, along with many more, all pertain to building certain aspects of distributed systems,
+including but not limited to:
+
+- Consensus mechanisms
+- Peer-to-peer networking
+- Fork-choice rules
+- Block authoring
+- State management
 
 ## A Brief Introduction to FRAME (Framework for Runtime Aggregation of Modularized Entities)
 

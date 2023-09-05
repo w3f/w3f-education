@@ -9,7 +9,7 @@ The purpose of this capstone project is to bring something both engaging and inf
 student. You, the student, should be able to build a Substrate pallet in the Substrate Node
 Template, run it, and modify and view its state in real time.
 
-An honorable mention and inspiration behind this project are
+An honorable mention and inspiration behind this project is
 [Substrate Kitties](https://www.shawntabrizi.com/substrate-collectables-workshop/) by Shawn Tabrizi.
 
 ## Required Functionality - What You Will Build
