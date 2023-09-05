@@ -185,7 +185,7 @@ module.exports = {
       type: "category",
       label: "Why Rust?",
       link: { type: "doc", id: "Rust/section1/index" },
-      items: ["Rust/section1/what-is-rust", "Rust/section1/why-rust", "Rust/section1/wasm-tldr"],
+      items: ["Rust/section1/what-is-rust", "Rust/section1/why-rust", "Rust/section1/wasm-tldr", "Rust/section1/end-goal"],
     },
     {
       type: "doc",
@@ -202,19 +202,21 @@ module.exports = {
         "Rust/section2/data-types",
         "Rust/section2/functions-comments",
         "Rust/section2/loops",
+        "Rust/section2/ex01-functions",
       ],
     },
     {
       type: "category",
       label: "Intro to Intermediate Rust: Ownership, Borrowing, & Slices",
       link: { type: "doc", id: "Rust/section3/index" },
-      items: ["Rust/section3/ownership", "Rust/section3/borrowing", "Rust/section3/slices"],
+      items: ["Rust/section3/ownership", "Rust/section3/borrowing", "Rust/section3/slices", "Rust/section3/ex02-borrowing",
+    ],
     },
     {
       type: "category",
       label: "Intro to Intermediate Rust: Enums & Matching Patterns",
       link: { type: "doc", id: "Rust/section4/index" },
-      items: ["Rust/section4/enums", "Rust/section4/panic", "Rust/section4/error-handling"],
+      items: ["Rust/section4/enums", "Rust/section4/panic", "Rust/section4/error-handling", "Rust/section4/ex03-enums"],
     },
     {
       type: "category",
@@ -225,6 +227,8 @@ module.exports = {
         "Rust/section5/structs",
         "Rust/section5/struct-methods",
         "Rust/section5/vectors-vs-strings",
+        "Rust/section5/ex04-collections",
+        "Rust/section5/ex05-structs"
       ],
     },
     {
@@ -236,13 +240,14 @@ module.exports = {
         "Rust/section6/generics",
         "Rust/section6/associated-generics",
         "Rust/section6/lifetimes",
+        "Rust/section6/ex06-traits"
       ],
     },
     {
       type: "category",
       label: "Intro to Advanced Rust: Iterators & Closures",
       link: { type: "doc", id: "Rust/section7/index" },
-      items: ["Rust/section7/iterators", "Rust/section7/closures", "Rust/section7/macros"],
+      items: ["Rust/section7/iterators", "Rust/section7/closures", "Rust/section7/macros", "Rust/section7/ex07-iterators"],
     },
     {
       type: "category",
@@ -253,6 +258,7 @@ module.exports = {
         "Rust/section8/installing-crate",
         "Rust/section8/defining-crate-features",
         "Rust/section8/unit-tests",
+        "Rust/section8/ex08-no-std"
       ],
     },
     {
