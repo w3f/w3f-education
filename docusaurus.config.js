@@ -152,6 +152,10 @@ module.exports = {
               label: "GitHub",
               href: "https://github.com/w3f/w3f-education",
             },
+            {
+              label: 'Legal Disclosures',
+              to: 'https://web3.foundation/legal-disclosures/',
+            },
           ],
         },
       ],
