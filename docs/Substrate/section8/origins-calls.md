@@ -39,6 +39,6 @@ Custom origins allow a developer to define a stringent set of requirements for w
 contain to be valid for that specific use case.
 
 For example, the `pallet_collectives` defines custom origins that represent a
-[`Member(AccountId)`](https://github.com/paritytech/substrate/blob/master/frame/collective/src/lib.rs#L139)
+[`Member(AccountId)`](https://github.com/paritytech/polkadot-sdk/blob/2c8021f998a4b3f3e9c0416c7886ef05803aba9d/substrate/frame/collective/src/lib.rs#L141)
 of a particular collective. In the pallet's context, a call containing this origin would imply that
 a member of that collective condoned that action.

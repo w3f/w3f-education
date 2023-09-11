@@ -29,7 +29,7 @@ The following will be created as a result of this project:
 
 1.  A runtime pallet, which the student can publish and modify as they will.
 2.  An instance of the node template with this pallet integrated.
-3.  A simple front end to display all profiles on a network.
+3.  A simple front end to display all profiles on a network. (optional)
 
 ## Student Objectives
 
@@ -53,7 +53,7 @@ The following Substrate topics and nuances will be covered as a result of this p
   discussed.
 - Going over the Rust language for each pallet concept.
 - Creating any storage mappings or associations for storing data in the chain
-- Learn how to utilize BoundedVec and the importance of bounded data in general in blockchain
+- Learn how to utilize `BoundedVec` and the importance of bounded data in general in blockchain
   development.
 - Learning safe math via the Like or Dislike mechanism to prevent integer overflows. Explain the
   importance of safe math in the runtime.

@@ -7,23 +7,32 @@ description: Learn what Substrate it is, and why it's the future of building inf
 
 [Substrate](https://paritytech.github.io/substrate/master/substrate/index.html) is a modular
 framework that enables you to create domain-specific blockchains by composing custom or pre-built
-components. It is part of the Polkadot SDK, and is responsible for providing the tools needed to
-build blockchain **runtimes**.
+components. It is part of the [Polkadot SDK](https://github.com/paritytech/polkadot-sdk), and is
+responsible for providing the tools needed to build blockchain **runtimes**.
+
+:::info Substrate is part of the Polkadot SDK (monorepo)
+
+As of August, 2023, the **Polkadot**, **Substrate**, and **Cumulus** codebases were merged into one
+monorepo. Now referred to as the **Polkadot SDK**, this monorepo represents all the primary tools
+needed to build blockchains using Substrate.
+
+:::
 
 The _Framework for Runtime Aggregation of Modularized Entities (**FRAME**)_ is a set of modules and
 support libraries that simplify runtime development within Substrate. In Substrate, these modules
 are called **pallets**, each hosting domain-specific logic to include in a chain's runtime.
 
 Substrate may be utilized to create a solo chain or a parachain for a relay chain like Polkadot or
-Kusama. At its core, it is a set of Rust crates that provide the most basic primitives and protocols
-to implement a distributed state machine, such as a blockchain.
+Kusama. At its core, it is a set of Rust libraries that provide the most basic primitives and
+protocols to implement a distributed, peer-to-peer state machine, such as a blockchain.
 
 :::info An analogy: React, the library for web and native user interfaces
 
-Another way to think about Substrate is similar to how a web developer may use/think about React.
-Where React provides core libraries for manipulating the elements of the DOM via developer-defined
-components, Substrate also provides the base libraries and primitives needed to create a blockchain.
-It was designed to not be opinionated via a highly generic codebase, enabling high customizability.
+Another way to think about Substrate is similar to how a web developer may use/think about
+**React**. Where React provides core libraries for manipulating the elements of the DOM via
+developer-defined components, Substrate also provides the base libraries and primitives needed to
+create a blockchain. It was designed to not be opinionated via a highly generic codebase, enabling
+high customizability.
 
 :::
 
