@@ -13,8 +13,8 @@ responsible for providing the tools needed to build blockchain **runtimes**.
 :::info Substrate is part of the Polkadot SDK (monorepo)
 
 As of August, 2023, the **Polkadot**, **Substrate**, and **Cumulus** codebases were merged into one
-monorepo. Now referred to as the **Polkadot SDK**, this monorepo represents all the primary tools
-needed to build blockchains using Substrate.
+monorepo. Now referred to as the [**Polkadot SDK**](https://github.com/paritytech/polkadot-sdk),
+this monorepo represents all the primary tools needed to build blockchains using Substrate.
 
 :::
 

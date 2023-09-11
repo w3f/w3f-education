@@ -18,5 +18,6 @@ sensible to make all standard blockchain protocols and primitives available to p
 
 ## The Polkadot SDK
 
-As of August 25th, 2023, Substrate, Polkadot, and Cumulus were merged under a single monorepo after
-being in three separate repositories.
+As of August 25th, 2023, Substrate, Polkadot, and Cumulus were merged under a
+[single monorepo](https://github.com/paritytech/polkadot-sdk) after being in three separate
+repositories.
