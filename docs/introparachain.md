@@ -16,6 +16,8 @@ The following courses, or knowledge of these subjects in general will aid you in
 1. [Intro to Rust](./introrust.md)
 2. [Intro to Substrate](./introsubstrate.md)
 
+[**Rust**](https://www.rust-lang.org/tools/install) should already be installed on your system.
+
 :::
 
 The primary goals are:
@@ -24,15 +26,29 @@ The primary goals are:
 - Learn the roles of the relay and parachain architecture.
 - Install necessary binaries and dependencies needed to create networks locally.
 - Modify your parachain and prep it for connecting to the relay chain.
-- Create a parathread and reserve a para ID
-- Create and run an auction, registering your parachain.
+- Create a parathread and reserve a para ID.
+- Regiseter your parachain using the `sudo` pallet.
 - Next steps and moving forward.
 
+## Section 1 - Network Architecture
 
-## Section 1 
+- [Polkadot Network Components](./Parachain/beginner/section1/network-components.md)
+- [Parachain Architecture Overview](./Parachain/beginner/section1/parachain.md)
+- [Relay Chain Architecture Overview](./Parachain/beginner/section1/relay-chain.md)
 
-## Section 2
+## Section 2 - Installing & Running Dependencies
 
-## Section 3 
+- [Install Local Binaries](./Parachain/beginner/section2/install-binary.md)
+- [Install the Cumulus Parachain Template](./Parachain/beginner/section2/install-template.md)
+- [Running the Relay and Parachain](./Parachain/beginner/section2/running-chains.md)
 
-## Section 4 
+## Section 3 - Registering Your Parachain
+
+- [Creating a Parathread](./Parachain/beginner/section3/creating-parathread.md)
+- [Registering Your Parachain with Sudo](./Parachain/beginner/section3/creating-auction.md)
+- [Developing Your Parachain](./Parachain/beginner/section3/developing-parachain.md)
+
+## Section 4 - Next Steps
+
+- [Ecosystem Initiatives](./Parachain/beginner/section4/initatives.md)
+- [Road to Production](./Parachain/beginner/section4/road-to-production.md)
