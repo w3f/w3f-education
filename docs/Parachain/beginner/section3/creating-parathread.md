@@ -11,4 +11,8 @@ Before registering and uploading your parachain's runtime, you need to register 
 
 Navigate to the [Polkadot.js Developer Console](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/explorer), select the "Network" dropdown, and select "Parachains":
 
-Select the "Parathreads" tab.  Because our chain spec for our parachain indicates the ID is `1000`, we will fill out the necessary details for our parachain:
+Select the "Parathreads" tab.  Our parachain indicates the ID is `2000`, as per our chain spec.  Luckily, the default starting `ParaId` is 2000, as stated below:
+
+![](../assets/register_paraid.png)
+
+Select `Alice` as per above, and send the extrinsic.  Your parachain can now be registered using that `ParaId`.

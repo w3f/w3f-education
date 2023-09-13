@@ -29,11 +29,17 @@ In order to register our parachain, we need both our relay chain creating blocks
 
 Navigate to the [Polkadot.js Developer Console](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/explorer), and select the `Sudo` tab:
 
+
 Once here, select the `parasSudoWrapper` in the dropdown:
+
+![](../assets/paras_sudo_wrapper.png)
 
 Upload the genesis (`parachain-genesis-state`) and runtime (`parachain-wasm`) from the `parachain-guide-resources` repository:
 
+![](../assets/sudo_schedule_filled.png)
+
 In the events tab in the main explorer, you should see two events - `sudo.Sudid` and `paras.PvfCheckAccepted`.  These should indicate that the parachain's runtime has been successfully registered, and the collator will start syncing with the relay chain.
 
+![](../assets/successful_pvf.png)
 
 
