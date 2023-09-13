@@ -42,4 +42,24 @@ In the events tab in the main explorer, you should see two events - `sudo.Sudid`
 
 ![](../assets/successful_pvf.png)
 
+## Ensuring Collation
+
+Your collator should have output similar to the following: 
+
+```sh
+2023-09-13 13:03:48 [Parachain] 🙌 Starting consensus session on top of parent 0x8d239901c4ee0eca7b10f97744bd2812e2682cd92a3e15c254931fb631af6289
+2023-09-13 13:03:48 [Parachain] 🎁 Prepared block for proposing at 198 (1 ms) [hash: 0xd5ab5c88bbc45c00500059d001303961fc43c2821f21c9939b44be5ec983dfb9; parent_hash: 0x8d23…6289; extrinsics (2): [0xc24e…cf43, 0xc8c9…86a5]
+2023-09-13 13:03:48 [Parachain] 🔖 Pre-sealed block for proposal at 198. Hash now 0x17eb48b6a0cca5cabfa3651961732b4095fa9a7edc77066ba310d3243342fba2, previously 0xd5ab5c88bbc45c00500059d001303961fc43c2821f21c9939b44be5ec983dfb9.
+2023-09-13 13:03:48 [Parachain] ✨ Imported #198 (0x17eb…fba2)
+2023-09-13 13:03:48 [Parachain] PoV size { header: 0.21875kb, extrinsics: 3.1298828125kb, storage_proof: 3.2939453125kb }
+2023-09-13 13:03:48 [Parachain] Compressed PoV size: 6.048828125kb
+2023-09-13 13:03:48 [Parachain] Produced proof-of-validity candidate. block_hash=0x17eb48b6a0cca5cabfa3651961732b4095fa9a7edc77066ba310d3243342fba2
+```
+
+In Polkadot.js, you should also see block production occurring on both the relay and parachain:
+
+![](../assets/collation_occuring.png)
+
+If not, you may have forgotten to specific a bootnode, in which case you may restart your collator and specify a relay chain validator using the `--bootnodes` flag.
+
 
