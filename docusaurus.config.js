@@ -17,7 +17,7 @@ module.exports = {
   markdown: {
     mermaid: true,
   },
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-search-algolia"],
   themeConfig: {
     prism: {
       additionalLanguages: ["rust"],
