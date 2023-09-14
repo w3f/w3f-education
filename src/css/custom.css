@@ -18,7 +18,7 @@
   --ifm-navbar-link-color: #000;
   --ifm-color-black: #fff;
   --ifm-code-font-size: 95%;
-  font-family: SuisseIntl,sans-serif;
+  font-family: SuisseIntl, sans-serif;
 }
 
 .hero__title {
@@ -31,14 +31,13 @@
   margin-right: 0rem;
 }
 
-
 .footer__link-item {
   text-decoration: none;
 }
 
 .footer__link-item:hover {
   color: #ebedf0;
-} 
+}
 
 .navbar__items {
   font-size: 18px;
@@ -51,7 +50,7 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -67,7 +66,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 .footer__copyright {
-  color: #7F7F7F;
+  color: #7f7f7f;
   font-size: 14px;
   text-align: right;
 }
@@ -80,7 +79,12 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 /* All other links should not be underlined */
-.button, .menu__link, .navbar__brand, .navbar__item, .pagination-nav__link, .table-of-contents__link {
+.button,
+.menu__link,
+.navbar__brand,
+.navbar__item,
+.pagination-nav__link,
+.table-of-contents__link {
   text-decoration: none;
 }
 
@@ -90,30 +94,25 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin: 4px 12px;
 }
 
-a.navbar__item{
-  background:
-    linear-gradient(
-      to right,
-      #fff,
-      #fff
-    ),
-    linear-gradient(
-      to right,
-      #000,
-      #000,
-      #000
-  );
-  background-size: 100% 3px, 0 3px;
-  background-position: 100% 100%, 0 100%;
+a.navbar__item {
+  background: linear-gradient(to right, #fff, #fff), linear-gradient(to right, #000, #000, #000);
+  background-size:
+    100% 3px,
+    0 3px;
+  background-position:
+    100% 100%,
+    0 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
 
-a:hover.navbar__item{
-  background-size: 0 3px, 100% 3px;
+a:hover.navbar__item {
+  background-size:
+    0 3px,
+    100% 3px;
 }
 
-/* Feature items*/ 
+/* Feature items*/
 .col.col--4.feature-item {
   background-color: white;
   padding: 0;
@@ -204,11 +203,11 @@ a:hover.navbar__item{
     margin: auto;
     margin-bottom: 2em;
   }
-  
+
   .container.container-home {
     padding: 2em 0;
   }
-  
+
   .col.footer__col {
     text-align: center;
     max-width: 100%;
@@ -227,7 +226,7 @@ a:hover.navbar__item{
   }
 
   .container-home .row .col.col.col {
-    max-width: 70%
+    max-width: 70%;
   }
 
   .feature-item > img {
@@ -266,7 +265,7 @@ a:hover.navbar__item{
   }
 
   .container-home .row .col.col.col {
-    max-width: 28%
+    max-width: 28%;
   }
 }
 
@@ -276,7 +275,7 @@ a:hover.navbar__item{
   }
 }
 
-.docusaurus-mermaid-container  {
+.docusaurus-mermaid-container {
   text-align: center;
   margin: 20px;
 }

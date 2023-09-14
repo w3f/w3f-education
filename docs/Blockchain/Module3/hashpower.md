@@ -2,5 +2,4 @@
 id: hashpower
 ---
 
-
 # Bitcoin Hashpower

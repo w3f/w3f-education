@@ -13,7 +13,7 @@ A significant side effect of running our local relay chain includes bypassing th
 
 ## A Brief Introduction to the Sudo Pallet
 
-The [`sudo`](https://paritytech.github.io/substrate/master/pallet_sudo/index.html) pallet executes calls that require `Root` origin with any keys that are declared as "sudo".  In most development environments, `Alice` is one of these keys.  Adding more keys if needed via the `set_key` extrinsic is also possible.
+The [`sudo`](https://paritytech.github.io/polkadot-sdk/master/pallet_sudo/index.html) pallet executes calls that require `Root` origin with any keys that are declared as "sudo".  In most development environments, `Alice` is one of these keys.  Adding more keys if needed via the `set_key` extrinsic is also possible.
 
 It primarily acts as a wrapper for other calls.  It is not meant to be used in pallets directly but rather merely execute privileged calls that require the `Root` origin.
 
