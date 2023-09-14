@@ -8,6 +8,8 @@ description: Understand how to utilize cargo.
 If Rust is installed on your system, then `cargo` by default is installed. `cargo` is Rust's package
 management system and can be called from the command line.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O0ex0P_EInM?si=woJlf4Z8EQHyAxcy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Creating a new project with Cargo
 
 Create a new project using `cargo` using the `cargo new` command. You will need to have your command
