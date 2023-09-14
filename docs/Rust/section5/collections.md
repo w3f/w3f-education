@@ -19,6 +19,8 @@ There are three commonly used collections in Rust:
 - Hashmaps - key-value data structures that store a **map** of information.
 - Strings - a collection of characters that are stored on the heap.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/du6V0bpafws?si=S8hPiTfjb6oF4okz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Vectors
 
 The official type declaration of a vector is `Vec<T>`, which represents a list of any generic type
