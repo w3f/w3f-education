@@ -12,6 +12,8 @@ necessary. Rust includes two commonly used _enums_ that help ensure data is vali
 Both types ensure invalid data and errors are handled adequately and do not cause the program to
 panic.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TTZs6pVdTaA?si=HLz41P7HUOKpcMs_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Using Option
 
 Option is an enum that contains two variants - `None` and `Some`:
