@@ -29,6 +29,8 @@ thread 'main' panicked at 'explicit panic', src/main.rs:3:5
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ```
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EVQ5DD5Otxk?si=8sB3xLvyR6vXRCvg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 There are a few methods that could cause a panic, namely within using `Result`. Methods such as
 `unwrap()` and `expect()` can cause a panic if the `Result` is `None`, as the error is not being
 handled. As a result, the program simply panics and closes to prevent any further unwanted behavior.
