@@ -16,6 +16,8 @@ There are also other cases where `std` may not be available. For this reason, so
 option of a `no-std` implementation which does not use the Rust Standard Library and can run in
 these resource-constrained environments.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b-PnGu63Xdk?si=w-z4MIDfqAAsOR-K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Specifying features
 
 A **feature** in the context of Rust crates refers to the ability to conditionally/optionally
