@@ -12,6 +12,8 @@ structure a basic testing structure for your Cargo project.
 
 Be sure to open your project, `first-cargo`, as that is the repo we will be testing.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tkGYuR1KKf8?si=nuZKzP25OAN5xTFl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Putting tests below the main function
 
 Tests are defined using the `#[test]` macro and are usually either in their separate directory on
