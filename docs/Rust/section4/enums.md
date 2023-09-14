@@ -8,6 +8,8 @@ description: Learn what enums are and how to use them in Rust.
 Enumerations, or **enums** are data structures that allow for a list of pre-defined options in Rust.
 They are useful for pattern matching, defining expected conditions, errors, and more.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GEycPZeRojk?si=_xSRTpPXc7nSQ9RZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 An example of enums in use would be defining different types of animal classes. An enum's values are
 called _variants_:
 
