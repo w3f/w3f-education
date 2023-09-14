@@ -15,8 +15,8 @@ adaptable comes from its heavy use of
 ## What is a generic code base?
 
 At a basic level, a generic code base represents a way to define very reusable code. The Substrate
-libraries use this design pattern to optionally leave some of the definitions of primitives up to
-the developer.
+libraries use this design pattern to optionally leave some definitions of primitives up to the
+developer.
 
 Blockchains often have standard 'primitives': Polkadot, Bitcoin, or Ethereum all have concepts and
 primitives that are commonplace, i.e., transactions, blocks, storage, and hashing algorithms.

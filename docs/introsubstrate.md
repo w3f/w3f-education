@@ -3,7 +3,7 @@ id: introsubstrate
 sidebar_position: 1
 ---
 
-# Introduction to Substrate & FRAME
+# Introduction to Polkadot SDK - Substrate & FRAME
 
 Developed by the Technical Education team at the Web3 Foundation, this course provides a
 comprehensive overview of the Substrate blockchain framework and building blockchains.
