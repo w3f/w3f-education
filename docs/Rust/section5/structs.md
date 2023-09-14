@@ -10,6 +10,8 @@ data type. It's similar to tuples in concept but provides several ways to expand
 struct behavior. Structs, like any other type, abide by Rust's strict typing system and allow for a
 plethora of expansion when it comes to programming in Rust.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RBjaBImXdoA?si=JB2WrDygv_1ziBtn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Creating Structs
 
 The `struct` keyword is used to instantiate struct, followed by the name, then a series of fields
