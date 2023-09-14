@@ -17,11 +17,17 @@ module.exports = {
   markdown: {
     mermaid: true,
   },
-  themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-search-algolia"],
+  themes: ["@docusaurus/theme-mermaid"],
   themeConfig: {
     prism: {
       additionalLanguages: ["rust"],
       theme: require("prism-react-renderer/themes/dracula"),
+    },
+    algolia: {
+      appId: "placeholder",
+      apiKey: "placeholder",
+      indexName: "education",
+      contextualSearch: true,
     },
     mermaid: {
       theme: { light: "neutral", dark: "neutral" },
