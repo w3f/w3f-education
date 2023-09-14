@@ -9,6 +9,8 @@ Closures are one of Rust's functional programming-esque features that can create
 functions**. Closures, like functions, execute blocks of logic within. They are fundamentally
 different in how they operate and handle ownership.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zgjn1y2Jugc?si=FyV0awFCBGvozvqN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 They may even be used as a return type, as shown in examples such as `unwrap_or_else()`:
 
 ```rust
