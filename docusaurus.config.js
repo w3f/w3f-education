@@ -24,9 +24,9 @@ module.exports = {
       theme: require("prism-react-renderer/themes/dracula"),
     },
     algolia: {
-      appId: "placeholder",
-      apiKey: "placeholder",
-      indexName: "education",
+      appId: "process.env.ALGOLIA_API_KEY",
+      apiKey: "process.env.ALGOLIA_APP_ID",
+      indexName: "education-web3",
       contextualSearch: true,
     },
     mermaid: {
