@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkw3f_education=self.webpackChunkw3f_education||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Polkadot MOOC","permalink":"/blog/Polkadot MOOC"}]}')}}]);

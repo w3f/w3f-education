@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Polkadot Education Initiative</ShortName>
+  <Description>Search Polkadot Education Initiative</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/x-icon">https://education.web3.foundation/img/favicon-32x32.png</Image>
+  <Url type="text/html" method="get" template="https://education.web3.foundation/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://education.web3.foundation/opensearch.xml" />
+  <moz:SearchForm>https://education.web3.foundation/</moz:SearchForm>
+</OpenSearchDescription>
