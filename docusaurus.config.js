@@ -23,6 +23,12 @@ module.exports = {
       additionalLanguages: ["rust"],
       theme: require("prism-react-renderer/themes/dracula"),
     },
+    algolia: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: "education-web3",
+      contextualSearch: true,
+    },
     mermaid: {
       theme: { light: "neutral", dark: "neutral" },
     },
