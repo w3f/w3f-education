@@ -10,6 +10,8 @@ framework that enables you to create domain-specific blockchains by composing cu
 components. It is part of the [Polkadot SDK](https://github.com/paritytech/polkadot-sdk), and is
 responsible for providing the tools needed to build blockchain **runtimes**.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/54u9E_7r5zA?si=82R9PojJiQ5R-VMl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 :::info Substrate is part of the Polkadot SDK (monorepo)
 
 As of August, 2023, the **Polkadot**, **Substrate**, and **Cumulus** codebases were merged into one
