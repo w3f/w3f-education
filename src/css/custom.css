@@ -279,3 +279,11 @@ a:hover.navbar__item {
   text-align: center;
   margin: 20px;
 }
+
+.markdown a {
+  color: #38aa69;
+}
+
+.markdown a:hover {
+  color: #4eeb92;
+}
