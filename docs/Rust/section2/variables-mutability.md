@@ -40,9 +40,11 @@ variable has been declared, the value within cannot be changed.
 let age: u32 = 22;
 // Increment the age by one.
 age += 1;
+```
 
-======
+Output:
 
+```console
 error[E0384]: cannot assign twice to immutable variable `age`
   --> src/main.rs:26:1
    |
