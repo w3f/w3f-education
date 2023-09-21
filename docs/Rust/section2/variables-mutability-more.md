@@ -115,7 +115,7 @@ pub enum Options {
 }
 
 fn main() {
-   let result = my_function(Options::One);
+   let result = my_function(Options::Three);
    assert!(result == 6);
 }
 
