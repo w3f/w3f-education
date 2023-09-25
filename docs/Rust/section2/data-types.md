@@ -12,7 +12,7 @@ types in Rust greatly aids in ensuring that data is flowing as it should through
 Rust has two kinds of **primitive**, or base, data types:
 
 - Scalar - single point types, such as numbers and booleans (`true` or `false` statements)
-- Compound - arrays, and tuples
+- Compound - arrays and tuples
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G9I-HdPsLmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -51,7 +51,7 @@ integer variants:
 
 The length or size of the integer is always explicitly declared. Rust has a set of defaults for
 inferring types, such as integers defaulting to the `i32` type. `usize` and `isize` depend on your
-machine's architecture, meaning they are either 32, or 64 bit in size.
+machine's architecture, meaning they are either 32 or 64 bit in size.
 
 Here are some common ways to declare an integer, some formats less traditional than others:
 
@@ -85,8 +85,9 @@ more about those later on.
 
 #### Floating point numbers
 
-Rust has two floating number types: ' f32`(32-bit) and`f64` (64-bit). Floating point numbers, unlike
-integers, are fractional, meaning they contain decimal points to represent parts of whole numbers:
+Rust has two floating number types: `f32` (32-bit) and `f64` (64-bit). Floating point numbers,
+unlike integers, are fractional, meaning they contain decimal points to represent parts of whole
+numbers:
 
 `f32` has single precision accuracy, whereas `f64` has double-precision accuracy. `f64` is the
 default type for floating point numbers in Rust:
