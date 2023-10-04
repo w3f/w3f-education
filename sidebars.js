@@ -202,6 +202,10 @@ module.exports = {
         "Rust/section2/data-types",
         "Rust/section2/functions-comments",
         "Rust/section2/loops",
+        "Rust/section2/alt-data-types",
+        "Rust/section2/common-traits",
+        "Rust/section2/casting-handling",
+        "Rust/section2/safe-math",
       ],
     },
     {
