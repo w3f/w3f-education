@@ -5,9 +5,11 @@ sidebar_label: Alternative Data Types
 description: Learn when, and how to use non-typical data types
 ---
 
-## Deterministic Types
+## Deterministic Types - Floating Point Numbers
 
 ## A Deeper Look at Scalar & Compound Types
+
+### Type Aliases
 
 ## Recognizing "Sized" Types
 

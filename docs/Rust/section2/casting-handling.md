@@ -5,10 +5,10 @@ sidebar_label: Casting & Type Conversion in Rust
 description: A comprehensive overview on how to cast and and handle type conversion in Rust
 ---
 
-## Lossy vs. Lossless Types
+## Lossy vs. Lossless Conversions
 
 ## Safely converting between primitive types
 
 ## Safely converting between custom types
 
-## Inferred Types
+## Inferred & Coercion Types
