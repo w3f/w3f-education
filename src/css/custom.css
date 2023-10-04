@@ -55,12 +55,12 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 .hero--primary {
-  --ifm-hero-background-color: #fff;
+  --ifm-hero-background-color: #f9f9f9;
   --ifm-hero-text-color: #000;
 }
 
 html[data-theme="dark"] .hero--primary {
-  --ifm-hero-background-color: #000;
+  --ifm-hero-background-color: #1d1d1d;
   --ifm-hero-text-color: #fff;
 }
 
