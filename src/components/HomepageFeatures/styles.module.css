@@ -19,3 +19,8 @@ html[data-theme="dark"] .features {
   height: 200px;
   width: 200px;
 }
+
+hr {
+  width: 15%;
+  height: 5px;
+}

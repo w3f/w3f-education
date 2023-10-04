@@ -66,6 +66,7 @@ export default function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container container-home">
         <h2 className="h2-home">Overview - Learn Polkadot</h2>
+        <hr></hr>
         <div className="row feature-row">
           {MainFeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
@@ -75,6 +76,7 @@ export default function HomepageFeatures() {
 
       <div className="container container-home">
       <h2 className="h2-home">Overview - Learn Core Development</h2>
+      <hr></hr>
         <div className="row feature-row">
           {CoursesFeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
