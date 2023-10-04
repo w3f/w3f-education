@@ -286,6 +286,15 @@ html[data-theme="dark"] .feature-link-arrow {
 .docusaurus-mermaid-container {
   text-align: center;
   margin: 20px;
+  background-color: #fff;
+  fill: #000;
+}
+
+.edgeLabel {
+  display: block;
+  border-radius: 4px;
+  padding-left: 4px;
+  word-wrap: break-word;
 }
 
 .markdown a {
