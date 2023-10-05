@@ -1,12 +1,12 @@
 # Dependencies
 /node_modules
 
-
 # IDE
 /.vscode
 
 # Production
 /build
+/docify/readme-generate/target
 
 # Generated files
 .docusaurus
