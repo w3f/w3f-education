@@ -13,13 +13,8 @@ trait Downloader {
 
 struct PolkadotSDK;
 
-#[derive(PartialEq)]
-struct Source {
-    path: String,
-    file_name: String,
-}
-
 impl Downloader for PolkadotSDK {
+
     const COMMIT_HASH: &'static str = "0a6dfdf973b8e7b669eda6e2ed202fb3549a20b9";
     const RESPOSITORY_NAME: &'static str = "paritytech/polkadot-sdk";
     const BASE_URL: &'static str = "https://raw.githubusercontent.com";
@@ -64,29 +59,30 @@ fn main() -> Result<()> {
     // After we have all relevant files, _then_ we process each file through compile_markdown, one at a time, into our desired output.
     // https://github.com/paritytech/polkadot-sdk/blob/0a6dfdf973b8e7b669eda6e2ed202fb3549a20b9/substrate/frame/timestamp/src/tests.rs
 
-    let paths = pre_docify();
+    let paths = pre_docify()?;
     for path in paths {
         let split_idx = path.find("src/");
         let source = path.split_at(split_idx.unwrap() + 4);
+        println!("{:?}", source);
         PolkadotSDK::download(source.1, source.0)?;
     }
+    
     process();
     Ok(())
 }
 
-fn pre_docify() -> Vec<String> {
+fn pre_docify() -> Result<Vec<String>> {
     let mut paths: Vec<String> = vec![];
     for entry in glob("./test_docs/**/*.md").expect("you suck") {
         let file = File::open(entry.unwrap());
         let mut buff_reader = BufReader::new(file.unwrap());
         let mut buffer = String::new();
-        buff_reader.read_to_string(&mut buffer).unwrap();
+        buff_reader.read_to_string(&mut buffer)?;
         for line in buffer.lines() {
-            if line.contains("docify") {
-                let beginning = line.find("substrate/").unwrap();
-                let end = line.find("\",").unwrap();
+            if line.contains("docify::embed") {
+                let beginning = line.find("substrate/").unwrap_or_default();
+                let end = line.find("\",").unwrap_or_default();
                 let path: &str = &line[beginning..end];
-
                 if !paths.contains(&path.to_string()) {
                     paths.push(path.to_string());
                 }
@@ -94,7 +90,7 @@ fn pre_docify() -> Vec<String> {
         }
     }
     println!("{:?}", paths);
-    paths
+    Ok(paths)
 }
 
 fn process() {
