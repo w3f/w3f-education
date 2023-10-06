@@ -197,11 +197,18 @@ module.exports = {
       label: "Rust 101 - Intro to Basic Rust",
       link: { type: "doc", id: "Rust/section2/index" },
       items: [
-        "Rust/section2/variables-mutability",
-        "Rust/section2/heap-vs-stack",
-        "Rust/section2/data-types",
-        "Rust/section2/functions-comments",
-        "Rust/section2/loops",
+        {
+          type: 'category',
+          link: { type: "doc", id: "Rust/section2/basics-index" },
+          label: 'Rust Basics',
+          items: [
+            "Rust/section2/variables-mutability",
+            "Rust/section2/heap-vs-stack",
+            "Rust/section2/data-types",
+            "Rust/section2/functions-comments",
+            "Rust/section2/loops",
+          ],
+        },
         {
           type: 'category',
           link: { type: "doc", id: "Rust/section2/extended-index" },
