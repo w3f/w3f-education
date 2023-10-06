@@ -1,7 +1,7 @@
 ---
 id: common-traits
-title: Common Traits in Rust
-sidebar_label: Common Traits in Rust
+title: Useful Traits
+sidebar_label: Useful Traits - Common Substrate Traits
 description:
   Learn some of the most common traits to know about, how to use them, and how they can improve your
   runtime.

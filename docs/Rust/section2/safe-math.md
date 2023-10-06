@@ -1,17 +1,13 @@
 ---
 id: safe-math
-title: Floating Point Numbers & Safe Math
-sidebar_label: Floating Point Numbers & Safe Math
+title: Using Substrate Arithmetic for Safe Math
+sidebar_label: Using Substrate Arithmetic for Safe Math
 description:
   Learn how math can be dangerous in the context of blockchain runtimes, and why floating point
   numbers are not always accurate.
 ---
 
-## Floating Point Numbers
-
-## Negative Numbers
-
-## Overflow Panic
+## Integer Overflow
 
 ## Safe Math
 
