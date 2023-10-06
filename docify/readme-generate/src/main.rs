@@ -1,6 +1,6 @@
 use curl::easy::Easy;
 use glob::glob;
-use std::fs::{create_dir_all, File};
+use std::fs::{create_dir_all, File, remove_dir, remove_dir_all};
 use std::io::{BufReader, Read, Result, Write};
 
 trait Downloader {
@@ -66,8 +66,13 @@ fn main() -> Result<()> {
         println!("{:?}", source);
         PolkadotSDK::download(source.1, source.0)?;
     }
-    
-    process();
+
+    remove_dir_all("test_docs/output")?;
+    #[cfg(all(doc, feature = "with-docify"))]
+    docify::compile_markdown!(
+        "/Users/bader/Documents/education/w3f-education/docify/readme-generate/test_docs/",
+        "/Users/bader/Documents/education/w3f-education/docify/readme-generate/test_docs/output"
+    );
     Ok(())
 }
 
@@ -91,12 +96,4 @@ fn pre_docify() -> Result<Vec<String>> {
     }
     println!("{:?}", paths);
     Ok(paths)
-}
-
-fn process() {
-    #[cfg(all(feature = "with-docify"))]
-    docify::compile_markdown!(
-        "/Users/bader/Documents/education/w3f-education/docify/readme-generate/test_docs/",
-        "/Users/bader/Documents/education/w3f-education/docify/readme-generate/test_docs/output"
-    );
 }
