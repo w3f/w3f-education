@@ -30,11 +30,23 @@ module.exports = {
       contextualSearch: true,
     },
     mermaid: {
-      theme: { light: "neutral", dark: "neutral" },
-    },
+      theme: { light: 'base', dark: 'base' },
+      options: {
+        themeVariables: {
+          fontFamily: 'Unbounded',
+          primaryColor: '#E6007A',
+          primaryBorderColor: '#E6007A',
+          lineColor: '#140523',
+          secondaryColor: '#552BBF',
+          tertiaryColor: '#fff',
+          titleColor: '#000',
+          nodeTextColor: '#fff'
+          }
+        },
+      },
     colorMode: {
       defaultMode: "light",
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
       title: "Technical Education",
