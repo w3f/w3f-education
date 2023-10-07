@@ -12,7 +12,7 @@ types in Rust greatly aids in ensuring that data is flowing as it should through
 Rust has two kinds of **primitive**, or base, data types:
 
 - Scalar - single point types, such as numbers and booleans (`true` or `false` statements)
-- Compound - arrays, and tuples
+- Compound - arrays and tuples
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G9I-HdPsLmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -51,12 +51,11 @@ integer variants:
 
 The length or size of the integer is always explicitly declared. Rust has a set of defaults for
 inferring types, such as integers defaulting to the `i32` type. `usize` and `isize` depend on your
-machine's architecture, meaning they are either 32, or 64 bit in size.
+machine's architecture, meaning they are either 32 or 64 bit in size.
 
 Here are some common ways to declare an integer, some formats less traditional than others:
 
 ```rust
-
 // Defaults to i32.
 let default = 10;
 
@@ -74,7 +73,6 @@ let hex = 0x001;
 
 // You can also represent characters as unsigned 8-bit numbers.  This will get very useful later on:
 let word_as_bytes: u8 = b'F';
-
 ```
 
 Lastly, as integers do have a size, integer overflow is possible if you exceed the limit of a given
@@ -85,20 +83,19 @@ more about those later on.
 
 #### Floating point numbers
 
-Rust has two floating number types: ' f32`(32-bit) and`f64` (64-bit). Floating point numbers, unlike
-integers, are fractional, meaning they contain decimal points to represent parts of whole numbers:
+Rust has two floating number types: `f32` (32-bit) and `f64` (64-bit). Floating point numbers,
+unlike integers, are fractional, meaning they contain decimal points to represent parts of whole
+numbers:
 
 `f32` has single precision accuracy, whereas `f64` has double-precision accuracy. `f64` is the
 default type for floating point numbers in Rust:
 
 ```rust
-
 let floating_double: f64 = 1.11;
 
 let floating_single: f32 = 1.4;
 
 let also_floating_double = 1.45;
-
 ```
 
 #### Operators
@@ -107,12 +104,10 @@ As in any other programming language, there are a set of operators that allow fo
 to be performed:
 
 ```rust
-
 let addition = 1 + 1; // 2
 let subtraction = 10 - 5; // 5
 let division = 8 / 4; // 2
 let multiplication = 4 * 4; // 16
-
 ```
 
 Likewise, Rust also supports bitwise operators. A full list of Rust's operators and symbols may be
@@ -124,12 +119,10 @@ A boolean value can only have two possible states: `true` or `false`. Declaring 
 simple:
 
 ```rust
-
 let i_am_true = true;
 
 // Usually, it's easy to infer a bool type; however good to show explicit type assignments.
 let i_am_false: bool = false;
-
 ```
 
 This opens up many possibilities for **branching logic** in our Rust programs, of which we'll cover
@@ -163,27 +156,22 @@ useful for describing a set of varying values which have some relationship to on
 The syntax for writing a tuple is as follows. Note that the type annotations are optional:
 
 ```rust
-
 let my_tuple: (u32, f32, char) = (5, 5.5, '🌒'); // The explicit type annotations here are optional,
-
 ```
 
 There are a couple of ways to access the elements within a tuple. The first way merely involves
 fetching them in order, starting at `0`:
 
 ```rust
-
 let unsigned_32: u32 = my_tuple.0;
 let floating_32: f32 = my_tuple.1;
 let moon: char = my_tuple.2;
-
 ```
 
 You may also use pattern matching to access these elements. The following syntax constructs a
 pattern out of the above:
 
 ```rust
-
 let my_tuple: (u32, f32, char) = (5, 5.5, '🌒'); // The explicit type annotations here are optional,
 
 let (unsigned_32, floating_32, moon) = my_tuple;
@@ -193,9 +181,7 @@ Tuples can have elements that are of varying types, as seen above. They can be u
 a set, fixed amount of elements, such as a set of coordinates:
 
 ```rust
-
 let location: (i32, i32) = (10, 45);
-
 ```
 
 ### Arrays
@@ -210,9 +196,7 @@ can grow and shrink in size, as the data is managed by the **heap**, whereas arr
 and stored on the stack.
 
 ```rust
-
 let my_pets_ages: [i32; 3] = [4, 5, 3];
-
 ```
 
 Notice in the type declaration, `[i32; 3]`, that the first part denotes the type of **each element**
@@ -234,7 +218,6 @@ Be forewarned - it's possible to access an element that doesn't exist, which wou
 error.
 
 ```rust
-
 error: this operation will panic at runtime
   --> src/main.rs:32:18
    |
@@ -242,7 +225,6 @@ error: this operation will panic at runtime
    |                  ^^^^^^^^^^^^^^^^^ index out of bounds: the length is 5 but the index is 5
    |
    = note: `#[deny(unconditional_panic)]` on by default
-
 ```
 
 :::info
@@ -269,10 +251,8 @@ fixed length in memory.
 Next, we create an array of _tuples_, which would look like:
 
 ```rust
-
 let tuple_array = [("hi", 3), ("hello", 1)];
    for tuple in tuple_array {
         println!("{:?}", tuple)
     }
-
 ```

@@ -71,27 +71,27 @@ memory management, and data representation.
 Take this example - if we try to compile this Rust code (note that the lines of code starting with
 `//` are comments that are not executed):
 
-```
-    // Here, the number five variable is, well, the number 5. It is a number that can be added and subtracted.
-    let the_number_five: u32 = 5;
-    // Here is another variable - but instead of being a number it's a character, as denoted by the `char` type and the single quotes surrounding the 5 ('5')
-    let imposter_number_five: char = '5';
-    // Let’s say we want to add them - this shouldn't work, as this is the same as trying to add a number to a word.
-    let the_number_ten: u32 = the_number_five + imposter_number_five;
-    // FAILURE!
-    println!("{the_number_ten}");
+```rust
+// Here, the number five variable is, well, the number 5. It is a number that can be added and subtracted.
+let the_number_five: u32 = 5;
+// Here is another variable - but instead of being a number it's a character, as denoted by the `char` type and the single quotes surrounding the 5 ('5')
+let the_character_five: char = '5';
+// Let’s say we want to add them - this shouldn't work, as this is the same as trying to add a number to a word.
+let the_number_ten: u32 = the_number_five + the_character_five;
+// FAILURE!
+println!("{the_number_ten}");
 ```
 
 The Rust compiler, before we even run the program, gives an error as to _why_ this is impossible to
 compile. See below the level of detail the compiler gives the programmer, including a reference for
 why this may not compile.
 
-```
-  Compiling playground v0.0.1 (/playground)
+```console
+Compiling playground v0.0.1 (/playground)
 error[E0277]: cannot add `char` to `u32`
  --> src/main.rs:5:38
   |
-5 | let the_number_ten = the_number_five + imposter_number_five;
+5 | let the_number_ten = the_number_five + the_character_five;
   |                                      ^ no implementation for `u32 + char`
   |
   = help: the trait `Add<char>` is not implemented for `u32`

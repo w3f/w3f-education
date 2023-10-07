@@ -11,8 +11,6 @@ In this section, you will:
 - Learn what `rustup` and `cargo` are
 - Get your local machine environment ready for Rust development
 
-# Setting up Your Environment
-
 ## Rustup
 
 There is a standard tool in the Rust ecosystem called `rustup`. This tool allows you to easily

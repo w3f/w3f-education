@@ -20,19 +20,19 @@ are two common methods to accomplish a program's memory management and allocatio
 
 ## The Stack
 
-The stack is a linear model of storing objects on a "stack." It is faster than the heap but cannot
-be modified as easily. Objects are pushed and popped to and from the stack accordingly. In Rust,
-items that are of known size are stored on the stack. Known size in this context refers to some
-value that can be calculated at compile time, for example:
+The stack is a linear model of storing objects on a "stack." It is faster than the heap, but also
+less flexible as it can only contain objects of a known and fixed size. Known size in this context
+refers to some value that can be calculated at compile time. Objects are pushed and popped to and
+from the stack.
 
 ```rust
-let hello = "Hello, World";
+let hello: &'static str = "Hello, World";
 // or
-let x = 10;
+let x: u32 = 10;
 ```
 
-Both `hello` and `x` are pushed onto the stack because they are known in size, meaning their memory
-profile can be determined at compile time because their contents are defined preemptively.
+Both `hello` and `x` are fixed size and value variables, meaning their memory profile can be
+determined at compile time and they can be pushed to the stack.
 
 In Rust, the stack is the default for managing primitive/basic values, call frames and local
 variables. Non-primitives can also be put on the stack, but this is dependent on their lifetime and
@@ -61,9 +61,18 @@ let hello_string = String::from("Hello, World");
 hello_string.push('!'); // Adds an ! to hello_string
 ```
 
-## When to use which? How is this used in Rust?
+## Using `Box<T>` Reference Large Data
+
+There may be situations where you have a large amount of data which is being pass around your
+program.
+
+TODO
+
+## What decisions do you need to make?
 
 In Rust, this memory management and allocation is handled for you. There is no special syntax to
 dictate this in Rust, as it is already a part of the language. As you progress, you will learn how
 Rust efficiently manages memory through the ownership and borrowing systems while providing
 low-level access.
+
+However, it is important that you understand how resources
