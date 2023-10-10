@@ -16,9 +16,8 @@ redefined primitives for basic types related to numerics specifically for Susbtr
 large numbers. Let's explore how to access and use these data types, and why they're useful in the
 context of runtime development.
 
-:::tip Confused on what is going on? We often couple Rust with examples from the Substrate codebase.
-Anytime you feel lost, make sure to read the tip right below any new concepts that are introduced!
-:::
+:::tip Confused on what is going on? Anytime you feel lost, make sure to read the tip right below
+any new concepts that are introduced! :::
 
 ## Using Larger Data Types
 
@@ -45,23 +44,30 @@ has to be created. This particular type, `U256`, actually stores _four_ `u64` nu
 
 :::
 
-todo: use h256 as an example?
-
 In cryptographic contexts, this is especially, useful, as we can now represent 256-bit numbers
 numerically.
 
 ## "Deterministic" Data Types - Floating Point Numbers
 
-Floating point numbers have presented issues in traditional computing for decades. To make a long
-story short, floating point calculations are not deterministic, as different architectures may
-calculate the end result differently.
+Floating point numbers have presented issues in traditional computing for decades. To summarize,
+floating point calculations are not deterministic, as different architectures may calculate the end
+result differently - a 32-bit system will calculate a floating point number differently from a
+64-bit system.
+[This video goes into more depth about the issues presented here.](https://www.youtube.com/watch?v=PZRI1IfStY0).
 
-todo: add better sources for this
+While in _most_ cases, an inaccuracy to the 100th or 1000th place is not a terrible thing, in the
+case of dealing with things such as balances in a blockchain, floating point rounding errors could
+easily result in different nodes calculating different balances.
 
 For this reason, the notion of floating point primitives, such as `f32` and `f64`, cannot, and
 should not, be used in the context of the blockchain runtime. Even if one environment can
 deterministically use floating point numbers with sufficient accuracy, other clients on the network
 may provide alternate calculations.
+
+`sp-arithmetic` provides data types to deal with numbers less than zero, and allows them to be dealt
+safely in runtime. Unlike floating point arithmetic, which is not deterministic, these data types
+allow fixed point arithmetic. Fixed point arithmetic provides a uniform, deterministic result, as
+they operate on parts of a whole rather than the relative nature of floating point arithmetic.
 
 ## Negative Numbers - Unsigned Integers vs. Signed Integers
 
@@ -81,14 +87,22 @@ positive, real numbers. This is party due to a few reasons:
 :::tip Thought exercise: if Polkadot used `u8` for the BlockNumber type, how would the chain run
 before it overflowed?
 
-Give it some thought, and pick the correct answer. What would a _smaller_ data type imply for
-something like `BlockNumber`, which the network uses to progress?
+Give it some thought, and pick an answer! What would a _smaller_ data type imply for something like
+`BlockNumber`, which the network uses to progress?
 
-<details>
-    <summary>It wouldn't overflow; the error would be handled </summary>
+<details class="wrong">
+    <summary><b>It wouldn't overflow; the error would be handled</b></summary>
+Not quite - integer overflows can happen regardless of whether it is handled or not.  A more serious implication is at play here - if the chain's height is bound by a small number type, then that is effectively the maximum amount of blocks which can be generated.
 </details>
-<details>
-    <summary>After the limit of <code>u8::MAX</code> blocks</summary>
+
+<details class="correct">
+    <summary><b>After the limit of <code>u8::MAX</code> blocks</b></summary>
+
+Correct!
+
+The limit of a `u8::MAX` would indicate the limit for the blockchain, and thus how many blocks can
+be generated.
+
 </details>
 :::
 
@@ -110,7 +124,64 @@ Type aliases are used to shorten long, generic types. For example, the following
 access a Balance with all configuration in Substrate:
 
 ```rust
- type BalanceOf<T> == ...
+ type BalanceOf<T> = <<T as Config>::Currency as Currency<<T as frame_system::Config>::AccountId>>::Balance;
 ```
 
-### Recognizing "Sized" Types
+This type alias truncates a long(er) type which is used to access the Balances interface from one of
+the most widely used pallets, `pallet_balance`. You may notice type aliasing being used quite
+frequently, as this greatly aids in code readability and saves the trouble of typing!
+
+### Regarding "Sized" Types
+
+In Rust, all types are either _sized_ or _unsized_. `Sized` is a trait which is implicitly placed on
+every type with a known, constant type at compile time. In Rust, the notion of a type being `Sized`
+refers to whether or not its reasonably able to tell the size at compile time. Unsized types, such
+as dynamically sized typed, are stored on the heap and referenced via a pointer.
+
+:::info Why would a type be 'unsized'?
+
+As stated previously, Rust is a **statically** typed language, meaning variables (amongst other
+tokens within the language) must be known at compile time.
+
+However, especially in more trait-oriented code bases you may be dealing with **dynamically sized
+types**, which while useful for demonstrating polymorphic and scalable code, it can introduce some
+extra complexities in consuming those particular APIs.
+
+:::
+
+All local variables, functions parameters, const items, and static items (variables on the stack)
+must be `Sized`.
+
+Luckily, the pointer type in Rust is always `Sized` - this is why we are able to declare `&str`, but
+cannot use `str`:
+
+```rust
+let sized_str: &str = ""; // string literals always default to &str
+```
+
+If we dereference `sized_str`, which will give us `str`, the compiler will throw an error indicating
+that it cannot possibly know the size of `str`:
+
+```rust
+let unsized_str: str = *""; // string literals always default to &str
+error[E0277]: the size for values of type `str` cannot be known at compilation time
+   |
+   |     let let unsized_str: str = *"";
+   |         ^^^^^^ doesn't have a size known at compile-time
+   |
+```
+
+`str` on its own is actually an undefined slice of `u8`, or `[u8]`. This does not have a defined
+size, which is why `&str` must be used. `&str` _refers_ to the actual slice of bytes stored on the
+heap with a pointer, which _is_ `Sized`.
+
+### Why does this matter?
+
+This section may seem out of place, but later when dealing with more exotic and dynamic types, such
+as in the context of Substrate, this will aid in understanding the decisions of the various APIs
+that Substrate exposes. Trait objects (and their respective virtual tables), smart pointers, and
+other dynamically sized types all become more commonplace in bigger projects that allow for more
+decisions centered around the types of the APIs themselves to take place.
+
+Rust comes with different ways to deal with unsized types, which become increasingly more
+commonplace when dealing with more generic codebases, where not all items are completely defined.
