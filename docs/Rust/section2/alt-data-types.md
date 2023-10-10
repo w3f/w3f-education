@@ -16,8 +16,11 @@ redefined primitives for basic types related to numerics specifically for Susbtr
 large numbers. Let's explore how to access and use these data types, and why they're useful in the
 context of runtime development.
 
-:::tip Confused on what is going on? Anytime you feel lost, make sure to read the tip right below
-any new concepts that are introduced! :::
+<!-- prettier-ignore -->
+:::tip Confused on what is going on?
+
+Anytime you feel lost, make sure to read the tip right below any new concepts that are introduced!
+:::
 
 ## Using Larger Data Types
 
