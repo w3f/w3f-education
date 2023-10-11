@@ -24,7 +24,7 @@ subgraph DS["Development Stage"]
     PS["Prototype Stage"] --> TS["Testnet Stage"] --> CS["Canary Stage"] --> PRS("Production Stage")
 end
 subgraph DEP["Deployment"]
-LOCAL["Local Relay Chain Development"] --> ROC["Roccoco Testnet Deployment"] --> KSM["Kusama Deployment"] --> DOT("Polkadot Deployment")
+LOCAL["Local Relay Chain Development"] --> ROC["Rococo Testnet Deployment"] --> KSM["Kusama Deployment"] --> DOT("Polkadot Deployment")
 end
 
 DEP --- DS
@@ -33,7 +33,7 @@ DEP --- DS
 Most parachains within the ecosystem have adopted this pattern of deployment. This guide shows you
 how to accomplish the first part with a setup catered to local development. After this, it is
 typical to look to deploy to a testnet, such as
-[Roccoco](./deployment-strat.md#testnet---deploying-on-roccoco). After that, most parachains opt to
+[Rococo](./deployment-strat.md#testnet---deploying-on-Rococo). After that, most parachains opt to
 either go directly to [Polkadot](./deployment-strat.md#production---deploying-on-polkadot), or setup
 a canary network on [Kusama](./deployment-strat.md#canary---deploying-on-kusama).
 
