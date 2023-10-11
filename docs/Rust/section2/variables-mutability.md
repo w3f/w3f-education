@@ -7,10 +7,10 @@ description: How variables and mutability works in Rust.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eE5x17yRzUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-If you have ever used another programming language, the concept of **variables** should be familiar. 
+If you have ever used another programming language, the concept of **variables** should be familiar.
 
 ```rust
-// A couple Rust variables. 
+// A couple Rust variables.
 // The first holds a name (a slice of text), and the other, an age (a number).
 let my_name: &str = "Bader";
 let age: u32 = 22;
@@ -18,20 +18,23 @@ let age: u32 = 22;
 println!("My name is {my_name} and I am {age} years old.");
 ```
 
-As in other languages, variables in Rust behave mostly the same with the exception of a few unique properties, the most prominent being **mutability** and **shadowing** .
+As in other languages, variables in Rust behave mostly the same with the exception of a few unique
+properties, the most prominent being **mutability** and **shadowing** .
 
 :::info
 
-All variables in Rust are immutable by default.  Immutable variables cannot be changed unless explicitly declared as mutable.  This prevents unwanted changes to values in code.  
+All variables in Rust are immutable by default. Immutable variables cannot be changed unless
+explicitly declared as mutable. This prevents unwanted changes to values in code.
 
 :::
 
 ## Immutability in Rust
 
-As mentioned before, by default, all variables in Rust are immutable.  This means that once a variable has been declared, the value within cannot be changed.
+As mentioned before, by default, all variables in Rust are immutable. This means that once a
+variable has been declared, the value within cannot be changed.
 
 ```rust
-// The compiler won't allow this to be changed. 
+// The compiler won't allow this to be changed.
 // This code would throw an error!
 
 let age: u32 = 22;
@@ -53,13 +56,21 @@ error[E0384]: cannot assign twice to immutable variable `age`
    | ^^^^^^^^ cannot assign twice to an immutable variable
 ```
 
-This is yet another example of how the Rust compiler prevents any illegal operations, along with a descriptive way of letting the developer know.  The most interesting line to note is `cannot assign twice to immutable variable`, as this clearly shows the immutability property of the variable.
+This is yet another example of how the Rust compiler prevents any illegal operations, along with a
+descriptive way of letting the developer know. The most interesting line to note is
+`cannot assign twice to immutable variable`, as this clearly shows the immutability property of the
+variable.
 
-This same error is actually incredibly useful, as in some cases, we sometimes want to keep the value of a variable the same.  The Rust compiler, by default, keeps this *safe* by keeping it immutable.  There are many practical reasons for this, i.e., multi-developer projects, where one developer can see the program's intentions by whether a variable is mutable.  
+This same error is actually incredibly useful, as in some cases, we sometimes want to keep the value
+of a variable the same. The Rust compiler, by default, keeps this _safe_ by keeping it immutable.
+There are many practical reasons for this, i.e., multi-developer projects, where one developer can
+see the program's intentions by whether a variable is mutable.
 
-A variable's value changing unintentionally can also cause trivial bugs, but luckily the Rust compiler deals with it elegantly using immutability.
+A variable's value changing unintentionally can also cause trivial bugs, but luckily the Rust
+compiler deals with it elegantly using immutability.
 
-Of course, variables aren't always meant to be immutable.  To allow a variable to become mutable, use the `mut` keyword before the variable name when declaring it:
+Of course, variables aren't always meant to be immutable. To allow a variable to become mutable, use
+the `mut` keyword before the variable name when declaring it:
 
 ```rust
 // This works now!  Notice the `mut`, short for mutable, after `let`
@@ -70,7 +81,7 @@ age += 1;
 
 ## Shadowing in Rust
 
-Along with variability, Rust introduces the concept of **shadowing**.  Take a look at this example:
+Along with variability, Rust introduces the concept of **shadowing**. Take a look at this example:
 
 ```rust
 let x = 10u32;
@@ -80,11 +91,16 @@ let x: &str = "Hello!";
 println!("{x}");
 ```
 
-At first glance, this may seem odd - why are there two variables with the same name *and* different type?  Shouldn't Rust's type system prevent this from occurring?
+At first glance, this may seem odd - why are there two variables with the same name _and_ different
+type? Shouldn't Rust's type system prevent this from occurring?
 
-This is what's called shadowing.  The Rust compiler will take the latest value assigned to that variable name, in this case from the number `10` to `Hello!`, and utilize that until either the scope ends or it is shadowed again.
+This is what's called shadowing. The Rust compiler will take the latest value assigned to that
+variable name, in this case from the number `10` to `Hello!`, and utilize that until either the
+scope ends or it is shadowed again.
 
-Shadowing is not the same as declaring a variable mutable with `mut`, as it remains immutable after being shadowed.  The `let` keyword must also be used to shadow a variable, take a look at the following example: 
+Shadowing is not the same as declaring a variable mutable with `mut`, as it remains immutable after
+being shadowed. The `let` keyword must also be used to shadow a variable, take a look at the
+following example:
 
 ```rust
 
@@ -93,7 +109,8 @@ x = "Hello!";
 
 ```
 
-The above code will fail to compile, as no new assignment is being made via `let`.  It is trying, in essence, to assign a number of type `u32` to a slice of text.
+The above code will fail to compile, as no new assignment is being made via `let`. It is trying, in
+essence, to assign a number of type `u32` to a slice of text.
 
 ```rust
 
@@ -106,13 +123,16 @@ error[E0308]: mismatched types
 3 | x = "Hello!";
   |     ^^^^^^^^ expected `u32`, found `&str`
 
-  ```
+```
 
 Shadowing with `let` reassigns the variable to a new type and value, redefining it altogether.
 
 ## Constants in Rust
 
-As with traditional, immutable variables in Rust, **constants** are also immutable - permanently.  Constants in Rust cannot be made into mutable variables with `mut`.  Another difference is that constants only may be set to a constant expression, meaning the value is hardcoded and not calculated as the result of some function in runtime.
+As with traditional, immutable variables in Rust, **constants** are also immutable - permanently.
+Constants in Rust cannot be made into mutable variables with `mut`. Another difference is that
+constants only may be set to a constant expression, meaning the value is hardcoded and not
+calculated as the result of some function in runtime.
 
 ```rust
 
@@ -120,12 +140,13 @@ const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
 ```
 
-The naming convention for constants is all uppercase, with underscores between each word.  They can be used for declaring some standard, global, and constant variables within your Rust program.
-
+The naming convention for constants is all uppercase, with underscores between each word. They can
+be used for declaring some standard, global, and constant variables within your Rust program.
 
 ## Try it out!
 
-Try out some of these concepts yourself!  There are a few things that may seem unfamiliar here, which will be covered on the next page, however - have a look at the code and familiarize yourself:
+Try out some of these concepts yourself! There are a few things that may seem unfamiliar here, which
+will be covered on the next page, however - have a look at the code and familiarize yourself:
 
 - `u32` means that a variable is a number.
 - `&str` means that the variable is a string literal.
@@ -134,7 +155,10 @@ Try out some of these concepts yourself!  There are a few things that may seem u
 
 ## What is happening here?
 
+Three primary concepts are being put to use here - namely, **immutability** and **shadowing**.
+Initially, we declare two variables - `name` and `age`. `age` is mutable, as age is expected to
+change, however, a name is meant to be immutable. However, `age` is set to a type that we can't add
+to easily.
 
-Three primary concepts are being put to use here - namely, **immutability** and **shadowing**.  Initially, we declare two variables - `name` and `age`.  `age` is mutable, as age is expected to change, however, a name is meant to be immutable.  However, `age` is set to a type that we can't add to easily.
-
-This is where shadowing comes into play.  Using shadowing, redefine `age` to be a number of type `u32` instead.  This allows us to add to the age easily.
+This is where shadowing comes into play. Using shadowing, redefine `age` to be a number of type
+`u32` instead. This allows us to add to the age easily.

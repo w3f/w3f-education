@@ -1,12 +1,26 @@
 .features {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 2rem 0;
   width: 100%;
-  background-color: var(--ifm-color-secondary);
+  /* background-color: var(--ifm-color-secondary); */
+}
+
+html[data-theme="dark"] .features {
+  color: #fff;
+}
+
+.col.col--4.feature-item {
+  background-color: #000;
 }
 
 .featureSvg {
   height: 200px;
   width: 200px;
+}
+
+hr {
+  width: 15%;
+  height: 5px;
 }

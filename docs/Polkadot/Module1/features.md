@@ -4,15 +4,15 @@ id: features
 
 # Features of Polkadot
 
-Bitcoin and Ethereumare proof-of-work (PoW) blockchains where security relies
-on assumptions about processing power; alternative proof-of-stake (PoS) systems' security instead
-rely on incentives and the ability to destroy security deposits. These differences present difficulties
-for one blockchain to trust another. Another challenge that blockchain technologies need to tackle
-is scalability. Existing blockchain systems generally have high latency and can only have tens of
-transactions per second, whereas credit card companies such as Mastercard or Visa carry out
-thousands of transactions per second.
+Bitcoin and Ethereumare proof-of-work (PoW) blockchains where security relies on assumptions about
+processing power; alternative proof-of-stake (PoS) systems' security instead rely on incentives and
+the ability to destroy security deposits. These differences present difficulties for one blockchain
+to trust another. Another challenge that blockchain technologies need to tackle is scalability.
+Existing blockchain systems generally have high latency and can only have tens of transactions per
+second, whereas credit card companies such as Mastercard or Visa carry out thousands of transactions
+per second.
 
-Efforts are in place to upgrade Ethereum to Proof of Stake. 
+Efforts are in place to upgrade Ethereum to Proof of Stake.
 
 ## Sharding Explained
 

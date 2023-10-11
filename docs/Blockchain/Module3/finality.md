@@ -2,5 +2,4 @@
 id: finality
 ---
 
-
 # Block finality

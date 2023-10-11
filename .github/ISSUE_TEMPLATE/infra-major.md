@@ -1,10 +1,9 @@
 ---
 name: Major Infra Refactor
-about: 'For major changes regarding sitewide infrastructure changes.'
+about: "For major changes regarding sitewide infrastructure changes."
 title: "[Infra Refactor] TITLE-HERE"
 labels: Major Infra Refactor
-assignees: ''
-
+assignees: ""
 ---
 
 ## Highlight the main issue(s) below:
