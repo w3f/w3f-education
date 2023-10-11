@@ -414,6 +414,7 @@ module.exports = {
       items: [
         "Parachain/beginner/section4/initatives",
         "Parachain/beginner/section4/road-to-production",
+        "Parachain/beginner/section4/deployment-strat",
       ],
     },
   ],
