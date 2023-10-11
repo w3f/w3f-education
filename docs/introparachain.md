@@ -16,7 +16,8 @@ The following courses, or knowledge of these subjects in general will aid you in
 1. [Intro to Rust](./introrust.md)
 2. [Intro to Substrate](./introsubstrate.md)
 
-[**Rust**](https://www.rust-lang.org/tools/install) should already be installed on your system.
+* [**Rust**](https://www.rust-lang.org/tools/install) should already be installed on your system
+* For a smoother start, clone the [Parachain Guide Resources](https://github.com/w3f/parachain-guide-resources) repository
 
 :::
 
@@ -45,7 +46,7 @@ The primary goals are:
 ## Section 3 - Registering Your Parachain
 
 - [Creating a Parathread](./Parachain/beginner/section3/creating-parathread.md)
-- [Registering Your Parachain with Sudo](./Parachain/beginner/section3/creating-auction.md)
+- [Registering Your Parachain with Sudo](./Parachain/beginner/section3/sudo-register.md)
 - [Developing Your Parachain](./Parachain/beginner/section3/developing-parachain.md)
 
 ## Section 4 - Next Steps (coming soon)
