@@ -5,13 +5,13 @@ sidebar_position: 1
 
 # Parachain Development Guide
 
-This guide aims to jumpstart a developer from an overview of Polkadot architecture, creating their own parachain, and going through the process of registering it to a locally available relay chain.  It contains both a brief, yet demystifying explanation of Polkadot as a sharded blockchain network and how various roles work together to provide data availability, interoperability, and shared security.
+This guide aims to jumpstart a developer who wants to begin developing parachains on Polkadot. This guide covers an overview of Polkadot architecture, creating your own parachain, and going through the process of registering it to a locally available relay chain.  It contains both a brief, yet demystifying explanation of Polkadot and how various roles work together to provide data availability, interoperability, and shared security.  This guide also offers practical steps to begin parachain development, as well as offer different potential workflows for how to locally develop a parachain. 
 
 If you wish to only learn about the current relay chain and parachain architecture, then you only need to read the [first section](./Parachain/beginner/section1/index.md).  Otherwise, this guide also provides the means to begin your parachain development journey.
 
-:::tip Suggested Prerequisites
+:::tip Suggested Prerequisite/Complementary Reading 
 
-The following courses, or knowledge of these subjects in general will aid you in smoothly following this guide:
+The following courses, or knowledge of these subjects in general will aid you in smoothly following this guide.  As FRAME and Substrate are inevitable to know if you wish to modify and customize your parachain, the following courses cover highly useful material for this purpose:
 
 1. [Intro to Rust](./introrust.md)
 2. [Intro to Substrate](./introsubstrate.md)
@@ -28,7 +28,7 @@ The primary goals are:
 - Modify your parachain and prep it for connecting to the relay chain.
 - Create a parathread and reserve a para ID.
 - Regiseter your parachain using the `sudo` pallet.
-- Next steps and moving forward.
+- Next steps and moving forward in deployment and production **(coming soon)**.
 
 ## Section 1 - Network Architecture
 
