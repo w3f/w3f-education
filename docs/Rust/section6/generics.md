@@ -12,6 +12,8 @@ define a set of expectations while still being abstract and generic.
 
 Generics can be used in traits, methods, functions, enums, and structs.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UuTMLSbHL78?si=_JsmCW98RbBoHOW0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Scenario: Why Generic Code is Useful
 
 Let's assume that I wish to have a simple function that is meant to square two numbers, as we've

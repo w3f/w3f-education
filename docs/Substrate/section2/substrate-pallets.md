@@ -34,7 +34,7 @@ a few standard pallets that you might often encounter as a developer:
   [OpenGov - the next generation of decentralized on-chain governance](https://wiki.polkadot.network/docs/learn-polkadot-opengov).
 
 To view all pallets included with FRAME, look at the
-[repository on GitHub](https://github.com/paritytech/substrate/tree/master/frame).
+[repository on GitHub](https://github.com/paritytech/polkadot-sdk/tree/master/substrate/frame).
 
 ## Our Pallet: pallet_connect
 

@@ -9,6 +9,8 @@ description: Learn how to define methods for structs in Rust.
 applied to structs. They breathe life into structs by providing associated logic that often utilizes
 its inner fields and represents an instance of that struct.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/94PMc7Aib98?si=5q4wtzT7pZ6IYyri" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 The syntax is nearly identical to a function, with the exception that its part of the
 **implementation** of the struct:
 

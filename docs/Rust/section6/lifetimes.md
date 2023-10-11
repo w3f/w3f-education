@@ -9,6 +9,8 @@ If you recall, in the Ownership section of this course, a value in Rust is only 
 scope. Once it is out of scope, it is out of memory and disregarded. This concept is called a
 **lifetime**. Every reference in Rust has a **lifetime**, although they are mostly inferred.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fxrA08DO7VE?si=V995n2Il0N8cOfoX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## When to Declare Explicit Lifetimes
 
 Lifetimes are also generic, and are used to **validate** references. In essence, the lifetime is

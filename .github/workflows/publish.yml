@@ -19,6 +19,9 @@ jobs:
           fetch-depth: 0
 
       - name: Publish
+        env: 
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         run: |
           git config --global user.email "w3fdeply@users.noreply.github.com"
           git config --global user.name "w3fdeploy"

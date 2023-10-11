@@ -12,6 +12,8 @@ Instead of handling an entire collection, which could be costly performance-wise
 to handle a _reference_ to those items. These slices can be modified in place or returned as
 immutable as part of a function.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SR0wotzEPi0?si=OSCvc45hcB-kLKeD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## String slices
 
 Working with string and byte slices is one of the most common tasks when working with Rust,

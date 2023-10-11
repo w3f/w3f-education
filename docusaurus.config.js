@@ -23,12 +23,30 @@ module.exports = {
       additionalLanguages: ["rust"],
       theme: require("prism-react-renderer/themes/dracula"),
     },
-    mermaid: {
-      theme: { light: "neutral", dark: "neutral" },
+    algolia: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: "education-web3",
+      contextualSearch: true,
     },
+    mermaid: {
+      theme: { light: 'base', dark: 'base' },
+      options: {
+        themeVariables: {
+          fontFamily: 'Unbounded',
+          primaryColor: '#E6007A',
+          primaryBorderColor: '#E6007A',
+          lineColor: '#140523',
+          secondaryColor: '#552BBF',
+          tertiaryColor: '#fff',
+          titleColor: '#000',
+          nodeTextColor: '#fff'
+          }
+        },
+      },
     colorMode: {
       defaultMode: "light",
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
       title: "Technical Education",

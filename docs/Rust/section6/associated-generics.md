@@ -7,6 +7,8 @@ description: Learn the difference between associated types vs generic types.
 
 Associated types are an abstract way to define a name for what a type should be.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YCoFRJopcck?si=m4UIiK6vNKqcnNkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 In the [Generics](./generics.md) section, we encountered an associated type when we defined the
 `Mul` trait as a bound:
 

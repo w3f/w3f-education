@@ -40,8 +40,9 @@ pub trait Config: frame_system::Config {
 **Tight** coupling a pallet involves explicitly declaring an entire, **specific** pallet as a
 dependency. This would also mean that this pallet has to be within your pallet's `Cargo.toml` file,
 precisely just that specific pallet's instance. An example of this is the Bounties pallet, which
-tightly couples the [Treasury](https://github.com/paritytech/substrate/tree/master/frame/treasury)
-pallet to it:
+tightly couples the
+[Treasury](https://github.com/paritytech/polkadot-sdk/tree/master/substrate/frame/treasury) pallet
+to it:
 
 ```rust
 /// Notice the use of the '+' operator to tightly couple the Config of pallet_treasury
@@ -50,9 +51,10 @@ pub trait Config<I: 'static = ()>: frame_system::Config + pallet_treasury::Confi
 
 Tightly coupling two pallets in this manner is helpful when they share very similar goals and
 objectives and for pallets that are simple enough. Because the
-[Bounties](https://github.com/paritytech/substrate/tree/master/frame/bounties) pallet solely depends
-on the [Treasury](https://github.com/paritytech/substrate/tree/master/frame/treasury) pallet for
-payouts (and its subsequent types), it is sensible to couple it tightly.
+[Bounties](https://github.com/paritytech/polkadot-sdk/tree/master/substrate/frame/bounties) pallet
+solely depends on the
+[Treasury](https://github.com/paritytech/polkadot-sdk/tree/master/substrate/frame/treasury) pallet
+for payouts (and its subsequent types), it is sensible to couple it tightly.
 
 ## Which to use?
 

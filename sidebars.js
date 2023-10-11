@@ -402,9 +402,9 @@ module.exports = {
       label: "Creating & Registering Parachain",
       link: { type: "doc", id: "Parachain/beginner/section3/index" },
       items: [
-        "Parachain/beginner/section3/creating-auction",
-        "Parachain/beginner/section3/creating-parathread",
-        "Parachain/beginner/section3/developing-parachain",
+        'Parachain/beginner/section3/creating-parathread',
+        'Parachain/beginner/section3/sudo-register',
+        'Parachain/beginner/section3/developing-parachain',
       ],
     },
     {

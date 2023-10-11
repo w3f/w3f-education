@@ -9,6 +9,8 @@ Iterators in Rust allow you to perform tasks sequentially on a series of items w
 of the sequence. `Iterator` is a trait that, once implemented, handles many of the nuances of safely
 looping through collections. Iterators are **lazy**, meaning they are only used when called upon.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CA8IGB-9K0c?si=PUg94WHtIbeiVp1q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Creating an Iterator
 
 Most collections we discussed earlier have the `Iterator` trait already implemented. The most common

@@ -20,6 +20,8 @@ To summarize:
 - A `Vec<T>` is a data structure that is more generic in nature, as it allows for _any_ data type to
   be passed in to form a managed list.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I5QupMyJ64Q?si=N4n4swVWtoL9RrQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## When to use a string slice versus a String?
 
 Remember, slices are **"view-only", immutable references**. `String` should be used when you require

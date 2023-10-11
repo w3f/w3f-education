@@ -10,6 +10,8 @@ run it. This section will focus on the `[dependencies]` section of your `Cargo.t
 bring in external crates for usage within your project. Crates are other Rust packages with publicly
 exposed types and functionality for usage in `Cargo` projects.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gv4nkIpbqDI?si=K2KKwYdulrQ_KPUx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Adding a new crate
 
 Two primary methods of declaring an external crate in Rust are directly putting it in `Cargo.toml`

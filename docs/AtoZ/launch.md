@@ -22,7 +22,7 @@ The Polkadot network started as a Proof of Authority network, a consensus mechan
 small number of validators complete control over the network. It was maintained by six validators
 that Web3 Foundation controlled. With the power of Sudo (a Substrate functionality that allows for a
 single account to do anything to the chain using root, though a bit technical, you can learn more
-about it [here](https://paritytech.github.io/substrate/master/pallet_sudo/index.html) and
+about it [here](https://paritytech.github.io/polkadot-sdk/master/pallet_sudo/index.html) and
 [here](https://www.shawntabrizi.com/substrate/the-sudo-story-in-substrate/)), the Foundation closely
 nourished the early stages of the network. Users were allowed to claim their DOT tokens and stake
 them. However, during this phase, users' staking only meant **signaling their intention** to be a

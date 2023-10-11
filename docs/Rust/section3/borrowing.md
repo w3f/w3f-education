@@ -12,6 +12,8 @@ compile time).
 While ownership does ensure that all memory will be allocated appropriately/deallocated, it does
 introduce some complexity that references and borrowing solve.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x8ainN1vTaE?si=nkR6-xD38Vebia_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Problem: Heap-stored Values
 
 Data types that aren't fixed size and have the potential to grow in size during runtime are stored

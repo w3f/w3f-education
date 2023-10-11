@@ -11,41 +11,42 @@ In this final page, we will do the following:
 - Run **one** parachain collator to supply block data to our relay chain.
 - Observe the state changing on both chains, and what they mean.
 
-:::note All commands are in the context of the `parachain-guide-resources` repository
-:::
+:::note All commands are in the context of the `parachain-guide-resources` repository :::
 
 ## Launching the Relay Chain
 
-Our relay chain needs two validators to build blocks.  We can use the `alice` and `bob` development presets to launch our testnet validation nodes using the `polkadot` binary:
+Our relay chain needs two validators to build blocks. We can use the `alice` and `bob` development
+presets to launch our testnet validation nodes using the `polkadot` binary:
 
 :::tip Use the `symlink`!
 
-If you followed the steps to add a `symlink`, you may replace the preceded: `./target/release/polkadot` with just: `polkadot`
+If you followed the steps to add a `symlink`, you may replace the preceded:
+`./target/release/polkadot` with just: `polkadot`
 
 :::
 
-- Launch Alice: 
-    ```bash
-    ./polkadot/target/release/polkadot \
-        --alice \
-        --validator \
-        --base-path /tmp/relay/alice \
-        --chain ./relaychain/relaychain_spec_raw.json \
-        --port 30333 \
-        --rpc-port 9944 \
-        --disable-worker-version-check
-    ```
+- Launch Alice:
+  ```bash
+  ./polkadot/target/release/polkadot \
+      --alice \
+      --validator \
+      --base-path /tmp/relay/alice \
+      --chain ./relaychain/relaychain_spec_raw.json \
+      --port 30333 \
+      --rpc-port 9944 \
+      --disable-worker-version-check
+  ```
 - Launch Bob:
-    ```bash
-    ./polkadot/target/release/polkadot \
-        --bob \
-        --validator \
-        --base-path /tmp/relay/bob \
-        --chain ./relaychain/relaychain_spec_raw.json \
-        --port 30334 \
-        --rpc-port 9945 \
-        --disable-worker-version-check
-    ```
+  ```bash
+  ./polkadot/target/release/polkadot \
+      --bob \
+      --validator \
+      --base-path /tmp/relay/bob \
+      --chain ./relaychain/relaychain_spec_raw.json \
+      --port 30334 \
+      --rpc-port 9945 \
+      --disable-worker-version-check
+  ```
 
 Once they are both running, you should see output similar to the following (for `bob`):
 
@@ -89,7 +90,8 @@ If Bob and Alice are not syncing, you may run `bob` with this command:
 
 :::
 
-If both nodes are syncing, you should be seeing the block count increase and new consensus sessions being started:
+If both nodes are syncing, you should be seeing the block count increase and new consensus sessions
+being started:
 
 ```bash
 2023-08-11 10:58:18 🙌 Starting consensus session on top of parent 0x7389b78dbb3a94bf09aa53802c338131e242b78678f5959f170e4902ccf24422
@@ -106,26 +108,28 @@ Congratulations, your relay chain is up and running!
 
 ## Launching the Parachain
 
-With the relay chain actively producing blocks, we now need to launch a **collator** for our parachain:
+With the relay chain actively producing blocks, we now need to launch a **collator** for our
+parachain:
 
 - Launch a collator
-    ```bash
-    ./substrate-parachain-template/target/release/parachain-template-node \
-        --alice \
-        --collator \
-        --force-authoring \
-        --chain ./parachain/parachain_chain_spec_raw.json \
-        --base-path /tmp/parachain/alice \
-        --port 40333 \
-        --rpc-port 8844 \
-        -- \
-        --execution wasm \
-        --chain ./relaychain/relaychain_spec_raw.json \
-        --port 30343 \
-        --rpc-port 9977
-    ```
 
-With the output looking like: 
+  ```bash
+  ./substrate-parachain-template/target/release/parachain-template-node \
+      --alice \
+      --collator \
+      --force-authoring \
+      --chain ./parachain/parachain_chain_spec_raw.json \
+      --base-path /tmp/parachain/alice \
+      --port 40333 \
+      --rpc-port 8844 \
+      -- \
+      --execution wasm \
+      --chain ./relaychain/relaychain_spec_raw.json \
+      --port 30343 \
+      --rpc-port 9977
+  ```
+
+With the output looking like:
 
 ```bash
 2023-08-11 10:52:44 Parachain Collator Template
@@ -145,7 +149,8 @@ CLI parameter `--execution` has no effect anymore and will be removed in the fut
 2023-08-11 10:52:48 [Relaychain] 🏷  Local node identity is: 12D3KooWKdqvh5Lzt1p8Rm54QNC1UwWtBabyBPUYtkdAt1SKkYpG
 ```
 
-Your parachain should be syncing with the relay chain, and will look similar to the below.  Notice the blocks being imported and matching the height of the relay chain:
+Your parachain should be syncing with the relay chain, and will look similar to the below. Notice
+the blocks being imported and matching the height of the relay chain:
 
 ```bash
 2023-08-11 11:22:04 [Relaychain] 💤 Idle (2 peers), best: #237 (0x3069…400d), finalized #235 (0xa85b…c64c), ⬇ 48.2kiB/s ⬆ 1.9kiB/s
@@ -168,10 +173,12 @@ Your parachain should be syncing with the relay chain, and will look similar to 
 2023-08-11 11:22:20 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
 ```
 
-It's possible you may also need to specify a bootnode for the parachain as well.  
+It's possible you may also need to specify a bootnode for the parachain as well.
 
-Our parachain is not making any blocks; and that is normal, as we still need to register it onto the relay chain.
+Our parachain is not making any blocks; and that is normal, as we still need to register it onto the
+relay chain.
 
 ## Observing State & Verifying Orchestration
 
-The most user-friendly way to verify and validate the state of both the relay chain and parachain is **Polkadot.js**.
+The most user-friendly way to verify and validate the state of both the relay chain and parachain is
+**Polkadot.js**.

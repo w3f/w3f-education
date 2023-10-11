@@ -13,6 +13,8 @@ does not affect performance - as ownership checks happen at compile time.
 
 While these rules may seem prohibitive, they sometimes ensure entirely memory-safe code.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8yH5vLQm7Po?si=jUH1ktS4XbmrNq3K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 :::note
 
 If you aren't familiar with the stack and heap, make sure you

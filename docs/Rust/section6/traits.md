@@ -9,6 +9,8 @@ There is no genuine concept of object-oriented-style inheritance in Rust. **Trai
 notion of defining shared behavior for data structures. A trait defines a set of shared functions,
 expectations, and behavior that can be used for an indefinite number of types.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h0Plp1u1SD0?si=PohZonenbRLdE_0P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Creating a Trait
 
 Defining a trait utilizes the `trait` keyword, followed by the name of the trait. In this example,
