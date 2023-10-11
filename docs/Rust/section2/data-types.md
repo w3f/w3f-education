@@ -1,22 +1,25 @@
 ---
-id: data-types 
+id: data-types
 title: Data Types in Rust
 sidebar_label: Data Types
 description: Learn what data types are and which basic ones exist.
 ---
 
-As mentioned before in the introduction of this course, one of Rust's main objectives is to have a robust, compile-time type system.  Just as the immutability of variables helps with safety, having types in Rust greatly aids in ensuring that data is flowing as it should throughout the program.
+As mentioned before in the introduction of this course, one of Rust's main objectives is to have a
+robust, compile-time type system. Just as the immutability of variables helps with safety, having
+types in Rust greatly aids in ensuring that data is flowing as it should throughout the program.
 
 Rust has two kinds of **primitive**, or base, data types:
 
- - Scalar - single point types, such as numbers and booleans (`true` or `false` statements)
- - Compound - arrays, and tuples
+- Scalar - single point types, such as numbers and booleans (`true` or `false` statements)
+- Compound - arrays, and tuples
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G9I-HdPsLmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Scalar Types
 
-Scalar types represent a single value, such as a number or boolean.  Rust has four core Scalar types, which you have most likely seen in other programming languages: 
+Scalar types represent a single value, such as a number or boolean. Rust has four core Scalar types,
+which you have most likely seen in other programming languages:
 
 - Integers
 - Floating-point numbers
@@ -25,25 +28,30 @@ Scalar types represent a single value, such as a number or boolean.  Rust has fo
 
 ### Integers & Floating-point Types
 
-An integer in Rust is the same as in mathematics - a non-fractional, whole number that can be either positive or negative.  There are two types of integers: *unsigned* (positive numbers) and *signed* (negative *or* positive numbers).  
+An integer in Rust is the same as in mathematics - a non-fractional, whole number that can be either
+positive or negative. There are two types of integers: _unsigned_ (positive numbers) and _signed_
+(negative _or_ positive numbers).
 
-- Signed integers are denoted by the `i`, followed by the length of the number: `i32`.  
+- Signed integers are denoted by the `i`, followed by the length of the number: `i32`.
 - Unsigned integers start with `u,` followed by the length of the number: `u32`.
 
-The numeric characters `32` that follow whether an integer is signed or unsigned denotes the length of the number.  Take this table from the [Rust Book](https://doc.rust-lang.org/book/ch03-02-data-types.html), which states all possible integer variants: 
+The numeric characters `32` that follow whether an integer is signed or unsigned denotes the length
+of the number. Take this table from the
+[Rust Book](https://doc.rust-lang.org/book/ch03-02-data-types.html), which states all possible
+integer variants:
 
-| Length    | Signed    | Unsigned  |
-|---------  |--------   |---------- |
-| 8-bit     | i8        | u8        |
-| 16-bit    | i16       | u16       |
-| 32-bit    | i32       | u32       |
-| 64-bit    | i64       | u64       |
-| 128-bit   | i128      | u128      |
-| arch      | isize     | usize     |
+| Length  | Signed | Unsigned |
+| ------- | ------ | -------- |
+| 8-bit   | i8     | u8       |
+| 16-bit  | i16    | u16      |
+| 32-bit  | i32    | u32      |
+| 64-bit  | i64    | u64      |
+| 128-bit | i128   | u128     |
+| arch    | isize  | usize    |
 
-
-The length or size of the integer is always explicitly declared.  Rust has a set of defaults for inferring types, such as integers defaulting to the `i32` type.  `usize` and `isize` depend on your machine's architecture, meaning they are either 32, or 64 bit in size.
-
+The length or size of the integer is always explicitly declared. Rust has a set of defaults for
+inferring types, such as integers defaulting to the `i32` type. `usize` and `isize` depend on your
+machine's architecture, meaning they are either 32, or 64 bit in size.
 
 Here are some common ways to declare an integer, some formats less traditional than others:
 
@@ -69,15 +77,19 @@ let word_as_bytes: u8 = b'F';
 
 ```
 
-Lastly, as integers do have a size, integer overflow is possible if you exceed the limit of a given type.  For example, the type `u8` has a minimum of 0 and a maximum of 255, meaning 256 would cause a panic.  As the Rust compiler doesn't check for overflows, there are some additional functions you can use to ensure that adding or subtracting is always safe and won't cause a runtime error.  We'll learn more about those later on.
-
+Lastly, as integers do have a size, integer overflow is possible if you exceed the limit of a given
+type. For example, the type `u8` has a minimum of 0 and a maximum of 255, meaning 256 would cause a
+panic. As the Rust compiler doesn't check for overflows, there are some additional functions you can
+use to ensure that adding or subtracting is always safe and won't cause a runtime error. We'll learn
+more about those later on.
 
 #### Floating point numbers
 
-Rust has two floating number types: ' f32` (32-bit) and `f64` (64-bit).  Floating point numbers, unlike integers, are fractional, meaning they contain decimal points to represent parts of whole numbers:
+Rust has two floating number types: ' f32`(32-bit) and`f64` (64-bit). Floating point numbers, unlike
+integers, are fractional, meaning they contain decimal points to represent parts of whole numbers:
 
-
-`f32` has single precision accuracy, whereas `f64` has double-precision accuracy.  `f64` is the default type for floating point numbers in Rust:
+`f32` has single precision accuracy, whereas `f64` has double-precision accuracy. `f64` is the
+default type for floating point numbers in Rust:
 
 ```rust
 
@@ -89,12 +101,12 @@ let also_floating_double = 1.45;
 
 ```
 
-
 #### Operators
 
-As in any other programming language, there are a set of operators that allow for basic mathematics to be performed:
+As in any other programming language, there are a set of operators that allow for basic mathematics
+to be performed:
 
-```rust 
+```rust
 
 let addition = 1 + 1; // 2
 let subtraction = 10 - 5; // 5
@@ -103,29 +115,34 @@ let multiplication = 4 * 4; // 16
 
 ```
 
-Likewise, Rust also supports bitwise operators.  A full list of Rust's operators and symbols may be [found here.](https://doc.rust-lang.org/book/appendix-02-operators.html)
-
+Likewise, Rust also supports bitwise operators. A full list of Rust's operators and symbols may be
+[found here.](https://doc.rust-lang.org/book/appendix-02-operators.html)
 
 ### Boolean Types
 
-A boolean value can only have two possible states: `true` or `false`.  Declaring a boolean in Rust is simple:
+A boolean value can only have two possible states: `true` or `false`. Declaring a boolean in Rust is
+simple:
 
-```rust 
+```rust
 
 let i_am_true = true;
 
 // Usually, it's easy to infer a bool type; however good to show explicit type assignments.
-let i_am_false: bool = false; 
+let i_am_false: bool = false;
 
 ```
 
-This opens up many possibilities for **branching logic** in our Rust programs, of which we'll cover later.
+This opens up many possibilities for **branching logic** in our Rust programs, of which we'll cover
+later.
 
 ### Character Type
 
-The character, or `char` type in Rust is the basic building block for alphabetic values.  It simply declares a single character, which is encased by single quotes.  At its core, it represents a [Unicode Scalar Value](https://home.unicode.org/), supporting a plethora of characters as well as zero-width spaces:
+The character, or `char` type in Rust is the basic building block for alphabetic values. It simply
+declares a single character, which is encased by single quotes. At its core, it represents a
+[Unicode Scalar Value](https://home.unicode.org/), supporting a plethora of characters as well as
+zero-width spaces:
 
-```rust 
+```rust
 // Both are valid Unicode characters!
 let the_letter_a = 'A';
 let the_moon = '🌒';
@@ -133,23 +150,26 @@ let the_moon = '🌒';
 
 ## Compound Types
 
-Scalar types define how variables can hold a single value at a time.  Compound types can hold multiple values under the same, unifying type.
+Scalar types define how variables can hold a single value at a time. Compound types can hold
+multiple values under the same, unifying type.
 
 There are two primary kinds of compound types - tuples and arrays.
 
 ### Tuples
 
-A *tuple* is a way to combine multiple values and types into a single, compound type.  It can be useful for describing a set of varying values which have some relationship to one another.
+A _tuple_ is a way to combine multiple values and types into a single, compound type. It can be
+useful for describing a set of varying values which have some relationship to one another.
 
-The syntax for writing a tuple is as follows.  Note that the type annotations are optional: 
+The syntax for writing a tuple is as follows. Note that the type annotations are optional:
 
-```rust 
+```rust
 
-let my_tuple: (u32, f32, char) = (5, 5.5, '🌒'); // The explicit type annotations here are optional, 
+let my_tuple: (u32, f32, char) = (5, 5.5, '🌒'); // The explicit type annotations here are optional,
 
 ```
 
-There are a couple of ways to access the elements within a tuple.  The first way merely involves fetching them in order, starting at `0`:
+There are a couple of ways to access the elements within a tuple. The first way merely involves
+fetching them in order, starting at `0`:
 
 ```rust
 
@@ -159,18 +179,20 @@ let moon: char = my_tuple.2;
 
 ```
 
-You may also use pattern matching to access these elements.  The following syntax constructs a pattern out of the above:
+You may also use pattern matching to access these elements. The following syntax constructs a
+pattern out of the above:
 
 ```rust
 
-let my_tuple: (u32, f32, char) = (5, 5.5, '🌒'); // The explicit type annotations here are optional, 
+let my_tuple: (u32, f32, char) = (5, 5.5, '🌒'); // The explicit type annotations here are optional,
 
 let (unsigned_32, floating_32, moon) = my_tuple;
 ```
 
-Tuples can have elements that are of varying types, as seen above.  They can be useful in describing a set, fixed amount of elements, such as a set of coordinates:
+Tuples can have elements that are of varying types, as seen above. They can be useful in describing
+a set, fixed amount of elements, such as a set of coordinates:
 
-```rust 
+```rust
 
 let location: (i32, i32) = (10, 45);
 
@@ -178,9 +200,14 @@ let location: (i32, i32) = (10, 45);
 
 ### Arrays
 
-An **array** is a collection of multiple values.  Unlike tuples, these values must be the same type.  Arrays are like lists - and are useful for having a fixed amount of types and having data stored on the **stack**.  
+An **array** is a collection of multiple values. Unlike tuples, these values must be the same type.
+Arrays are like lists - and are useful for having a fixed amount of types and having data stored on
+the **stack**.
 
-Arrays are typically used less often than** vectors**, which is a type of collection that includes a number of convenience methods for sorting and manipulating the values within the collection.  Vectors can grow and shrink in size, as the data is managed by the **heap**, whereas arrays are fixed-length and stored on the stack.
+Arrays are typically used less often than** vectors**, which is a type of collection that includes a
+number of convenience methods for sorting and manipulating the values within the collection. Vectors
+can grow and shrink in size, as the data is managed by the **heap**, whereas arrays are fixed-length
+and stored on the stack.
 
 ```rust
 
@@ -188,21 +215,25 @@ let my_pets_ages: [i32; 3] = [4, 5, 3];
 
 ```
 
-Notice in the type declaration, `[i32; 3]`, that the first part denotes the type of **each element** within the array with each type being an `i32`.  The second portion within the square brackets, `3`, denotes the **maximum amount of elements an array can hold**.  It's possible to do without this explicit declaration, as the compiler will interpret it as it stands. 
+Notice in the type declaration, `[i32; 3]`, that the first part denotes the type of **each element**
+within the array with each type being an `i32`. The second portion within the square brackets, `3`,
+denotes the **maximum amount of elements an array can hold**. It's possible to do without this
+explicit declaration, as the compiler will interpret it as it stands.
 
+To access specific elements within an array is done using square brackets, along with the index of
+the element you wish to access. As with tuples, all arrays start at index `0`:
 
-To access specific elements within an array is done using square brackets, along with the index of the element you wish to access.  As with tuples, all arrays start at index `0`: 
-
-```rust 
+```rust
 
 let course_modules = ["Module 1", "Module 2", "Module 3","Module 4", "Module 5"];
 // Use the [ index ] syntax to access a particular element.
 let module_one = course_modules[0];
 ```
 
-Be forewarned - it's possible to access an element that doesn't exist, which would cause a runtime error.
+Be forewarned - it's possible to access an element that doesn't exist, which would cause a runtime
+error.
 
-```rust 
+```rust
 
 error: this operation will panic at runtime
   --> src/main.rs:32:18
@@ -216,7 +247,11 @@ error: this operation will panic at runtime
 
 :::info
 
-How can the Rust compiler know when a runtime error will occur?  Because an array is fixed length, it knows the maximum index that can be accessed, in this case, `4`.  The compiler disallows it before the program is even compiled.  However, if this index is a user-generated value, which can only exist at runtime, then a panic will occur and the program will stop.  The fact that the program stops is a security measure as it prevents any possibly invalid memory from being accessed and exploited.
+How can the Rust compiler know when a runtime error will occur? Because an array is fixed length, it
+knows the maximum index that can be accessed, in this case, `4`. The compiler disallows it before
+the program is even compiled. However, if this index is a user-generated value, which can only exist
+at runtime, then a panic will occur and the program will stop. The fact that the program stops is a
+security measure as it prevents any possibly invalid memory from being accessed and exploited.
 
 :::
 
@@ -226,9 +261,12 @@ How can the Rust compiler know when a runtime error will occur?  Because an arra
 
 ## What is happening here?
 
-We define an array a fixed-length list of values of the same type stored on the stack.  We can successfully access and print the items in this list; however, the compiler prevents any out-of-bounds access.  It also prevents any additional items from being appended, as the array has a fixed length in memory.
+We define an array a fixed-length list of values of the same type stored on the stack. We can
+successfully access and print the items in this list; however, the compiler prevents any
+out-of-bounds access. It also prevents any additional items from being appended, as the array has a
+fixed length in memory.
 
-Next, we create an array of *tuples*, which would look like:
+Next, we create an array of _tuples_, which would look like:
 
 ```rust
 
@@ -238,10 +276,3 @@ let tuple_array = [("hi", 3), ("hello", 1)];
     }
 
 ```
-
-
-
-
-
-
-

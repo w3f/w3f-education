@@ -3,8 +3,7 @@ name: Content Addition
 about: For adding new educational content.
 title: "[Content Addition]"
 labels: Content Addition
-assignees: ''
-
+assignees: ""
 ---
 
 ## Does this address existing content?

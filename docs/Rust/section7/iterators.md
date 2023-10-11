@@ -5,11 +5,16 @@ sidebar_label: Iterators
 description: Learn how to use iterators in Rust.
 ---
 
-Iterators in Rust allow you to perform tasks sequentially on a series of items while knowing the end of the sequence.  `Iterator` is a trait that, once implemented, handles many of the nuances of safely looping through collections.  Iterators are **lazy**, meaning they are only used when called upon.
+Iterators in Rust allow you to perform tasks sequentially on a series of items while knowing the end
+of the sequence. `Iterator` is a trait that, once implemented, handles many of the nuances of safely
+looping through collections. Iterators are **lazy**, meaning they are only used when called upon.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CA8IGB-9K0c?si=PUg94WHtIbeiVp1q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Creating an Iterator
 
-Most collections we discussed earlier have the `Iterator` trait already implemented.  The most common usage of iterators regards arrays or vectors, and they are often used as an alternative for loops:
+Most collections we discussed earlier have the `Iterator` trait already implemented. The most common
+usage of iterators regards arrays or vectors, and they are often used as an alternative for loops:
 
 ```rust
 let my_vec = vec![1, 2, 3, 4, 5];
@@ -26,7 +31,8 @@ for val in my_vec.iter() {
 }
 ```
 
-You may notice that this looks familiar to a regular `for` loop.  This will be discussed in more depth in a later section, but know they are different!
+You may notice that this looks familiar to a regular `for` loop. This will be discussed in more
+depth in a later section, but know they are different!
 
 ## A closer look at the `Iterator` trait
 
@@ -41,22 +47,32 @@ pub trait Iterator {
 }
 ```
 
-The `next()` method is the heart of an `Iterator`'s functionality, as it's the only method needed to implement the `Iterator` trait.  `next()` returns the next item as `Some(value)` from the iterator, and returns `None` once it's complete.
+The `next()` method is the heart of an `Iterator`'s functionality, as it's the only method needed to
+implement the `Iterator` trait. `next()` returns the next item as `Some(value)` from the iterator,
+and returns `None` once it's complete.
 
-Notice that although `Iterator` can iterate over many types, it uses an associated type, `Item`.  Using an associated type allows the type implementing the trait to specify the desired outcome, versus a generic would have the developer impose some type that may be incorrect.
+Notice that although `Iterator` can iterate over many types, it uses an associated type, `Item`.
+Using an associated type allows the type implementing the trait to specify the desired outcome,
+versus a generic would have the developer impose some type that may be incorrect.
 
 ## "Consuming" An Iterator & Iterator Methods
 
-As a result of implementing `Iterator`, one can use a few key methods to modify a sequence of items.  For more information on available methods, it is highly encouraged to read through the Rust documentation for the [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) trait.
+As a result of implementing `Iterator`, one can use a few key methods to modify a sequence of items.
+For more information on available methods, it is highly encouraged to read through the Rust
+documentation for the [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) trait.
 
-Some methods consume an iterator, meaning they call the `next( )` method within their implementation.  An example is `.sum()`, which collectively adds all items by calling `next()` until the iterator has reached its end:
+Some methods consume an iterator, meaning they call the `next( )` method within their
+implementation. An example is `.sum()`, which collectively adds all items by calling `next()` until
+the iterator has reached its end:
 
 ```rust
 let my_vec = vec![1, 2, 3, 4, 5];
 let sum = my_vec.iter().sum();
 ```
 
-The `.map()` method is very commonly used.  It takes a closure, performs an operation over each item in the iterator, and returns an iterator.  This does not modify the previous iterator, rather it returns a new one with modified values:
+The `.map()` method is very commonly used. It takes a closure, performs an operation over each item
+in the iterator, and returns an iterator. This does not modify the previous iterator, rather it
+returns a new one with modified values:
 
 ```rust
 let my_vec = vec![1, 2, 3, 4, 5];
@@ -64,7 +80,8 @@ let my_vec = vec![1, 2, 3, 4, 5];
 my_vec.iter().map(|x| x + 1);
 ```
 
-Another method that operates similarly is `filter()` , which returns an iterator of filtered values based on a conditional statement within the closure:
+Another method that operates similarly is `filter()` , which returns an iterator of filtered values
+based on a conditional statement within the closure:
 
 ```rust
 let my_vec = vec![1, 2, 3, 4, 5];
@@ -74,7 +91,8 @@ my_vec.iter().filter(|x| *x % 2 == 0);
 
 ### Using .collect()
 
-Using `collect()`, you can gather the values of an iterator and back into a vector that represents the operation you performed on it:
+Using `collect()`, you can gather the values of an iterator and back into a vector that represents
+the operation you performed on it:
 
 ```rust
 let my_vec = vec![1, 2, 3, 4, 5];
@@ -99,7 +117,8 @@ let chained_iter = my_vec.iter().map(|x| x + 1).filter(|x| *x % 2 == 0);
 
 ## Loops vs Iterators - when to use which?
 
-In the previous section, a piece of code looked just like a `for` loop that was covered in the Loops module:
+In the previous section, a piece of code looked just like a `for` loop that was covered in the Loops
+module:
 
 ```rust
     let my_vec = vec![1, 2, 3, 4, 5];
@@ -117,7 +136,8 @@ At first glance, this appears to be the same syntax and functionality as a norma
     }
 ```
 
-Both serve the same purpose but behave differently.  Iterators operate on **references**, whereas a `for` loop directly takes possession of the value for the loop's scope.  Calling:
+Both serve the same purpose but behave differently. Iterators operate on **references**, whereas a
+`for` loop directly takes possession of the value for the loop's scope. Calling:
 
 ```rust
 for val in my_vec.iter() {}
@@ -129,8 +149,8 @@ It is effectively the same as calling:
 for val in &my_vec {}
 ```
 
-It is generally a better design decision to utilize a reference-based approach, as `my_vec` would be unusable after a traditional `for` loop that takes ownership.
-
+It is generally a better design decision to utilize a reference-based approach, as `my_vec` would be
+unusable after a traditional `for` loop that takes ownership.
 
 ## Try it yourself!
 
@@ -138,4 +158,6 @@ It is generally a better design decision to utilize a reference-based approach, 
 
 ## What's going on here?
 
-The code features a collection of various iterators stemming from the same `Vec`, `my_vec`.  Iterators do not directly modify the `Vec`. Rather each operation returns a new iterator with values that may be modified, which is the case with `map()`.
+The code features a collection of various iterators stemming from the same `Vec`, `my_vec`.
+Iterators do not directly modify the `Vec`. Rather each operation returns a new iterator with values
+that may be modified, which is the case with `map()`.
