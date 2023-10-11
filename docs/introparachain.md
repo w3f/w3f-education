@@ -48,7 +48,7 @@ The primary goals are:
 - [Registering Your Parachain with Sudo](./Parachain/beginner/section3/creating-auction.md)
 - [Developing Your Parachain](./Parachain/beginner/section3/developing-parachain.md)
 
-## Section 4 - Next Steps
+## Section 4 - Next Steps (coming soon)
 
 - [Ecosystem Initiatives](./Parachain/beginner/section4/initatives.md)
 - [Road to Production](./Parachain/beginner/section4/road-to-production.md)
