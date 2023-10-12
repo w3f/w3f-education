@@ -81,9 +81,9 @@ positive, real numbers. This is party due to a few reasons:
 
 1. The notion of a negative balance does not exist for on-chain balances. Even for a `BlockNumber`,
    a negative block number is invalid and unreasonable in any scenario.
-2. `u32` and other unsigned types give a higher, _positive_ bound then a type like `i32`. With
-   `BlockNumber` as an example, this would allow the total amount of blocks that a network could
-   generate to be much higher than using a signed type.
+2. `u32` and other unsigned types give a higher, _positive_ bound than a type like `i32`. With
+   `BlockNumber` as an example. This would allow the total number of blocks a network could
+   generate to be much higher than a signed type.
 
 :::tip Thought exercise: if Polkadot used `u8` for the BlockNumber type, how would the chain run
 before it overflowed?
