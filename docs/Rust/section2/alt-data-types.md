@@ -85,7 +85,7 @@ positive, real numbers. This is party due to a few reasons:
    `BlockNumber` as an example. This would allow the total number of blocks a network could
    generate to be much higher than a signed type.
 
-:::tip Thought exercise: if Polkadot used `u8` for the BlockNumber type, how would the chain run
+:::tip Thought exercise: if Polkadot used `u8` for the BlockNumber type, how long would the chain run
 before it overflowed?
 
 Give it some thought, and pick an answer! What would a _smaller_ data type imply for something like
