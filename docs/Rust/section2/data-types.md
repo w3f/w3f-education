@@ -11,8 +11,8 @@ types in Rust greatly aids in ensuring that data is flowing as it should through
 
 Rust has two kinds of **primitive**, or base, data types:
 
-- Scalar - single point types, such as numbers and booleans (`true` or `false` statements)
-- Compound - arrays, and tuples
+- Scalar - single point types, such as numbers and booleans (`true` or `false` statements).
+- Compound - arrays and tuples.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G9I-HdPsLmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
