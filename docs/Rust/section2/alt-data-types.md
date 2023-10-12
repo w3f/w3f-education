@@ -109,7 +109,7 @@ be generated.
 
 ### Context-driven types
 
-In runtime development, data types should be chosen more carefully than normal. Because a runtime
+In runtime development, data types should be chosen more carefully. Because a runtime
 instance is anticipated to run for a long period of time, ideally without too many breaking
 upgrades, fundamental primitives and their underlying types must be able to withstand different
 scenarios or network load.
