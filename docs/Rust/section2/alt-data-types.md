@@ -63,9 +63,7 @@ case of dealing with things such as balances in a blockchain, floating point rou
 easily result in different nodes calculating different balances and potentially never reaching a consensus!
 
 For this reason, the notion of floating point primitives, such as `f32` and `f64`, cannot, and
-should not, be used in the context of the blockchain runtime. Even if one environment can
-deterministically use floating point numbers with sufficient accuracy, other clients on the network
-may provide alternate calculations.
+should not, be used in the context of the blockchain runtime.
 
 `sp-arithmetic` provides data types to deal with numbers less than zero, and allows them to be dealt
 safely in runtime. Unlike floating point arithmetic, which is not deterministic, these data types
