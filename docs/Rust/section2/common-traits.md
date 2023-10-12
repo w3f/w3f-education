@@ -7,7 +7,10 @@ description:
   runtime.
 ---
 
-:::warning This page is under construction :::
+<!-- prettier-ignore -->
+:::warning This page is under construction
+
+:::
 
 ## Rust Native Traits
 

@@ -5,7 +5,10 @@ sidebar_label: Casting & Type Conversion in Rust
 description: A comprehensive overview on how to cast and and handle type conversion in Rust
 ---
 
-:::warning This page is under construction :::
+<!-- prettier-ignore -->
+:::warning This page is under construction
+
+:::
 
 ## Lossy vs. Lossless Conversions
 
