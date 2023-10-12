@@ -5,6 +5,8 @@ sidebar_label: Alternative Data Types
 description: Learn when, and how to use non-typical data types
 ---
 
+:::warning This page is under construction :::
+
 Rust's primitive data types can form the basis for more complex data types. These data types are
 custom, but are provided when certain primitive types are not able to accommodate some special
 scenarios.
