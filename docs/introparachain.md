@@ -23,7 +23,7 @@ The following courses, or knowledge of these subjects in general will aid you in
 
 The primary goals are:
 
-- Learn the basics of how Polkadot works as a **sharded** network.
+- Learn the basics of how Polkadot works as an **execution sharded** network.
 - Learn the roles of the relay and parachain architecture.
 - Install necessary binaries and dependencies needed to create networks locally.
 - Modify your parachain and prep it for connecting to the relay chain.
