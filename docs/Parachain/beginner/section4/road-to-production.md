@@ -80,7 +80,7 @@ section on it.
 ### On Collation
 
 Collators are necessary to keep the parachain syncing and finalizing with the relay chain. A
-parachain only really needs one, **honest** collator at minimum, however it is advisable to have
+parachain only really needs one **honest** collator at minimum, however, it is advisable to have
 more to ensure resilience.
 
 ## Stuck? Ask on StackExchange, or reach out on the Polkadot Forum
