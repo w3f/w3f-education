@@ -60,7 +60,7 @@ result differently - a 32-bit system will calculate a floating point number diff
 
 While in _most_ cases, an inaccuracy to the 100th or 1000th place is not a terrible thing, in the
 case of dealing with things such as balances in a blockchain, floating point rounding errors could
-easily result in different nodes calculating different balances.
+easily result in different nodes calculating different balances and potentially never reaching a consensus!
 
 For this reason, the notion of floating point primitives, such as `f32` and `f64`, cannot, and
 should not, be used in the context of the blockchain runtime. Even if one environment can
