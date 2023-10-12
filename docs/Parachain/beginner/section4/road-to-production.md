@@ -83,7 +83,7 @@ Collators are necessary to keep the parachain syncing and finalizing with the re
 parachain only really needs one **honest** collator at minimum, however, it is advisable to have
 more to ensure resilience.
 
-## Stuck? Ask on StackExchange, or reach out on the Polkadot Forum
+## Stuck with an issue? Ask on StackExchange
 
 If you get stuck on a technical issue, make sure to ask on
 [The Substrate Stack Exchange](https://substrate.stackexchange.com/). It often has those more
