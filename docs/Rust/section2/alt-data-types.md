@@ -10,7 +10,7 @@ custom, but are provided when certain primitive types are not able to accommodat
 scenarios.
 
 In the Polkadot SDK, a great example of this is the `sp_arithmetic` crate, which provides minimal,
-redefined primitives for basic types related to numerics specifically for Susbtrate runtimes.
+redefined primitives for basic types related to numerics specifically for Susbtrate-based blockchain runtimes.
 
 `sp_core`, another crate, provides predefined types for dealing with cryptographic primitives or
 large numbers. Let's explore how to access and use these data types, and why they're useful in the
