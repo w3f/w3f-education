@@ -8,7 +8,7 @@ description: Learn the next technical steps to put your parachain to the road of
 The road to production for a parachain can be a daunting process. Luckily, there is a clear path to
 progression from prototype, to testnet, to canary (if desired), to production.
 
-:::info The following is empirical advice
+:::info The following is an empirical advice
 
 The following is mostly based off of common approaches that have been implemented over the years by
 different parachains within the ecosystem.
