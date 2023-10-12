@@ -10,7 +10,8 @@ progression from prototype, to testnet, to canary (if desired), to production.
 
 :::info The following is empirical advice
 
-The following is mostly based off of common approaches that have been implemented over the years.
+The following is mostly based off of common approaches that have been implemented over the years by
+different parachains within the ecosystem.
 
 :::
 
@@ -49,22 +50,23 @@ production-like setting.
 ## Existing References
 
 There are a number of different parachains to reference. All use Substrate as the base, but have
-varying implementations depending on their usecase.
+varying implementations depending on their usecase. You may find a comphrensive list of these
+parachains on [parachains.info](https://parachains.info/).
 
 ## Parachain Design Decisions
 
 When building a parachain, there are a number of design decisions that go beyond pure code.
-Parachains should be concerned with maximizing the blockspace they purchase, whether that is through
-auction or pay to go schemes.
+Parachains should be concerned with maximizing the blockspace they purchase.
 
 In order to do this, more elaborate schemes containing game theory and economics are often involved
-to ensure the parachain itself remains a "closed-feedback loop" so to speak.
+to ensure the parachain itself remains self-sufficient within its own means and domain-specific
+functionality.
 
 :::info But I thought Polkadot Secures My Parachain For Me?
 
-The parachain's consensus and finality is guranteed by Polkadot, yes. However, the parachain itself
-is responsible for the business logic, whether it chooses to incentivize its collators, any staking
-mechanisms, and any other domain specific logic. It is possible for an attacker to exploit a
+**The parachain's consensus and finality is guaranteed by Polkadot, yes.** However, the parachain
+itself is responsible for the business logic, whether it chooses to incentivize its collators, any
+staking mechanisms, and any other domain-specific logic. It is possible for an attacker to exploit a
 parachain's mechanism if it isn't designed well or contains a vector for attack.
 
 :::
