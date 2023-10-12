@@ -9,8 +9,9 @@ Rust's primitive data types can form the basis for more complex data types. Thes
 custom, but are provided when certain primitive types are not able to accommodate some special
 scenarios.
 
-In the Polkadot SDK, a great example of this is the `sp_arithmetic` crate, which provides minimal,
-redefined primitives for basic types related to numerics specifically for Susbtrate-based blockchain runtimes.
+In the Polkadot SDK, a great example of this is usage of the `sp_arithmetic` crate, which provides
+minimal, redefined primitives for basic types related to numerics specifically for Susbtrate-based
+blockchain runtimes.
 
 `sp_core`, another crate, provides predefined types for dealing with cryptographic primitives or
 large numbers. Let's explore how to access and use these data types, and why they're useful in the
@@ -60,7 +61,8 @@ result differently - a 32-bit system will calculate a floating point number diff
 
 While in _most_ cases, an inaccuracy to the 100th or 1000th place is not a terrible thing, in the
 case of dealing with things such as balances in a blockchain, floating point rounding errors could
-easily result in different nodes calculating different balances and potentially never reaching a consensus!
+easily result in different nodes calculating different balances and potentially never reaching a
+consensus!
 
 For this reason, the notion of floating point primitives, such as `f32` and `f64`, cannot, and
 should not, be used in the context of the blockchain runtime.
@@ -73,20 +75,20 @@ they operate on parts of a whole rather than the relative nature of floating poi
 ## Negative Numbers - Unsigned Integers vs. Signed Integers
 
 You may notice that Substrate specifically uses _unsigned_ for many data types which are represented
-for a number, such as a `BlockNumber`, which is a `u32`, or even a balance, which is usually
-represented as `u128`.
+for a number. An example of this is a `BlockNumber`, which is a `u32`, or even the type for an
+account balance, which is usually represented as `u128`.
 
 Unsigned types cannot be negative, meaning that all primitives used within a runtime are all
-positive, real numbers. This is party due to a few reasons:
+positive integers. This is party due to a few reasons:
 
 1. The notion of a negative balance does not exist for on-chain balances. Even for a `BlockNumber`,
    a negative block number is invalid and unreasonable in any scenario.
 2. `u32` and other unsigned types give a higher, _positive_ bound than a type like `i32`. With
-   `BlockNumber` as an example. This would allow the total number of blocks a network could
-   generate to be much higher than a signed type.
+   `BlockNumber` as an example. This would allow the total number of blocks a network could generate
+   to be much higher than a signed type.
 
-:::tip Thought exercise: if Polkadot used `u8` for the BlockNumber type, how long would the chain run
-before it overflowed?
+:::tip Thought exercise: if Polkadot used `u8` for the BlockNumber type, how long would the chain
+run before it overflowed?
 
 Give it some thought, and pick an answer! What would a _smaller_ data type imply for something like
 `BlockNumber`, which the network uses to progress?
@@ -109,10 +111,10 @@ be generated.
 
 ### Context-driven types
 
-In runtime development, data types should be chosen more carefully. Because a runtime
-instance is anticipated to run for a long period of time, ideally without too many breaking
-upgrades, fundamental primitives and their underlying types must be able to withstand different
-scenarios or network load.
+In runtime development, data types should be chosen more carefully. Because a runtime instance is
+anticipated to run for a long period of time, ideally without too many breaking upgrades,
+fundamental primitives and their underlying types must be able to withstand different scenarios or
+network load.
 
 They can have a direct impact on the chain itself; from the state and how those types are stored, to
 the chain's continued operation and ensuring it can run for an amount of time without interruption.
@@ -122,7 +124,7 @@ the chain's continued operation and ensuring it can run for an amount of time wi
 ### Type Aliases
 
 Type aliases are used to shorten long, generic types. For example, the following is how one may
-access a Balance with all configuration in Substrate:
+access a balance from an interface exposed by the balances' pallet in Substrate:
 
 ```rust
  type BalanceOf<T> = <<T as Config>::Currency as Currency<<T as frame_system::Config>::AccountId>>::Balance;
