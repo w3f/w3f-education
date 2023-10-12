@@ -21,7 +21,7 @@ Deploying to Rococo requires submitting a form,
 This will enable you obtain a parachain slot and subsequently deploy your parachain on Rococo and
 test your parachain in an actual multi-chain environment.
 
-## Achieve a Parachain Slot Candle Auctions
+## Lease a Parachain Slot through Auctions
 
 Obtaining a slot on Polkadot or Kusama is a different process - you will need to participate in a
 [candle-style auction](https://wiki.polkadot.network/docs/learn-auction#mechanics-of-a-candle-auction).
