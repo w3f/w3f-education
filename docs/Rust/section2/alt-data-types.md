@@ -6,8 +6,8 @@ description: Learn when, and how to use non-typical data types
 ---
 
 Rust's primitive data types can form the basis for more complex data types. These data types are
-custom, but are provided when certain primitive types are not able to accommodate some atypical
-scenario.
+custom, but are provided when certain primitive types are not able to accommodate some special
+scenarios.
 
 In the Polkadot SDK, a great example of this is the `sp_arithmetic` crate, which provides minimal,
 redefined primitives for basic types related to numerics specifically for Susbtrate runtimes.
