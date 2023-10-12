@@ -93,7 +93,7 @@ Give it some thought, and pick an answer! What would a _smaller_ data type imply
 
 <details class="wrong">
     <summary><b>It wouldn't overflow; the error would be handled</b></summary>
-Not quite - integer overflows can happen regardless of whether it is handled or not.  A more serious implication is at play here - if the chain's height is bound by a small number type, then that is effectively the maximum amount of blocks which can be generated.
+Not quite - integer overflows can happen regardless of whether it is handled or not.  A more serious implication is at play here - if the chain's height is bound by a small number type, then that is effectively the maximum number of blocks that can be kept track of.
 </details>
 
 <details class="correct">
