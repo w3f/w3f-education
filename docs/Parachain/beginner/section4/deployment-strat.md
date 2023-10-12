@@ -6,8 +6,8 @@ description: Explore different relay chains for deploying your parachains
 ---
 
 The following explores different ways one can register a parachain on Rococo, Kusama, or Polkadot.
-Keep in mind that the process of registering on Kusama versus Polkadot is quite similar, however
-Kusama has more relaxed auction parameters.
+Keep in mind that the process of registering on Kusama versus Polkadot is quite similar, with Kusama
+having altered parameters for various mechanisms related to parachains leases and crowdloans.
 
 ## Testnet - Deploying on Rococo
 
@@ -18,8 +18,8 @@ developing and testing locally.
 Deploying to Rococo requires submitting a form,
 [which you may find here.](https://github.com/paritytech/subport/issues/new?assignees=al3mart%2CAlexD10S&labels=Rococo&projects=&template=rococo.yaml)
 
-This will enable you obtain a parachain slot and subsequently deploy your parachain on Rococo, test
-your various mechanisms in an actual multi-chain environment with virtually zero stakes.
+This will enable you obtain a parachain slot and subsequently deploy your parachain on Rococo and
+test your parachain in an actual multi-chain environment.
 
 ## Achieve a Parachain Slot Candle Auctions
 
@@ -31,10 +31,22 @@ networks.
 
 ### Canary - Deploying on Kusama
 
-Find the details to deploy a parachain on
+:::warning More detailed instructions coming soon
+
+This section is currently incomplete.
+
+:::
+
+Find details on how auctions are used to obtain a parachain slot on
 [Kusama here](https://guide.kusama.network/docs/learn-auction).
 
 ### Production - Deploying on Polkadot
 
-Find the details to deploy a parachain on
-[Kusama here](https://wiki.polkadot.network/docs/learn-auction).
+:::warning More detailed instructions coming soon
+
+This section is currently incomplete.
+
+:::
+
+Find details on how auctions are used to obtain a parachain slot on
+[Polkadot here](https://wiki.polkadot.network/docs/learn-auction).
