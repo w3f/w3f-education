@@ -37,35 +37,70 @@ mode, it resorts to wrapping the overflowed amount in a modular fashion:
 let max = u8::MAX + 10; // In debug mode, this would panic. In release, max would simply be 9.
 ```
 
+However, in some cases, you may not want to always wrap your integers. What if a user's balance is
+changing within your runtime. In the event of an overflow, the default behavior of wrapping a value
+would result in the user's balance starting from zero!
+
+Luckily, there are ways to both represent and handle these scenarios depending on our specific use
+case natively built into Rust.
+
 ## Safe Math
 
 Our primary goal is to reduce any point of failure within our blockchain runtime. Both Rust and
 Substrate both provide safe ways to deal with numbers, alternatives to floating point arithmetic,
 and currency math.
 
-### Saturated Conversions
+:::info Defensive, or safe math, wasn't just because of blockchain.
 
-```rust
-  #[test]
-  fn saturated_add_example() {
-      // Saturating add simply 'saturates' to the numeric bound of that type if it overflows.
-      // Typically, this is only useful
-      let add = u32::MAX.saturating_add(10);
-      assert_eq!(add, u32::MAX)
-  }
-```
+Traditional banking also needs to utilize such practices within their codebase. Rather than use
+purely primitive, native types, **currency** math usually involves abstracting such operations into
+types which are more controlled.
 
-### Checked Conversions
+A prime example is that banking also doesn't use floating point numbers, rather they use fixed-point
+arithmetic to mitigate the potential for inaccuracy or unexpected behavior.
+
+:::
+
+With Rust, there are numerous ways to use these tactics with primitive types. Of course, cases such
+as floating point numbers in financial situations should still be avoided.
+
+The following methods represent different ways one can handle numbers safely:
+
+### Checked Operations
+
+**Checked operations** utilize a `Option<T>` as a return type. This simply means that if the
+resulting operation is invalid, i.e., an integer overflow, it will return `None`, and if successful,
+then `Some`. The only downside of using this type is the need to handle the `Option` type
+accordingly.
+
+This is an example of a valid operation:
 
 ```rust
     #[test]
-    fn checked_add_handle_error_example() {
+    fn checked_add_example() {
+        // This is valid, as 20 is perfectly within the bounds of u32.
         let add = 10u32.checked_add(10);
         assert_eq!(add, Some(20))
     }
 ```
 
-### Wrapped Conversions
+This is an example of an invalid operation, in this case, a simulated integer overflow, which would
+simply result in `None`:
+
+```rust
+    #[test]
+    fn checked_add_handle_error_example() {
+        // This is invalid - we are adding something to the max of u32::MAX, which would overflow.
+        // Luckily, checked_add just marks this as None!
+        let add = u32::MAX.checked_add(10);
+        assert_eq!(add, None)
+    }
+```
+
+### Wrapped Operations
+
+Wrapped is the default behavior in _release_ mode. As discussed earlier, wrapped operations simply
+overflow the number back to 0 plus the remainder (modulo, essentially):
 
 ```rust
     #[test]
@@ -76,6 +111,24 @@ and currency math.
         assert_eq!(add, 9)
     }
 ```
+
+### Saturated Operations
+
+Saturating a number simply limits it to its numeric bound. For example, adding to `u32::MAX` would
+simply just limit itself to `u32::MAX`:
+
+```rust
+  #[test]
+  fn saturated_add_example() {
+      // Saturating add simply 'saturates' to the numeric bound of that type if it overflows.
+      let add = u32::MAX.saturating_add(10);
+      assert_eq!(add, u32::MAX)
+  }
+```
+
+Typically, it is better to use something like `checked` to ensure the state of the calculation.
+Saturating calculations can be used if one is very sure that something won't overflow, but does not
+want to introduce the notion of any potential-panic or wrapping behavior.
 
 ## Currency Math
 
