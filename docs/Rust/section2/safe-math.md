@@ -12,18 +12,17 @@ description:
 
 :::
 
-Seemingly small things like adding or substracting numbers can present some novel scenarios. As our
-runtime should _never_ panic, this includes eliminating the possibility of integer overflows,
-converting between number types, or even handling 'currency' math.
+Small things like adding or subtracting numbers can present some novel scenarios. As our runtime
+should _never_ panic; this includes eliminating the possibility of integer overflows, converting
+between number types, or even handling 'currency' math.
 
-:::tip To follow along, use `sp_runtime` and `sp_arithmetic`
+:::tip To follow along, you can use `sp_arithmetic`
 
 The following code may use types that Substrate provides. Feel free to follow along by including
 these crates in your `Cargo.toml` as follows:
 
 ```toml
 sp-arithmetic = "19.0.0-dev.1"
-sp-runtime = "19.0.0-dev.1"
 ```
 
 :::
@@ -34,12 +33,12 @@ In Rust, integer overflow is possible in **debug** mode, where the compiler woul
 mode, it resorts to wrapping the overflowed amount in a modular fashion:
 
 ```rust
-let max = u8::MAX + 10; // In debug mode, this would panic. In release, max would simply be 9.
+let max = u8::MAX + 10; // In debug mode, this would panic. In release, `u32::MAX` would be 9.
 ```
 
-However, in some cases, you may not want to always wrap your integers. What if a user's balance is
-changing within your runtime. In the event of an overflow, the default behavior of wrapping a value
-would result in the user's balance starting from zero!
+However, you may only want sometimes to wrap your integers. What if a user's balance is changing
+within your runtime? In an overflow, the default behavior of wrapping a value would result in the
+user's balance starting from zero!
 
 Luckily, there are ways to both represent and handle these scenarios depending on our specific use
 case natively built into Rust.
@@ -52,26 +51,25 @@ and currency math.
 
 :::info Defensive, or safe math, wasn't just because of blockchain.
 
-Traditional banking also needs to utilize such practices within their codebase. Rather than use
-purely primitive, native types, **currency** math usually involves abstracting such operations into
-types which are more controlled.
+Traditional banking also needs to utilize such practices within its codebase. Rather than use purely
+primitive, native types, **currency** math usually involves abstracting such operations into more
+controlled types.
 
-A prime example is that banking also doesn't use floating point numbers, rather they use fixed-point
-arithmetic to mitigate the potential for inaccuracy or unexpected behavior.
+A prime example is that banking also doesn't use floating point numbers. Rather they use fixed-point
+arithmetic to mitigate the potential for inaccuracy, rounding errors, or other unexpected behavior.
 
 :::
 
-With Rust, there are numerous ways to use these tactics with primitive types. Of course, cases such
-as floating point numbers in financial situations should still be avoided.
+Rust has numerous ways to use these tactics with its type system. Of course, cases such as floating
+point numbers in financial situations should still be avoided.
 
 The following methods represent different ways one can handle numbers safely:
 
 ### Checked Operations
 
-**Checked operations** utilize a `Option<T>` as a return type. This simply means that if the
-resulting operation is invalid, i.e., an integer overflow, it will return `None`, and if successful,
-then `Some`. The only downside of using this type is the need to handle the `Option` type
-accordingly.
+**Checked operations** utilize a `Option<T>` as a return type. This means that if the resulting
+operation is invalid, i.e., an integer overflow, it will return `None`, and if successful, then
+`Some`. The only downside of using this type is the need to handle the `Option` type accordingly.
 
 This is an example of a valid operation:
 
@@ -114,8 +112,8 @@ overflow the number back to 0 plus the remainder (modulo, essentially):
 
 ### Saturated Operations
 
-Saturating a number simply limits it to its numeric bound. For example, adding to `u32::MAX` would
-simply just limit itself to `u32::MAX`:
+Saturating a number limits it to its numeric bound. For example, adding to `u32::MAX` would simply
+limit itself to `u32::MAX`:
 
 ```rust
   #[test]
@@ -127,18 +125,18 @@ simply just limit itself to `u32::MAX`:
 ```
 
 Typically, it is better to use something like `checked` to ensure the state of the calculation.
-Saturating calculations can be used if one is very sure that something won't overflow, but does not
-want to introduce the notion of any potential-panic or wrapping behavior.
+Saturating calculations can be used if one is very sure that something won't overflow, but wants to
+avoid introducing the notion of any potential-panic or wrapping behavior.
 
 ## Currency Math
 
-At the most fundamental level, currency math involves simply using base 10 numbers versus floating
-point numbers. They allow for the most versatile and familiar method of arithmetic to represent
-parts of a whole without the use of a floating point primitive.
+At the most fundamental level, currency math involves simply using base 10 versus floating point
+numbers to avoid unexpected behavior. Let's see how `sp_arithmatic`, a library within Substrate,
+provides some of this functionality:
 
 ### Using 'PerThing' - `Percent`
 
-`sp_arithmetic` contains a trait called `PerThing`, which allows for a custom type to be implemented
+`sp_arithmetic` contains a trait called `PerThing`, allowing a custom type to be implemented
 specifically for fixed point arithmetic. One example is `Percent`, which implements `PerThing`, and
 allows for percentages to be calculated safely:
 
@@ -189,8 +187,8 @@ Or also division:
     }
 ```
 
-Either way, you are able to safely deconstruct or construct and interact with representatives of
-these numbers.
+Either way, you can safely deconstruct (or construct) and interact with representatives of these
+numbers.
 
 Later, in the context of a FRAME pallet, the usage of these types and calculations will start to
 make more sense when dealing with mathematics in the runtime.
