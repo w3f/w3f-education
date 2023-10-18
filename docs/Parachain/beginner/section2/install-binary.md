@@ -119,7 +119,7 @@ updated. Once you modify the chain spec, you can run the following command to ge
 
 ```bash
 # Run from locally compiled repository
-./polkadot/target/release/polkadot build-spec > ./relaychain/relaychain_spec.json
+./target/debug/polkadot build-spec > ./relaychain/relaychain_spec.json
 # or, with symlink
 polkadot build-spec > ./relaychain/relaychain_spec.json
 ```
@@ -128,7 +128,7 @@ Once this is built, also build the **raw**, SCALE-encoded file:
 
 ```bash
 # Run from locally compiled repository
-./polkadot/target/release/polkadot build-spec \
+./target/debug/polkadot build-spec \
     --chain ./relaychain/relaychain_spec.json \
     --raw > ./relaychain/relaychain_spec_raw.json
 

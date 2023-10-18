@@ -27,18 +27,16 @@ If you followed the steps to add a `symlink`, you may replace the preceded:
 
 - Launch Alice:
   ```bash
-  ./polkadot/target/release/polkadot \
+  ./target/debug/polkadot \
       --alice \
       --validator \
       --base-path /tmp/relay/alice \
       --chain ./relaychain/relaychain_spec_raw.json \
-      --port 30333 \
-      --rpc-port 9944 \
       --disable-worker-version-check
   ```
 - Launch Bob:
   ```bash
-  ./polkadot/target/release/polkadot \
+  ./target/debug/polkadot \
       --bob \
       --validator \
       --base-path /tmp/relay/bob \
