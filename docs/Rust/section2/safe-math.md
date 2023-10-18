@@ -132,6 +132,34 @@ want to introduce the notion of any potential-panic or wrapping behavior.
 
 ## Currency Math
 
-### Using 'PerThing'
+At the most fundamental level, currency math involves simply using base 10 numbers versus floating
+point numbers. They allow for the most versatile and familiar method of arithmetic to represent
+parts of a whole without the use of a floating point primitive.
 
-### Fixed Point Arithmetic
+### Using 'PerThing' - `Percent`
+
+`sp_arithmetic` contains a trait called `PerThing`, which allows for a custom type to be implemented
+specifically for fixed point arithmetic. One example is `Percent`, which implements `PerThing`, and
+allows for percentages to be calculated safely:
+
+```rust
+    #[test]
+    fn percent_example() {
+        let percent = Percent::from_rational(190u32, 400u32);
+        assert_eq!(percent.deconstruct(), 47)
+    }
+```
+
+Note that `190 / 400 = 0.475`, and that `Percent` represents it as a _rounded down_, fixed point
+number (`47`). Unlike primitive types, types that implement `PerThing` will also not overflow, and
+are therefore safe to use. They adopt the same behavior that saturated calculation would provide:
+
+```rust
+    #[test]
+    fn percent_example_overflow() {
+        let percent = Percent::from_rational(50032, 400u32);
+        assert_eq!(percent.deconstruct(), 100)
+    }
+```
+
+### Fixed Point Arithmetic with `sp_arithmetic`
