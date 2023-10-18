@@ -162,4 +162,35 @@ are therefore safe to use. They adopt the same behavior that saturated calculati
     }
 ```
 
+If percent isn't precise enough, `Perbill` or `Permill` (parts of a billion and million
+respectively) can be used for operations that require it.
+
 ### Fixed Point Arithmetic with `sp_arithmetic`
+
+As stated, one can also perform mathematics using these types directly. For example, multiplication:
+
+```rust
+    #[test]
+    fn percent_mult() {
+        let percent = Percent::from_rational(5u32, 100u32);
+        assert_eq!(percent.int_mul(5).deconstruct(), 25)
+    }
+```
+
+Or also division:
+
+```rust
+    #[test]
+    fn percent_div() {
+        let percent = Percent::from_rational(50u32, 100u32);
+        let other_percent = Percent::from_parts(10);
+
+        assert_eq!(percent.int_div(other_percent), 5)
+    }
+```
+
+Either way, you are able to safely deconstruct or construct and interact with representatives of
+these numbers.
+
+Later, in the context of a FRAME pallet, the usage of these types and calculations will start to
+make more sense when dealing with mathematics in the runtime.
