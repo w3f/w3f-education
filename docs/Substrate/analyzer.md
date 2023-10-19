@@ -38,6 +38,6 @@ You can choose to run `cargo check` on at your leisure.
 2. _Disable auto-build / build script run_
 
 By default, the Rust Analyzer also will build (via `build.rs`, if the workspace/crate contains one).
-Disabling this also aids in performance:
+Disabling this also contribute to performance:
 
 ![](./assets/disable_build.png)
