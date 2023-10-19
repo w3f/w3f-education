@@ -287,6 +287,11 @@ module.exports = {
       label: "Course Syllabus",
     },
     {
+      type: "doc",
+      id: "Substrate/analyzer",
+      label: "Configuring Rust Analyzer",
+    },
+    {
       type: "category",
       label: "Introduction to Substrate",
       link: { type: "doc", id: "Substrate/section1/index" },
