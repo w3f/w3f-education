@@ -86,23 +86,21 @@ polkadot --help
 
 ### Option 2: Install via a package manager (Linux)
 
-One may use `apt`, so long as they add the necessary repositories:
-
-```bash
-# Import the security@parity.io GPG key
-gpg --recv-keys --keyserver hkps://keys.mailvelope.com 9D4B2B6EB8F97156D19669A9FF0812D491B96798
-gpg --export 9D4B2B6EB8F97156D19669A9FF0812D491B96798 > /usr/share/keyrings/parity.gpg
-# Add the Parity repository and update the package index
-echo 'deb [signed-by=/usr/share/keyrings/parity.gpg] https://releases.parity.io/deb release main' > /etc/apt/sources.list.d/parity.list
-apt update
-# Install the `parity-keyring` package - This will ensure the GPG key
-# used by APT remains up-to-date
-apt install parity-keyring
-# Install polkadot
-apt install polkadot
-```
+One may use `apt` to install the `polkadot` binary. You may find instructions for this on the
+[Polkadot Wiki](https://wiki.polkadot.network/docs/maintain-sync#setup-instructions).
 
 ## Chain Specification
+
+:::warning This is optional!
+
+Generating a new chain specification should only be done if you want to run the relay chain with
+your own modification. It is recommended that you skip this and come back to it later if you decide
+to change how the relay chain implementation works, or wish to try out different configs.
+
+For development purposes, it is recommended that you use the chain specification included within
+[`parachain-guide-resources`](https://github.com/w3f/parachain-guide-resources).
+
+:::
 
 Once Polkadot is compiled, we must ensure we have a valid `chain_spec` file to launch our local
 relay chain.
@@ -119,9 +117,9 @@ updated. Once you modify the chain spec, you can run the following command to ge
 
 ```bash
 # Run from locally compiled repository
-./target/debug/polkadot build-spec > ./relaychain/relaychain_spec.json
+./target/debug/polkadot build-spec > ./relaychain/my_relaychain_spec.json
 # or, with symlink
-polkadot build-spec > ./relaychain/relaychain_spec.json
+polkadot build-spec > ./relaychain/my_relaychain_spec.json
 ```
 
 Once this is built, also build the **raw**, SCALE-encoded file:
@@ -129,11 +127,11 @@ Once this is built, also build the **raw**, SCALE-encoded file:
 ```bash
 # Run from locally compiled repository
 ./target/debug/polkadot build-spec \
-    --chain ./relaychain/relaychain_spec.json \
-    --raw > ./relaychain/relaychain_spec_raw.json
+    --chain ./relaychain/my_relaychain_spec.json \
+    --raw > ./relaychain/my_relaychain_spec_raw.json
 
 # or, with symlink
 polkadot build-spec \
-    --chain ./relaychain/relaychain_spec.json \
-    --raw > ./relaychain/relaychain_spec_raw.json
+    --chain ./relaychain/my_relaychain_spec.json \
+    --raw > ./relaychain/my_relaychain_spec_raw.json
 ```

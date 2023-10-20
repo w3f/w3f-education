@@ -80,7 +80,7 @@ the same way:
 
    ```bash
    # Run from locally compiled repository
-   ./substrate-parachain-template/target/target/release/parachain-template-node build-spec > ./parachain/parachain_chain_spec.json
+   ./substrate-parachain-template/target/release/parachain-template-node build-spec > ./parachain/parachain_chain_spec.json
    ```
 
 2. Once this is built, also build the **raw**, SCALE-encoded file:
@@ -115,7 +115,7 @@ As always, these are already available within the `parachain-guide-resources` re
 ### Optional: Generating The Runtime Wasm Bundle
 
 ```bash
-./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-wasm \
+./substrate-parachain-template/target/release/parachain-template-node export-genesis-wasm \
 --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-wasm
 
 # or, with symlink:
@@ -126,7 +126,7 @@ parachain-template-node export-genesis-wasm \
 ### Optional: Generating the Genesis State Bundle
 
 ```bash
-./substrate-parachain-template/target/target/release/parachain-template-node export-genesis-state \
+./substrate-parachain-template/target/release/parachain-template-node export-genesis-state \
 --chain ./parachain/parachain_chain_spec_raw.json ./parachain/parachain-genesis-state
 
 # or, with symlink:
