@@ -162,6 +162,8 @@ other ways of dealing with runtime arithmetic that won't carry these consequence
 While it may seem trivial, choosing how to handle numbers is quite important. As a thought exercise,
 here are some scenarios of which will shed more light on when to use which.
 
+<!-- todo: add solutions to better approaches to these examples -->
+
 1.  **Bob's** balance exceeds the `Balance` type on the `EduChain`. Because the pallet developer did
     not handle the calculation to add to Bob's balance with any regard to this overflow, **Bob's**
     balance is now essentially `0`, the operation **wrapped**.
@@ -173,7 +175,9 @@ here are some scenarios of which will shed more light on when to use which.
 
 3.  The type for counting the number of proposals on-chain is represented by a `u8` number, called
     `proposals_count`. Every time a new proposal is added to the system, this number increases. With
-    `u8::MAX`'s limit being `255`
+    the proposal pallet being high in usage, it has reached `u8::MAX`'s limit of `255`, causing
+    `proposals_count` to go to `0`. Unfortunately, this resulted in new proposals overwriting old
+    ones, effectively erasing any notion of past proposals!
 
 ### When to use which? (todo)
 
