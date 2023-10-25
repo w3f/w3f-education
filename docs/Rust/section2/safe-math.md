@@ -173,39 +173,6 @@ relevant or not, thereby making it slightly more expensive.
 
 :::
 
-### Wrapped Operations
-
-Wrapped operations simply overflow the number back to 0 plus the remainder (modulo, essentially).
-Wrapped operations typically do not have to
-
-```rust
-#[test]
-fn wrapped_add_example() {
-    // Wrapping add wraps around the difference of the overflow.
-    // For example, the overflow here is 9 over (since adding 1 would cause the overflow)
-    let add_explicit = u32::MAX.wrapping_add(10);
-    assert_eq!(add_explicit, 9);
-}
-```
-
-This is the default behavior in _release_ mode, meaning it does not have to be explicitly used. For
-example, the following code illustrates what would happen at runtime if a number happened to cause
-an overflow:
-
-```rust
-#[test]
-fn wrapped_add_release_example() {
-    // However, the above is the same as the below when compiled for release mode:
-    // Get a random number:
-    let mut rng = rand::thread_rng();
-    let n1: u32 = rng.gen_range(1..10);
-    // Add this (unknown at compile time):
-    let add_implicit: u32 = u32::MAX + n1;
-    // Will take some number from 1 to 10, and wrap around.  The result could be any number from 1 to 9.
-    assert_eq!(add_implicit, u32::MAX + n1);
-}
-```
-
 ### Saturated Operations
 
 Saturating a number of limits it to its numeric bound, no matter the integer would overflow in
