@@ -73,7 +73,8 @@ single nondeterministic result could cause chaos for consensus along with the af
 
 :::
 
-The following methods represent different ways one can handle numbers safely natively in Rust.
+The following methods represent different ways one can handle numbers safely natively in Rust,
+without fear of panic, unexpected wrapping, or other unexpected behavior.
 
 ### Checked Operations
 
@@ -105,10 +106,10 @@ fn checked_add_handle_error_example() {
 }
 ```
 
-Typically, if you aren't sure about which operation to use, **checked** operations are the safe bet,
-as it presents two, predictable outcomes that can be handled. In reality, checked operations aren't
-utilized much within the Polkadot codebase, but are still a valid way to ensure safety is a part of
-your runtime's design.
+Typically, if you aren't sure about which operation to use, **checked** operations are a safe bet,
+as it presents two, predictable outcomes that can be handled accordingly (`Some` and `None`). In
+reality, checked operations aren't utilized much within the Polkadot codebase, but are still a valid
+way to ensure safety is a part of your runtime's design.
 
 In a real context, the resulting `Option` should be handled accordingly. The following function is
 from the
@@ -194,9 +195,9 @@ avoid introducing the notion of any potential-panic or wrapping behavior.
 
 As a recap, we covered the following concepts:
 
-1. **Checked** operations,
-2. **Saturated** operations,
-3. **Wrapped** operations,
+1. **Checked** operations - using `Option`,
+2. **Saturated** operations - limited to the lower and upper bounds of a number type,
+3. **Wrapped** operations (the default) - wrap around to above or below the bounds of a type,
 
 **Wrapped operations** cause the overflow to revert to 0 - imagine this in the context of a
 blockchain, where are balances, voting counters, nonces for transactions, and other aspects. Some of
@@ -206,24 +207,55 @@ other ways of dealing with runtime arithmetic that won't carry these consequence
 While it may seem trivial, choosing how to handle numbers is quite important. As a thought exercise,
 here are some scenarios of which will shed more light on when to use which.
 
-<!-- todo: add solutions to better approaches to these examples -->
+#### Bob's Overflowed Balance
 
-1.  **Bob's** balance exceeds the `Balance` type on the `EduChain`. Because the pallet developer did
-    not handle the calculation to add to Bob's balance with any regard to this overflow, **Bob's**
-    balance is now essentially `0`, the operation **wrapped**.
+**Bob's** balance exceeds the `Balance` type on the `EduChain`. Because the pallet developer did not
+handle the calculation to add to Bob's balance with any regard to this overflow, **Bob's** balance
+is now essentially `0`, the operation **wrapped**.
 
-2.  **Alice's** balance has reached `0` after a transfer to `Bob`. Suddenly, she has been slashed on
-    `EduChain`, causing her balance to reach near the limit of `u32::MAX` - a very large amount - as
-    _checked operations_ can go both ways. **Alice** can now successfully vote using her new token
-    balance, destroying the integrity of the chain.
+<details>
+    <summary><b>Solution: Saturating</b></summary>
+    For Bob's balance problems, using a saturated_add could've mitigated this issue.  They simply would've reached the upper, or lower bounds, of the particular type for an on-chain balance.  In other words: Bob's would've stayed at the maximum of the Balance type.
+</details>
 
-3.  The type for counting the number of proposals on-chain is represented by a `u8` number, called
-    `proposals_count`. Every time a new proposal is added to the system, this number increases. With
-    the proposal pallet being high in usage, it has reached `u8::MAX`'s limit of `255`, causing
-    `proposals_count` to go to `0`. Unfortunately, this resulted in new proposals overwriting old
-    ones, effectively erasing any notion of past proposals!
+#### Alice's 'Underflowed' Balance
 
-### Decision Chart: When to use which? (todo)
+**Alice's** balance has reached `0` after a transfer to `Bob`. Suddenly, she has been slashed on
+`EduChain`, causing her balance to reach near the limit of `u32::MAX` - a very large amount - as
+_checked operations_ can go both ways. **Alice** can now successfully vote using her new,
+overpowered token balance, destroying the integrity of the chain.
+
+<details>
+    <summary><b>Solution: Saturating</b></summary>
+    For Alice's balance problem, using saturated_sub could've mitigated this issue.  They simply would've reached the upper, or lower bounds, of the particular type for an on-chain balance.  In other words: Alice's balance would've stayed at "0", even after being slashed.
+</details>
+
+#### Proposals' ID Overwrite
+
+The type for counting the number of proposals on-chain is represented by a `u8` number, called
+`proposals_count`. Every time a new proposal is added to the system, this number increases. With the
+proposal pallet being high in usage, it has reached `u8::MAX`'s limit of `255`, causing
+`proposals_count` to go to `0`. Unfortunately, this resulted in new proposals overwriting old ones,
+effectively erasing any notion of past proposals!
+
+<details>
+    <summary><b>Solution: Checked</b></summary>
+For the proposal IDs, proper handling via `checked` math would've been much more suitable,  Saturating could've been used - but it also would've 'failed' silently.  Using `checked_add` to ensure that the next proposal ID would've been valid would've been a viable way to let the user know the state of their proposal:
+
+```rust
+let next_proposal_id = current_count.checked_add(1).ok_or_else(|| Error::TooManyProposals)?;
+```
+
+</details>
+
+---
+
+From the above, we can clearly see the problematic nature of seemingly simple operations in runtime.
+Of course, it may be that using checked math is perfectly fine under some scenarios - such as
+certain balance being never realistically attainable, or a number type being so large that it could
+never realistically overflow unless one sent thousands of transactions to the network.
+
+### Decision Chart: When to use which?
 
 ```mermaid
 flowchart LR
