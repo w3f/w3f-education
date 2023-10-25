@@ -14,7 +14,8 @@ description:
 
 Small things like adding or subtracting numbers can present some novel scenarios. As our runtime
 should _never_ panic; this includes eliminating the possibility of integer overflows, converting
-between number types, or even handling 'currency' math.
+between number types, or even handling floating point usage with fixed point arithmetic to mitigate
+issues that they can present.
 
 :::tip To follow along, you can use `sp_arithmetic`
 
@@ -29,42 +30,50 @@ sp-arithmetic = "19.0.0-dev.1"
 
 ## Integer Overflow
 
-In Rust, integer overflow is possible in **debug** mode, where the compiler would panic. In release
-mode, it resorts to wrapping the overflowed amount in a modular fashion:
+In runtime, we don't always have control over what is being supplied as a parameter. For example,
+this counter function could present one of two outcomes depending on whether it is in **release** or
+**debug** mode:
 
 ```rust
-let max = u8::MAX + 10; // In debug mode, this would panic. In release, `u32::MAX` would be 9.
+fn count(x: u8) -> u8 {
+    let overflow = u8::MAX + x;
+    overflow
+}
+
+count(10); // In debug mode, this would panic. In release, `u32::MAX` would be 9.
 ```
 
-However, you may only sometimes want to wrap your integers. What if a user's balance is changing
-within your runtime? In an overflow, the default behavior of wrapping a value would result in the
-user's balance starting from zero!
+The Rust compiler would panic in **debug** mode in the event of an integer overflow. In **release**
+mode, it resorts to _wrapping_ the overflowed amount in a modular fashion, (hence returning `9`).
+
+While this may seem "safe" on the surface, wrapping could present unintended consequences in the
+context of blockchain development. A quick example is a user's balance overflowing - the default
+behavior of wrapping would result in the user's balance starting from zero!
 
 Luckily, there are ways to both represent and handle these scenarios depending on our specific use
-case natively built into Rust.
+case natively built into Rust, as well as libraries like `sp_arithmetic`.
 
 ## Safe Math
 
-Our primary goal is to reduce any point of failure within our blockchain runtime. Both Rust and
-Substrate both provide safe ways to deal with numbers, alternatives to floating point arithmetic,
-and currency math.
+Our main objective is to reduce the likelihood of any point of failure within our blockchain
+runtime. Both Rust and Substrate both provide safe ways to deal with numbers and alternatives to
+floating point arithmetic.
 
-:::info Defensive, or safe math, wasn't just because of blockchain.
+:::info Defensive, or safe math, isn't just useful for blockchain development.
 
 Traditional banking also needs to utilize such practices within its codebase. Rather than use purely
-primitive, native types, **currency** math usually involves abstracting such operations into more
-controlled, fixed-point types.
+primitive, native types, **fixed-point arithmetic** usually involves abstracting such operations
+into more controlled, fixed-point types.
 
 A prime example is that banking also doesn't use floating point numbers. Rather they use fixed-point
 arithmetic to mitigate the potential for inaccuracy, rounding errors, or other unexpected behavior.
 
-Cases such as floating point numbers in critical environments (like blockchains) should still be
-avoided.
+Using **primitive** floating point number types in a blockchain context should also be avoided, as a
+single nondeterministic result could cause chaos for consensus along with the aforementioned issues.
 
 :::
 
-Rust has numerous, native ways to perform these operations safely. The following methods represent
-different ways one can handle numbers safely.
+The following methods represent different ways one can handle numbers safely natively in Rust.
 
 ### Checked Operations
 
@@ -95,6 +104,74 @@ fn checked_add_handle_error_example() {
     assert_eq!(add, None)
 }
 ```
+
+Typically, if you aren't sure about which operation to use, **checked** operations are the safe bet,
+as it presents two, predictable outcomes that can be handled. In reality, checked operations aren't
+utilized much within the Polkadot codebase, but are still a valid way to ensure safety is a part of
+your runtime's design.
+
+In a real context, the resulting `Option` should be handled accordingly. The following function is
+from the
+[`polkadot-sdk`](https://github.com/paritytech/polkadot-sdk/blob/c86b633695299ed27053940d5ea5c5a2392964b3/bridges/modules/messages/src/inbound_lane.rs#L168),
+and part of it increases a nonce which is responsible as part of receiving a message from a bridge
+protocol:
+
+```rust
+/// Receive new message.
+pub fn receive_message<Dispatch: MessageDispatch>(
+    &mut self,
+    relayer_at_bridged_chain: &S::Relayer,
+    nonce: MessageNonce,
+    message_data: DispatchMessageData<Dispatch::DispatchPayload>,
+) -> ReceivalResult<Dispatch::DispatchLevelResult> {
+    let mut data = self.storage.get_or_init_data();
+    if Some(nonce) != data.last_delivered_nonce().checked_add(1) {
+        return ReceivalResult::InvalidNonce
+    }
+    // ...
+```
+
+Because wrapped operations return `Option<T>`, the above syntax of:
+
+```rust
+if Some(value) = some_option.checked_add(1) {
+    // do something with value..
+} else {
+    // oh no, an overflow!
+}
+```
+
+Is a good convention to use for hand line not only checked types, but most types that return
+`Option<T>`.
+
+#### Checked Operations: Result Flavored
+
+In the Polkadot SDK codebase, you may see checked operations being handled as a `Result`. For
+example, the following code is used in the `contracts` pallet to determine
+[if there is enough gas via `checked_sub`](https://github.com/paritytech/polkadot-sdk/blob/f6560c2b7226ea756ade18df42018c3eaf3be2e0/substrate/frame/contracts/src/gas.rs#L122):
+
+```rust
+//...
+self.gas_left = self.gas_left.checked_sub(&amount).ok_or_else(|| <Error<T>>::OutOfGas)?;
+//...
+```
+
+At a glance, this may seem confusing, as we just got done explaining how to handle a `Option`, not
+`Result`. `Result` may be used as an alternative to `Option` where it ergonomically makes sense to
+let the user know that something unexpected has happened. This is particularly useful in the context
+of dispatchables within a Substrate pallet, for example.
+
+:::tip `ok_or` or `ok_or_else`?
+
+You may see `ok_or` and `ok_or_else` being used interchangeably. In reality, they have the same
+functionality with one caveat - `ok_or` is _eagerly_ evaluated, versus `ok_or_else` is _lazily_
+evaluated. Using `ok_or_else` is more performant, as if the `Option` is `Some()`, there is no need
+to actually run the closure. `ok_or` is eager to make new allocations - regardless of whether it is
+relevant or not, thereby making it slightly more expensive.
+
+[See more here.](https://rust-lang.github.io/rust-clippy/master/index.html#/or_fun_call)
+
+:::
 
 ### Wrapped Operations
 
@@ -131,8 +208,8 @@ fn wrapped_add_release_example() {
 
 ### Saturated Operations
 
-Saturating a number limits it to its numeric bound. For example, adding to `u32::MAX` would simply
-limit itself to `u32::MAX`:
+Saturating a number of limits it to its numeric bound, no matter the integer would overflow in
+runtime. For example, adding to `u32::MAX` would simply limit itself to `u32::MAX` :
 
 ```rust
 #[test]
@@ -150,9 +227,9 @@ avoid introducing the notion of any potential-panic or wrapping behavior.
 
 As a recap, we covered the following concepts:
 
-1. **Wrapped** operations,
+1. **Checked** operations,
 2. **Saturated** operations,
-3. **Checked** operations,
+3. **Wrapped** operations,
 
 **Wrapped operations** cause the overflow to revert to 0 - imagine this in the context of a
 blockchain, where are balances, voting counters, nonces for transactions, and other aspects. Some of
@@ -179,7 +256,7 @@ here are some scenarios of which will shed more light on when to use which.
     `proposals_count` to go to `0`. Unfortunately, this resulted in new proposals overwriting old
     ones, effectively erasing any notion of past proposals!
 
-### When to use which? (todo)
+### Decision Chart: When to use which? (todo)
 
 ```mermaid
 flowchart LR
@@ -238,7 +315,7 @@ As stated, one can also perform mathematics using these types directly. For exam
 ```rust
 #[test]
 fn percent_mult() {
-    let percent = Percent::from_rational(5u32, 100u32);
+    let percent = Percent::from_rational(5u32, 100u32); // aka, 5%
     assert_eq!(percent.int_mul(5).deconstruct(), 25)
 }
 ```
