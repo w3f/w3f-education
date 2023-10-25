@@ -12,10 +12,9 @@ description:
 
 :::
 
-Small things like adding or subtracting numbers can present some novel scenarios. As our runtime
-should _never_ panic; this includes eliminating the possibility of integer overflows, converting
-between number types, or even handling floating point usage with fixed point arithmetic to mitigate
-issues that they can present.
+As our runtime should _never_ panic; this includes eliminating the possibility of integer overflows,
+converting between number types, or even handling floating point usage with fixed point arithmetic
+to mitigate issues that come with floating point calculations.
 
 :::tip To follow along, you can use `sp_arithmetic`
 
@@ -30,9 +29,23 @@ sp-arithmetic = "19.0.0-dev.1"
 
 ## Integer Overflow
 
-In runtime, we don't always have control over what is being supplied as a parameter. For example,
-this counter function could present one of two outcomes depending on whether it is in **release** or
-**debug** mode:
+The Rust compiler prevents any sort of overflow from happening at compile time, for example:
+
+```rust
+let overflow = u8::MAX + 10;
+
+// Results in:
+error: this arithmetic operation will overflow
+   --> src/main.rs:121:24
+    |
+121 |         let overflow = u8::MAX + 10;
+    |                        ^^^^^^^^^^^^ attempt to compute `u8::MAX + 10_u8`, which would overflow
+    |
+```
+
+However in runtime, we don't always have control over what is being supplied as a parameter. For
+example, this counter function could present one of two outcomes depending on whether it is in
+**release** or **debug** mode:
 
 ```rust
 fn count(x: u8) -> u8 {
@@ -40,15 +53,16 @@ fn count(x: u8) -> u8 {
     overflow
 }
 
-count(10); // In debug mode, this would panic. In release, `u32::MAX` would be 9.
+count(10); // In debug mode, this would panic. In release, this would return 9.
 ```
 
 The Rust compiler would panic in **debug** mode in the event of an integer overflow. In **release**
-mode, it resorts to _wrapping_ the overflowed amount in a modular fashion, (hence returning `9`).
+mode, it resorts to silently _wrapping_ the overflowed amount in a modular fashion, (hence returning
+`9`).
 
 While this may seem "safe" on the surface, wrapping could present unintended consequences in the
 context of blockchain development. A quick example is a user's balance overflowing - the default
-behavior of wrapping would result in the user's balance starting from zero!
+behavior of wrapping could result in the user's balance starting from zero!
 
 Luckily, there are ways to both represent and handle these scenarios depending on our specific use
 case natively built into Rust, as well as libraries like `sp_arithmetic`.
@@ -74,7 +88,7 @@ single nondeterministic result could cause chaos for consensus along with the af
 :::
 
 The following methods represent different ways one can handle numbers safely natively in Rust,
-without fear of panic, unexpected wrapping, or other unexpected behavior.
+without fear of panic or unexpected behavior from wrapping.
 
 ### Checked Operations
 
@@ -106,16 +120,14 @@ fn checked_add_handle_error_example() {
 }
 ```
 
-Typically, if you aren't sure about which operation to use, **checked** operations are a safe bet,
-as it presents two, predictable outcomes that can be handled accordingly (`Some` and `None`). In
-reality, checked operations aren't utilized much within the Polkadot codebase, but are still a valid
-way to ensure safety is a part of your runtime's design.
+Typically, if you aren't sure about which operation to use for runtime math, **checked** operations
+are a safe bet, as it presents two, predictable (and _erroring_) outcomes that can be handled
+accordingly (`Some` and `None`).
 
-In a real context, the resulting `Option` should be handled accordingly. The following function is
-from the
+In a practical context, the resulting `Option` should be handled accordingly. The following function
+is from the
 [`polkadot-sdk`](https://github.com/paritytech/polkadot-sdk/blob/c86b633695299ed27053940d5ea5c5a2392964b3/bridges/modules/messages/src/inbound_lane.rs#L168),
-and part of it increases a nonce which is responsible as part of receiving a message from a bridge
-protocol:
+and part of it increases a nonce as part of receiving a message in a bridging context:
 
 ```rust
 /// Receive new message.
@@ -126,6 +138,8 @@ pub fn receive_message<Dispatch: MessageDispatch>(
     message_data: DispatchMessageData<Dispatch::DispatchPayload>,
 ) -> ReceivalResult<Dispatch::DispatchLevelResult> {
     let mut data = self.storage.get_or_init_data();
+
+    // Notice the handling of the Option below:
     if Some(nonce) != data.last_delivered_nonce().checked_add(1) {
         return ReceivalResult::InvalidNonce
     }
@@ -142,7 +156,7 @@ if Some(value) = some_option.checked_add(1) {
 }
 ```
 
-Is a good convention to use for hand line not only checked types, but most types that return
+Is a good convention to use for handling not only checked types, but most types that return
 `Option<T>`.
 
 #### Checked Operations: Result Flavored
@@ -160,7 +174,8 @@ self.gas_left = self.gas_left.checked_sub(&amount).ok_or_else(|| <Error<T>>::Out
 At a glance, this may seem confusing, as we just got done explaining how to handle a `Option`, not
 `Result`. `Result` may be used as an alternative to `Option` where it ergonomically makes sense to
 let the user know that something unexpected has happened. This is particularly useful in the context
-of dispatchables within a Substrate pallet, for example.
+of dispatchables within a Substrate pallet, for example, where information about a failure to
+perform some action matters in the context of the application.
 
 :::tip `ok_or` or `ok_or_else`?
 
@@ -176,8 +191,8 @@ relevant or not, thereby making it slightly more expensive.
 
 ### Saturated Operations
 
-Saturating a number of limits it to its numeric bound, no matter the integer would overflow in
-runtime. For example, adding to `u32::MAX` would simply limit itself to `u32::MAX` :
+Saturating a number limits it to the type's upper or lower bound, no matter the integer would
+overflow in runtime. For example, adding to `u32::MAX` would simply limit itself to `u32::MAX`:
 
 ```rust
 #[test]
@@ -191,18 +206,25 @@ fn saturated_add_example() {
 Saturating calculations can be used if one is very sure that something won't overflow, but wants to
 avoid introducing the notion of any potential-panic or wrapping behavior.
 
-### Operations in Substrate Development - Further Context
+### Mathematical Operations in Substrate Development - Further Context
 
 As a recap, we covered the following concepts:
 
-1. **Checked** operations - using `Option`,
+1. **Checked** operations - using `Option` or `Result`,
 2. **Saturated** operations - limited to the lower and upper bounds of a number type,
 3. **Wrapped** operations (the default) - wrap around to above or below the bounds of a type,
 
-**Wrapped operations** cause the overflow to revert to 0 - imagine this in the context of a
-blockchain, where are balances, voting counters, nonces for transactions, and other aspects. Some of
-these mechanisms can be more critical than others. Its for this reason that we may consider some
-other ways of dealing with runtime arithmetic that won't carry these consequences.
+:::info The problem with 'default' wrapped operations
+
+**Wrapped operations** cause the overflow to wrap around to either the maximum or minimum of that
+type. Imagine this in the context of a blockchain, where there are balances, voting counters, nonces
+for transactions, and other aspects of a blockchain.
+
+Some of these mechanisms can be more critical than others. It's for this reason that we may consider
+some other ways of dealing with runtime arithmetic, such as saturated or checked operations, that
+won't carry these potential consequences.
+
+:::
 
 While it may seem trivial, choosing how to handle numbers is quite important. As a thought exercise,
 here are some scenarios of which will shed more light on when to use which.
@@ -214,8 +236,8 @@ handle the calculation to add to Bob's balance with any regard to this overflow,
 is now essentially `0`, the operation **wrapped**.
 
 <details>
-    <summary><b>Solution: Saturating</b></summary>
-    For Bob's balance problems, using a saturated_add could've mitigated this issue.  They simply would've reached the upper, or lower bounds, of the particular type for an on-chain balance.  In other words: Bob's would've stayed at the maximum of the Balance type.
+    <summary><b>Solution: Saturating or Checked</b></summary>
+    For Bob's balance problems, using a saturated_add or checked_add could've mitigated this issue.  They simply would've reached the upper, or lower bounds, of the particular type for an on-chain balance.  In other words: Bob's balance would've stayed at the maximum of the Balance type.
 </details>
 
 #### Alice's 'Underflowed' Balance
@@ -227,7 +249,11 @@ overpowered token balance, destroying the integrity of the chain.
 
 <details>
     <summary><b>Solution: Saturating</b></summary>
-    For Alice's balance problem, using saturated_sub could've mitigated this issue.  They simply would've reached the upper, or lower bounds, of the particular type for an on-chain balance.  In other words: Alice's balance would've stayed at "0", even after being slashed.
+    For Alice's balance problem, using saturated_sub could've mitigated this issue.  As debt or having a negative balance is not a concept within blockchains, a saturating calculation would've simply limited her balance to the lower bound of u32.  
+    
+    In other words: Alice's balance would've stayed at "0", even after being slashed.  
+    
+    This is also an example that while one system may work in isolation, shared interfaces, such as the notion of balances, are often shared across multiple pallets - meaning these small changes can make a big difference in outcome.
 </details>
 
 #### Proposals' ID Overwrite
@@ -261,6 +287,11 @@ never realistically overflow unless one sent thousands of transactions to the ne
 flowchart LR
     CH["Checked"]
     ST["Saturated"]
+
+    CH-->NEED["The user needs to know that the operation failed - and why"]
+    CH-->DOUBT["Unsure whether this operation could fail/overflow"]
+    ST-->SILENT["Silently reaching upper/lower bound will not result in any damage"]
+    ST-->REASON["In all reasonable circumstances, the number will not overflow"]
 ```
 
 ## Fixed Point Arithmetic
