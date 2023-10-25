@@ -244,7 +244,7 @@ is now essentially `0`, the operation **wrapped**.
 
 **Alice's** balance has reached `0` after a transfer to `Bob`. Suddenly, she has been slashed on
 `EduChain`, causing her balance to reach near the limit of `u32::MAX` - a very large amount - as
-_checked operations_ can go both ways. **Alice** can now successfully vote using her new,
+_wrapped operations_ can go both ways. **Alice** can now successfully vote using her new,
 overpowered token balance, destroying the integrity of the chain.
 
 <details>
