@@ -29,7 +29,7 @@ sp-arithmetic = "19.0.0-dev.1"
 
 ## Integer Overflow
 
-The Rust compiler prevents any sort of overflow from happening at compile time, for example:
+The Rust compiler prevents any sort of static overflow from happening at compile time, for example:
 
 ```rust
 let overflow = u8::MAX + 10;
