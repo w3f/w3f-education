@@ -16,17 +16,6 @@ As our runtime should _never_ panic; this includes eliminating the possibility o
 converting between number types, or even handling floating point usage with fixed point arithmetic
 to mitigate issues that come with floating point calculations.
 
-:::tip To follow along, you can use `sp_arithmetic`
-
-The following code may use types that Substrate provides. Feel free to follow along by including
-these crates in your `Cargo.toml` as follows:
-
-```toml
-sp-arithmetic = "19.0.0-dev.1"
-```
-
-:::
-
 ## Integer Overflow
 
 The Rust compiler prevents any sort of static overflow from happening at compile time, for example:
@@ -48,30 +37,37 @@ example, this counter function could present one of two outcomes depending on wh
 **release** or **debug** mode:
 
 ```rust
-fn count(x: u8) -> u8 {
-    let overflow = u8::MAX + x;
-    overflow
+fn naive_add(x: u8, y: u8) -> u8 {
+    x + y
 }
-
-count(10); // In debug mode, this would panic. In release, this would return 9.
+// highlight-next-line
+count(250u8, 10u8); // In debug mode, this would panic. In release, this would return 4.
 ```
 
 The Rust compiler would panic in **debug** mode in the event of an integer overflow. In **release**
 mode, it resorts to silently _wrapping_ the overflowed amount in a modular fashion, (hence returning
-`9`).
+`4`).
 
-While this may seem "safe" on the surface, wrapping could present unintended consequences in the
-context of blockchain development. A quick example is a user's balance overflowing - the default
-behavior of wrapping could result in the user's balance starting from zero!
+It is actually the _silent_ portion of this behavior that presents a real issue - as it may be an
+unintended, but also a very _silent killer_ in terms of producing bugs. In fact, it may have been
+better for this type of behavior to produce some sort of error, or even `panic!`, as in that
+scenario, at least such behavior could become obvious. Especially in the context of blockchain
+development, where unsafe arithmetic could produce unexpected consequences.
+
+A quick example is a user's balance overflowing: the default behavior of wrapping could result in
+the user's balance starting from zero, or vice versa, of a `0` balance turning into the `MAX` of
+some type. Naturally, this could lead to various exploits and issues down the road, which if failing
+silently, would be difficult to trace and rectify.
 
 Luckily, there are ways to both represent and handle these scenarios depending on our specific use
 case natively built into Rust, as well as libraries like `sp_arithmetic`.
 
 ## Safe Math
 
-Our main objective is to reduce the likelihood of any point of failure within our blockchain
-runtime. Both Rust and Substrate both provide safe ways to deal with numbers and alternatives to
-floating point arithmetic.
+Our main objective is to reduce the likelihood of any unintended or undefined behavior within our
+blockchain runtime. Intentional and predictable design should be our first and foremost property for
+ensuring a well running, safely designed system. Both Rust and Substrate both provide safe ways to
+deal with numbers and alternatives to floating point arithmetic.
 
 :::info Defensive, or safe math, isn't just useful for blockchain development.
 
@@ -81,6 +77,8 @@ into more controlled, fixed-point types.
 
 A prime example is that banking also doesn't use floating point numbers. Rather they use fixed-point
 arithmetic to mitigate the potential for inaccuracy, rounding errors, or other unexpected behavior.
+For more on the specifics of why this is,
+[watch this video by the Computerfile](https://www.youtube.com/watch?v=PZRI1IfStY0).
 
 Using **primitive** floating point number types in a blockchain context should also be avoided, as a
 single nondeterministic result could cause chaos for consensus along with the aforementioned issues.
@@ -124,51 +122,74 @@ Typically, if you aren't sure about which operation to use for runtime math, **c
 are a safe bet, as it presents two, predictable (and _erroring_) outcomes that can be handled
 accordingly (`Some` and `None`).
 
-In a practical context, the resulting `Option` should be handled accordingly. The following function
-is from the
-[`polkadot-sdk`](https://github.com/paritytech/polkadot-sdk/blob/c86b633695299ed27053940d5ea5c5a2392964b3/bridges/modules/messages/src/inbound_lane.rs#L168),
-and part of it increases a nonce as part of receiving a message in a bridging context:
+In a practical context, the resulting `Option` should be handled accordingly. The following
+conventions can be seen from the within the Polkadot SDK, where an `Option` can be handled in one of
+two ways:
+
+- As an `Option`, using the `if let` / `if` or `match`
+- As a `Result`, via `ok_or` (or similar conversion to `Result` from `Option`)
+
+#### Handling via Option - More Verbose
+
+Because wrapped operations return `Option<T>`, you can use a more verbose/explicit form of error
+handling via `if` or `if let`:
 
 ```rust
-/// Receive new message.
-pub fn receive_message<Dispatch: MessageDispatch>(
-    &mut self,
-    relayer_at_bridged_chain: &S::Relayer,
-    nonce: MessageNonce,
-    message_data: DispatchMessageData<Dispatch::DispatchPayload>,
-) -> ReceivalResult<Dispatch::DispatchLevelResult> {
-    let mut data = self.storage.get_or_init_data();
-
-    // Notice the handling of the Option below:
-    if Some(nonce) != data.last_delivered_nonce().checked_add(1) {
-        return ReceivalResult::InvalidNonce
+fn increase_balance(account: Address, amount: u64) -> Result<(), BlockchainError> {
+    // Get a user's current balance
+    let balance = Runtime::get_balance(account)?;
+    // highlight-start
+    // SAFELY increase the balance by some amount
+    if let Some(new_balance) = balance.checked_add(amount) {
+        Runtime::set_balance(account, new_balance);
+        return Ok(());
+    } else {
+        return Err(BlockchainError::Overflow)
     }
-    // ...
-```
-
-Because wrapped operations return `Option<T>`, the above syntax of:
-
-```rust
-if Some(value) = some_option.checked_add(1) {
-    // do something with value..
-} else {
-    // oh no, an overflow!
+    // highlight-end
 }
 ```
 
-Is a good convention to use for handling not only checked types, but most types that return
-`Option<T>`.
-
-#### Checked Operations: Result Flavored
-
-In the Polkadot SDK codebase, you may see checked operations being handled as a `Result`. For
-example, the following code is used in the `contracts` pallet to determine
-[if there is enough gas via `checked_sub`](https://github.com/paritytech/polkadot-sdk/blob/f6560c2b7226ea756ade18df42018c3eaf3be2e0/substrate/frame/contracts/src/gas.rs#L122):
+Optionally, `match` may also be directly used in a more concise manner:
 
 ```rust
-//...
-self.gas_left = self.gas_left.checked_sub(&amount).ok_or_else(|| <Error<T>>::OutOfGas)?;
-//...
+fn increase_balance(account: Address, amount: u64) -> Result<(), BlockchainError> {
+    // Get a user's current balance
+    let balance = Runtime::get_balance(account)?;
+    // highlight-start
+    // SAFELY increase the balance by some amount
+    let new_balance = match balance.checked_add(amount) {
+        Some(balance) => balance,
+        None => return Err(BlockchainError::Overflow),
+    };
+    // highlight-end
+    Runtime::set_balance(account, new_balance);
+    Ok(())
+}
+```
+
+This is generally a useful convention for handling not only checked types, but most types that
+return `Option<T>`.
+
+#### Handling via Result - Less Verbose
+
+In the Polkadot SDK codebase, you may see checked operations being handled as a `Result` via
+`ok_or`. This is a less verbose way of expressing the above, and which to use often boils down to
+the developer's preference:
+
+```rust
+fn increase_balance(account: Address, amount: u64) -> Result<(), BlockchainError> {
+    // Get a user's current balance
+    let balance = Runtime::get_balance(account)?;
+    // highlight-start
+    // SAFELY increase the balance by some amount - this time, by using `ok_or`
+    let new_balance = balance
+        .checked_add(amount)
+        .ok_or(BlockchainError::Overflow)?;
+    // highlight-end
+    Runtime::set_balance(account, new_balance);
+    Ok(())
+}
 ```
 
 At a glance, this may seem confusing, as we just got done explaining how to handle a `Option`, not
@@ -295,6 +316,17 @@ flowchart LR
 ```
 
 ## Fixed Point Arithmetic
+
+:::tip To follow along, you can use `sp_arithmetic`
+
+The following code may use types that Substrate provides. Feel free to follow along by including
+these crates in your `Cargo.toml` as follows:
+
+```toml
+sp-arithmetic = "19.0.0-dev.1"
+```
+
+:::
 
 Fixed point arithmetic solves the aforementioned problems of dealing with the (sometimes) uncertain
 nature of floating point numbers. Rather than use a radix point (`0.80`), a type which _represents_
