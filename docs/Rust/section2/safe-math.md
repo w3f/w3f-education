@@ -332,17 +332,18 @@ Fixed point arithmetic solves the aforementioned problems of dealing with the (s
 nature of floating point numbers. Rather than use a radix point (`0.80`), a type which _represents_
 a floating point number in base 10 can be used instead.
 
-Let's see how `sp_arithmetic`, a library within Substrate, allows us to easily take advantage of the
-capabilities of fixed point arithmetic:
+**Example - Perbill, parts of a billion**
 
-### Using 'PerThing'
+```rust
+#[test]
+fn perbill_example() {
+    let p = Perbill::from_percent(80);
+    // 800000000 bil, or a representative of 0.800000000. Precision is in the billions place.
+    assert_eq!(p.deconstruct(), 800000000);
+}
+```
 
-[`sp_arithmetic`](https://paritytech.github.io/polkadot-sdk/master/sp_arithmetic/) contains a trait
-called
-[`PerThing`](https://paritytech.github.io/polkadot-sdk/master/sp_arithmetic/per_things/trait.PerThing.html),
-allowing a custom type to be implemented specifically for fixed point arithmetic. One example is
-[`Percent`](https://paritytech.github.io/polkadot-sdk/master/sp_arithmetic/per_things/struct.Percent.html),
-which implements `PerThing`, and allows for percentages to be calculated safely:
+**Example - Percent, parts of a hundred**
 
 ```rust
 #[test]
@@ -354,23 +355,30 @@ fn percent_example() {
 
 Note that `190 / 400 = 0.475`, and that `Percent` represents it as a _rounded down_, fixed point
 number (`47`). Unlike primitive types, types that implement `PerThing` will also not overflow, and
-are therefore safe to use. They adopt the same behavior that a saturated calculation would provide:
+are therefore safe to use. They adopt the same behavior that a saturated calculation would provide,
+meaning that if one is to go over "100%", it wouldn't overflow, but simply stop at the upper or
+lower bound.
 
-```rust
-#[test]
-fn percent_example_overflow() {
-    let percent = Percent::from_rational(50032, 400u32);
-    assert_eq!(percent.deconstruct(), 100)
-}
-```
+### Using 'PerThing'
 
-If percent isn't precise enough,
-[`Perbill`](https://paritytech.github.io/polkadot-sdk/master/sp_arithmetic/per_things/struct.Perbill.html)
-or
-[`Permill`](https://paritytech.github.io/polkadot-sdk/master/sp_arithmetic/per_things/struct.Permill.html)
-(parts of a billion and million respectively) can be used for operations that require it.
+[`sp_arithmetic`](https://paritytech.github.io/polkadot-sdk/master/sp_arithmetic/) contains a trait
+called
+[`PerThing`](https://paritytech.github.io/polkadot-sdk/master/sp_arithmetic/per_things/trait.PerThing.html),
+allowing a custom type to be implemented specifically for fixed point arithmetic. While a number of
+fixed-point types are introduced, let's focus on a few specific examples that implement `PerThing`:
 
-### Fixed Point Arithmetic with `sp_arithmetic`
+- `Percent` - parts of one hundred.
+- `Permill` - parts of a million.
+- `Perbill` - parts of a billion.
+
+Because each of these implement the same trait, `PerThing`, we have access to a few widely used
+methods:
+
+- `from_rational()` -
+- `from_percent()` -
+- `from_parts()` -
+
+#### Fixed Point Arithmetic with `PerThing`
 
 As stated, one can also perform mathematics using these types directly. For example, multiplication:
 
@@ -396,6 +404,22 @@ fn percent_div() {
 
 Either way, you can safely deconstruct (or construct) and interact with representatives of these
 numbers.
+
+Later, in the context of a FRAME pallet, the usage of these types and calculations will start to
+make more sense when dealing with mathematics in the runtime.
+
+### Fixed Point Math in Substrate Development - Further Context
+
+Let's examine the usage of `Perbill` and how exactly we can use it as an alternative to floating
+point numbers in Substrate development. For this scenario, let's say we are demonstrating a _voting_
+system which depends on reaching a certain threshold, or percentage, before it can be deemed valid.
+
+For most cases, `Perbill` gives us a reasonable amount of precision for most applications, which is
+why we're using it here.
+
+```rust
+
+```
 
 Later, in the context of a FRAME pallet, the usage of these types and calculations will start to
 make more sense when dealing with mathematics in the runtime.
