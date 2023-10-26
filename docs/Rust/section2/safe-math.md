@@ -337,9 +337,11 @@ a floating point number in base 10 can be used instead.
 ```rust
 #[test]
 fn perbill_example() {
+    //highlight-start
     let p = Perbill::from_percent(80);
     // 800000000 bil, or a representative of 0.800000000. Precision is in the billions place.
     assert_eq!(p.deconstruct(), 800000000);
+     //highlight-end
 }
 ```
 
@@ -348,8 +350,10 @@ fn perbill_example() {
 ```rust
 #[test]
 fn percent_example() {
+    //highlight-start
     let percent = Percent::from_rational(190u32, 400u32);
     assert_eq!(percent.deconstruct(), 47)
+    //highlight-end
 }
 ```
 
@@ -374,41 +378,32 @@ fixed-point types are introduced, let's focus on a few specific examples that im
 Because each of these implement the same trait, `PerThing`, we have access to a few widely used
 methods:
 
-- `from_rational()` -
-- `from_percent()` -
-- `from_parts()` -
+- `from_rational()`
+- `from_percent()`
+- `from_parts()`
+
+Each of these can be used to construct and represent ratios within our runtime.
 
 #### Fixed Point Arithmetic with `PerThing`
 
-As stated, one can also perform mathematics using these types directly. For example, multiplication:
+As stated, one can also perform mathematics using these types directly. For example, finding the
+percentage of a particular item via multiplication:
 
 ```rust
 #[test]
 fn percent_mult() {
     let percent = Percent::from_rational(5u32, 100u32); // aka, 5%
-    assert_eq!(percent.int_mul(5).deconstruct(), 25)
+    let five_percent_of_100 = percent * 100u32; // 5% of 100 is 5.
+    assert_eq!(five_percent_of_100, 5)
 }
 ```
 
-Or also division:
-
-```rust
-#[test]
-fn percent_div() {
-    let percent = Percent::from_rational(50u32, 100u32);
-    let other_percent = Percent::from_parts(10);
-
-    assert_eq!(percent.int_div(other_percent), 5)
-}
-```
-
-Either way, you can safely deconstruct (or construct) and interact with representatives of these
-numbers.
-
-Later, in the context of a FRAME pallet, the usage of these types and calculations will start to
-make more sense when dealing with mathematics in the runtime.
+With the knowledge of how these types operate in relation to other numbers, let's explore how
+they're used in Substrate development.
 
 ### Fixed Point Math in Substrate Development - Further Context
+
+<!-- todo - add examples -->
 
 Let's examine the usage of `Perbill` and how exactly we can use it as an alternative to floating
 point numbers in Substrate development. For this scenario, let's say we are demonstrating a _voting_
@@ -416,10 +411,6 @@ system which depends on reaching a certain threshold, or percentage, before it c
 
 For most cases, `Perbill` gives us a reasonable amount of precision for most applications, which is
 why we're using it here.
-
-```rust
-
-```
 
 Later, in the context of a FRAME pallet, the usage of these types and calculations will start to
 make more sense when dealing with mathematics in the runtime.
