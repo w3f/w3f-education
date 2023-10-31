@@ -5,12 +5,13 @@ sidebar_label: Developing your parachain with FRAME
 description: Configure and customize your parachain before registering it on the relay chain.
 ---
 
-Congratulations, you have successfully registered a parachain to your local relay chain!
+Congratulations, you have successfully registered a parachain on a local relay chain!
 
-Now, you have a couple of options:
+Now, you have a few options:
 
-1.  Modify your existing parachain and upgrade its runtime.
-2.  Add more parachains with domain-specific functionality.
+1.  Modify your existing parachain by either developing or adding **pallets**, and upgrading its
+    runtime.
+2.  Locally deploy more parachains with domain-specific functionality.
 3.  Change the relay chain's core configuration and functionality.
 
 Both options will require changes to the code base(s), and for the binaries to be re-compiled. In
@@ -111,24 +112,35 @@ construct_runtime!(
     pub enum Runtime
     {
                 // ...
-        Assets: pallet_assets = 51, // some arbitrary id for the pallet
+        Assets: pallet_assets = 51, // some arbitrary id for the pallet, should be higher than the last pallet.
                 // ...
     }
 );
 ```
 
 Once complete, you should be able to build (`cargo build --release`) and re-launch your collator.
-Keep in mind you will also have to upgrade your parachain on the Relay chain, or re-register it.
+Keep in mind you will also have to upgrade your parachain.
 
 #### Upgrading your parachain with a new runtime
 
-Upgrading your parachain usually involves two steps:
+If your runtime has changed, you need to upgrade your parachain. As the relay chain holds the PVF of
+your parachain, it also needs to be part of the upgrade process.
 
-1. Authorize the upgrade by providing its hash via `authorize_upgrade`
-2. Enact the upgrade via `enact_authorized_upgrade`
+Upgrading your parachain usually involves two steps, both done using the `parachainSystem` pallet:
+
+1. **Authorize the upgrade by providing its hash via the `authorize_upgrade` extrinsic:**
+
+![](../assets/authorize_upgrade.png)
+
+2. **Enact the upgrade via the `enact_authorized_upgrade` extrinsic:**
+
+![](../assets/enact.png)
 
 These first notify the relay chain of the new PVF, then actually enact that upgrade with our new
 runtime.
+
+In PolkadotJS, both extrinsics can accept the runtime, where the first one hashes it, and the second
+one accepts the full runtime code, where it applies the upgrade.
 
 ## Register a second, custom parachain
 
