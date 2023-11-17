@@ -11,7 +11,11 @@ In this final page, we will do the following:
 - Run **one** parachain collator to supply block data to our relay chain.
 - Observe the state changing on both chains, and what they mean.
 
-:::note All commands are in the context of the `parachain-guide-resources` repository :::
+:::note
+
+All commands are in the context of the `parachain-guide-resources` repository
+
+:::
 
 ## Launching the Relay Chain
 
@@ -27,18 +31,16 @@ If you followed the steps to add a `symlink`, you may replace the preceded:
 
 - Launch Alice:
   ```bash
-  ./polkadot/target/release/polkadot \
+  ./target/debug/polkadot \
       --alice \
       --validator \
       --base-path /tmp/relay/alice \
       --chain ./relaychain/relaychain_spec_raw.json \
-      --port 30333 \
-      --rpc-port 9944 \
       --disable-worker-version-check
   ```
 - Launch Bob:
   ```bash
-  ./polkadot/target/release/polkadot \
+  ./target/debug/polkadot \
       --bob \
       --validator \
       --base-path /tmp/relay/bob \
@@ -115,18 +117,13 @@ parachain:
 
   ```bash
   ./substrate-parachain-template/target/release/parachain-template-node \
-      --alice \
-      --collator \
-      --force-authoring \
-      --chain ./parachain/parachain_chain_spec_raw.json \
-      --base-path /tmp/parachain/alice \
-      --port 40333 \
-      --rpc-port 8844 \
-      -- \
-      --execution wasm \
-      --chain ./relaychain/relaychain_spec_raw.json \
-      --port 30343 \
-      --rpc-port 9977
+    --alice \
+    --collator \
+    --force-authoring \
+    --chain ./parachain/parachain_chain_spec_raw.json \
+    --base-path /tmp/parachain/alice \
+    --port 40333 \
+    --rpc-port 8844 \
   ```
 
 With the output looking like:
@@ -139,7 +136,6 @@ With the output looking like:
 2023-08-11 10:52:44 🏷  Node name: Alice
 2023-08-11 10:52:44 👤 Role: AUTHORITY
 2023-08-11 10:52:44 💾 Database: RocksDb at /tmp/parachain/alice/chains/local_testnet/db/full
-CLI parameter `--execution` has no effect anymore and will be removed in the future!
 2023-08-11 10:52:45 Parachain Account: 5Ec4AhPZk8STuex8Wsi9TwDtJQxKqzPJRCH7348Xtcs9vZLJ
 2023-08-11 10:52:45 Is collating: yes
 2023-08-11 10:52:46 [Parachain] 🔨 Initializing Genesis block/state (state: 0xde8e…66b5, header-hash: 0x2717…55b5)
@@ -173,7 +169,7 @@ the blocks being imported and matching the height of the relay chain:
 2023-08-11 11:22:20 [Parachain] 💤 Idle (0 peers), best: #0 (0x2717…55b5), finalized #0 (0x2717…55b5), ⬇ 0 ⬆ 0
 ```
 
-It's possible you may also need to specify a bootnode for the parachain as well.
+It's possible you may also need to specify a bootnode for the parachain as well, such as `alice`.
 
 Our parachain is not making any blocks; and that is normal, as we still need to register it onto the
 relay chain.
@@ -181,4 +177,9 @@ relay chain.
 ## Observing State & Verifying Orchestration
 
 The most user-friendly way to verify and validate the state of both the relay chain and parachain is
-**Polkadot.js**.
+**Polkadot.js**, and by visiting the relay chain and parachain respectively. The relay chain should
+be making blocks, whereas the parachain shouldn't be. This is a great way to ensure your
+configuration is working so far:
+
+- [Polkadot.js - Relay Chain](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/explorer)
+- [Polkadot.js - Parachain](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A8844#/explorer)
