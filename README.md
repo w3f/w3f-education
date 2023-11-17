@@ -31,13 +31,13 @@ Hosted on GitHub pages - https://w3f.github.io/w3f-education/. This website is b
 ## Running Locally
 
 The Web3 Foundation Education pages are built from the source files in this repository. After
-cloning the source locally, you can start the websites with each of these respective commands
-(ensure you run `yarn` at the root of the repository first to install dependencies).
+cloning the source locally, you can start the website with the commands below (ensure you run `yarn`
+at the root of the repository first to install dependencies).
 
 The Web3 Foundation Education pages use Algolia search, which can be accessed locally by providing
-the correct App ID and API key. The `app_id` and `api_key` environment variables are needed for the
-pages to be built successfully. If you are an external contributor, set the variables with some
-values like shown below, which lets the Wiki repo build successfully (but disables the search bar).
+the correct App ID and API key. The `app_id` and `api_key` environment variables are needed to build
+the pages successfully. If you are an external contributor, set the variables with some values like
+those shown below, which lets the Wiki repo build successfully (but disables the search bar).
 
 ```bash
 export ALGOLIA_APP_ID="xxxxxx" ALGOLIA_API_KEY="xxxxxx"
@@ -51,7 +51,7 @@ yarn install
 
 ### Build
 
-:bird: Building the Web3 Foundation Pages:
+Building the Web3 Foundation Pages:
 
 ```bash
 yarn start
