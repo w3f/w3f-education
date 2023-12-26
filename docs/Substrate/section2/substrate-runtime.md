@@ -39,6 +39,6 @@ environment.
 ## The Outer Node
 
 The outer node refers to the portion of a Substrate node that deals with peer-to-peer networking and
-receiving new incoming from nodes. Using **host functions**, it can pass this data as an opaque blob
-that is then decoded and processed by the runtime, where it is then stored in the underlying storage
-layer.
+receiving new incoming requests from nodes. Using **host functions**, it can pass this data as an
+opaque blob that is then decoded and processed by the runtime, where it is then stored in the
+underlying storage layer.
