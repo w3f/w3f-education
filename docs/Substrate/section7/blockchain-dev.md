@@ -18,7 +18,7 @@ It is important to abide by the general rule of thumb of **"not rolling your own
 established or community-approved algorithms.
 
 Whether it is apparent or not, all blockchain-based systems rely heavily on various cryptographic
-methods to track, verify, and provide the integrity blockchains intrisically offer.
+methods to track, verify, and provide the integrity blockchains intrinsically offer.
 
 As we've seen with the `StorageMap` implementation, we used the Blake2 hashing algorithm to hash our
 storage keys, or more important; we require an extrinsic to be a cryptographically valid, signed

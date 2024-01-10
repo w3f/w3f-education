@@ -53,7 +53,7 @@ We can now access any type within our configuration, per `T: Config`.
 
 ### Type breakdown: `BalanceOf<T>`
 
-At the type of the file, you notice a type alias that uses the `Currency` trait as well:
+At the top of the file, you notice a type alias that uses the `Currency` trait as well:
 
 ```rust
 type BalanceOf<T> =

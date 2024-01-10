@@ -6,7 +6,7 @@ description: Creating dispatchable functions for our pallet.
 ---
 
 With all of our tools in place to register a user, let's go through the process of adequately
-registering them via an **extrinsic**or state change.
+registering them via an **extrinsic** or state change.
 
 :::info What is an extrinsic again?
 
