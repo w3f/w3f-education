@@ -1,0 +1,16 @@
+[package]
+name = "readme-generate"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+docify = "0.2.4"
+curl = "0.4.44"
+glob = "0.3.1"
+
+[features]
+
+with-docify = []
+delete-after = []
