@@ -88,6 +88,10 @@ module.exports = {
               to: "docs/introparachain",
               label: "Parachain Development",
             },
+            {
+              to: "docs/OpenZeppelinTemplate/intro-oz-generic-template",
+              label: "Educhain",
+            },
           ],
         },
 
